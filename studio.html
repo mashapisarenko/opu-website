@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OPU Studio — recording mode</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<style>
+  /* Recording studio: fullscreen navy stage, big caption, lit keyboard */
+  body{background:linear-gradient(165deg,#141d33,#1e2a44 55%,#26355a);min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+  .stage{max-width:1100px;margin:0 auto;padding:30px 22px;width:100%}
+  #cap-kicker{font-family:Inter;text-transform:uppercase;letter-spacing:.2em;font-size:clamp(.7rem,1.6vw,.95rem);font-weight:600;color:var(--gold);text-align:center;min-height:1.2em}
+  #caption{font-family:"Playfair Display",serif;font-weight:700;color:#fff;text-align:center;font-size:clamp(1.6rem,4.5vw,3.2rem);line-height:1.15;margin:.35rem 0 1.4rem;min-height:1.2em}
+  .brandline{display:flex;justify-content:center;align-items:center;gap:10px;color:#c9cee0;font-size:clamp(.75rem,1.6vw,.95rem);margin-top:22px}
+  .brandline .dot{width:26px;height:26px;border-radius:50%;background:var(--gold);display:grid;place-items:center;color:#fff;font-size:.8rem}
+  .brandline b{color:#fff}
+  #controls{position:fixed;left:0;right:0;bottom:0;background:rgba(10,15,30,.92);backdrop-filter:blur(6px);padding:12px 16px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;align-items:center;z-index:50}
+  #controls .kbtn{padding:7px 14px;font-size:.85rem}
+  #controls input[type=text]{border-radius:999px;border:1px solid rgba(193,154,75,.5);background:rgba(255,255,255,.1);color:#fff;padding:7px 14px;font-size:.85rem;width:300px}
+  #controls input[type=text]::placeholder{color:#8b93ad}
+  .hint-note{color:#8b93ad;font-size:.75rem;width:100%;text-align:center}
+  body.clean #controls{display:none}
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div id="cap-kicker">ONLINE PIANO UNIVERSITY</div>
+  <div id="caption">Play your first note</div>
+  <div class="kb-shell">
+    <div id="opu-keyboard"></div>
+    <div class="kb-controls" id="song-controls">
+      <button class="kbtn" data-kb-song="joy" type="button">♫ Ode to Joy</button>
+      <button class="kbtn" data-kb-song="elise" type="button">♫ Für Elise</button>
+      <button class="kbtn" data-kb-song="bday" type="button">♫ Happy Birthday</button>
+      <button class="kbtn" id="kb-rec" type="button">● Record</button>
+      <button class="kbtn" id="kb-play" type="button">▶ Play my melody</button>
+    </div>
+    <p id="kb-hint"></p>
+    <div class="kb-tip"><span id="kb-midi-status" class="midi"></span></div>
+  </div>
+  <div class="brandline"><span class="dot">♪</span> <span><b>Dr. Maria Pisarenko</b> · DMA · onlinepianouniversity.com</span></div>
+</div>
+
+<div id="controls">
+  <input type="text" id="cap-input" placeholder="Type a caption and press Enter…">
+  <button class="kbtn" onclick="setCap('Can you learn piano as an adult?')">Cap: Too old?</button>
+  <button class="kbtn" onclick="setCap('Start the right way — free guide')">Cap: Free guide</button>
+  <button class="kbtn" onclick="setCap('C Major — your first chord')">Cap: C Major</button>
+  <button class="kbtn" onclick="document.body.classList.add('clean')">🎬 Clean screen (press C to bring back)</button>
+  <span class="hint-note">Recording recipe: QuickTime → New Screen Recording → mic ON → 🎬 Clean screen → play a song → read your script aloud. Press C to show controls again.</span>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/keyboard.js"></script>
+<script>
+  function setCap(t){ document.getElementById("caption").textContent = t; }
+  document.getElementById("cap-input").addEventListener("keydown", function(e){
+    if (e.key === "Enter") { setCap(this.value); this.blur(); }
+    e.stopPropagation();
+  });
+  window.addEventListener("keydown", function(e){
+    if (e.key.toLowerCase() === "c" && document.activeElement.tagName !== "INPUT") {
+      document.body.classList.toggle("clean");
+    }
+  });
+</script>
+</body>
+</html>

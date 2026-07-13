@@ -1,0 +1,13 @@
+{
+  "name": "Online Piano University",
+  "short_name": "Piano University",
+  "description": "Learn piano the right way, from your first note — free university-level course by Dr. Maria Pisarenko, DMA.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e2a44",
+  "theme_color": "#1e2a44",
+  "icons": [
+    { "src": "images/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "images/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

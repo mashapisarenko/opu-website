@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free University Piano Course for Beginners — Online Piano University</title>
+<meta name="description" content="The complete beginner piano course, in order, free — the same university curriculum Dr. Maria Pisarenko (DMA) teaches at colleges. 41 lessons on YouTube: reading music, chords, pedal, both hands.">
+<link rel="canonical" href="https://onlinepianouniversity.com/free-course.html">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1e2a44">
+<link rel="icon" href="images/icon-192.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Free University Piano Course for Beginners",
+  "description": "A complete university-level beginner piano course, free on YouTube: posture, reading music, chords, pedal, both hands, first real pieces. 41 lessons following Alfred's Basic Adult All-in-One Course, Level 1.",
+  "provider": {"@type": "Organization", "name": "Online Piano University", "url": "https://onlinepianouniversity.com/"},
+  "isAccessibleForFree": true,
+  "hasCourseInstance": {"@type": "CourseInstance", "courseMode": "online", "courseWorkload": "PT30M", "instructor": {"@type": "Person", "name": "Dr. Maria Pisarenko", "honorificSuffix": "DMA"}},
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}
+}
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="index.html"><span class="dot">♪</span> Online Piano University</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+    <nav class="nav-links">
+      <a href="free-course.html" class="active">Free Course</a>
+      <a href="submit.html">Get Feedback</a>
+      <a href="lessons.html">1-on-1 Lessons</a>
+      <a href="about.html">About</a>
+      <a href="books.html">Books &amp; Gear</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn" href="#playlist">▶ Start the Free Course</a>
+    </nav>
+  </div>
+</header>
+
+<section class="pagehero">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--gold)">Start here · 41 lessons · Free</span>
+    <h1>Free University Piano Course for Beginners</h1>
+    <p class="sub">The complete beginner course, in order, free — the same curriculum I teach at universities. Follows <em>Alfred's Basic Adult All-in-One Piano Course, Level 1</em>, lesson by lesson, nothing skipped.</p>
+    <div class="cta" style="margin-top:24px;display:flex;gap:14px;flex-wrap:wrap">
+      <a class="btn" href="#playlist">▶ Begin with Lesson 1</a>
+      <a class="btn ghost" href="https://www.youtube.com/@ONLINEPIANOUNIVERSITY" target="_blank" rel="noopener">Subscribe on YouTube →</a>
+    </div>
+  </div>
+</section>
+<div class="strip"><div class="wrap"><span>New lessons every <b>Tuesday &amp; Saturday</b></span><span>Taught by <b>Dr. Maria Pisarenko, DMA</b></span><span>100% free on YouTube</span></div></div>
+
+<section id="playlist" class="course">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">The full course</span>
+      <h2>Watch in order — Lesson 1 to 41</h2>
+      <p class="lead" style="max-width:66ch;margin:8px auto 0">Press play below to start the whole course playlist from Lesson 1. Each lesson has chapters, so you can jump to any topic.</p>
+    </div>
+    <div class="videowrap" style="margin-top:24px">
+      <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLmHakdUcQbtSHDPhBQL8DLmiiKe3CsRzM" title="Free University Piano Course for Beginners — full playlist" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <p class="center" style="margin-top:18px"><a class="btn dark" href="https://www.youtube.com/playlist?list=PLmHakdUcQbtSHDPhBQL8DLmiiKe3CsRzM" target="_blank" rel="noopener">Open the playlist on YouTube →</a></p>
+  </div>
+</section>
+
+<!-- VIRTUAL KEYBOARD -->
+<section style="padding-bottom:0">
+  <div class="wrap">
+    <div class="kbwidget">
+      <div class="center">
+        <span class="eyebrow">Warm up right here</span>
+        <h2 style="margin:.3rem 0">Try the keys before your first lesson</h2>
+        <p style="color:#c9cee0;max-width:56ch;margin:6px auto 0">Tap the keys, play a song, or record your own melody — then start Lesson 1 and learn to do it properly.</p>
+      </div>
+      <div class="kb-shell">
+        <div id="opu-keyboard"></div>
+        <div class="kb-controls">
+          <button class="kbtn" data-kb-song="joy" type="button">♫ Ode to Joy</button>
+          <button class="kbtn" data-kb-song="elise" type="button">♫ Für Elise</button>
+          <button class="kbtn" data-kb-song="bday" type="button">♫ Happy Birthday</button>
+          <button class="kbtn" id="kb-rec" type="button">● Record</button>
+          <button class="kbtn" id="kb-play" type="button">▶ Play my melody</button>
+        </div>
+        <p id="kb-hint">Play a song — and watch the keys light up.</p>
+        <div class="kb-tip">
+          <span>After a few lessons, you'll play these for real.</span>
+          <span class="midi" id="kb-midi-status"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--paper)">
+  <div class="wrap">
+    <span class="eyebrow">What you'll learn</span>
+    <h2>A real foundation, step by step</h2>
+    <div class="grid cols-3" style="margin-top:22px">
+      <div class="card"><h3>Posture &amp; hand position</h3><p class="muted">Sit correctly, shape your hands — the technique that prevents bad habits.</p></div>
+      <div class="card"><h3>Reading music</h3><p class="muted">Notes on the Grand Staff, key signatures (to 1♯/1♭), counting in 2/4, 3/4, 4/4.</p></div>
+      <div class="card"><h3>Chords &amp; harmony</h3><p class="muted">C, G7, F, D7 — and how music actually works.</p></div>
+      <div class="card"><h3>Both hands + pedal</h3><p class="muted">Play hands together with the damper pedal, smoothly and musically.</p></div>
+      <div class="card"><h3>Scales</h3><p class="muted">C, G and F major — the keys your first pieces live in.</p></div>
+      <div class="card"><h3>Real pieces</h3><p class="muted">Perform complete pieces properly — not just pressed, played.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap grid cols-2" style="align-items:center;gap:30px">
+    <div>
+      <span class="eyebrow">Companion course</span>
+      <h2>Extra Practice — play along with me</h2>
+      <p class="lead">Eight close-up play-along sessions that accompany the main course. Watch my hands from above and practice together, at your pace.</p>
+      <p><a class="btn dark" href="https://www.youtube.com/playlist?list=PLmHakdUcQbtRHJTg1qzpE-pKYTvFf0Tt3" target="_blank" rel="noopener">▶ Open Extra Practice →</a></p>
+    </div>
+    <div class="videowrap">
+      <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLmHakdUcQbtRHJTg1qzpE-pKYTvFf0Tt3" title="Extra Practice — play-along companion course" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--paper);padding-top:44px">
+  <div class="wrap center">
+    <span class="eyebrow">What students say</span>
+    <div class="grid cols-1" style="max-width:640px;margin:14px auto 0">
+      <div class="card review-card"><p class="stars">★★★★★</p><p class="quote">“After being away from piano lessons for 15 years… Dr. Pisarenko is a great instructor for me. She's kind and patient and encouraging… top notch instruction. She's the best!”</p><p class="rev-by"><b>— Guillo L.</b>, returning adult student<span class="rev-src">Yelp</span></p></div>
+    </div>
+    <p style="margin-top:10px"><a href="reviews.html">Read more reviews →</a></p>
+  </div>
+</section>
+
+<section style="padding-bottom:0">
+  <div class="wrap">
+    <div class="capture">
+      <span class="eyebrow" style="color:var(--gold)">Free guide</span>
+      <h2>Get the Adult Beginner's Piano Starter Guide</h2>
+      <p style="color:#d7dbe8;max-width:52ch;margin:6px auto 0">Start the right way — the first steps, the right instrument, and how to practice, in one free PDF.</p>
+      <form class="opu-capture">
+        <input type="email" name="email_address" placeholder="Your email" required aria-label="Your email">
+        <button class="btn" type="submit">Send me the guide</button>
+      </form>
+      <p class="form-ok">✓ Thank you — check your inbox!</p>
+      <p class="note">No spam — just piano. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<section class="gear">
+  <div class="wrap">
+    <span class="eyebrow">What you'll need</span>
+    <h2>The book &amp; a good keyboard</h2>
+    <p class="disclaimer">As an Amazon Associate I earn from qualifying purchases.</p>
+    <div class="grid cols-2" style="margin-top:16px">
+      <div class="card"><h3>📘 Alfred's Basic Adult All-in-One, Level 1</h3><p class="muted">The course book — we follow it page by page.</p><a class="btn dark" href="https://amzn.to/4eZzt2w" target="_blank" rel="noopener sponsored">View on Amazon →</a></div>
+      <div class="card"><h3>🎹 A digital piano with 88 weighted keys</h3><p class="muted">Yamaha P71, Roland FP-10 or Casio PX-S1100 — see my full recommendations.</p><a class="btn dark" href="books.html">See recommended keyboards →</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="finalcta">
+  <div class="wrap center">
+    <h2>Your first lesson takes 20 minutes</h2>
+    <p style="color:#fff;opacity:.95;font-size:1.1rem">Start today — properly, from the very first note.</p>
+    <p style="margin-top:14px"><a class="btn dark" href="#playlist">▶ Begin with Lesson 1</a></p>
+  </div>
+</section>
+
+<section style="background:var(--paper);padding:36px 0">
+  <div class="wrap center">
+    <div class="socials">
+      <a href="https://www.youtube.com/@ONLINEPIANOUNIVERSITY" target="_blank" rel="noopener">▶ YouTube</a>
+      <a href="https://www.instagram.com/online_piano_university/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/OnlinePianoUniversity/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.tiktok.com/@online.piano.university" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.pinterest.com/OnlinePianoUniversity/" target="_blank" rel="noopener">Pinterest</a>
+    </div>
+  </div>
+</section>
+
+<footer id="footer">
+  <div class="wrap cols">
+    <div style="max-width:320px">
+      <div class="brand" style="color:#fff;margin-bottom:8px"><span class="dot">♪</span> Online Piano University</div>
+      <p style="color:#aeb5cb">Learn piano the right way, from your first note — with Dr. Maria Pisarenko, DMA.</p>
+      <p class="disclaimer" style="color:#8b93a8">As an Amazon Associate I earn from qualifying purchases.</p>
+    </div>
+    <div>
+      <p style="color:#fff;font-weight:600">Explore</p>
+      <p><a href="free-course.html">Free Course</a></p>
+      <p><a href="submit.html">Get Feedback</a></p>
+      <p><a href="lessons.html">1-on-1 Lessons</a></p>
+      <p><a href="about.html">About</a></p>
+      <p><a href="books.html">Books &amp; Gear</a></p>
+      <p><a href="reviews.html">Reviews</a></p>
+    </div>
+    <div>
+      <p style="color:#fff;font-weight:600">More from Dr. Maria Pisarenko</p>
+      <p><a href="https://www.mariapisarenko.com" target="_blank" rel="noopener">mariapisarenko.com →</a></p>
+      <p><a href="https://www.youtube.com/@ONLINEPIANOUNIVERSITY" target="_blank" rel="noopener">YouTube channel →</a></p>
+    </div>
+    <div>
+      <p style="color:#fff;font-weight:600">Contact</p>
+      <p><a href="mailto:maria@onlinepianouniversity.com">maria@onlinepianouniversity.com</a></p>
+      <p><a href="contact.html">Contact page →</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/site.js"></script>
+<script src="js/keyboard.js"></script>
+</body>
+</html>
