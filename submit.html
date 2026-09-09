@@ -3,6 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DZSNWWT4S4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DZSNWWT4S4');
+</script>
+
 <title>Send Me Your Playing — Free Feedback | Online Piano University</title>
 <meta name="description" content="Record yourself playing a lesson from the free course and send it to Dr. Maria Pisarenko's studio — get personal, detailed feedback on your notes, rhythm and hand position. Free.">
 
@@ -29,6 +38,35 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://onlinepianouniversity.com/submit.html#service",
+  "name": "Personal Feedback on Your Playing",
+  "serviceType": "Piano performance feedback",
+  "url": "https://onlinepianouniversity.com/submit.html",
+  "provider": {
+    "@type": "Person",
+    "@id": "https://onlinepianouniversity.com/#maria",
+    "name": "Dr. Maria Pisarenko",
+    "honorificSuffix": "DMA"
+  },
+  "areaServed": "Worldwide",
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Adult beginner pianists"
+  },
+  "description": "Record yourself playing a lesson from the free beginner course and receive specific, personal feedback from Dr. Maria Pisarenko, DMA — on your hands, your sound and what to practice next.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://onlinepianouniversity.com/submit.html"
+  }
+}
+</script>
 </head>
 <body>
 
@@ -61,29 +99,29 @@
 <section>
   <div class="wrap grid cols-3" style="margin-top:0">
     <div class="card center">
-      <div style="font-size:2rem">🎙️</div>
+      <div style="font-size:2rem"></div>
       <h3>1 · Record</h3>
       <p class="muted">Play the exercise or song from <b>any lesson (1–41)</b> of the free course. A simple phone recording is perfect — <b>audio alone is enough</b>. Want feedback on your hand position too? Film <b>just your hands</b> on the keys. Your face is never required.</p>
     </div>
     <div class="card center">
-      <div style="font-size:2rem">📤</div>
+      <div style="font-size:2rem"></div>
       <h3>2 · Send</h3>
       <p class="muted">Upload your recording right on this page — choose your lesson, tell me what felt difficult, and send. It takes one minute.</p>
     </div>
     <div class="card center">
-      <div style="font-size:2rem">🎓</div>
+      <div style="font-size:2rem"></div>
       <h3>3 · Get feedback</h3>
       <p class="muted">Within about 48 hours you'll receive detailed feedback in your inbox: what's already working, the one thing to fix first, and exactly how to practice it — my method, from my lessons.</p>
     </div>
   </div>
 </section>
 
-<section style="padding-top:0">
+<section style="padding-top:0" id="send">
   <div class="wrap center">
     <div class="capture">
       <span class="eyebrow" style="color:var(--gold)">Ready?</span>
       <h2>Send your recording now</h2>
-      <p style="color:#d7dbe8;max-width:56ch;margin:6px auto 0">Attach your audio or hands-only video (up to ~25 MB by email — for bigger files, send a Google Drive / Dropbox / iCloud link).</p>
+      <p style="color:#d7dbe8;max-width:56ch;margin:6px auto 0">Upload your audio or hands-only video below (up to 40 MB) — for bigger files, send a Google Drive / Dropbox / iCloud link instead.</p>
       <form id="upload-form" style="display:none;max-width:520px;margin:18px auto 0;text-align:left">
         <input type="email" id="uf-email" placeholder="Your email" required aria-label="Your email" style="width:100%;margin-bottom:10px;padding:11px 14px;border-radius:10px;border:1px solid rgba(193,154,75,.5)">
         <select id="uf-lesson" required aria-label="Lesson number" style="width:100%;margin-bottom:10px;padding:11px 14px;border-radius:10px;border:1px solid rgba(193,154,75,.5)">
@@ -133,13 +171,34 @@
         <input type="text" id="uf-note" placeholder="What felt difficult? (optional)" aria-label="What felt difficult" style="width:100%;margin-bottom:10px;padding:11px 14px;border-radius:10px;border:1px solid rgba(193,154,75,.5)">
         <input type="file" id="uf-file" accept="audio/*,video/*" required aria-label="Your recording" style="width:100%;margin-bottom:10px;color:#d7dbe8">
         <label style="display:block;color:#d7dbe8;font-size:.85rem;margin-bottom:12px"><input type="checkbox" id="uf-consent" required> I agree to receive my feedback and piano tips by email.</label>
-        <p style="text-align:center"><button class="btn" type="submit" id="uf-btn">🎙️ Send my playing →</button></p>
+        <p style="text-align:center"><button class="btn" type="submit" id="uf-btn">Send my playing →</button></p>
         <p class="form-ok" id="uf-ok" style="display:none">✓ Received! Your feedback will arrive by email within 48 hours.</p>
+        <div id="uf-next" style="display:none;margin-top:18px;padding:18px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(193,154,75,.45);text-align:left">
+          <p style="color:#fff;font-weight:600;margin:0 0 6px">While you wait &mdash; the fastest way to fix what is holding you back</p>
+          <p style="color:#d7dbe8;margin:0 0 12px;font-size:.96rem">A written review tells you what to change. A live lesson lets me watch your hands and correct them in the moment. Most students who send a recording are one or two habits away from a real jump.</p>
+          <p style="margin:0">
+            <a class="btn" data-pay="PAY_SINGLE_60" data-subject="A lesson after sending my playing" data-fallback-label="Ask about a lesson &rarr;" href="#">Book a single lesson with me &mdash; $100 &rarr;</a>
+          </p>
+        </div>
         <p class="note" id="uf-err" style="display:none"></p>
       </form>
-      <p style="margin-top:16px" id="mailto-wrap"><a class="btn" id="submit-mailto" href="#">✉️ Email my playing →</a></p>
+      <p style="margin-top:16px" id="mailto-wrap"><a class="btn" id="submit-mailto" href="#">Email my playing →</a></p>
       <p class="note" id="submit-email-note"></p>
       <div id="submit-form-slot"></div>
+    </div>
+  </div>
+</section>
+
+<section id="feedback-pricing">
+  <div class="wrap center">
+    <span class="eyebrow">What this costs</span>
+    <h2>Nothing. It is free.</h2>
+    <p class="lead" style="max-width:60ch;margin:10px auto 0">Send a recording and I will listen to it properly and write back &mdash; no charge, no card, nothing to cancel, and no limit on how often. I would rather hear a hundred people play than charge ten of them.</p>
+    <p class="muted" style="max-width:60ch;margin:14px auto 0">Every review is prepared in my studio with the help of an assistant trained on my own lessons, and <b>I personally read and approve every one</b> before it reaches you. If that ever stops being possible because too many of you are sending recordings, I will say so here first &mdash; I will not quietly start charging.</p>
+    <div class="card" style="max-width:640px;margin:26px auto 0;text-align:left;padding:22px 24px">
+      <p style="margin:0 0 6px;font-weight:600">If you want more than a letter back</p>
+      <p class="muted" style="margin:0 0 14px">A written review tells you what to change. A live lesson lets me watch your hands and correct them in the moment. Most people who send me a recording are one or two habits away from a real jump.</p>
+      <p style="margin:0"><a class="btn" data-pay="PAY_SINGLE_60" data-subject="A lesson after sending my playing" data-fallback-label="Ask about a lesson &rarr;" href="#">Book a single lesson with me &mdash; $100 &rarr;</a></p>
     </div>
   </div>
 </section>
@@ -149,10 +208,10 @@
     <span class="eyebrow">Good to know</span>
     <h2>How to record so I can really hear you</h2>
     <div class="grid cols-2" style="margin-top:16px">
-      <div class="card"><h3>📱 Phone placement</h3><p class="muted">Put the phone a little to the side of the piano, about an arm's length away — not on the piano itself (it buzzes). Quiet room, one take, no editing needed. Mistakes are welcome: they're exactly what feedback is for.</p></div>
-      <div class="card"><h3>🙌 Hands-only video</h3><p class="muted">Film from slightly above and to the side, so I can see your fingers and wrists on the keys. This lets me check your round hand, curved fingers and fingertip contact — the foundation of everything.</p></div>
-      <div class="card"><h3>🔒 Your privacy</h3><p class="muted">Recordings are used only to prepare your feedback — never published, never shared. Audio-only is completely fine. You choose how much to show.</p></div>
-      <div class="card"><h3>✍️ Honest note</h3><p class="muted">Feedback is prepared in my studio with the help of an AI assistant trained on my own lessons and method — and during this pilot <b>I personally review every single feedback</b> before it reaches you. You get my standards, faster.</p></div>
+      <div class="card"><h3>Phone placement</h3><p class="muted">Put the phone a little to the side of the piano, about an arm's length away — not on the piano itself (it buzzes). Quiet room, one take, no editing needed. Mistakes are welcome: they're exactly what feedback is for.</p></div>
+      <div class="card"><h3>Hands-only video</h3><p class="muted">Film from slightly above and to the side, so I can see your fingers and wrists on the keys. This lets me check your round hand, curved fingers and fingertip contact — the foundation of everything.</p></div>
+      <div class="card"><h3>Your privacy</h3><p class="muted">Recordings are used only to prepare your feedback — never published, never shared. Audio-only is completely fine. You choose how much to show.</p></div>
+      <div class="card"><h3>Honest note</h3><p class="muted">Feedback is prepared in my studio with the help of an AI assistant trained on my own lessons and method — and during this pilot <b>I personally review every single feedback</b> before it reaches you. You get my standards, faster.</p></div>
     </div>
   </div>
 </section>
@@ -190,6 +249,10 @@
       <p><a href="mailto:maria@onlinepianouniversity.com">maria@onlinepianouniversity.com</a></p>
     </div>
   </div>
+  <div class="wrap" style="padding-top:0">
+      <p><a href="privacy.html">Privacy Policy</a></p>
+      <p><a href="terms.html">Terms of Use</a></p>
+    </div>
 </footer>
 
 <script src="js/config.js"></script>
@@ -237,11 +300,33 @@
         .catch(function (e) {
           err.textContent = (e.message || "Upload failed.") + " You can also email your recording instead: " + email;
           err.style.display = "block";
-          btn.disabled = false; btn.textContent = "🎙️ Send my playing →";
+          btn.disabled = false; btn.textContent = "Send my playing →";
         });
     });
   }
 })();
 </script>
+
+<script>
+(function(){
+  var C = (window.OPU || {});
+  var MAIL = "mailto:" + (C.EMAIL || "maria@onlinepianouniversity.com");
+  document.querySelectorAll("[data-pay]").forEach(function(a){
+    var url = C[a.getAttribute("data-pay")];
+    if (url) { a.href = url; a.setAttribute("target","_blank"); a.setAttribute("rel","noopener"); }
+    else {
+      a.href = MAIL + "?subject=" + encodeURIComponent(a.getAttribute("data-subject") || "Piano feedback");
+      if (a.dataset.fallbackLabel) a.textContent = a.dataset.fallbackLabel;
+    }
+  });
+  var ok = document.getElementById("uf-ok"), next = document.getElementById("uf-next");
+  if (ok && next) {
+    new MutationObserver(function(){
+      if (ok.style.display !== "none") next.style.display = "block";
+    }).observe(ok, {attributes:true, attributeFilter:["style"]});
+  }
+})();
+</script>
+
 </body>
 </html>

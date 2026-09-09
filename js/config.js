@@ -21,6 +21,21 @@ window.OPU = {
   SUBMIT_FORM_URL: "",                   // ← hosted upload form (Tally etc., legacy option)
   BACKEND_URL: "https://opu-engine.onrender.com", // OPU Engine (Render, LIVE 2026-07-11) — upload form on submit.html active
 
+
+  /* ---- CHECKOUT LINKS (fill these in and the whole site goes live) ----
+     Paste the Stripe Payment Link (or PayPal link) for each item.
+     While a value is empty the button falls back to a pre-filled email,
+     so nothing on the site is ever dead or broken. */
+  PAY_SINGLE_60:  "",   // <- single 60-minute lesson, $100
+  PAY_SINGLE_30:  "",   // <- single 30-minute lesson, $60
+  PAY_MONTH_60:   "",   // <- 4 x 60-minute lessons, $360
+  PAY_MONTH_30:   "",   // <- 4 x 30-minute lessons, $200
+  PAY_PKG_60:     "",   // <- 10 x 60-minute lessons, $850
+  PAY_PKG_30:     "",   // <- 10 x 30-minute lessons, $450
+  /* Feedback is FREE during the pilot - no checkout needed yet.
+     When it is time to charge, add PAY_REVIEW / PAY_REVIEW_SUB here
+     and put the tier cards back on submit.html. */
+
   // Contact
   EMAIL: "maria@onlinepianouniversity.com",
 
