@@ -180,6 +180,7 @@
             <a class="btn" data-pay="PAY_SINGLE_60" data-subject="A lesson after sending my playing" data-fallback-label="Ask about a lesson &rarr;" href="#">Book a single lesson with me &mdash; $100 &rarr;</a>
           </p>
         </div>
+        <p class="note" id="uf-slow" style="display:none">Still working — my studio server wakes up from sleep, so the first upload of the day can take up to a minute. Please keep this page open.</p>
         <p class="note" id="uf-err" style="display:none"></p>
       </form>
       <p style="margin-top:16px" id="mailto-wrap"><a class="btn" id="submit-mailto" href="#">Email my playing →</a></p>
@@ -282,6 +283,9 @@
         err.style.display = "block"; return;
       }
       btn.disabled = true; btn.textContent = "Uploading…";
+      var slowEl = document.getElementById("uf-slow");
+      var slowTimer = setTimeout(function(){ if (slowEl) slowEl.style.display = "block"; }, 8000);
+      var clearSlow = function(){ clearTimeout(slowTimer); if (slowEl) slowEl.style.display = "none"; };
       var fd = new FormData();
       fd.append("file", f);
       fd.append("email", document.getElementById("uf-email").value);
@@ -291,6 +295,7 @@
       fetch(backend.replace(/\/$/, "") + "/submit", { method: "POST", body: fd })
         .then(function (r) { return r.json(); })
         .then(function (d) {
+          clearSlow();
           if (d.ok) {
             document.getElementById("upload-form").style.display = "none";
             document.getElementById("uf-ok").style.display = "block";
@@ -298,6 +303,7 @@
           } else { throw new Error(d.error || "Something went wrong."); }
         })
         .catch(function (e) {
+          clearSlow();
           err.textContent = (e.message || "Upload failed.") + " You can also email your recording instead: " + email;
           err.style.display = "block";
           btn.disabled = false; btn.textContent = "Send my playing →";
