@@ -1,0 +1,210 @@
+# -*- coding: utf-8 -*-
+import json, pathlib
+
+SPECS = [
+{
+ "slug": "piano-bench-height-posture",
+ "date": "2026-10-07",
+ "title": "How to Sit at the Piano: Bench Height, Distance, and Why It Decides Everything",
+ "description": "Bench height and distance are the first thing a concert pianist checks and the last thing adult beginners think about. How to set both in three minutes, and the faults that disappear when you do.",
+ "sub": "It is the least interesting subject in music and the one that quietly decides how you will sound. Three minutes, once, and most of the usual problems never arrive.",
+ "image": "lead-at-the-piano.jpg",
+ "image_alt": "Dr. Maria Pisarenko seated at the piano",
+ "cta_text": "Lesson 1 of the free course begins here, before any reading:",
+ "cta_href": "https://youtu.be/AzU01rYWHK8",
+ "cta_link": "Start at Lesson 1 &rarr;",
+ "body": """
+<p>When a student walks into my studio, I do not listen first. I look at how they are sitting, and I can usually predict what I am about to hear.</p>
+
+<p>Adults find this deflating. They have come to learn music and the first subject is furniture. But the instrument is played with the whole arm from the shoulder, and where the shoulder sits in relation to the keyboard determines what the arm is able to do. Get it wrong and you are not learning the piano &mdash; you are learning to compensate.</p>
+
+<h2>Height: the one that matters most</h2>
+
+<p><strong>The rule: your forearm should run level with the tops of the white keys, or a shade above. Never below.</strong></p>
+
+<p>Here is how to find it without measuring anything. Sit down and let both arms hang loose at your sides &mdash; genuinely loose, shake them once so the shoulders drop. Now bring your hands up onto the keys without lifting your shoulders. Where the forearm naturally arrives tells you whether the seat is right.</p>
+
+<p>If the forearm comes to rest below the level of the keys, you are too low. This is the commonest fault in adult playing, and it is almost always a chair rather than a body: dining chairs are built for tables, and tables are lower than keyboards.</p>
+
+<p><strong>Why it matters so much:</strong> from below, the weight of your arm cannot travel forward into the key &mdash; the angle sends it into your wrist joint instead. So the fingers press, alone, and the aching forearms, the thin sound and the uneven notes all follow from that one angle.</p>
+
+<p><strong>If the bench does not adjust:</strong> a folded towel or a firm cushion. Add thickness until the forearm is level. This is exactly what an adjustable bench does, and there is nothing makeshift about solving it this way &mdash; the wrong height is the problem, not what you sat on to fix it.</p>
+
+<h2>Distance: further back than feels natural</h2>
+
+<p>Most beginners sit too close, because being close to the keys feels like control.</p>
+
+<p><strong>The test:</strong> sit so that when your hands are on the keys, your elbows are slightly in front of your body rather than tucked at your sides. Your upper arm should hang, and there should be room for the elbow to move forward and back without meeting your ribs.</p>
+
+<p>Sitting too close pins the elbows, and pinned elbows mean the arm cannot travel &mdash; so when the music moves to the top or the bottom of the keyboard, the hand goes alone, sideways, at an angle, and everything about the sound changes. A pianist's arm follows the hand along the keyboard. It cannot do that from a chair pulled in like a desk.</p>
+
+<h2>How far up the bench</h2>
+
+<p>Sit on the front half of the bench, not back against it. You want your weight forward enough that you can lean slightly towards the instrument and your feet can carry some of it.</p>
+
+<p>Feet flat on the floor, one slightly forward if that is comfortable &mdash; the right foot near the pedal even if you are not using it yet. If your feet do not reach the floor, put something solid under them. Dangling feet leave the whole body hanging from the seat, and the back tires within minutes.</p>
+
+<h2>What good sitting is not</h2>
+
+<p><strong>It is not a military back.</strong> Adults often overcorrect into a rigidly straight spine held by effort, which tires faster than slouching and makes the shoulders rise. The back should be upright and easy, leaning very slightly forward, with the weight carried through the sit bones and the feet.</p>
+
+<p><strong>It is not stillness.</strong> Watch any good pianist and the body moves constantly &mdash; with the phrase, towards the difficult passage, away at the end of it. Sitting well means being organised enough to move freely, not being fixed in a photograph.</p>
+
+<p><strong>And it is not shoulders.</strong> Check yours now, reading this. If they are up near your ears, that is where they will be at the piano, and raised shoulders lock the whole arm. Let them drop, twice per practice session, deliberately.</p>
+
+<h2>The three-minute setup, in order</h2>
+
+<ol>
+  <li><strong>Height.</strong> Arms hang loose, bring them up, check the forearm is level with the key tops or slightly above. Add a towel until it is.</li>
+  <li><strong>Distance.</strong> Elbows slightly in front of the body, free to move, not pinned to your sides.</li>
+  <li><strong>Feet.</strong> Flat on the floor, carrying some weight. Something solid under them if they do not reach.</li>
+  <li><strong>Shoulders.</strong> Drop them. Then begin.</li>
+</ol>
+
+<p>Do this once, note where the towel or the bench setting needs to be, and you never think about it again.</p>
+
+<h2>Check it from the side, not from inside</h2>
+
+<p>You cannot see your own forearm angle while playing, and your sense of it is unreliable &mdash; everyone's is. So put your phone on a shelf to your side, at roughly keyboard height, and film thirty seconds.</p>
+
+<p>Look for one line: does the forearm run level into the hand, or dip at the wrist? And watch what happens at the difficult bar. In almost every recording I am sent, the setup is fine until the music gets hard, and then the wrist sinks and the shoulders rise. That is tension arriving on schedule, and once you have seen it on video you can catch it in the room.</p>
+
+<p>If you would like me to look at those thirty seconds, <a href="../submit.html">send them &mdash; I answer recordings myself and it costs nothing</a>. It is the fastest thirty seconds of teaching available to an adult learning alone.</p>
+"""
+},
+{
+ "slug": "how-long-to-learn-piano-adult",
+ "date": "2026-10-09",
+ "title": "How Long Before I Can Play a Real Piece?",
+ "description": "A concert pianist gives a specific, honest answer about how long it takes an adult beginner to play real music — what arrives in weeks, what takes a year, and what actually changes the timeline.",
+ "sub": "A specific answer rather than an encouraging one &mdash; including what &ldquo;a real piece&rdquo; turns out to mean once you are inside it.",
+ "image": "lead-seated-black.jpg",
+ "image_alt": "Dr. Maria Pisarenko at the keyboard",
+ "cta_text": "Forty-one lessons, free, in the order they should be learned:",
+ "cta_href": "https://youtu.be/AzU01rYWHK8",
+ "cta_link": "Start at Lesson 1 &rarr;",
+ "body": """
+<p>This is the question underneath most other questions, and people usually get one of two unhelpful answers: <em>everyone is different</em>, or a cheerful promise about thirty days.</p>
+
+<p>Let me give you the answer I give my own students, with the caveats where they belong rather than in front.</p>
+
+<h2>The assumption behind the answer</h2>
+
+<p>Everything below assumes <strong>fifteen to twenty honest minutes a day, most days</strong>, with a sensible sequence and some way of hearing yourself. Not two hours on Sunday. The daily part is not a moral preference; playing the piano is a physical skill, and physical skills consolidate overnight, so six short sessions give you six nights of consolidation and one long one gives you one.</p>
+
+<p>Double the practice and you do not halve the timeline &mdash; you shorten it somewhat. Practise once a week and no timeline applies at all, because the hand loses between sessions roughly what it gained.</p>
+
+<h2>Week two: something that sounds like music</h2>
+
+<p>Within a fortnight, an adult working sensibly is playing short pieces with one hand and beginning to put hands together. It will be simple, and it will sound like music rather than like exercises. Method books are engineered for this, and they are good at it.</p>
+
+<p>The trap here is that the first fortnight goes better than people expect, which sets up the month-three disappointment. Nothing has gone wrong at month three. The easy part simply ended.</p>
+
+<h2>Month three: recognisable tunes, hands together</h2>
+
+<p>By about three months a diligent adult beginner is playing pieces that a listener would recognise, with both hands, at a modest speed. This is where most people relax &mdash; the instrument has stopped being alien.</p>
+
+<p>It is also where most people quit, for reasons that have nothing to do with music: the novelty is gone, the pieces have got harder, and nobody has heard them play. I have written separately about <a href="why-adult-beginners-quit-piano.html">why adults stop in the first three months</a>, because it is preventable and it is the single biggest loss in adult learning.</p>
+
+<h2>Months six to nine: a real piece</h2>
+
+<p>Here is the honest answer to the question as asked. <strong>Somewhere between six and nine months, an adult who has practised most days can play a genuine piece of music &mdash; not an arrangement for beginners, but something written as it stands.</strong></p>
+
+<p>There is repertoire that is real music and also playable at that stage: short pieces from Bach's notebooks, easy Schumann, Satie, the simpler classical dances. This is not a consolation prize. It is the beginning of the actual repertoire, and it is a great deal better music than most of what is arranged for beginners.</p>
+
+<p>What you will not have at nine months is speed, or a large piece, or the endurance for something that runs five minutes. Those come with the second year.</p>
+
+<h2>Year two: the piece you imagined</h2>
+
+<p>The pieces adults name when they picture themselves playing &mdash; a Chopin nocturne, a Beethoven sonata movement, something by Debussy &mdash; are typically a second-year or third-year proposition, and some of them are considerably further than that.</p>
+
+<p>I would rather tell you this plainly than have you discover it at month five and conclude you are slow. You are not slow. That music is genuinely difficult, and playing it badly is not the same as playing it.</p>
+
+<h2>What actually changes the timeline</h2>
+
+<p>In my experience, four things, and only one of them is talent.</p>
+
+<p><strong>Daily practice beats long practice, by a wide margin.</strong> This is the biggest single factor and it is entirely within your control.</p>
+
+<p><strong>Whether anybody hears you.</strong> An adult who films a minute a week and gets outside ears a few times a year progresses visibly faster than one who does not &mdash; because faults caught early cost a minute and faults caught late cost a season. This is the second biggest factor, and it is the one adults most often skip.</p>
+
+<p><strong>Whether the physical side was taught at all.</strong> Weight, release, wrist, the hand travelling. Without it there is a ceiling, and it arrives in the second year, and it feels like a personal limit rather than a missing technique.</p>
+
+<p><strong>Choosing pieces at the right level.</strong> Adults reach above themselves constantly, and a piece two levels too hard costs three months and teaches bad habits. Playing something slightly too easy, beautifully, is worth more than surviving something too hard.</p>
+
+<h2>What does not change it much</h2>
+
+<p>Age. I have taught adults in their sixties and seventies who progressed faster than students in their twenties, because they practised daily and listened to instruction. Adults learn to read faster than children, understand the reasons faster, and organise their practice better. What children have is time and no impatience &mdash; and impatience, not age, is the adult's real handicap.</p>
+
+<h2>What to do with all this</h2>
+
+<p>Set the expectation at six to nine months for a real piece, and then stop looking at the timeline. The people who get there are not the ones who checked; they are the ones who did fifteen minutes today.</p>
+
+<p>And film a minute a week from the start. Not to judge yourself &mdash; to have evidence. The single most useful thing you can own at month four, when it feels as though nothing is happening, is a recording of month one.</p>
+
+<p>If you want to know where you actually are rather than where you feel you are, <a href="../submit.html">send me a minute and I will tell you</a>. <a href="../free-course.html">The forty-one-lesson course is free</a>, in order, and it starts before the first note.</p>
+"""
+},
+{
+ "slug": "how-many-keys-do-i-need-piano",
+ "date": "2026-10-12",
+ "title": "61, 76 or 88 Keys: What You Can and Cannot Play on Each",
+ "description": "How many keys an adult beginner actually needs, what each size can and cannot play, and why the number of keys matters far less than whether they are weighted.",
+ "sub": "A straight answer about key counts &mdash; what runs out, when it runs out, and the question that matters considerably more than this one.",
+ "image": "lead-piano-strings.jpg",
+ "image_alt": "Piano strings, photographed inside the instrument",
+ "cta_text": "The free course &mdash; start on whatever instrument is already in the house:",
+ "cta_href": "https://youtu.be/AzU01rYWHK8",
+ "cta_link": "Start at Lesson 1 &rarr;",
+ "body": """
+<p>Before the answer, the thing that actually matters: <strong>whether the keys are weighted matters far more than how many there are.</strong></p>
+
+<p>A weighted key answers differently depending on how you play it &mdash; gently for a quiet sound, with the arm's weight for a full one. That relationship is what playing the piano is, and everything I teach about tone and evenness depends on it. An unweighted keyboard, where every key gives the same volume however you play it, teaches a hand to poke, and poking then has to be un-learned on a real instrument.</p>
+
+<p>So: sixty-one weighted keys beat eighty-eight unweighted ones, every time and without argument. Now, the counts.</p>
+
+<h2>61 keys &mdash; five octaves</h2>
+
+<p><strong>What it does:</strong> the whole of a beginner's first year, comfortably. Method-book pieces live in the middle of the keyboard, and 61 keys give you generous room on both sides of that.</p>
+
+<p><strong>When it runs out:</strong> sooner than people expect, and not gradually. It runs out the day you open a piece of real repertoire, because classical writing uses the extremes deliberately &mdash; a bass note two octaves below the hand, a melody carried up into the top. When notes are missing, they cannot be fudged; the piece simply cannot be played as written.</p>
+
+<p><strong>Buy it if</strong> you are testing whether the habit will take, you have very little space, or you need to carry it. Do not buy it as your one instrument if you intend to keep playing.</p>
+
+<h2>76 keys</h2>
+
+<p><strong>What it does:</strong> a great deal, and for longer than 61. Most early and intermediate repertoire fits.</p>
+
+<p><strong>The honest problem:</strong> it is an awkward size. It costs close to what a full 88 costs, takes nearly the space, and still runs out eventually. I rarely recommend it, not because it is bad but because the money is better spent on the full set.</p>
+
+<h2>88 keys &mdash; the full piano</h2>
+
+<p><strong>What it does:</strong> everything. Every piece written for the instrument, forever, with no adjusting.</p>
+
+<p>There is a second reason beyond repertoire, and it is the one people do not anticipate. <strong>On a full keyboard, middle C is where middle C is.</strong> Your hands learn the geography of the instrument &mdash; where the notes sit relative to your body &mdash; and on a shortened keyboard that geography is wrong. Move to a real piano and everything is displaced. It is not fatal, but it is a needless piece of re-learning.</p>
+
+<p><strong>Buy it if</strong> you are buying once and keeping it. Which, if you are reading this far, you probably are.</p>
+
+<h2>So, plainly</h2>
+
+<p><strong>If you already own a keyboard of any size:</strong> start today on it, and do not think about this question for six months. Beginning now matters more than any of this. The only thing worth checking immediately is whether the keys respond to how hard you play &mdash; and if they do not, plan to replace it before your second year rather than your second month.</p>
+
+<p><strong>If you are buying and can only buy once:</strong> 88 weighted keys with hammer action. Nothing else on the specification sheet is worth the money: the six hundred voices, the accompaniment styles, the light-up keys and the built-in lessons are all ways of not practising. One good piano sound and a key that answers your hand.</p>
+
+<p><strong>If the budget will not stretch to 88 weighted:</strong> buy 61 weighted rather than 88 unweighted, and plan to upgrade. You will have learned the right physical habit, and habit is much more expensive to change than hardware.</p>
+
+<h2>The purchase nobody puts on the list</h2>
+
+<p>An adjustable bench, and a stand that does not wobble.</p>
+
+<p>I mean this seriously: a bench will do more for how you sound than the difference between two instruments at the same price. Almost every fault I see in adult beginners begins with sitting too low, because a dining chair is built for a table and a table is lower than a keyboard. And a keyboard on a flexing X-stand moves when you play with weight &mdash; so the hand quietly learns not to use weight, which is the one thing you most need it to learn.</p>
+
+<p>Solid stand, bench that adjusts, weighted keys. In that order of neglect, and roughly that order of importance. The rest of the specification sheet can be ignored.</p>
+
+<p>My notes on instruments and the book I teach from are on my <a href="../books.html">books and gear page</a>. But do not let any of it delay you: the best instrument for an adult beginner is the one that is in the room, today.</p>
+"""
+},
+]
+
+pathlib.Path("_specs_batch_05.json").write_text(json.dumps(SPECS, ensure_ascii=False, indent=1), encoding="utf-8")
+print("specs:", len(SPECS))
