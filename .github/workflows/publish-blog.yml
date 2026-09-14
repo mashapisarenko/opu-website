@@ -1,0 +1,42 @@
+name: Publish the blog on schedule
+
+# Articles are written and checked in advance, then wait in blog/_queue/.
+# This publishes whatever is due, once a day, whether or not anyone is at the
+# computer. It only ever moves an already-written file into place and adds its
+# card, its JSON-LD entry and its sitemap row.
+
+on:
+  schedule:
+    - cron: '20 14 * * *'   # 14:20 UTC = 7:20 in Las Vegas
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-blog
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish anything due
+        id: run
+        run: python3 blog/_publish.py | tee "$RUNNER_TEMP/publish.log"
+
+      - name: Commit and push if something was published
+        run: |
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "nothing changed — no commit"
+            exit 0
+          fi
+          slugs=$(sed -n 's/^PUBLISHED=//p' "$RUNNER_TEMP/publish.log" | tr ',' ' ')
+          git config user.name  "OPU blog scheduler"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Blog published on schedule:${slugs:+ }$slugs"
+          git push
