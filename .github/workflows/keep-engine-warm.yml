@@ -1,0 +1,41 @@
+# Keeps the feedback engine awake so a student's first upload is not met with a
+# ninety-second wait. Render's free tier sleeps after about fifteen minutes of
+# inactivity; measured cold start was over 90 s, while a warm 1.1 MB video upload
+# finished in under 3 s.
+#
+# This lives in the PUBLIC website repository on purpose: GitHub Actions minutes
+# are free and unlimited for public repositories, so this costs nothing and needs
+# no new account anywhere.
+#
+# Honest limits: GitHub's scheduler has a five-minute minimum and runs late under
+# load, so the engine may still be found asleep occasionally. It is a large
+# improvement, not a guarantee. The paid Render tier is the only guarantee.
+name: Keep the feedback engine awake
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:        # so it can also be run by hand from the Actions tab
+
+permissions: {}
+
+concurrency:
+  group: keep-engine-warm
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Ping /health
+        run: |
+          code=$(curl -sS -o /dev/null -w '%{http_code}' \
+                   --max-time 120 --retry 2 --retry-delay 25 \
+                   https://opu-engine.onrender.com/health || echo 000)
+          echo "engine /health returned: $code"
+          # A cold start can still answer slowly or time out. That is a warning,
+          # not a failure — a failing job would email Masha for no reason.
+          if [ "$code" != "200" ]; then
+            echo "::warning::the engine did not answer 200 (got $code) — it may have been waking up"
+          fi
