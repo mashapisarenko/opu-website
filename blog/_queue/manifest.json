@@ -6,9 +6,9 @@
     "summary": "Almost nobody stops because they lack talent. They stop for four ordinary reasons, and every one of them can be designed out in advance."
   },
   {
-    "slug": "practising-piano-when-you-have-no-time",
+    "slug": "practicing-piano-when-you-have-no-time",
     "date": "2026-09-18",
-    "title": "Practising Piano When You Have a Job, a Family and Twenty Minutes",
+    "title": "Practicing Piano When You Have a Job, a Family and Twenty Minutes",
     "summary": "The commonest reason adults stop is not difficulty. It is time. So here is precisely what I would put in your twenty minutes, and what I would cut first."
   },
   {
@@ -70,5 +70,11 @@
     "date": "2026-10-12",
     "title": "61, 76 or 88 Keys: What You Can and Cannot Play on Each",
     "summary": "A straight answer about key counts &mdash; what runs out, when it runs out, and the question that matters considerably more than this one."
+  },
+  {
+    "slug": "reading-music-or-playing-by-ear",
+    "date": "2026-10-14",
+    "title": "Reading Music or Playing by Ear: Which Should an Adult Learn First?",
+    "summary": "Adults are told to pick a side. Both camps are describing something real &mdash; and for a beginner the answer is far less dramatic than the argument."
   }
 ]

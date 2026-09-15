@@ -1,0 +1,69 @@
+# -*- coding: utf-8 -*-
+# Text written 2026-09-15 by the cloud daily brief, which had no Mac and no web
+# and so could not build the HTML. Two of its three articles duplicated queue
+# entries already written on 14 September; this one did not.
+import json, pathlib
+
+SPECS = [{
+ "slug": "reading-music-or-playing-by-ear",
+ "date": "2026-10-14",
+ "title": "Reading Music or Playing by Ear: Which Should an Adult Learn First?",
+ "description": "Adults are often told to pick a side. Both camps are describing something real, and the answer for a beginner is less controversial than the argument suggests.",
+ "sub": "Adults are told to pick a side. Both camps are describing something real &mdash; and for a beginner the answer is far less dramatic than the argument.",
+ "image": "lead-concert-gown.jpg",
+ "image_alt": "Dr. Maria Pisarenko, concert pianist",
+ "cta_text": "The free course teaches reading from lesson one, and asks you to listen from lesson one:",
+ "cta_href": "https://youtu.be/AzU01rYWHK8",
+ "cta_link": "Start at Lesson 1 &rarr;",
+ "body": """
+<p>There is a long-running argument in music teaching, and adult beginners walk into the middle of it on about their second day.</p>
+
+<p>One side says that reading music is the essential skill &mdash; that without it you are locked out of the entire written repertoire, dependent on somebody else's tutorial for every piece you will ever play. The other side says that reading is a bottleneck that produces pianists who can decode a page and cannot play anything without one, and that the ear is the real musical organ.</p>
+
+<p>Both sides are describing something they have genuinely seen. And for a beginner, the practical answer is less dramatic than the argument.</p>
+
+<h2>What each one actually gives you</h2>
+
+<p><strong>Reading</strong> gives you independence and access. Several centuries of piano music exist as notation and only as notation, and there is no way in to most of it except through the page. Reading also makes you faster at learning anything, because a score tells you the structure of a piece at a glance &mdash; the repeat, the sequence, the place where the left hand simply does what it did eight bars ago. A player who cannot read has to discover that structure by ear, one note at a time.</p>
+
+<p><strong>The ear</strong> gives you the thing that makes playing sound like music rather than like a correct performance of instructions. Adjusting your balance so the melody sits above the accompaniment, hearing that a phrase wants to lean toward its third bar, noticing that you are rushing &mdash; all of that is listening, not reading. The ear also gives you a kind of freedom that readers often envy: sit down, hear a tune, find it.</p>
+
+<p>Notice that these are not competing accounts of one skill. They are two different skills that happen to be used at the same moment.</p>
+
+<h2>Why the question feels urgent, and mostly is not</h2>
+
+<p>I think the argument gets heated because each camp has met the other's failure case.</p>
+
+<p>Every teacher has met the fluent reader who plays accurately and hears nothing &mdash; who will play a wrong note that is printed and not notice, and who cannot tell you which hand has the melody. And every teacher has met the gifted player-by-ear who has been stuck at the same level for years, because everything they know arrived through imitation, and imitation cannot teach you a piece nobody has shown you.</p>
+
+<p>Both of those are real, and both are the result of doing one thing to the exclusion of the other for a very long time. Neither is a risk in your first year.</p>
+
+<h2>What I would tell you to do</h2>
+
+<p>Learn to read, from the beginning, and train the ear alongside it every single day &mdash; in small amounts, on purpose, and mostly away from the page.</p>
+
+<p>The reason to start reading early is practical. Reading is a decoding skill, and decoding skills get much harder to acquire the longer you leave them, because your hands quickly get good enough to learn pieces another way, and then reading feels like a slow detour around something you can already do. Adults are especially prone to this. It is far easier to build reading in while everything is difficult than to add it at month eighteen.</p>
+
+<p>The reason not to let reading swallow everything is that it is entirely possible to practice for a year with your eyes and never once check with your ears &mdash; and that habit is also hard to undo.</p>
+
+<h2>Four ear exercises that cost you five minutes</h2>
+
+<p>None of these require an app, and all of them fit inside a normal practice session.</p>
+
+<p><strong>Sing the melody before you play it.</strong> Badly is fine. If you cannot sing a phrase you cannot really hear it yet, and you will find out in five seconds rather than five weeks.</p>
+
+<p><strong>Play a phrase, then play it again listening only to the left hand.</strong> Most beginners have never once heard their own accompaniment. It is usually too loud.</p>
+
+<p><strong>Find something small by ear each week.</strong> A nursery tune, a birthday song, four notes of something on the radio. Do not write it down. Hunt for it.</p>
+
+<p><strong>Record yourself and listen back without the score in front of you.</strong> This is uncomfortable and it is the fastest of the four. You hear your own rushing instantly, and you never hear it while playing.</p>
+
+<h2>One thing that is not optional</h2>
+
+<p>Whichever way you lean, count out loud. Rhythm does not belong to reading or to the ear &mdash; it belongs to both, and it is the first thing a listener notices and the hardest thing to repair after a year of approximation. I have written separately about <a href="how-to-count-music-out-loud.html">the right way to count out loud</a>.</p>
+
+<p>The free course teaches reading from the first lesson, because that is the part that is hardest to add later &mdash; and it asks you to count out loud, and to listen, from the beginning. And if you want to know which of the two is currently carrying you, <a href="../submit.html">record a few minutes of your playing and send it</a>. The written feedback is free, and it will tell you what your ear is doing as well as what your hands are.</p>
+"""
+}]
+pathlib.Path("_specs_batch_06.json").write_text(json.dumps(SPECS, ensure_ascii=False, indent=1), encoding="utf-8")
+print("ok")
