@@ -91,7 +91,7 @@ SPECS = [
 
 <h2>What genuinely comes back, and fast</h2>
 
-<p><strong>Reading.</strong> Note-reading is stored like reading words, and it returns startlingly quickly &mdash; days, not months, for someone who read fluently as a child. It will feel rusty for a fortnight and then simply be there.</p>
+<p><strong>Reading.</strong> Note-reading is stored like reading words, and it returns startlingly quickly &mdash; days, not months, for someone who read fluently as a child. It will feel rusty for two weeks and then simply be there.</p>
 
 <p><strong>The pieces your hands learned deeply.</strong> Anything you played hundreds of times is not gone. It is often under your fingers before you consciously recall it, which is why returning adults so often find one old piece arriving nearly intact while everything else is a mess.</p>
 
