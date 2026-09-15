@@ -42,14 +42,18 @@
       var input = form.querySelector('input[type="email"]');
       var ok = form.parentElement.querySelector(".form-ok");
       if (!input || !input.value) return;
+      // a form may carry its own file; otherwise it delivers the Starter Guide
+      var path = form.getAttribute("data-download") || GUIDE_PATH;
+      var fname = form.getAttribute("data-filename") || "Piano_Starter_Guide_by_Dr_Maria_Pisarenko.pdf";
       var a = document.createElement("a");
-      a.href = GUIDE_PATH;
-      a.download = "Piano_Starter_Guide_by_Dr_Maria_Pisarenko.pdf";
+      a.href = path;
+      a.download = fname;
       document.body.appendChild(a);
       a.click();
       a.remove();
       if (ok) {
-        ok.innerHTML = "✓ Your guide is downloading now — and a copy is on its way to your inbox! (If the download didn't start, <a href='" + GUIDE_PATH + "' download style='color:#bfe0c0;text-decoration:underline'>click here</a>.)";
+        var what = form.getAttribute("data-download") ? "Your piece is" : "Your guide is";
+        ok.innerHTML = "✓ " + what + " downloading now — and a copy is on its way to your inbox! (If the download didn't start, <a href='" + path + "' download style='color:#bfe0c0;text-decoration:underline'>click here</a>.)";
         ok.style.display = "block";
       }
       setTimeout(function () { form.reset(); }, 2500);
