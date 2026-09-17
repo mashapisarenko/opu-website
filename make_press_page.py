@@ -33,7 +33,7 @@ PRESS = [
   "traditions, beliefs. It helps us open our minds to new ideas, new ways of looking at the world.&rdquo;",
   "Feature: <i>Las Vegas musician began playing piano at 5 &mdash; in Siberia</i>"),
  ("Clark County, Nevada", "2019",
-  "http://www.clarkcountynv.gov/public-communications/news/Pages/Russian-Seasons-in-Las-Vegas-Feb--9.aspx",
+  "https://www.clarkcountynv.gov/public-communications/news/Pages/Russian-Seasons-in-Las-Vegas-Feb--9.aspx",
   "&ldquo;Dr. Maria (Masha) Pisarenko is actively involved in the cultural life &hellip; as a performer, "
   "educator and artistic director. She has performed on some of the most prestigious stages of the world, "
   "including in Russia, Asia, Europe, and the United States.&rdquo;", None),
@@ -50,6 +50,8 @@ PRESS = [
   None,
   "<i>Pianist Maria Pisarenko wins Reno Chamber Orchestra College Concerto Competition</i> &mdash; "
   "the prize was to appear as featured soloist with the orchestra."),
+ # This quote is NOT in the CV - it was taken from the Las Vegas Sun article itself,
+ # fetched and read on 2026-09-17. Verbatim from the piece, not paraphrased.
  ("Las Vegas Sun", "2008",
   "https://lasvegassun.com/news/2008/sep/17/intimate-masterful-and-free/",
   "&ldquo;Siberian-born Pisarenko trained at the Russian Academy of Music and performed in Europe "
@@ -66,7 +68,10 @@ BROADCASTS = [
  ("Nevada Public Radio (88.9 KNPR)", "Interview &mdash; November 2012, and again November 2009"),
  ("Reno Public Radio (KUNR FM)", "Interview &mdash; February 2010; Mozart&rsquo;s Piano Concerto No. 21 "
   "with the Reno Chamber Orchestra, broadcast March 2010"),
+ ("Channel One Russia", "National television &mdash; performance and interview at the First "
+  "International Tchaikovsky Youth Competition"),
  ("Radio of Russia, Irkutsk", "Interviews &mdash; 2016 and 2004"),
+ ("Angarsk Radio", "Interview"),
  ("Vesti Irkutsk", "Solo recital at the Irkutsk Philharmonic, and Grieg&rsquo;s Piano Concerto with the "
   "Irkutsk Philharmonic Orchestra &mdash; broadcast, with interview"),
 ]

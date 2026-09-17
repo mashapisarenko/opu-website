@@ -34,12 +34,12 @@ RELATED = {
  "does-piano-playing-hurt-hands": ["why-your-hands-get-tense-at-the-piano", "piano-wrist-position-adults", "piano-bench-height-posture"],
  # --- practice ---
  "how-to-practice-piano-a-method-not-more-minutes": ["practicing-piano-when-you-have-no-time", "how-long-to-practice-piano-each-day", "run-your-own-piano-lesson"],
- "how-long-to-practice-piano-each-day": ["how-to-practice-piano-a-method-not-more-minutes", "practicing-piano-when-you-have-no-time", "piano-plateau-month-four"],
+ "how-long-to-practice-piano-each-day": ["how-to-practice-piano-a-method-not-more-minutes", "why-adult-beginners-quit-piano", "practicing-piano-when-you-have-no-time", "piano-plateau-month-four"],
  "practicing-piano-when-you-have-no-time": ["how-to-practice-piano-a-method-not-more-minutes", "how-long-to-practice-piano-each-day", "run-your-own-piano-lesson"],
  "run-your-own-piano-lesson": ["learning-piano-without-a-teacher", "how-to-practice-piano-a-method-not-more-minutes", "how-to-choose-a-piano-teacher"],
  "piano-plateau-month-four": ["why-adult-beginners-quit-piano", "how-long-to-learn-piano-adult", "how-to-practice-piano-a-method-not-more-minutes"],
  # --- the adult learner ---
- "is-it-too-late-to-learn-piano-at-40-50-60": ["learning-piano-after-70", "adults-learn-piano-differently", "why-adults-learn-piano-your-reason-matters"],
+ "is-it-too-late-to-learn-piano-at-40-50-60": ["why-adults-learn-piano-your-reason-matters", "why-adult-beginners-quit-piano", "learning-piano-after-70", "adults-learn-piano-differently"],
  "learning-piano-after-70": ["is-it-too-late-to-learn-piano-at-40-50-60", "adults-learn-piano-differently", "does-piano-playing-hurt-hands"],
  "adults-learn-piano-differently": ["is-it-too-late-to-learn-piano-at-40-50-60", "what-european-music-schools-teach-that-american-adults-missed", "learning-piano-without-a-teacher"],
  "why-adults-learn-piano-your-reason-matters": ["is-it-too-late-to-learn-piano-at-40-50-60", "returning-to-piano-as-an-adult", "how-to-practice-piano-a-method-not-more-minutes"],
