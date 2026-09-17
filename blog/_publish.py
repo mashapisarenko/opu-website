@@ -11,6 +11,7 @@ here: every word of an article is written and checked before it is queued.
 Run by .github/workflows/publish-blog.yml once a day.  Safe to run any number
 of times: a post already published is simply no longer in the manifest.
 """
+import sys
 import json, re, sys, datetime, shutil, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent   # opu-website/
@@ -129,6 +130,19 @@ def main():
     SITEMAP.write_text(sitemap, encoding="utf-8")
     MANIFEST.write_text(json.dumps([e for e, _ in keep], indent=2, ensure_ascii=False) + "\n",
                         encoding="utf-8")
+    # Rebuild the "Read next" blocks so a newly published article is linked from the
+    # others and links back. Internal linking was entirely absent until 2026-09-17;
+    # doing it here means it can never be forgotten again.
+    try:
+        import subprocess
+        r = subprocess.run([sys.executable, str(BLOG / "_related.py")],
+                           capture_output=True, text=True, cwd=str(BLOG.parent))
+        print((r.stdout or "").strip() or "read-next: nothing to do")
+        if r.returncode:
+            print("read-next WARNING:", (r.stderr or "").strip()[:300])
+    except Exception as exc:                      # never let this break a publish
+        print("read-next skipped:", exc)
+
     print("PUBLISHED=%s" % ",".join(published))
     return 0
 
