@@ -1,215 +1,128 @@
 # -*- coding: utf-8 -*-
+"""Two more queued articles, written 2026-09-19, so the blog is covered past the
+end of October. Both chosen because nothing on the site answers them and adults
+type them into a search box: practising where other people can hear you, and
+choosing the first piece."""
 import json, pathlib
 
 SPECS = [
 {
- "slug": "piano-wrist-position-adults",
- "date": "2026-09-23",
- "title": "Wrist Height: The Single Most Common Fault in Adult Beginners",
- "description": "A dropped wrist is the commonest fault a concert pianist sees in adult beginners, and it causes aching hands, a thin sound and uneven playing. How to find the right height in two minutes and check it yourself.",
- "sub": "One thing goes wrong more often than everything else put together, and it is not a musical mistake at all. It is the height of your wrist.",
+ "slug": "practicing-piano-in-an-apartment",
+ "date": "2026-10-30",
+ "title": "Practicing Piano in an Apartment Without Annoying Anybody",
+ "description": "How to practice piano in an apartment or a shared house: what the quiet hours actually are, when headphones help and when they quietly hurt your playing, and the practice that makes no sound at all.",
+ "sub": "Thin walls are the reason a surprising number of American adults stop playing. Almost none of it is necessary, and some of the best practice there is makes no sound at all.",
  "image": "lead-seated-black.jpg",
- "image_alt": "Dr. Maria Pisarenko at the keyboard",
- "cta_text": "The free course begins with exactly this &mdash; how to sit before how to read:",
+ "image_alt": "Dr. Maria Pisarenko seated at the piano",
+ "cta_text": "The free course is built in short lessons, which is exactly what a considerate practice needs:",
  "cta_href": "https://youtu.be/AzU01rYWHK8",
  "cta_link": "Start at Lesson 1 &rarr;",
  "body": """
-<p>When someone sends me a recording, I usually know what I am going to say within the first five seconds, and it is almost never about notes. It is about a wrist sitting below the level of the keys.</p>
+<p>I have had adult students who practiced in a closet, in a garage in January, and once, memorably, in a car with a roll-up keyboard on the passenger seat during a lunch break. Every one of them was working around the same problem: other people can hear you, and you do not want to be the neighbor everybody talks about.</p>
 
-<p>I would put it this way: if you fixed only one thing about how you play, and never fixed anything else, fix this. It is upstream of most of the other complaints adults bring me.</p>
+<p>It is worth saying plainly that this is a real obstacle and not an excuse. A beginner repeats the same four bars twenty times, slowly, with mistakes. That is far harder to live next to than a competent pianist playing a whole piece. Adults sense this, and a great many of them quietly reduce their practice to the hours when the building is empty &mdash; which usually means no practice at all.</p>
 
-<h2>What a dropped wrist actually does</h2>
+<h2>First, find out what the rules actually are</h2>
 
-<p>The piano key does not care what pushes it down. It cares how much weight arrives and how it is released. Your arm is heavy; your fingers are not. When the wrist hangs below the keyboard, the arm's weight cannot travel forward into the key &mdash; the angle sends it into the wrist joint instead. So the finger has to press. And the finger, working alone, is a small and rather weak machine.</p>
+<p>Most American leases and HOA documents define quiet hours, and they are usually narrower than people assume &mdash; commonly 10 p.m. to 7 or 8 a.m. on weekdays, with a later start at weekends. Outside those hours, ordinary domestic music at a reasonable volume is normal use of a home, not a nuisance.</p>
 
-<p>Everything downstream follows from that:</p>
+<p>I say this because the adults who suffer most are the ones who have never read the rule and are policing themselves against an imagined one. Read yours. You may find that the 6 p.m. practice you have been avoiding was never in question.</p>
 
-<ul>
-  <li><strong>Aching forearms after twenty minutes.</strong> Small muscles are doing a large muscle's job, and they fatigue exactly on schedule.</li>
-  <li><strong>A thin, hard sound.</strong> A pressed key and a dropped key sound different. The pressed one has an edge at the front of the note and no body behind it.</li>
-  <li><strong>Uneven playing.</strong> Each finger presses with a different amount of its own strength, so the notes come out at different volumes &mdash; and the fourth and fifth fingers, the weakest, come out quietest of all.</li>
-  <li><strong>Nothing works above a certain speed.</strong> Pressing has to be repeated for every note. Weight and release can be passed along the hand. Only one of those scales.</li>
-</ul>
+<p>The other half of this is social rather than legal, and it works better than any technique: tell your immediate neighbors that you have started learning, that you will keep to certain hours, and that they should tell you if it becomes a problem. People are far more tolerant of a noise they have been warned about and that has a human being attached to it. I have never had a student regret that conversation.</p>
 
-<p>Adults nearly always read these four as evidence about themselves: <em>my hands are too old, too small, too stiff, not strong enough.</em> They are evidence about an angle.</p>
+<h2>Headphones: what they fix and what they quietly break</h2>
 
-<h2>Finding the right height, in two minutes</h2>
+<p>A digital piano with headphones solves the problem completely, and that is why most apartment-dwelling adults end up with one. But headphones change three things about your playing, and knowing which three lets you work around them.</p>
 
-<p>Sit at the instrument and let both arms hang loose at your sides. Completely loose &mdash; shake them once so the shoulders drop.</p>
+<p><strong>They flatter your tone.</strong> Headphone sound is close, even, and forgiving. A note you struck harshly sounds fine in there; the same note across a room would not. So once a week, take the headphones off and play the same passage out loud, even at low volume. That is the version your ear should be learning from.</p>
 
-<p>Now, without lifting your shoulders, bring your hands up onto the keys. Where the forearm naturally arrives is nearly the right height: <strong>the forearm running level with the tops of the white keys, or very slightly above &mdash; never below.</strong> The wrist is a flat continuation of the forearm, not a hinge that dips.</p>
+<p><strong>They hide the room.</strong> Playing is partly listening to a sound travel and decay in a space. In headphones there is no space, so the habit of listening to the <em>end</em> of a note &mdash; the single most useful habit an adult can build &mdash; is much harder to form.</p>
 
-<p>If your forearm comes to rest below the keys, the bench is too low. That is all it is. Nobody's anatomy requires a dropped wrist; a dining chair does.</p>
+<p><strong>They encourage you to play louder than you think.</strong> Volume in headphones is set by a dial, not by your arm, so your hands lose the feedback that tells them how much weight they are actually using. If you play mostly in headphones, make a point of practicing quietly on purpose sometimes, and notice how much control that takes.</p>
 
-<p><strong>If the bench does not adjust:</strong> sit on a folded towel or a firm cushion and add thickness until the forearm is level. This is not a temporary bodge to be embarrassed about &mdash; it is precisely what an adjustable bench does, and the reason every serious pianist owns one.</p>
+<p>None of this is an argument against headphones. It is an argument for not letting them be the only way you ever hear yourself.</p>
 
-<h2>The test that tells you the truth</h2>
+<h2>The practice that makes no sound at all</h2>
 
-<p>Your own sense of your wrist is unreliable. Mine was, at your stage, and so was everyone's. So do not trust it &mdash; look.</p>
+<p>Here is the part that surprises adults, and it is the reason a thin wall does not have to cost you your progress. A significant share of real practice does not require the instrument to make a sound.</p>
 
-<p>Put your phone on the music stand, or on a shelf to your side, at roughly the height of the keyboard, and film thirty seconds of whatever you are working on. Watch it that evening. You are looking for one thing: <strong>does the line of the forearm run level into the hand, or does it dip down at the wrist?</strong></p>
+<p><strong>Say the notes aloud, in rhythm, without playing.</strong> Take the line you are working on and name each note in time, as if you were reading it to someone. This is the exercise that turns counting-up-from-C into actual reading, and it is silent apart from your own voice.</p>
 
-<p>Almost everyone discovers the wrist drops at exactly one moment &mdash; the hard bar. The hand is fine and then the passage gets difficult and the wrist sinks. That is tension, arriving on cue, and now you know precisely where to look for it.</p>
+<p><strong>Tap the rhythm, hands on your knees, counting out loud.</strong> Right hand on the right knee, left on the left. Nearly every rhythm mistake an adult makes is visible here, without a single key being pressed, and fixing it here means it never reaches your hands.</p>
 
-<h2>The exercise, two minutes a day</h2>
+<p><strong>Play on a silent keyboard &mdash; a table.</strong> With the fingering written down, play the passage on a tabletop at the speed you wish you could. Your hand learns the shape and the order. This is not a substitute for sound, but for the mechanical part of a difficult passage it is genuinely effective, and it is how pianists work on trains.</p>
 
-<p>One note. Any note, third finger, right hand.</p>
+<p><strong>Read the music away from the piano.</strong> Sit with the page and work out what is happening: where the phrase goes, which hand has the tune, where the same figure comes back. Adults almost never do this, and it is the single biggest difference between practicing a piece and merely repeating it.</p>
 
-<p>Raise the whole arm a little from the shoulder, keeping the wrist flat and the fingertip firm. Let it fall &mdash; not push, fall &mdash; so the key goes down with the arm's weight behind it. Then release immediately, letting the hand come back up as one piece.</p>
+<h2>If you have an acoustic piano</h2>
 
-<p>Listen to the note until it dies away. You are listening for something round that carries, rather than something short and hard. Do it ten times with each hand, slowly, before you play anything else.</p>
+<p>An upright has a soft pedal &mdash; the left one &mdash; which on most uprights moves the hammers closer to the strings and takes real volume out. Use it while you learn notes, and release it once the passage is solid, because playing everything softly forever will train a timid hand.</p>
 
-<p>Two minutes a day, and within two weeks your ordinary playing starts to inherit it. This is the first thing I teach anyone, child or adult, and it is the first thing in my free course, before a single note is read.</p>
+<p>Some uprights also have a middle practice pedal that drops a strip of felt between hammers and strings. It sounds muffled and slightly awful, and it is the most neighborly setting a piano has. Treat it the way you would treat headphones: fine for the hard bar, not for the whole session.</p>
 
-<h2>Two warnings</h2>
+<p>Where the piano stands matters more than people expect. Against a shared wall is the worst possible place; an inside wall, on a rug, with something soft behind the instrument, can take a surprising amount of the edge off what the neighbors receive.</p>
 
-<p><strong>Level does not mean rigid.</strong> A wrist held stiffly flat is its own problem &mdash; it simply moves the tension somewhere else. The wrist should be level and free, able to float slightly up at the end of a phrase. Think of it as hanging from the forearm, not braced against it.</p>
+<h2>What I would actually do</h2>
 
-<p><strong>And high is not better than level.</strong> A wrist carried well above the keys throws the fingers at the keyboard from above and produces its own hard sound. Level, or a shade above. That is the whole rule.</p>
+<p>Twenty minutes, three parts. Five minutes silent &mdash; say the notes, tap the rhythm. Ten minutes on the hard bar, slowly, with the soft pedal or in headphones. Five minutes playing something you already know, out loud, at a normal volume, within the hours you are allowed. That last five minutes is the part your ear needs and the part your neighbors will actually enjoy, because it is the only part that sounds like music.</p>
 
-<p>Adults tell me constantly that their hands are the problem. In thirty years of teaching I have met very few hands that were the problem. I have met a great many chairs.</p>
-
-<p>Film your thirty seconds this week. If you want another musician to look at it with you, <a href="../submit.html">send it to me &mdash; I answer recordings myself and it costs nothing</a>.</p>
+<p>If you are not sure whether what you are doing sounds the way you think it does, <a href="../submit.html">send me a minute of it</a>. Hearing yourself is the one part of this you cannot do alone &mdash; and it is even harder in headphones.</p>
 """
 },
 {
- "slug": "digital-piano-vs-acoustic-beginner",
- "date": "2026-09-25",
- "title": "Digital or Acoustic: What Actually Matters When You Are Starting",
- "description": "A concert pianist on choosing a first instrument as an adult beginner — which features genuinely affect your playing, which are marketing, and why the wrong digital piano teaches a habit you will have to un-learn.",
- "sub": "Most of what is argued about here does not matter. Two things do, and one of them is not on the box.",
- "image": "lead-piano-strings.jpg",
- "image_alt": "Piano strings, photographed inside the instrument",
- "cta_text": "The free course works on any instrument you already have:",
- "cta_href": "https://youtu.be/AzU01rYWHK8",
- "cta_link": "Start at Lesson 1 &rarr;",
+ "slug": "choosing-your-first-piano-piece",
+ "date": "2026-11-02",
+ "title": "Choosing Your First Piece &mdash; and Why Most Adults Choose Wrong",
+ "description": "How an adult beginner should choose a first piano piece: why the famous ones are traps, the three things that make a piece learnable, and what to do with the piece you actually want to play.",
+ "sub": "Almost every adult picks the piece that made them want to play. It is the most natural choice in the world and it is usually the one that stops them.",
+ "image": "lead-burgundy-sofa.jpg",
+ "image_alt": "Dr. Maria Pisarenko",
+ "cta_text": "Every piece in the free course was chosen to be learnable in the order it arrives:",
+ "cta_href": "https://www.youtube.com/playlist?list=PLmHakdUcQbtSHDPhBQL8DLmiiKe3CsRzM",
+ "cta_link": "See the course &rarr;",
  "body": """
-<p>This is the question I am asked before any other, usually by someone who has not yet played a note and is worried about choosing wrong before they begin.</p>
+<p>Ask an adult beginner what they want to play and you will hear the same handful of answers: the Moonlight Sonata, Clair de lune, River Flows in You, Comptine d'un autre &eacute;t&eacute;, the theme from a film they love. These are not silly choices. They are the reason the person is sitting at the piano at all, and I never treat them as a joke.</p>
 
-<p>So let me take the pressure off first: <strong>the instrument you already have is good enough to start.</strong> If there is a keyboard in the house, begin on it today. Do not wait for the right purchase; waiting is a far bigger risk to your playing than any instrument is.</p>
+<p>But I do have to say the awkward thing, because nobody else will: almost every one of those pieces is harder than it sounds, and several are harder than they look. The first movement of the Moonlight is slow and quiet, which makes beginners assume it is easy, and it requires a right hand that can voice a melody over triplets while the left hand holds a line underneath &mdash; a control problem, not a speed problem, and control is the last thing a beginner acquires.</p>
 
-<p>That said, two things genuinely matter, and a great deal of what gets argued about does not.</p>
+<p>So the question is not whether you may play the piece you love. The question is what you play <em>on the way there</em>, and how to keep the love in the room while you do it.</p>
 
-<h2>The two things that matter</h2>
+<h2>Three things that make a piece learnable</h2>
 
-<p><strong>1. Weighted keys that respond to how you play them.</strong> This is the whole question, and everything else is decoration.</p>
+<p><strong>One: your hand does not have to move much.</strong> For a first piece, the five fingers should stay over five neighboring keys, or move only a little and at obvious moments. Every hand shift is a small act of aim, and aiming accurately is a skill you have not built yet. This one criterion eliminates most of the famous pieces immediately.</p>
 
-<p>On a real piano, a key pressed gently gives a quiet sound and a key played with the arm's weight gives a full one. That relationship is not a feature; it is what playing the piano <em>is</em>. Every physical thing I teach &mdash; weight, release, evenness, tone, phrasing &mdash; exists only because the instrument answers differently depending on how the key goes down.</p>
+<p><strong>Two: the two hands do different amounts of work.</strong> A good beginner's piece gives the tune to one hand and something simple to the other &mdash; single long notes, a repeated pattern, silence. Two hands doing equally busy things is the hardest coordination in music and there is no reason to meet it in week three.</p>
 
-<p>An unweighted keyboard, where every key gives the same volume no matter what you do, cannot teach any of it. Worse, it teaches the opposite: it trains a hand to poke, because poking works there. That habit then has to be un-learned on a real instrument, and un-learning is far slower than learning.</p>
+<p><strong>Three: you already know how it goes.</strong> This is the one adults underrate most. If you can hum the tune, your ear knows when you are wrong before your eyes do, and you correct yourself without a teacher in the room. A piece you have never heard forces you to learn the notes and the sound at the same time, which is twice the work for no extra reward.</p>
 
-<p>The words to look for are <strong>weighted</strong>, <strong>hammer action</strong> or <strong>graded hammer action</strong>. The words that mean you are being sold something else are <em>touch-sensitive</em> alone, and <em>semi-weighted</em>.</p>
+<h2>Why the famous piece is still worth keeping</h2>
 
-<p><strong>2. Enough keys that the music does not run out.</strong> More on this below, but briefly: a beginner's first months need far fewer keys than people think, and a beginner's second year needs more than a small keyboard has.</p>
+<p>Here is what I do with a student who wants Clair de lune in month two. I do not tell them to forget it. I write it at the top of the page and we work backwards: what does this piece actually require? Independent hands. A quiet, even touch. Reading two staves comfortably. The pedal. Then we find the small things that build each one, and the famous piece becomes a destination with a road to it rather than a wall.</p>
 
-<h2>What does not matter nearly as much as the shop suggests</h2>
+<p>Adults keep going when they can see the road. What makes them stop is being told to play studies for a year with no explanation of why &mdash; or, just as often, being allowed to fight a piece that is four years above them until they conclude they have no talent.</p>
 
-<p><strong>The number of sounds.</strong> Six hundred voices is six hundred ways not to practise. You need one good piano sound.</p>
+<h2>A practical first list</h2>
 
-<p><strong>Built-in songs, light-up keys and learning modes.</strong> These teach you to follow a machine rather than to read. The skill you want is reading, and a light above a key is not reading.</p>
-
-<p><strong>Brand loyalty arguments.</strong> Among the established makers, at a given price, the differences at beginner level are real but small, and much smaller than the difference between weighted and unweighted.</p>
-
-<p><strong>Whether it is &ldquo;a real piano&rdquo;.</strong> A good digital instrument in a flat where you can play at eleven at night is worth more than an acoustic you are afraid to touch. I say this as someone who performs on concert grands.</p>
-
-<h2>Digital or acoustic, honestly</h2>
-
-<p><strong>A digital piano is the better choice for most adult beginners.</strong> It never goes out of tune, it costs nothing to maintain, it takes headphones so the household is not consulted about your practice hours, and a decent weighted one is cheaper than a year of tuning and repair on a neglected acoustic.</p>
-
-<p><strong>An acoustic upright is the better choice if</strong> you have the space, the household, and either a good instrument already or the budget to have one chosen properly. The sound is richer, the action tells you more, and it rewards you as you improve in a way that a modest digital does not.</p>
-
-<p><strong>What I would avoid:</strong> a free acoustic piano of unknown history. &ldquo;Free piano, you just have to move it&rdquo; is very often a piano that needs more work than it is worth, and moving it costs real money before you find out. Have anyone's free piano looked at by a tuner before it enters your house.</p>
-
-<h2>How many keys</h2>
-
-<p>The honest answer is that it depends how long you intend to keep playing.</p>
-
-<p>Your first months will live in the middle of the keyboard and could be done on a very small instrument. But the repertoire an adult actually wants &mdash; the pieces people picture when they imagine themselves playing &mdash; reaches out to both ends, and a short keyboard starts refusing to play the music before your hands refuse to.</p>
-
-<p>If you are buying once and keeping it, buy the full set of 88. If you are borrowing or starting on what is in the house, start there and do not think about it again for six months. I have written about this in more detail on my <a href="../books.html">instruments and books page</a>.</p>
-
-<h2>Two things to buy that nobody mentions</h2>
-
-<p><strong>An adjustable bench.</strong> This will do more for your playing than an extra two hundred dollars of instrument. Almost every fault I see in adult beginners &mdash; aching forearms, a thin sound, uneven fingers &mdash; begins with sitting too low, and a dining chair is nearly always too low. A bench that adjusts fixes it permanently in one purchase.</p>
-
-<p><strong>A proper stand, if the instrument does not come with legs.</strong> A keyboard on a wobbling X-stand moves when you play with any weight, and a hand that feels the instrument move learns not to use weight. Something solid, at the right height, that does not travel.</p>
-
-<h2>So: what to do this week</h2>
-
-<p>If you have any keyboard at all, start on it, today, and come back to this question in three months when you know whether the habit is taking. If you are buying: weighted hammer action, 88 keys if you can, an adjustable bench, and ignore everything printed on the front panel in large type.</p>
-
-<p>Then start. The instrument matters much less than the fact that you began.</p>
-"""
-},
-{
- "slug": "does-piano-playing-hurt-hands",
- "date": "2026-09-28",
- "title": "Should Playing the Piano Hurt? No &mdash; and Here Is What Hurting Means",
- "description": "Aching hands, wrists or forearms after playing are not a normal part of learning the piano. A concert pianist explains what pain is telling you, the three causes she sees most often, and what to change.",
- "sub": "It should not hurt. Not at your age, not at any age, not even at the beginning. If it does, it is information &mdash; and it is usually about four specific things.",
- "image": "lead-pink-gown.jpg",
- "image_alt": "Dr. Maria Pisarenko, concert pianist and university professor",
- "cta_text": "The free course starts with the body, before a single note is read:",
- "cta_href": "https://youtu.be/AzU01rYWHK8",
- "cta_link": "Start at Lesson 1 &rarr;",
- "body": """
-<p>Adults ask me this quietly, as though it might be an embarrassing question. It is not. It is one of the most important questions a beginner can ask, and the answer is short.</p>
-
-<p><strong>No. Playing the piano should not hurt.</strong> Not a burning forearm, not an aching wrist, not sore knuckles, not a thumb that complains the next morning. Discomfort is not the price of learning and it is not a sign that you are working hard. It is information about how the work is being done.</p>
-
-<p>Musicians are not, as a profession, unusually stoical about this. We are trained from childhood to treat pain as a fault in the playing, because a pianist who plays through it stops being a pianist. I would like adults to inherit that attitude rather than the sporting one.</p>
-
-<h2>What hurting usually means</h2>
-
-<p>In my teaching, aching hands in a beginner come from one of four things, and the first is far commoner than the other three together.</p>
-
-<p><strong>1. The bench is too low.</strong> If your forearm sits below the level of the keys, the weight of your arm cannot reach the key &mdash; the angle is wrong &mdash; so the small muscles of the hand and forearm do work they are not built for. They ache on schedule, usually at fifteen to twenty minutes.</p>
-
-<p>Sit so the forearm runs level with the tops of the white keys, or very slightly above. If the chair does not adjust, sit on a folded towel. This single change resolves most of the aching I am asked about.</p>
-
-<p><strong>2. The hand is being held rather than hanging.</strong> Many adults arrive with an idea that the hand must be arranged into a shape and kept there. So it is held, continuously, by muscular effort &mdash; and holding anything for twenty minutes hurts, whatever it is.</p>
-
-<p>The hand's shape at the piano should be the shape it already makes when your arm hangs loose at your side: fingers naturally curved, nothing arranged. Let it hang, then bring it to the keys without changing it.</p>
-
-<p><strong>3. Nothing is being released.</strong> Beginners press a key and stay pressed until the next note. Pianists put weight in and take it out again, continuously. If your hand never lets go between notes, it is under load for the entire practice, and load without release is exactly the recipe for aching.</p>
-
-<p>Practise this on one note: let the arm's weight down into the key, then release the moment the sound has begun. The note goes on sounding without you holding it down hard &mdash; the instrument does not need the pressure, only the descent.</p>
-
-<p><strong>4. Too much, too suddenly.</strong> An adult who has never played sits down for ninety minutes because they finally have a free Sunday. That is a new physical activity done for ninety minutes without preparation, and the body responds as it would to any other.</p>
-
-<p>Fifteen to twenty minutes a day, every day, builds hands far faster and with none of this. Six short sessions beat one long one for reasons that have nothing to do with willpower and everything to do with how physical skills consolidate overnight.</p>
-
-<h2>Ordinary tiredness versus the kind you must not ignore</h2>
-
-<p>There is a difference between a hand that feels worked and a hand that is telling you to stop, and beginners often cannot yet read it. So use these lines instead of your judgement:</p>
-
-<p><strong>Stop the session now, and change something before the next one, if you have:</strong></p>
+<p>Every one of these fits the three rules, and every one is real music rather than an exercise:</p>
 
 <ul>
-  <li>Pain that is <strong>sharp</strong> rather than dull, or that arrives suddenly at a particular moment</li>
-  <li>Anything in the wrist, rather than in the muscle of the forearm</li>
-  <li><strong>Tingling or numbness</strong> in the fingers, at any time</li>
-  <li>Discomfort that is still there the next morning</li>
-  <li>Pain that appears earlier each session &mdash; twenty minutes this week, ten the next</li>
+<li><strong>The opening of Ode to Joy.</strong> Five fingers, no movement, and you already know it. This is where my own method begins, by ear before reading.</li>
+<li><strong>Aura Lee.</strong> A left-hand tune in a five-finger position &mdash; it teaches the weaker hand to carry a melody, which pays for years.</li>
+<li><strong>When the Saints Go Marching In.</strong> Simple, rhythmic, and it teaches you to keep going through a pickup without stopping.</li>
+<li><strong>Bach's Minuet in G, the first eight bars.</strong> Genuinely beautiful, genuinely eighteenth-century, and the first phrase is within reach much earlier than people think.</li>
+<li><strong>Erik Satie, Gymnop&eacute;die No. 1, slowly.</strong> Reachable sooner than the other famous ones because the hands move slowly and the texture is thin &mdash; and it sounds like the record.</li>
 </ul>
 
-<p>Any of those means something in the setup is wrong, and playing through it will make it worse rather than stronger. And any pain that persists after you have fixed the bench, the holding and the release is a matter for a medical professional rather than a piano teacher &mdash; I am not qualified to advise you on your body, and I would not want you to accept my guesses instead of an examination.</p>
+<p>If the piece you love is on a film soundtrack, look for whether a genuine simplified edition exists &mdash; not a butchered one, but an arrangement made by someone who kept the harmony and reduced the texture. For a lot of modern piano music, one exists, and playing a good arrangement of the thing you love beats playing a bad approximation of it.</p>
 
-<h2>What to change today, in order</h2>
+<h2>The mistake underneath the mistake</h2>
 
-<ol>
-  <li><strong>Raise the seat</strong> until your forearm is level with the keys. Towel, cushion, adjustable bench &mdash; whatever gets you there.</li>
-  <li><strong>Let the hand hang</strong> at your side, then bring it up unchanged. Stop arranging it.</li>
-  <li><strong>Release after every note</strong> for two minutes a day on a single key, until it stops being a thought.</li>
-  <li><strong>Cut the session to fifteen minutes</strong> and make it daily rather than occasional.</li>
-</ol>
+<p>The choice of piece matters less than one habit: adults tend to learn a piece by playing it from the top, again and again, until the beginning is polished and the end never arrives. Whatever you choose, learn it in sections, learn the hard section first, and learn it slowly enough that it cannot go wrong. That is what makes a piece finishable, and a finished piece is what makes an adult believe the next one is possible.</p>
 
-<p>Then, a week later, film thirty seconds of yourself playing and watch it. The wrist dipping below the keys, the hand braced into a shape, the arm never rising between notes &mdash; all three are visible in a way they are not feelable.</p>
-
-<p>And if you would like another musician to look at those thirty seconds with you, <a href="../submit.html">send them to me</a>. Hearing and seeing yourself is the part of this you genuinely cannot do alone &mdash; and a small physical fault caught in month two takes a minute to correct, where the same fault caught in year two takes a season.</p>
+<p>When you have one, <a href="../submit.html">record a minute and send it to me</a>. I will tell you what I actually hear &mdash; including whether the next piece should be harder, or whether something in this one is not finished yet.</p>
 """
 },
 ]
 
 pathlib.Path("_specs_batch_03.json").write_text(json.dumps(SPECS, ensure_ascii=False, indent=1), encoding="utf-8")
-print("specs:", len(SPECS))
+print("specs written:", len(SPECS))

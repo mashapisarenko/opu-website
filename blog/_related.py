@@ -33,7 +33,7 @@ RELATED = {
  "piano-bench-height-posture": ["piano-wrist-position-adults", "piano-hand-position-curved-fingers", "why-your-hands-get-tense-at-the-piano"],
  "does-piano-playing-hurt-hands": ["why-your-hands-get-tense-at-the-piano", "piano-wrist-position-adults", "piano-bench-height-posture"],
  # --- practice ---
- "how-to-practice-piano-a-method-not-more-minutes": ["practicing-piano-when-you-have-no-time", "how-long-to-practice-piano-each-day", "run-your-own-piano-lesson"],
+ "how-to-practice-piano-a-method-not-more-minutes": ["practicing-piano-when-you-have-no-time", "practicing-piano-in-an-apartment", "how-long-to-practice-piano-each-day", "run-your-own-piano-lesson"],
  "how-long-to-practice-piano-each-day": ["how-to-practice-piano-a-method-not-more-minutes", "why-adult-beginners-quit-piano", "practicing-piano-when-you-have-no-time", "piano-plateau-month-four"],
  "practicing-piano-when-you-have-no-time": ["how-to-practice-piano-a-method-not-more-minutes", "how-long-to-practice-piano-each-day", "run-your-own-piano-lesson"],
  "run-your-own-piano-lesson": ["learning-piano-without-a-teacher", "how-to-practice-piano-a-method-not-more-minutes", "how-to-choose-a-piano-teacher"],
@@ -45,15 +45,17 @@ RELATED = {
  "why-adults-learn-piano-your-reason-matters": ["is-it-too-late-to-learn-piano-at-40-50-60", "returning-to-piano-as-an-adult", "how-to-practice-piano-a-method-not-more-minutes"],
  "returning-to-piano-as-an-adult": ["why-adults-learn-piano-your-reason-matters", "adults-learn-piano-differently", "piano-plateau-month-four"],
  "why-adult-beginners-quit-piano": ["piano-plateau-month-four", "practicing-piano-when-you-have-no-time", "how-long-to-learn-piano-adult"],
- "how-long-to-learn-piano-adult": ["piano-plateau-month-four", "how-to-practice-piano-a-method-not-more-minutes", "why-adult-beginners-quit-piano"],
+ "how-long-to-learn-piano-adult": ["piano-plateau-month-four", "choosing-your-first-piano-piece", "how-to-practice-piano-a-method-not-more-minutes", "why-adult-beginners-quit-piano"],
  "playing-piano-for-other-people": ["piano-plateau-month-four", "why-your-hands-get-tense-at-the-piano", "how-to-practice-piano-a-method-not-more-minutes"],
+ "practicing-piano-in-an-apartment": ["practicing-piano-when-you-have-no-time", "digital-piano-vs-acoustic-beginner", "how-to-practice-piano-a-method-not-more-minutes"],
+ "choosing-your-first-piano-piece": ["how-long-to-learn-piano-adult", "right-notes-still-sounds-wrong", "how-to-practice-piano-a-method-not-more-minutes"],
  # --- teaching, method, gear ---
  "learning-piano-without-a-teacher": ["run-your-own-piano-lesson", "how-to-choose-a-piano-teacher", "right-notes-still-sounds-wrong"],
  "how-to-choose-a-piano-teacher": ["learning-piano-without-a-teacher", "run-your-own-piano-lesson", "russian-school-vs-american-piano-method"],
  "russian-school-vs-american-piano-method": ["what-european-music-schools-teach-that-american-adults-missed", "right-notes-still-sounds-wrong", "reading-music-or-playing-by-ear"],
  "what-european-music-schools-teach-that-american-adults-missed": ["russian-school-vs-american-piano-method", "reading-music-or-playing-by-ear", "adults-learn-piano-differently"],
- "right-notes-still-sounds-wrong": ["russian-school-vs-american-piano-method", "how-to-count-music-out-loud", "why-your-hands-get-tense-at-the-piano"],
- "digital-piano-vs-acoustic-beginner": ["how-many-keys-do-i-need-piano", "piano-bench-height-posture", "is-it-too-late-to-learn-piano-at-40-50-60"],
+ "right-notes-still-sounds-wrong": ["russian-school-vs-american-piano-method", "choosing-your-first-piano-piece", "how-to-count-music-out-loud", "why-your-hands-get-tense-at-the-piano"],
+ "digital-piano-vs-acoustic-beginner": ["how-many-keys-do-i-need-piano", "practicing-piano-in-an-apartment", "piano-bench-height-posture", "is-it-too-late-to-learn-piano-at-40-50-60"],
  "how-many-keys-do-i-need-piano": ["digital-piano-vs-acoustic-beginner", "piano-bench-height-posture", "how-to-find-any-note-on-the-piano"],
 }
 
