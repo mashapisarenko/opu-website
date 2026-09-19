@@ -21,9 +21,7 @@ SHELL = HERE / "free-course.html"
 OUT = HERE / "press.html"
 
 TITLE = "Press & Recognition - Dr. Maria Pisarenko, Concert Pianist"
-DESC = ("What the press has written about concert pianist Dr. Maria Pisarenko, DMA - the Las Vegas "
-        "Review-Journal, the Las Vegas Sun, This Is Reno, the Salt Lake Tribune - plus radio and "
-        "television broadcasts, competition prizes and the Steinway Top Teacher Award.")
+DESC = ("Press, radio and awards for Dr. Maria Pisarenko, DMA - Review-Journal, Las Vegas Sun, This Is Reno, Salt Lake Tribune, Channel One Russia, Steinway.")
 
 # (publication, year, url or None, quote or None, note or None)
 PRESS = [
@@ -168,10 +166,9 @@ def main():
     if not SHELL.exists():
         sys.exit("shell page not found: %s" % SHELL)
     t = SHELL.read_text(encoding="utf-8")
-    old_title = "Free University Piano Course for Beginners — Online Piano University"
-    old_desc = ("The complete beginner piano course, in order, free — the same university curriculum "
-                "Dr. Maria Pisarenko (DMA) teaches at colleges. 41 lessons on YouTube: reading music, "
-                "chords, pedal, both hands.")
+    old_title = "Free Piano Course for Adult Beginners — 41 Lessons in Order"
+    old_desc = ("Forty-one free piano lessons for adults, in order - reading, chords, pedal, both "
+                "hands. The university curriculum Dr. Maria Pisarenko, DMA, teaches at college.")
     for old, new in ((old_title, TITLE + " | Online Piano University"),
                      (old_desc, DESC),
                      ("free-course.html", "press.html")):

@@ -17,8 +17,7 @@ OUT = HERE / "first-piece.html"
 SITE = "https://onlinepianouniversity.com"
 
 TITLE = "Your First Piece, Free — Play Ode to Joy by Ear Today"
-DESC = ("One page from an adult piano method: the opening of Ode to Joy by ear, five fingers that "
-        "never move, no notation to decode. Free from Dr. Maria Pisarenko, DMA, concert pianist.")
+DESC = ("One page from an adult piano method: the opening of Ode to Joy by ear, five fingers that never move, nothing to decode. Free from a concert pianist.")
 
 BODY = """
 <section class="pagehero">
@@ -112,10 +111,9 @@ def main():
         sys.exit("shell page not found: %s" % SHELL)
     t = SHELL.read_text(encoding="utf-8")
 
-    old_title = ("Free University Piano Course for Beginners — Online Piano University")
-    old_desc = ("The complete beginner piano course, in order, free — the same university curriculum "
-                "Dr. Maria Pisarenko (DMA) teaches at colleges. 41 lessons on YouTube: reading music, "
-                "chords, pedal, both hands.")
+    old_title = ("Free Piano Course for Adult Beginners — 41 Lessons in Order")
+    old_desc = ("Forty-one free piano lessons for adults, in order - reading, chords, pedal, both "
+                "hands. The university curriculum Dr. Maria Pisarenko, DMA, teaches at college.")
     for old, new in ((old_title, TITLE + " | Online Piano University"),
                      (old_desc, DESC)):
         if old not in t:
