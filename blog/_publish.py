@@ -143,6 +143,15 @@ def main():
     except Exception as exc:                      # never let this break a publish
         print("read-next skipped:", exc)
 
+    # Refresh the sitemap from git rather than appending to it - appending is how the
+    # home page ended up listed twice and how 27 lastmod values went stale.
+    try:
+        r = subprocess.run([sys.executable, str(BLOG.parent / "refresh_sitemap.py")],
+                           capture_output=True, text=True, cwd=str(BLOG.parent))
+        print((r.stdout or "").strip() or "sitemap: nothing to do")
+    except Exception as exc:
+        print("sitemap refresh skipped:", exc)
+
     print("PUBLISHED=%s" % ",".join(published))
     return 0
 
