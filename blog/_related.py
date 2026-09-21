@@ -18,6 +18,21 @@ HERE = pathlib.Path(__file__).resolve().parent
 QUEUE = HERE / "_queue"
 
 RELATED = {
+ # --- added 2026-09-21: the November queue and the two December articles ---
+ "why-your-hands-will-not-do-two-things-at-once": ["how-to-practice-a-piece-you-cannot-play-yet", "why-count-out-loud-piano", "the-left-hand-is-not-the-weak-hand"],
+ "why-you-still-cannot-read-music-fluently": ["how-to-read-the-grand-staff", "reading-music-or-playing-by-ear", "why-piano-fingering-numbers-matter"],
+ "why-piano-fingering-numbers-matter": ["should-adults-learn-scales", "how-to-practice-a-piece-you-cannot-play-yet", "piano-hand-position-curved-fingers"],
+ "when-should-you-start-using-the-piano-pedal": ["what-playing-musically-actually-means", "how-to-make-the-melody-sing", "right-notes-still-sounds-wrong"],
+ "why-count-out-loud-piano": ["what-the-time-signature-tells-you", "right-notes-still-sounds-wrong", "how-to-practice-a-piece-you-cannot-play-yet"],
+ "what-playing-musically-actually-means": ["how-to-make-the-melody-sing", "right-notes-still-sounds-wrong", "when-should-you-start-using-the-piano-pedal"],
+ "the-left-hand-is-not-the-weak-hand": ["how-to-read-the-bass-clef", "why-your-hands-will-not-do-two-things-at-once", "should-adults-learn-scales"],
+ "how-to-read-the-grand-staff": ["how-to-read-the-bass-clef", "why-you-still-cannot-read-music-fluently", "the-left-hand-is-not-the-weak-hand"],
+ "what-the-time-signature-tells-you": ["why-count-out-loud-piano", "how-to-read-sheet-music-treble-clef-rhythm", "right-notes-still-sounds-wrong"],
+ "practicing-piano-over-the-holidays": ["practicing-piano-when-you-have-no-time", "piano-plateau-month-four", "why-adult-beginners-quit-piano"],
+ "should-adults-learn-scales": ["why-piano-fingering-numbers-matter", "the-left-hand-is-not-the-weak-hand", "how-to-practice-a-piece-you-cannot-play-yet"],
+ "how-to-make-the-melody-sing": ["what-playing-musically-actually-means", "when-should-you-start-using-the-piano-pedal", "right-notes-still-sounds-wrong"],
+ "what-piano-or-keyboard-should-i-buy-to-start": ["how-many-keys-do-i-need-piano", "digital-piano-vs-acoustic-beginner", "piano-bench-height-posture"],
+ "how-to-practice-a-piece-you-cannot-play-yet": ["practicing-piano-when-you-have-no-time", "choosing-your-first-piano-piece", "why-count-out-loud-piano"],
  # --- reading music ---
  "how-to-read-sheet-music-treble-clef-rhythm": ["what-the-treble-clef-means", "how-to-read-piano-notes-grand-staff", "how-to-count-music-out-loud"],
  "what-the-treble-clef-means": ["how-to-read-piano-notes-grand-staff", "how-to-read-the-bass-clef", "how-to-read-sheet-music-treble-clef-rhythm"],

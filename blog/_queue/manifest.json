@@ -1,5 +1,23 @@
 [
   {
+    "slug": "why-adult-beginners-quit-piano",
+    "date": "2026-09-16",
+    "title": "Why Adult Beginners Quit Piano in the First Three Months",
+    "summary": "Almost nobody stops because they lack talent. They stop for four ordinary reasons, and every one of them can be designed out in advance."
+  },
+  {
+    "slug": "practicing-piano-when-you-have-no-time",
+    "date": "2026-09-18",
+    "title": "Practicing Piano When You Have a Job, a Family and Twenty Minutes",
+    "summary": "The commonest reason adults stop is not difficulty. It is time. So here is precisely what I would put in your twenty minutes, and what I would cut first."
+  },
+  {
+    "slug": "what-european-music-schools-teach-that-american-adults-missed",
+    "date": "2026-09-21",
+    "title": "What European Music Schools Teach Children That American Adults Were Never Taught",
+    "summary": "Ear before eye, voice before hands, and naming what you hear. Three ordinary parts of a European childhood in music that most American adults were simply never offered."
+  },
+  {
     "slug": "piano-wrist-position-adults",
     "date": "2026-09-23",
     "title": "Wrist Height: The Single Most Common Fault in Adult Beginners",
@@ -98,13 +116,97 @@
   {
     "slug": "practicing-piano-in-an-apartment",
     "date": "2026-10-30",
-    "title": "Practicing Piano in an Apartment Without Annoying Anybody",
-    "summary": "Thin walls are the reason a surprising number of American adults stop playing. Almost none of it is necessary, and some of the best practice there is makes no sound at all."
+    "title": "How to Practice Piano in an Apartment Without Annoying Anyone",
+    "summary": "A surprising share of adults stop playing for a reason that has nothing to do with the piano: they are worried about being heard."
   },
   {
     "slug": "choosing-your-first-piano-piece",
     "date": "2026-11-02",
-    "title": "Choosing Your First Piece &mdash; and Why Most Adults Choose Wrong",
-    "summary": "Almost every adult picks the piece that made them want to play. It is the most natural choice in the world and it is usually the one that stops them."
+    "title": "How to Choose a Piece You Will Actually Finish",
+    "summary": "The piece you choose decides more about whether you keep playing than how much you practice does."
+  },
+  {
+    "slug": "why-your-hands-will-not-do-two-things-at-once",
+    "date": "2026-11-04",
+    "title": "Why Your Hands Will Not Do Two Different Things at Once",
+    "summary": "Every pianist starts with the hands coupled. What separates a player who can do it from one who cannot is not the brain they were born with — it is a specific kind of practice."
+  },
+  {
+    "slug": "why-you-still-cannot-read-music-fluently",
+    "date": "2026-11-06",
+    "title": "Why You Still Cannot Read Music Fluently — and What Actually Fixes It",
+    "summary": "Naming notes and reading music are two different skills. Months of practice at the first one will not produce the second, and almost nobody is told the difference."
+  },
+  {
+    "slug": "why-piano-fingering-numbers-matter",
+    "date": "2026-11-09",
+    "title": "Those Little Numbers Above the Notes Are Not Suggestions",
+    "summary": "A fingering is a plan for the whole phrase, not a preference about one note. Ignoring it is what puts a permanent stumble in the middle of a piece that is not actually difficult."
+  },
+  {
+    "slug": "when-should-you-start-using-the-piano-pedal",
+    "date": "2026-11-11",
+    "title": "When Should You Start Using the Pedal? And How to Stop It Sounding Like Mud",
+    "summary": "The pedal is not a sustain button. It is a second instrument played with your foot, and it has its own technique — starting with the fact that the foot moves after the hand, never with it."
+  },
+  {
+    "slug": "why-count-out-loud-piano",
+    "date": "2026-11-13",
+    "title": "Counting Out Loud Feels Childish. Do It Anyway.",
+    "summary": "Nobody hears you. And the thing counting fixes is the thing a listener notices first — long before they notice a wrong note."
+  },
+  {
+    "slug": "what-playing-musically-actually-means",
+    "date": "2026-11-16",
+    "title": "\"Play It Musically\" — What That Actually Means, in Practical Terms",
+    "summary": "Your ear already knows what beautiful sounds like. The gap is not taste — it is that nobody has told you which physical movements produce it."
+  },
+  {
+    "slug": "the-left-hand-is-not-the-weak-hand",
+    "date": "2026-11-18",
+    "title": "The Left Hand Is Not the Weak Hand",
+    "summary": "You have spent forty years doing fine work with one hand and carrying things with the other. That is training history, not anatomy, and it can be corrected on purpose."
+  },
+  {
+    "slug": "how-to-read-the-grand-staff",
+    "date": "2026-11-20",
+    "title": "Two Staves, One Instrument: How to Read the Grand Staff Without Getting Lost",
+    "summary": "The two staves are not two pieces of music side by side. They are one keyboard, cut in half at middle C, and reading them is a skill with its own practice."
+  },
+  {
+    "slug": "what-the-time-signature-tells-you",
+    "date": "2026-11-23",
+    "title": "What the Time Signature Is Actually Telling You",
+    "summary": "It is not a fraction and it is not decoration. It tells you how to count, and counting is what holds playing together."
+  },
+  {
+    "slug": "practicing-piano-over-the-holidays",
+    "date": "2026-11-25",
+    "title": "How to Keep Playing Through a Week When Nothing Is Normal",
+    "summary": "The adults who lose months are almost never the ones who missed four days. They are the ones who decided that missing four days meant they had stopped."
+  },
+  {
+    "slug": "should-adults-learn-scales",
+    "date": "2026-11-27",
+    "title": "Should You Learn Scales? Yes — but Not for the Reason You Were Told",
+    "summary": "Not discipline, not finger strength, not because they are good for you. There are three specific things a scale teaches that pieces do not teach efficiently."
+  },
+  {
+    "slug": "how-to-make-the-melody-sing",
+    "date": "2026-11-30",
+    "title": "Two Notes at Once: How to Make the Top One Sing",
+    "summary": "This is the difference between a chord that sounds like a block and a chord that sounds like music with a melody on top of it."
+  },
+  {
+    "slug": "what-piano-or-keyboard-should-i-buy-to-start",
+    "date": "2026-12-02",
+    "title": "What Piano or Keyboard Should You Buy to Start? What Actually Matters",
+    "summary": "One requirement is structural and everything else is preference. Adults put off starting for months over a decision that is simpler than the listings make it look."
+  },
+  {
+    "slug": "how-to-practice-a-piece-you-cannot-play-yet",
+    "date": "2026-12-04",
+    "title": "How to Practice a Piece You Cannot Play Yet",
+    "summary": "Playing and practicing are two different activities. Nobody tells you the difference when you learn alone, and it is the reason an hour of work leaves the difficult passage exactly as difficult."
   }
 ]
