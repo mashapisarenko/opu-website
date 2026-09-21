@@ -130,6 +130,131 @@ PLAYING = [
 ]
 
 
+# Scanned documents, on letterhead and signed. Every one was read in full on 2026-09-21
+# before it went on the page, and private data was PAINTED OUT of the image first:
+# Weller's home address, Peterson's home address and phone, her OWN home address on the
+# UNLV letter, Victor Alvarez's email, Damaris Morales-Alvarez's direct line. Redaction is
+# a filled rectangle burned into the JPEG, not a CSS overlay - an overlay can be removed
+# by anyone with a browser. The redacted images are the only ones in the repository.
+#
+# Two documents in her folder are deliberately NOT here:
+#   - William Epstein's letter is a GRADE APPEAL to another school, describing a disputed
+#     grade and a departmental conflict. It argues for her, but publishing it broadcasts
+#     the dispute. It would cost her trust, not build it.
+#   - "BusinessRate TOP 3 of 2026" is an award-mill mailer that sells plaques off Google
+#     reviews. Placed beside Steinway and ABRSM it devalues them.
+# (slug, who, role, year, pull quote, one line of context)
+LETTERS = [
+ ("weller-2010", "Harold Weller",
+  "Founding Music Director &amp; Conductor Laureate, The Las Vegas Philharmonic", "2010",
+  "&ldquo;On February 14th Masha performed brilliantly, eliciting an instant standing ovation "
+  "from the 1,200 in attendance and playing the <i>Concerto</i> as if it had been part of her "
+  "repertory for many years.&rdquo;",
+  "He invited her as guest soloist for Rachmaninov&rsquo;s Second Piano Concerto &mdash; a work, "
+  "he writes, &ldquo;she had not yet studied or performed.&rdquo; Earlier in the same letter: "
+  "&ldquo;an exceptionally gifted pianist&rdquo; whose &ldquo;ease, fluidity, and poetic "
+  "interpretation&rdquo; reminded him of Valentina Lisitsa."),
+ ("suu-2012", "Dr. Christian Bohnenstengel, NCTM",
+  "Director of Keyboard Studies, Southern Utah University", "2012",
+  "&ldquo;One of our finest piano majors commented enthusiastically &hellip; and noted that this "
+  "may have been the best recital he has ever attended. Another audience member perceived each "
+  "note as having a life of its own and noted Ms. Pisarenko&rsquo;s ability to make the notes "
+  "&lsquo;dance with each other.&rsquo;&rdquo;",
+  "After a recital and a masterclass with four piano majors: &ldquo;The students appreciated "
+  "Ms. Pisarenko&rsquo;s musical insights, technical advice, as well as her patient and helpful "
+  "demeanor.&rdquo;"),
+ ("csn-morales-2017", "D&aacute;maris Morales-Alvarez",
+  "Piano Program Coordinator, College of Southern Nevada", "2017",
+  "&ldquo;Ms. Pisarenko is also in charge of teaching some of our music Piano Major students and "
+  "for preparing them for recitals and juries. In this task she has always done a remarkable "
+  "work. <b>Her students demonstrate solid technic and musicianship.</b>&rdquo;",
+  "Written by the colleague who observed and evaluated her classes: &ldquo;knowledgeable and "
+  "diligent in the classroom &hellip; an excellent role model for our piano students.&rdquo;"),
+ ("peterson-2017", "Dr. Douglas R. Peterson",
+  "Music Director, Southern Nevada Musical Arts Society", "2017",
+  "&ldquo;I have only the highest praise for pianist Masha Pisarenko &hellip; Her performances in "
+  "both the Beethoven <i>Choral Fantasia</i> and the <i>Mozart Concerto</i> were accorded standing "
+  "ovations!&rdquo;",
+  "After four programs together over four years. He closes: &ldquo;Now that she has her doctorate "
+  "I predict Masha can also look forward to an outstanding career in the educational field.&rdquo;"),
+ ("csn-alvarez-2012", "Dr. Victor Hugo Alvarez",
+  "Music Professor and founder of the CSN Piano Concerto Competition", "2012",
+  "&ldquo;As a lead jury, you showed experience and sensitivity to each of the young pianist that "
+  "were select to play for you; all our participants were very enthusiastic with the Master Class "
+  "you offer and <b>wanted more time with you</b>.&rdquo;",
+  "Written after she sat as lead juror at the twelfth CSN Piano Concerto Competition."),
+ ("suu-2013", "Dr. Christian Bohnenstengel, NCTM",
+  "Director of Keyboard Studies, Southern Utah University", "2013",
+  "&ldquo;One of my colleagues commented enthusiastically on the performance of the <i>Toccata in "
+  "E Minor</i> by Bach, admiring Ms. Pisarenko&rsquo;s ability to convey the complex polyphonic "
+  "texture by giving each voice its own distinct color (e.g. bassoon, violin, etc.).&rdquo;",
+  "Her second invitation to Southern Utah University in as many years, again for a recital and a "
+  "masterclass."),
+ ("peterson-2010", "Dr. Douglas R. Peterson",
+  "Music Director, Southern Nevada Musical Arts Society", "2010",
+  "&ldquo;Masha&rsquo;s piano skills are formidable and her interpretations sensitive. She was "
+  "extremely well-prepared in all three programs &hellip; and I found her a pleasure to work "
+  "with.&rdquo;",
+  "The earlier of his two letters, written while she was still working toward the doctorate."),
+ ("bowers-unlv-2010", "Michael W. Bowers, Ph.D.",
+  "Executive Vice President &amp; Provost, University of Nevada, Las Vegas", "2010",
+  "&ldquo;Congratulations to you on becoming First Prize Winner of the Reno Chamber Orchestra "
+  "Concerto Competition &hellip; It appears that you are on your way to a very prominent artistic "
+  "career.&rdquo;",
+  "From the provost&rsquo;s office of her own university."),
+]
+
+# (slug, title, issuer, year, one line)
+CERTIFICATES = [
+ ("abrsm-2026", "Letter of Appreciation", "ABRSM &mdash; the Associated Board of the Royal Schools of Music", "2026",
+  "For teachers whose students earned a <b>Distinction</b> in an ABRSM examination and played at "
+  "the High Scorers&rsquo; Concert. Signed by the Chief Executive. Nevada, 1 May 2026."),
+ ("abrsm-2025", "Letter of Appreciation", "ABRSM &mdash; the Associated Board of the Royal Schools of Music", "2025",
+  "The same recognition the year before. Two consecutive years of students taking a Distinction "
+  "in the examinations of a London board that has graded players since 1889."),
+ ("steinway-2018", "Top Music Teacher", "Steinway &amp; Sons", "2018",
+  "&ldquo;Steinway &amp; Sons is pleased to recognize Dr. Maria Pisarenko &mdash; 2018 Top Music "
+  "Teacher.&rdquo; Signed by the Chief Executive Officer of Steinway Musical Instruments."),
+ ("snmas-2013", "Certificate of Appreciation", "Southern Nevada Musical Arts Society", "2013",
+  "Presented in the society&rsquo;s fiftieth-anniversary year: &ldquo;In recognition of your "
+  "graciously sharing your musical artistry.&rdquo;"),
+]
+
+
+def letter(slug, who, role, year, quote, context):
+    return (
+      f'      <div class="card" style="padding:0;overflow:hidden">'
+      f'<a href="images/letters/{slug}.jpg" target="_blank" rel="noopener" '
+      f'style="display:block;background:#e9e6df;border-bottom:1px solid var(--line)">'
+      f'<img src="images/letters/{slug}-thumb.jpg" loading="lazy" '
+      f'alt="Letter from {who}, {year}, on official letterhead" '
+      f'style="display:block;width:100%;height:230px;object-fit:cover;object-position:top"></a>'
+      f'<div style="padding:15px 16px">'
+      f'<p style="margin:0 0 10px">{quote}</p>'
+      f'<p class="muted" style="margin:0 0 10px;font-size:.9rem">{context}</p>'
+      f'<p style="margin:0;font-size:.93rem"><b>{who}</b> <span class="muted">&middot; {year}</span>'
+      f'<br><span class="muted" style="font-size:.9rem">{role}</span>'
+      f'<br><a href="images/letters/{slug}.jpg" target="_blank" rel="noopener">Read the letter itself &rarr;</a>'
+      f'</p></div></div>')
+
+
+def certificate(slug, title, issuer, year, note):
+    return (
+      f'      <div class="card" style="padding:0;overflow:hidden">'
+      f'<a href="images/letters/{slug}.jpg" target="_blank" rel="noopener" '
+      f'style="display:block;background:#e9e6df;border-bottom:1px solid var(--line)">'
+      f'<img src="images/letters/{slug}-thumb.jpg" loading="lazy" '
+      f'alt="{title} from {issuer}, {year}" '
+      f'style="display:block;width:100%;height:210px;object-fit:contain;padding:10px"></a>'
+      f'<div style="padding:15px 16px">'
+      f'<p style="margin:0 0 8px;font-size:1.02rem"><b>{title}</b> '
+      f'<span class="muted">&middot; {year}</span></p>'
+      f'<p class="muted" style="margin:0 0 10px;font-size:.9rem">{note}</p>'
+      f'<p style="margin:0;font-size:.93rem">{issuer}'
+      f'<br><a href="images/letters/{slug}.jpg" target="_blank" rel="noopener">See the document &rarr;</a>'
+      f'</p></div></div>')
+
+
 def clip(vid, label):
     """A still with a play badge, not an embed: eleven autoplay-capable iframes would make
     the page crawl, and an embed also lets YouTube set cookies before anyone clicks.
@@ -178,7 +303,8 @@ BODY = """
     <p class="sub">None of this is my own copy. Every quote below is from the publication named,
       and every link on this page was opened and read in a browser on 21 September 2026 before it was
       allowed to stay. Where a paper has taken its archive offline, the quote stands without a link, or
-      points at the Internet Archive&rsquo;s permanent capture &mdash; never at nothing.</p>
+      points at the Internet Archive&rsquo;s permanent capture &mdash; never at nothing.
+      The letters below are scans of the originals: open any of them and read the whole page.</p>
   </div>
 </section>
 
@@ -193,11 +319,23 @@ __PRESS__
 
 <section class="course" style="background:var(--paper)">
   <div class="wrap">
-    <h2>Letters, citations and awards</h2>
-    <p class="muted" style="max-width:70ch;margin:.4rem 0 0">These are not newspaper articles. They
-      are written by the institutions themselves and are held in my file.</p>
-    <div class="grid cols-2" style="margin-top:20px;gap:18px;align-items:start">
-__ENDORSEMENTS__
+    <h2>What conductors and university faculty have written about me</h2>
+    <p class="sub" style="max-width:72ch">These are not quotes I typed out. Each one is a letter on
+      the institution&rsquo;s own letterhead, signed. <b>Click any letter to read the whole thing.</b>
+      The only marks on them are gray rectangles where a private home address or a direct phone
+      number used to be &mdash; mine and theirs. Nothing else has been touched.</p>
+    <div class="grid cols-2" style="margin-top:22px;gap:20px;align-items:start">
+__LETTERS__
+    </div>
+  </div>
+</section>
+
+<section class="course">
+  <div class="wrap">
+    <h2>Awards and certificates</h2>
+    <p class="sub" style="max-width:72ch">The documents themselves, not a list.</p>
+    <div class="grid cols-2" style="margin-top:22px;gap:20px;align-items:start">
+__CERTIFICATES__
     </div>
   </div>
 </section>
@@ -285,6 +423,15 @@ __PLAYING__
           Turkey.</p>
       </div>
       <div class="card">
+        <h3>Also on file</h3>
+        <p class="muted" style="margin:.4rem 0 0">Southern Utah University, on a letter in my file:
+          <i>&ldquo;With a career that began with international acclaim at a young age and has
+          continued to be successful &hellip; a mature, highly experienced performing artist, [she]
+          is an individual that can render the sincere emotion and deep feelings of the
+          composers.&rdquo;</i></p>
+      </div>
+
+      <div class="card">
         <h3>Teaching and recognition</h3>
         <ul class="muted" style="padding-left:18px;margin:.4rem 0 0;line-height:1.7">
           <li>University faculty &mdash; College of Southern Nevada and Southern Utah University</li>
@@ -293,6 +440,8 @@ __PLAYING__
             was on how children who learn differently are taught. I do not teach in my first
             language by accident; I studied how to do it.</li>
           <li>My own students have placed in the Silver State and Legacy competitions, 2016&ndash;2019</li>
+          <li>My students have taken <b>Distinctions</b> in ABRSM examinations and played at the
+            ABRSM High Scorers&rsquo; Concert in 2025 and again in 2026 &mdash; the letters are above</li>
           <li>I prepare students for <b>ABRSM</b> (levels 1&ndash;8 and the ARSM, LRSM and FRSM diplomas),
             <b>Trinity College London</b>, the <b>Royal Conservatory of Music</b>, <b>London College of
             Music</b> and the <b>AMEB</b>, and for conservatory entrance examinations</li>
@@ -342,7 +491,8 @@ def main():
         t = t.replace(k, k.replace("free-course.html", "press.html"))
 
     body = (BODY.replace("__PRESS__", "\n".join(card(*p) for p in PRESS))
-                .replace("__ENDORSEMENTS__", "\n".join(endorsement(*e) for e in ENDORSEMENTS))
+                .replace("__LETTERS__", "\n".join(letter(*l) for l in LETTERS))
+                .replace("__CERTIFICATES__", "\n".join(certificate(*c) for c in CERTIFICATES))
                 .replace("__TEACHING__", "\n".join(clip(*c) for c in TEACHING))
                 .replace("__PLAYING__", "\n".join(clip(*c) for c in PLAYING))
                 .replace("__BROADCASTS__", "\n".join(
