@@ -28,7 +28,7 @@ import pathlib, re, sys
 
 # The day every external link on this page was last opened in a real browser.
 # The daily check reads this and complains when it goes stale.
-LINKS_VERIFIED = "2026-09-21"
+LINKS_VERIFIED = "2026-09-21"  # 9 press links + 11 video links, all opened 2026-09-21
 
 HERE = pathlib.Path(__file__).resolve().parent
 SHELL = HERE / "free-course.html"
@@ -110,6 +110,48 @@ BROADCASTS = [
 ]
 
 
+# Every id below was resolved through YouTube's oEmbed endpoint on 2026-09-21 and came
+# back with a real title. All of them live on the LAS VEGAS PIANO SCHOOL channel - that
+# is where she published them years ago, and it is stated on the page rather than hidden.
+TEACHING = [
+ ("rBFtvaVzHao", "Masterclass &mdash; Southern Utah University"),
+ ("dYG3BpAfvg0", "Masterclass &mdash; Southern Utah University"),
+ ("wTivVH7kgW4", "Masterclass &mdash; College of Southern Nevada"),
+ ("6XSnGz8EJ3E", "Masterclass &mdash; Dixie State University"),
+ ("7oCPAmZ7ZNw", "Group music theory class &mdash; University of Nevada, Las Vegas"),
+]
+PLAYING = [
+ ("-qdfCD3HkDM", "Grieg &mdash; Piano Concerto in A minor, with the UNLV Symphony Orchestra"),
+ ("nHnkxR2ZVWY", "Mozart &mdash; Piano Concerto No. 21, K. 467, with orchestra"),
+ ("EgFVoXjRwBc", "Beethoven &mdash; Choral Fantasy, Op. 80, with orchestra and chorus"),
+ ("bUlj5NvPVlw", "Solo recital &mdash; Bach, Beethoven, Brahms, Chopin, Scriabin"),
+ ("ZwyCmQZjgSQ", "Solo recital &mdash; Bach, Mozart, Schumann, Liszt, Prokofiev, Gershwin"),
+ ("BBZP-fcnki0", "Chamber recital &mdash; Mozart, Mendelssohn and Shostakovich piano trios"),
+]
+
+
+def clip(vid, label):
+    """A still with a play badge, not an embed: eleven autoplay-capable iframes would make
+    the page crawl, and an embed also lets YouTube set cookies before anyone clicks.
+    hqdefault is 4:3 with black bars, so the box is 16:9 and the image is cropped to it.
+    A thumbnail that fails to load leaves a dark box, not a broken-image icon."""
+    return (
+      f'      <a class="card" style="text-decoration:none;display:block;padding:0;overflow:hidden" '
+      f'href="https://www.youtube.com/watch?v={vid}" target="_blank" rel="noopener">'
+      f'<span style="display:block;position:relative;aspect-ratio:16/9;background:#14213d">'
+      f'<img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" alt="" loading="lazy" '
+      f'style="display:block;width:100%;height:100%;object-fit:cover">'
+      f'<span aria-hidden="true" style="position:absolute;inset:0;display:flex;align-items:center;'
+      f'justify-content:center"><span style="width:54px;height:54px;border-radius:50%;'
+      f'background:rgba(20,33,61,.78);border:2px solid rgba(255,255,255,.9);display:flex;'
+      f'align-items:center;justify-content:center"><span style="display:block;width:0;height:0;'
+      f'margin-left:4px;border-left:15px solid #fff;border-top:9px solid transparent;'
+      f'border-bottom:9px solid transparent"></span></span></span></span>'
+      f'<span style="display:block;padding:12px 14px;font-size:.93rem">{label}'
+      f'<br><span class="muted" style="font-size:.86rem">Watch on YouTube &rarr;</span></span></a>')
+
+
+
 def card(pub, year, url, quote, note, linklabel=None):
     head = f"<b>{pub}</b>" + (f' <span class="muted">&middot; {year}</span>' if year else "")
     body = f'<p style="margin:0 0 10px">{quote}</p>' if quote else ""
@@ -171,22 +213,86 @@ __BROADCASTS__
 
 <section class="course">
   <div class="wrap">
+    <h2>Watch me teach</h2>
+    <p class="sub" style="max-width:70ch">Anyone can describe their own playing. These are recordings
+      of me doing the work &mdash; masterclasses at three universities and a theory class, filmed by
+      the schools themselves.</p>
+    <div class="grid cols-3" style="margin-top:20px;gap:18px;align-items:start">
+__TEACHING__
+    </div>
+
+    <h2 style="margin-top:44px">And hear me play</h2>
+    <p class="sub" style="max-width:70ch">Concertos with orchestra, solo recitals and chamber music.
+      These recordings live on my Las Vegas Piano School channel, where I first published them.</p>
+    <div class="grid cols-3" style="margin-top:20px;gap:18px;align-items:start">
+__PLAYING__
+    </div>
+  </div>
+</section>
+
+<section class="course">
+  <div class="wrap">
     <h2>Prizes, awards and teaching</h2>
     <div class="grid cols-2" style="margin-top:20px;gap:18px;align-items:start">
       <div class="card">
-        <h3>International competitions</h3>
+        <h3>Competitions won</h3>
         <ul class="muted" style="padding-left:18px;margin:.4rem 0 0;line-height:1.7">
-          <li>2nd Prize &mdash; International Piano Competition in Memory of <b>Sviatoslav Richter</b>, Paris</li>
-          <li>2nd Prize &mdash; <b>Fr&eacute;d&eacute;ric Chopin</b> International Competition, Rome</li>
-          <li><b>First International Tchaikovsky Youth Competition</b>, Moscow</li>
-          <li>Winner &mdash; Reno Chamber Orchestra College Concerto Competition</li>
-          <li>Winner &mdash; UNLV Concerto Competition</li>
+          <li>2nd Prize &mdash; International Piano Competition in Memory of <b>Sviatoslav Richter</b>,
+            Paris, 1997</li>
+          <li>2nd Prize &mdash; <b>Fr&eacute;d&eacute;ric Chopin</b> International Competition,
+            Rome, 1996</li>
+          <li><b>First International Tchaikovsky Youth Competition</b>, Moscow, 1992 &mdash; aged twelve</li>
+          <li><b>New Names</b> Charitable Foundation, Moscow, 1992</li>
+          <li>Winner &mdash; Reno Chamber Orchestra Concerto Competition, 2010</li>
+          <li>Winner &mdash; UNLV Concerto Competition, 2012</li>
+          <li>Grand Prix &mdash; Irkutsk Regional Piano Competition, 1990; Governor of the Irkutsk
+            Region Award, 1990</li>
         </ul>
+      </div>
+
+      <div class="card">
+        <h3>Invited to judge</h3>
+        <p class="muted" style="margin:.4rem 0 0">Sitting on a jury is the profession&rsquo;s own test
+          of a teacher: you are asked because other teachers trust your ear.</p>
+        <ul class="muted" style="padding-left:18px;margin:.4rem 0 0;line-height:1.7">
+          <li>Northern Nevada Music Teachers Association Reno Piano Festival, 2019</li>
+          <li>Irkutsk Regional Piano Competition &mdash; 2010, 2012, 2016</li>
+          <li>College of Southern Nevada Piano Concerto Competition, 2012</li>
+          <li>National Federation of Music Clubs, 2009</li>
+          <li>Silver State Competition, 2007</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Masterclasses given</h3>
+        <ul class="muted" style="padding-left:18px;margin:.4rem 0 0;line-height:1.7">
+          <li>Southern Utah University &mdash; 2012, 2013</li>
+          <li>Dixie State University, Utah &mdash; 2013</li>
+          <li>College of Southern Nevada &mdash; 2012</li>
+          <li>Irkutsk College of Music &mdash; 2014, 2015, 2016</li>
+          <li>Angarsk School of Music &mdash; 1997&ndash;2017</li>
+          <li>Moscow schools of music &mdash; 1995&ndash;2005</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Stages played</h3>
+        <p class="muted" style="margin:.4rem 0 0;line-height:1.7">The Royal Academy of Music, London
+          &middot; the University of Oxford &middot; the Paris Conservatory &middot; the Santa Cecilia
+          Conservatory, Rome &middot; the Benedetto Marcello Conservatory, Venice &middot; the Moscow
+          State Conservatory &middot; The Smith Center, Las Vegas &middot; the Irkutsk, Krasnoyarsk,
+          Novosibirsk, Kharkov and Zaporozhye philharmonics &middot; Bangkok &middot; Pamukkale,
+          Turkey.</p>
       </div>
       <div class="card">
         <h3>Teaching and recognition</h3>
         <ul class="muted" style="padding-left:18px;margin:.4rem 0 0;line-height:1.7">
           <li>University faculty &mdash; College of Southern Nevada and Southern Utah University</li>
+          <li><b>D.M.A. in Piano Performance</b>, University of Nevada Las Vegas &mdash; and a second
+            doctorate, a <b>Ph.D. in Linguistics and English-language teaching</b>, whose dissertation
+            was on how children who learn differently are taught. I do not teach in my first
+            language by accident; I studied how to do it.</li>
+          <li>My own students have placed in the Silver State and Legacy competitions, 2016&ndash;2019</li>
           <li>I prepare students for <b>ABRSM</b> (levels 1&ndash;8 and the ARSM, LRSM and FRSM diplomas),
             <b>Trinity College London</b>, the <b>Royal Conservatory of Music</b>, <b>London College of
             Music</b> and the <b>AMEB</b>, and for conservatory entrance examinations</li>
@@ -237,6 +343,8 @@ def main():
 
     body = (BODY.replace("__PRESS__", "\n".join(card(*p) for p in PRESS))
                 .replace("__ENDORSEMENTS__", "\n".join(endorsement(*e) for e in ENDORSEMENTS))
+                .replace("__TEACHING__", "\n".join(clip(*c) for c in TEACHING))
+                .replace("__PLAYING__", "\n".join(clip(*c) for c in PLAYING))
                 .replace("__BROADCASTS__", "\n".join(
                     f'      <div class="card"><p style="margin:0 0 6px"><b>{n}</b></p>'
                     f'<p class="muted" style="margin:0;font-size:.93rem">{d}</p></div>'
