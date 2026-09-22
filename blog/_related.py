@@ -18,6 +18,18 @@ HERE = pathlib.Path(__file__).resolve().parent
 QUEUE = HERE / "_queue"
 
 RELATED = {
+ # --- added 2026-09-22: the December queue ---
+ "what-sharps-and-flats-actually-do": ["why-you-still-cannot-read-music-fluently", "how-to-read-the-grand-staff", "what-the-treble-clef-means"],
+ "why-chord-changes-feel-impossible": ["why-your-hands-will-not-do-two-things-at-once", "how-to-practice-a-piece-you-cannot-play-yet", "why-piano-fingering-numbers-matter"],
+ "what-the-metronome-is-actually-for": ["why-count-out-loud-piano", "what-the-time-signature-tells-you", "how-to-practice-piano-a-method-not-more-minutes"],
+ "how-to-memorize-a-piece-of-music": ["how-to-practice-a-piece-you-cannot-play-yet", "playing-piano-for-other-people", "choosing-your-first-piano-piece"],
+ "why-you-stop-every-time-you-make-a-mistake": ["how-to-practice-a-piece-you-cannot-play-yet", "playing-piano-for-other-people", "how-to-practice-piano-a-method-not-more-minutes"],
+ "easy-christmas-carols-for-adult-beginners": ["choosing-your-first-piano-piece", "how-to-make-the-melody-sing", "practicing-piano-over-the-holidays"],
+ "how-to-tell-if-you-are-actually-improving": ["piano-plateau-month-four", "how-long-to-learn-piano-adult", "why-adult-beginners-quit-piano"],
+ "what-a-piano-teacher-hears-that-you-do-not": ["right-notes-still-sounds-wrong", "what-playing-musically-actually-means", "how-to-choose-a-piano-teacher"],
+ "you-got-a-keyboard-now-what": ["what-piano-or-keyboard-should-i-buy-to-start", "piano-bench-height-posture", "how-many-keys-do-i-need-piano"],
+ "piano-goals-for-the-new-year-that-you-will-keep": ["how-long-to-learn-piano-adult", "practicing-piano-when-you-have-no-time", "why-adult-beginners-quit-piano"],
+ "what-the-first-year-of-piano-actually-looks-like": ["how-long-to-learn-piano-adult", "piano-plateau-month-four", "run-your-own-piano-lesson"],
  # --- added 2026-09-21: the November queue and the two December articles ---
  "why-your-hands-will-not-do-two-things-at-once": ["how-to-practice-a-piece-you-cannot-play-yet", "why-count-out-loud-piano", "the-left-hand-is-not-the-weak-hand"],
  "why-you-still-cannot-read-music-fluently": ["how-to-read-the-grand-staff", "reading-music-or-playing-by-ear", "why-piano-fingering-numbers-matter"],
