@@ -101,7 +101,7 @@
     <div class="card center">
       <div style="font-size:2rem"></div>
       <h3>1 · Record</h3>
-      <p class="muted">Play the exercise or song from <b>any lesson (1–41)</b> of the free course. A simple phone recording is perfect — <b>audio alone is enough</b>. Want feedback on your hand position too? Film <b>just your hands</b> on the keys. Your face is never required.</p>
+      <p class="muted">Play the exercise or song from <b>any lesson (1–41)</b> of the free course. A simple phone recording is perfect — <b>audio alone is enough</b>. One request: <b>just play — please don't count aloud or talk while recording</b>. I listen to every sound, and a voice over the notes hides them. Anything you want to tell me goes in the note box. Want feedback on your hand position too? Film <b>just your hands</b> on the keys. Your face is never required.</p>
     </div>
     <div class="card center">
       <div style="font-size:2rem"></div>
@@ -111,7 +111,7 @@
     <div class="card center">
       <div style="font-size:2rem"></div>
       <h3>3 · Get feedback</h3>
-      <p class="muted">Within about 48 hours you'll receive detailed feedback in your inbox: what's already working, the one thing to fix first, and exactly how to practice it — my method, from my lessons.</p>
+      <p class="muted">Within about 48 hours you'll receive detailed feedback in your inbox: what's already working, what to fix first, and exactly how to practice it — my method, from my lessons.</p>
     </div>
   </div>
 </section>
@@ -169,6 +169,7 @@
           <option value="41">Lesson 41 — Arpeggiated Chords + O Sole Mio</option>
         </select>
         <input type="text" id="uf-note" placeholder="What felt difficult? (optional)" aria-label="What felt difficult" style="width:100%;margin-bottom:10px;padding:11px 14px;border-radius:10px;border:1px solid rgba(193,154,75,.5)">
+        <p style="color:#d7dbe8;font-size:.85rem;margin:0 0 6px">Just play — no counting aloud or talking during the recording.</p>
         <input type="file" id="uf-file" accept="audio/*,video/*" required aria-label="Your recording" style="width:100%;margin-bottom:10px;color:#d7dbe8">
         <label style="display:block;color:#d7dbe8;font-size:.85rem;margin-bottom:12px"><input type="checkbox" id="uf-consent" required> I agree to receive my feedback and piano tips by email.</label>
         <p style="text-align:center"><button class="btn" type="submit" id="uf-btn">Send my playing →</button></p>
@@ -269,6 +270,8 @@
   document.getElementById("submit-email-note").textContent = "Or write directly to " + email + " — subject: “My playing — Lesson …”";
   // Maestra Engine upload form — activates when BACKEND_URL is set in js/config.js.
   var backend = (window.OPU && window.OPU.BACKEND_URL) || "";
+  // wake the engine (it sleeps when idle) while the visitor is still reading the page
+  if (backend) { try { fetch(backend.replace(/\/$/, "") + "/health").catch(function(){}); } catch (e) {} }
   if (backend) {
     document.getElementById("upload-form").style.display = "block";
     document.getElementById("mailto-wrap").style.display = "none";

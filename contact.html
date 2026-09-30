@@ -94,7 +94,90 @@
   <div class="wrap">
     <span class="eyebrow" style="color:var(--gold)">Get in touch</span>
     <h1>Contact Dr. Maria Pisarenko</h1>
-    <p class="sub">Questions about the free course, booking 1-on-1 Zoom lessons, or anything piano — write to me directly.</p>
+    <p class="sub">Questions about the free course, booking 1-on-1 Zoom lessons, or anything piano — write to me below and the message comes straight to me.</p>
+  </div>
+</section>
+
+<section id="write" style="padding-bottom:10px">
+  <div class="wrap">
+    <style>
+      .cform{max-width:640px;margin:0 auto;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:28px 26px;box-shadow:0 6px 24px rgba(30,42,68,.06)}
+      .cform h2{margin:0 0 4px}
+      .cform .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+      @media (max-width:640px){.cform .row{grid-template-columns:1fr}.cform{padding:22px 16px}}
+      .cform label{display:block;font-weight:600;font-size:.92rem;color:var(--navy);margin:14px 0 6px}
+      .cform label span{font-weight:400;color:var(--muted)}
+      .cform input,.cform select,.cform textarea{width:100%;box-sizing:border-box;font:inherit;padding:11px 13px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+      .cform textarea{min-height:130px;resize:vertical}
+      .cform input:focus,.cform select:focus,.cform textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+      .cform .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+      .cform .actions{margin-top:20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+      .cform .msg{display:none;margin-top:14px;padding:12px 14px;border-radius:10px}
+      .cform .msg.ok{background:#eef6ee;color:#23512a}
+      .cform .msg.err{background:#fbeeee;color:#7a2323}
+    </style>
+    <form class="cform" id="contact-form" novalidate>
+      <span class="eyebrow">Write to me</span>
+      <h2>Send me a message</h2>
+      <p class="muted" style="margin:4px 0 0">It comes straight to my own inbox, and I answer every message myself.</p>
+      <div class="row">
+        <div><label for="cf-name">Your name</label><input id="cf-name" name="name" autocomplete="name"></div>
+        <div><label for="cf-email">Your email <span>(so I can reply)</span></label><input id="cf-email" name="email" type="email" autocomplete="email" required></div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="cf-need">What can I help you with?</label>
+          <select id="cf-need" name="need">
+            <option value="lessons">Private 1-on-1 lessons on Zoom</option>
+            <option value="returning">I played as a child and want to come back</option>
+            <option value="feedback">Feedback on my playing</option>
+            <option value="course">A question about the free course</option>
+            <option value="book">A question about a book</option>
+            <option value="press">Press, concerts or collaboration</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+        <div>
+          <label for="cf-level">Where are you with the piano?</label>
+          <select id="cf-level" name="level">
+            <option value="">Choose one</option>
+            <option value="never">I have never played</option>
+            <option value="child">I played as a child and stopped</option>
+            <option value="self">I have been teaching myself</option>
+            <option value="some">I have had some lessons</option>
+            <option value="advanced">I play at an advanced level</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="cf-found">How did you find me?</label>
+          <select id="cf-found" name="found_via">
+            <option value="">Choose one</option>
+            <option value="youtube">YouTube</option>
+            <option value="google">Google or another search engine</option>
+            <option value="instagram">Instagram</option>
+            <option value="facebook">Facebook</option>
+            <option value="tiktok">TikTok</option>
+            <option value="pinterest">Pinterest</option>
+            <option value="blog">An article on this site</option>
+            <option value="friend">A friend or a recommendation</option>
+            <option value="concert">A concert, or mariapisarenko.com</option>
+            <option value="other">Somewhere else</option>
+          </select>
+        </div>
+        <div><label for="cf-found-other">Where exactly? <span>(optional)</span></label><input id="cf-found-other" name="found_other" placeholder="e.g. the video on middle C"></div>
+      </div>
+      <label for="cf-message">Your message</label>
+      <textarea id="cf-message" name="message" placeholder="Tell me what you would like to play, what feels hard, and what you hope to get from lessons."></textarea>
+      <div class="hp" aria-hidden="true"><label for="cf-website">Leave this empty</label><input id="cf-website" name="website" tabindex="-1" autocomplete="off"></div>
+      <div class="actions">
+        <button class="btn" type="submit" id="cf-btn">Send my message</button>
+        <span class="muted" style="font-size:.88rem">Or email me directly: <a href="mailto:maria@onlinepianouniversity.com">maria@onlinepianouniversity.com</a></span>
+      </div>
+      <p class="msg ok" id="cf-ok">Thank you. Your message is on its way to me, and I read and answer every one myself.</p>
+      <p class="msg err" id="cf-err"></p>
+    </form>
   </div>
 </section>
 
@@ -213,5 +296,47 @@
 
 <script src="js/config.js"></script>
 <script src="js/site.js"></script>
+<script>
+(function(){
+  var f=document.getElementById("contact-form"); if(!f) return;
+  var backend=(window.OPU&&window.OPU.BACKEND_URL)||"";
+  // the engine sleeps when idle; wake it while the visitor is still typing
+  if(backend){ try{ fetch(backend.replace(/\/$/,"")+"/health",{mode:"cors"}).catch(function(){}); }catch(e){} }
+  var MAIL="maria@onlinepianouniversity.com";
+  function val(id){var e=document.getElementById(id);return e?e.value.trim():"";}
+  function label(id){var e=document.getElementById(id);return e&&e.selectedIndex>=0?e.options[e.selectedIndex].text:"";}
+  function mailto(){
+    var body="Name: "+val("cf-name")+"\nWhat I need: "+label("cf-need")+"\nWhere I am with the piano: "+label("cf-level")+
+      "\nHow I found you: "+label("cf-found")+(val("cf-found-other")?" - "+val("cf-found-other"):"")+"\n\n"+val("cf-message");
+    return "mailto:"+MAIL+"?subject="+encodeURIComponent("Website: "+label("cf-need"))+"&body="+encodeURIComponent(body);
+  }
+  f.addEventListener("submit",function(ev){
+    ev.preventDefault();
+    var err=document.getElementById("cf-err"), ok=document.getElementById("cf-ok"), btn=document.getElementById("cf-btn");
+    err.style.display="none";
+    var em=val("cf-email");
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){err.textContent="Please enter your email so I can reply.";err.style.display="block";return;}
+    if(!backend){window.location.href=mailto();return;}
+    btn.disabled=true; btn.textContent="Sending…";
+    var fd=new FormData(f);
+    var ctl=window.AbortController?new AbortController():null;
+    var t=setTimeout(function(){ if(ctl) ctl.abort(); },75000);
+    fetch(backend.replace(/\/$/,"")+"/contact",{method:"POST",body:fd,signal:ctl?ctl.signal:undefined})
+      .then(function(r){return r.json();})
+      .then(function(d){
+        clearTimeout(t);
+        if(d&&d.ok){ f.querySelectorAll("input,select,textarea,button").forEach(function(x){x.disabled=true;}); ok.style.display="block";
+          if(window.gtag) gtag("event","contact_form_sent",{need:val("cf-need"),found_via:val("cf-found")}); }
+        else { throw new Error((d&&d.error)||"failed"); }
+      })
+      .catch(function(e){
+        clearTimeout(t); btn.disabled=false; btn.textContent="Send my message";
+        err.innerHTML="The form could not send just now. <a href=\""+mailto()+"\">Click here to send the same message by email</a> - everything you wrote is already in it.";
+        err.style.display="block";
+      });
+  });
+})();
+</script>
+
 </body>
 </html>
