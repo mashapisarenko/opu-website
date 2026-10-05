@@ -28,7 +28,7 @@ import pathlib, re, sys
 
 # The day every external link on this page was last opened in a real browser.
 # The daily check reads this and complains when it goes stale.
-LINKS_VERIFIED = "2026-09-21"  # 9 press links + 11 video links, all opened 2026-09-21
+LINKS_VERIFIED = "2026-10-05"  # 9 press links + 11 video links, all opened 2026-09-21
 
 HERE = pathlib.Path(__file__).resolve().parent
 SHELL = HERE / "free-course.html"
