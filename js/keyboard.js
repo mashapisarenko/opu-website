@@ -44,21 +44,57 @@
   };
 
   // ---------- audio engine ----------
+  // 2026-10-05 - why the keys lit up with no sound (her report):
+  //  1. On phones and tablets a TOUCH pointerdown is not a "user activation" for the
+  //     browser, so the AudioContext created there stayed suspended - keys lit, silence.
+  //     Fix: unlock on every gesture type (pointerdown, pointerup, touchend, click,
+  //     keydown), and when a note arrives while the context is still waking up, play it
+  //     the moment resume() resolves instead of scheduling it into a frozen clock.
+  //  2. On iPhone/iPad, Web Audio is muted by the ring/silent switch. Fix: ask for the
+  //     "playback" audio session (Safari 16.4+) and, for older iOS, start a silent
+  //     looping <audio> element on the first gesture, which moves the page into the
+  //     playback category so the piano is heard even with the switch on silent.
+  var SILENT_WAV = "data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA";
   var Audio = {
     ctx: null,
+    unlocked: false,
     ensure: function () {
       if (!this.ctx) {
         var AC = window.AudioContext || window.webkitAudioContext;
         if (!AC) return null;
+        try { if (navigator.audioSession) navigator.audioSession.type = "playback"; } catch (e) {}
         this.ctx = new AC();
       }
-      if (this.ctx.state === "suspended") this.ctx.resume();
+      if (this.ctx.state !== "running") { try { this.ctx.resume(); } catch (e) {} }
       return this.ctx;
+    },
+    unlock: function () {
+      var ctx = Audio.ensure();
+      if (!ctx || Audio.unlocked) return;
+      try {
+        var b = ctx.createBuffer(1, 1, 22050), s = ctx.createBufferSource();
+        s.buffer = b; s.connect(ctx.destination); s.start(0);
+      } catch (e) {}
+      try {
+        var el = document.createElement("audio");
+        el.src = SILENT_WAV; el.loop = true; el.setAttribute("playsinline", "");
+        el.volume = 0.01;
+        var pr = el.play(); if (pr && pr.catch) pr.catch(function () {});
+      } catch (e) {}
+      if (ctx.state === "running") Audio.unlocked = true;
     },
     freq: function (midi) { return 440 * Math.pow(2, (midi - 69) / 12); },
     play: function (midi, vel) {
       var ctx = this.ensure();
       if (!ctx) return;
+      if (ctx.state !== "running") {
+        var self = this;
+        ctx.resume().then(function () { self._play(ctx, midi, vel); }, function () {});
+        return;
+      }
+      this._play(ctx, midi, vel);
+    },
+    _play: function (ctx, midi, vel) {
       vel = vel || 0.9;
       var t = ctx.currentTime;
       var f = this.freq(midi);
@@ -178,6 +214,11 @@
     var mount = document.getElementById("opu-keyboard");
     if (!mount) return;
     var kb = build(mount);
+    window.OPUKeyboardAudio = Audio;   // lets a test read Audio.ctx.state
+
+    ["pointerdown", "pointerup", "touchend", "click", "keydown"].forEach(function (ev) {
+      window.addEventListener(ev, Audio.unlock, { capture: true, passive: true });
+    });
 
     // pointer (mouse + touch + glissando)
     var pointerDown = false, lastKey = null;
