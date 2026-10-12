@@ -1,290 +1,386 @@
 [
-  {
-    "slug": "how-many-keys-do-i-need-piano",
-    "date": "2026-10-12",
-    "title": "61, 76 or 88 Keys: What You Can and Cannot Play on Each",
-    "summary": "A straight answer about key counts &mdash; what runs out, when it runs out, and the question that matters considerably more than this one."
-  },
-  {
-    "slug": "reading-music-or-playing-by-ear",
-    "date": "2026-10-14",
-    "title": "Reading Music or Playing by Ear: Which Should an Adult Learn First?",
-    "summary": "Adults are told to pick a side. Both camps are describing something real &mdash; and for a beginner the answer is far less dramatic than the argument."
-  },
-  {
-    "slug": "right-notes-still-sounds-wrong",
-    "date": "2026-10-16",
-    "title": "You Can Play All the Right Notes and It Still Sounds Wrong",
-    "summary": "You have the notes. You have the rhythm. And it still does not sound like music. This is the most common thing adults describe to me, and it has a specific cause."
-  },
-  {
-    "slug": "learning-piano-after-70",
-    "date": "2026-10-19",
-    "title": "Learning Piano After 70: What Changes, What Does Not",
-    "summary": "Some things really are different, and pretending otherwise helps nobody. Most of the important ones are not, and that is the part people are not told."
-  },
-  {
-    "slug": "piano-plateau-month-four",
-    "date": "2026-10-21",
-    "title": "The Plateau: Why Month Four Feels Like Going Backwards",
-    "summary": "It arrives at around the same time for almost everyone, it feels like proof that you have no talent, and it is in fact a specific and well-understood thing."
-  },
-  {
-    "slug": "playing-piano-for-other-people",
-    "date": "2026-10-23",
-    "title": "Why You Freeze When Someone Listens",
-    "summary": "You have played it forty times alone and it was fine. Someone walks into the room and your hands are suddenly not yours. There are reasons, and there are things that work."
-  },
-  {
-    "slug": "run-your-own-piano-lesson",
-    "date": "2026-10-26",
-    "title": "How to Run Your Own Piano Lesson When You Do Not Have a Teacher",
-    "summary": "Most of what a teacher does in an hour, you can do for yourself once you know what the hour is supposed to contain. One part you cannot, and it is worth knowing which."
-  },
-  {
-    "slug": "adults-learn-piano-differently",
-    "date": "2026-10-28",
-    "title": "Adults Learn Piano Differently From Children &mdash; and Mostly Better",
-    "summary": "The comparison is always made in one direction. Having taught both for years, I think the balance is considerably more even than adults are told."
-  },
-  {
-    "slug": "practicing-piano-in-an-apartment",
-    "date": "2026-10-30",
-    "title": "How to Practice Piano in an Apartment Without Annoying Anyone",
-    "summary": "A surprising share of adults stop playing for a reason that has nothing to do with the piano: they are worried about being heard."
-  },
-  {
-    "slug": "choosing-your-first-piano-piece",
-    "date": "2026-11-02",
-    "title": "How to Choose a Piece You Will Actually Finish",
-    "summary": "The piece you choose decides more about whether you keep playing than how much you practice does."
-  },
-  {
-    "slug": "why-your-hands-will-not-do-two-things-at-once",
-    "date": "2026-11-04",
-    "title": "Why Your Hands Will Not Do Two Different Things at Once",
-    "summary": "Every pianist starts with the hands coupled. What separates a player who can do it from one who cannot is not the brain they were born with — it is a specific kind of practice."
-  },
-  {
-    "slug": "why-you-still-cannot-read-music-fluently",
-    "date": "2026-11-06",
-    "title": "Why You Still Cannot Read Music Fluently — and What Actually Fixes It",
-    "summary": "Naming notes and reading music are two different skills. Months of practice at the first one will not produce the second, and almost nobody is told the difference."
-  },
-  {
-    "slug": "why-piano-fingering-numbers-matter",
-    "date": "2026-11-09",
-    "title": "Those Little Numbers Above the Notes Are Not Suggestions",
-    "summary": "A fingering is a plan for the whole phrase, not a preference about one note. Ignoring it is what puts a permanent stumble in the middle of a piece that is not actually difficult."
-  },
-  {
-    "slug": "when-should-you-start-using-the-piano-pedal",
-    "date": "2026-11-11",
-    "title": "When Should You Start Using the Pedal? And How to Stop It Sounding Like Mud",
-    "summary": "The pedal is not a sustain button. It is a second instrument played with your foot, and it has its own technique — starting with the fact that the foot moves after the hand, never with it."
-  },
-  {
-    "slug": "why-count-out-loud-piano",
-    "date": "2026-11-13",
-    "title": "Counting Out Loud Feels Childish. Do It Anyway.",
-    "summary": "Nobody hears you. And the thing counting fixes is the thing a listener notices first — long before they notice a wrong note."
-  },
-  {
-    "slug": "what-playing-musically-actually-means",
-    "date": "2026-11-16",
-    "title": "\"Play It Musically\" — What That Actually Means, in Practical Terms",
-    "summary": "Your ear already knows what beautiful sounds like. The gap is not taste — it is that nobody has told you which physical movements produce it."
-  },
-  {
-    "slug": "the-left-hand-is-not-the-weak-hand",
-    "date": "2026-11-18",
-    "title": "The Left Hand Is Not the Weak Hand",
-    "summary": "You have spent forty years doing fine work with one hand and carrying things with the other. That is training history, not anatomy, and it can be corrected on purpose."
-  },
-  {
-    "slug": "how-to-read-the-grand-staff",
-    "date": "2026-11-20",
-    "title": "Two Staves, One Instrument: How to Read the Grand Staff Without Getting Lost",
-    "summary": "The two staves are not two pieces of music side by side. They are one keyboard, cut in half at middle C, and reading them is a skill with its own practice."
-  },
-  {
-    "slug": "what-the-time-signature-tells-you",
-    "date": "2026-11-23",
-    "title": "What the Time Signature Is Actually Telling You",
-    "summary": "It is not a fraction and it is not decoration. It tells you how to count, and counting is what holds playing together."
-  },
-  {
-    "slug": "practicing-piano-over-the-holidays",
-    "date": "2026-11-25",
-    "title": "How to Keep Playing Through a Week When Nothing Is Normal",
-    "summary": "The adults who lose months are almost never the ones who missed four days. They are the ones who decided that missing four days meant they had stopped."
-  },
-  {
-    "slug": "should-adults-learn-scales",
-    "date": "2026-11-27",
-    "title": "Should You Learn Scales? Yes — but Not for the Reason You Were Told",
-    "summary": "Not discipline, not finger strength, not because they are good for you. There are three specific things a scale teaches that pieces do not teach efficiently."
-  },
-  {
-    "slug": "how-to-make-the-melody-sing",
-    "date": "2026-11-30",
-    "title": "Two Notes at Once: How to Make the Top One Sing",
-    "summary": "This is the difference between a chord that sounds like a block and a chord that sounds like music with a melody on top of it."
-  },
-  {
-    "slug": "what-piano-or-keyboard-should-i-buy-to-start",
-    "date": "2026-12-02",
-    "title": "What Piano or Keyboard Should You Buy to Start? What Actually Matters",
-    "summary": "One requirement is structural and everything else is preference. Adults put off starting for months over a decision that is simpler than the listings make it look."
-  },
-  {
-    "slug": "how-to-practice-a-piece-you-cannot-play-yet",
-    "date": "2026-12-04",
-    "title": "How to Practice a Piece You Cannot Play Yet",
-    "summary": "Playing and practicing are two different activities. Nobody tells you the difference when you learn alone, and it is the reason an hour of work leaves the difficult passage exactly as difficult."
-  },
-  {
-    "slug": "what-sharps-and-flats-actually-do",
-    "date": "2026-12-07",
-    "title": "What Sharps and Flats Actually Do (and Why One Key Has Two Names)",
-    "summary": "The rule takes ten seconds to learn. What nobody tells adult beginners is how long a sharp stays in force, and why F sharp and G flat are the same key with two names."
-  },
-  {
-    "slug": "why-chord-changes-feel-impossible",
-    "date": "2026-12-09",
-    "title": "Why Chord Changes Feel Impossible &mdash; and the Practice That Fixes Them",
-    "summary": "The problem is almost never speed. It is that you are moving five fingers when the music only asked you to move one."
-  },
-  {
-    "slug": "what-the-metronome-is-actually-for",
-    "date": "2026-12-11",
-    "title": "What a Metronome Is Actually For (It Is Not Making You Play Faster)",
-    "summary": "A metronome does not make you play faster. It shows you where your playing is uneven &mdash; which is uncomfortable, and is exactly the information you need."
-  },
-  {
-    "slug": "how-to-memorize-a-piece-of-music",
-    "date": "2026-12-14",
-    "title": "How to Memorize a Piece of Music: The Four Kinds of Memory",
-    "summary": "If your hands know a piece but you cannot start it from the middle, you have one kind of memory and you need four."
-  },
-  {
-    "slug": "why-you-stop-every-time-you-make-a-mistake",
-    "date": "2026-12-16",
-    "title": "Why You Stop Every Time You Make a Mistake (and How to Stop Stopping)",
-    "summary": "Nobody decides to do this. It happens by itself, it feels responsible, and it quietly builds a piece that has a perfect opening and no ending."
-  },
-  {
-    "slug": "easy-christmas-carols-for-adult-beginners",
-    "date": "2026-12-18",
-    "title": "Easy Christmas Carols for Adult Beginners (and How to Make Them Sound Finished)",
-    "summary": "You do not need more notes to sound better. You need the notes you have to be shaped &mdash; and carols are the easiest place to learn how."
-  },
-  {
-    "slug": "how-to-tell-if-you-are-actually-improving",
-    "date": "2026-12-21",
-    "title": "How to Tell If You Are Actually Improving at the Piano",
-    "summary": "The things that improve first are not the things you are watching. That is why so many adults conclude they are stuck a month before it shows."
-  },
-  {
-    "slug": "what-a-piano-teacher-hears-that-you-do-not",
-    "date": "2026-12-23",
-    "title": "What a Piano Teacher Hears in Your Playing That You Do Not",
-    "summary": "Adults learning alone check for wrong notes, because wrong notes are the only fault they have a name for. A teacher is listening to something else entirely."
-  },
-  {
-    "slug": "you-got-a-keyboard-now-what",
-    "date": "2026-12-25",
-    "title": "You Got a Keyboard for Christmas. Now What?",
-    "summary": "The first week decides whether the instrument becomes a habit or a piece of furniture. Almost none of what matters is about the keyboard itself."
-  },
-  {
-    "slug": "piano-goals-for-the-new-year-that-you-will-keep",
-    "date": "2026-12-28",
-    "title": "Piano Goals for the New Year That You Will Actually Keep",
-    "summary": "\"Practice every day\" and \"learn Clair de Lune\" are the two commonest resolutions, and they fail in opposite ways."
-  },
-  {
-    "slug": "what-the-first-year-of-piano-actually-looks-like",
-    "date": "2026-12-30",
-    "title": "What the First Year of Piano Actually Looks Like",
-    "summary": "Not a promise and not a syllabus &mdash; a description, so you can tell whether what is happening to you is normal. Usually it is."
-  },
-  {
-    "slug": "practicing-on-days-you-do-not-feel-like-it",
-    "date": "2027-01-01",
-    "title": "What to Practice on a Day You Do Not Feel Like Practicing",
-    "summary": "Not a motivation lecture. One specific, small thing to do on the days when sitting down at the piano feels like too much."
-  },
-  {
-    "slug": "how-to-practice-slowly",
-    "date": "2027-01-04",
-    "title": "How to Practice Slowly Without It Becoming Meaningless",
-    "summary": "&ldquo;Practice it slowly&rdquo; is the most-repeated advice in music and the least explained. There is a right way to do it, and most adults are not doing it."
-  },
-  {
-    "slug": "piano-dynamics-markings-explained",
-    "date": "2027-01-06",
-    "title": "How Loud Is Loud? p, mf and f, Explained Practically",
-    "summary": "There is no decibel value for forte. What there is, is a relationship &mdash; and once you see it, the markings stop being guesswork."
-  },
-  {
-    "slug": "how-to-start-sight-reading",
-    "date": "2027-01-08",
-    "title": "How to Start Sight-Reading: A Method You Can Begin This Week",
-    "summary": "You do not get better at reading by learning pieces. You get better by reading things you will never learn."
-  },
-  {
-    "slug": "what-is-a-key-signature",
-    "date": "2027-01-11",
-    "title": "What Is a Key Signature, and Why Does It Change?",
-    "summary": "A key signature is a labor-saving device. Understanding what it is doing makes it far less intimidating than it looks."
-  },
-  {
-    "slug": "five-minute-piano-warm-up",
-    "date": "2027-01-13",
-    "title": "A Five-Minute Warm-Up That Is Actually Worth Doing",
-    "summary": "A warm-up is not practice and it is not an exercise. Its whole job is to get the hand and the ear ready, and that takes five minutes."
-  },
-  {
-    "slug": "finger-independence-exercises",
-    "date": "2027-01-15",
-    "title": "Finger Independence: What Helps, and What Quietly Causes Injury",
-    "summary": "Some of the best-known finger exercises in piano history have injured more hands than they have helped. The anatomy explains why."
-  },
-  {
-    "slug": "reading-ledger-lines",
-    "date": "2027-01-18",
-    "title": "Reading Ledger Lines Without Counting Every Time",
-    "summary": "Those little extra lines are not a new alphabet. Two landmarks and one habit turn them into notes you recognize."
-  },
-  {
-    "slug": "why-you-cannot-play-fast",
-    "date": "2027-01-20",
-    "title": "Why You Cannot Play Fast Yet (It Is Not Your Fingers)",
-    "summary": "Adults assume speed comes with strength or youth. It comes from efficiency of movement, and here is what is eating yours."
-  },
-  {
-    "slug": "tempo-markings-explained",
-    "date": "2027-01-22",
-    "title": "Andante, Allegro, Moderato: What Tempo Markings Actually Mean",
-    "summary": "Beginners look up Allegro, find a number, and set the metronome. That is not quite what the word is for."
-  },
-  {
-    "slug": "arpeggios-for-beginners",
-    "date": "2027-01-25",
-    "title": "Arpeggios: What They Are and Why They Feel Impossible at First",
-    "summary": "If arpeggios feel lumpy and uneven no matter how slowly you go, you are almost certainly missing one specific motion."
-  },
-  {
-    "slug": "when-to-move-on-from-a-piece",
-    "date": "2027-01-27",
-    "title": "When Should You Move On From a Piece?",
-    "summary": "You do not have to finish a piece to have learned from it. Knowing when to let one go is a skill of its own."
-  },
-  {
-    "slug": "repeat-signs-and-road-map",
-    "date": "2027-01-29",
-    "title": "Repeat Signs, D.C., Coda: How to Find Your Way Through a Piece",
-    "summary": "Da capo, dal segno, the coda sign, first and second endings &mdash; these are directions, not music, and they are simpler than they look."
-  }
+ {
+  "slug": "how-many-keys-do-i-need-piano",
+  "date": "2026-10-12",
+  "title": "61, 76 or 88 Keys: What You Can and Cannot Play on Each",
+  "summary": "A straight answer about key counts &mdash; what runs out, when it runs out, and the question that matters considerably more than this one."
+ },
+ {
+  "slug": "who-taught-the-person-teaching-you",
+  "date": "2026-10-13",
+  "title": "Who Taught the Person Teaching You? Why Piano Lineage Matters",
+  "summary": "A piano teacher's lineage shows which ideas shaped them; I lay out both branches of mine, from Liszt and from Leonid Nikolayev, and offer adults a practical way to judge any teacher."
+ },
+ {
+  "slug": "reading-music-or-playing-by-ear",
+  "date": "2026-10-14",
+  "title": "Reading Music or Playing by Ear: Which Should an Adult Learn First?",
+  "summary": "Adults are told to pick a side. Both camps are describing something real &mdash; and for a beginner the answer is far less dramatic than the argument."
+ },
+ {
+  "slug": "a-girl-from-siberia-and-the-piano",
+  "date": "2026-10-15",
+  "title": "A Girl from Siberia and the Piano: What Starting Early Means",
+  "summary": "Dr. Pisarenko recalls her Siberian childhood at the piano and explains honestly what starting early does and does not mean, and why adult beginners are not behind."
+ },
+ {
+  "slug": "right-notes-still-sounds-wrong",
+  "date": "2026-10-16",
+  "title": "You Can Play All the Right Notes and It Still Sounds Wrong",
+  "summary": "You have the notes. You have the rhythm. And it still does not sound like music. This is the most common thing adults describe to me, and it has a specific cause."
+ },
+ {
+  "slug": "the-silence-before-the-first-chord",
+  "date": "2026-10-17",
+  "title": "The Silence Before the First Chord",
+  "summary": "The pause before the first note is where the music begins. Dr. Pisarenko describes breathing, hearing the sound first, and a three-step routine that helps adults play with intention."
+ },
+ {
+  "slug": "why-i-teach-adults",
+  "date": "2026-10-18",
+  "title": "Why a Concert Pianist Teaches Adults Who Think It Is Too Late",
+  "summary": "Dr. Pisarenko explains why she, a concert pianist, teaches adults who believe it is too late, the Nikolaev method behind her lessons, and what adults do better than children."
+ },
+ {
+  "slug": "learning-piano-after-70",
+  "date": "2026-10-19",
+  "title": "Learning Piano After 70: What Changes, What Does Not",
+  "summary": "Some things really are different, and pretending otherwise helps nobody. Most of the important ones are not, and that is the part people are not told."
+ },
+ {
+  "slug": "inside-a-central-music-school-for-gifted-children",
+  "date": "2026-10-20",
+  "title": "Inside a Russian Music School for Gifted Children",
+  "summary": "Russian special music schools combine ordinary schooling with daily musical training in ear, theory and ensemble; I describe the Central Music School and what adult beginners can borrow from it."
+ },
+ {
+  "slug": "piano-plateau-month-four",
+  "date": "2026-10-21",
+  "title": "The Plateau: Why Month Four Feels Like Going Backwards",
+  "summary": "It arrives at around the same time for almost everyone, it feels like proof that you have no talent, and it is in fact a specific and well-understood thing."
+ },
+ {
+  "slug": "tatiana-nikolayeva-the-teacher-who-heard-me-play",
+  "date": "2026-10-22",
+  "title": "Tatiana Nikolayeva: The Teacher Who Heard Me Play",
+  "summary": "Dr. Pisarenko recalls playing for the pianist Tatiana Nikolayeva, whose pupil taught her, and shares practical steps for adults who dread playing for other people."
+ },
+ {
+  "slug": "playing-piano-for-other-people",
+  "date": "2026-10-23",
+  "title": "Why You Freeze When Someone Listens",
+  "summary": "You have played it forty times alone and it was fine. Someone walks into the room and your hands are suddenly not yours. There are reasons, and there are things that work."
+ },
+ {
+  "slug": "what-happens-in-a-solo-recital",
+  "date": "2026-10-24",
+  "title": "What Really Happens in a Solo Piano Recital",
+  "summary": "A solo recital is built from invisible decisions: programming, layered memory, the hall and the opening silence. Dr. Pisarenko turns them into advice for adults who play for family."
+ },
+ {
+  "slug": "the-gnessin-academy-and-the-teachers-who-shaped-me",
+  "date": "2026-10-25",
+  "title": "The Gnessin Academy and the Teachers Who Shaped Me",
+  "summary": "Dr. Pisarenko describes the Gnessin Russian Academy of Music, her teachers and masterclasses, and explains why collaborative piano trains listening and lets adults make music with others."
+ },
+ {
+  "slug": "run-your-own-piano-lesson",
+  "date": "2026-10-26",
+  "title": "How to Run Your Own Piano Lesson When You Do Not Have a Teacher",
+  "summary": "Most of what a teacher does in an hour, you can do for yourself once you know what the hour is supposed to contain. One part you cannot, and it is worth knowing which."
+ },
+ {
+  "slug": "leonid-nikolayev-the-teacher-of-yudina-and-shostakovich",
+  "date": "2026-10-27",
+  "title": "Leonid Nikolayev: The Teacher Behind Yudina and Shostakovich",
+  "summary": "Leonid Nikolayev taught Yudina, Sofronitsky and Shostakovich and wanted thinking musicians, not just pianists; this phrase shapes how I teach adult beginners to listen, reason and play."
+ },
+ {
+  "slug": "adults-learn-piano-differently",
+  "date": "2026-10-28",
+  "title": "Adults Learn Piano Differently From Children &mdash; and Mostly Better",
+  "summary": "The comparison is always made in one direction. Having taught both for years, I think the balance is considerably more even than adults are told."
+ },
+ {
+  "slug": "alexander-goldenweiser-from-liszt-to-your-piano",
+  "date": "2026-10-29",
+  "title": "Alexander Goldenweiser: From Liszt to Your Piano",
+  "summary": "How Goldenweiser, a pupil of Liszt's pupil Siloti, shaped the Russian school, and why what a tradition hands down is a way of listening that adults can learn."
+ },
+ {
+  "slug": "practicing-piano-in-an-apartment",
+  "date": "2026-10-30",
+  "title": "How to Practice Piano in an Apartment Without Annoying Anyone",
+  "summary": "A surprising share of adults stop playing for a reason that has nothing to do with the piano: they are worried about being heard."
+ },
+ {
+  "slug": "what-a-piano-competition-teaches-you",
+  "date": "2026-10-31",
+  "title": "What a Piano Competition Teaches You About Nerves",
+  "summary": "Competitions taught Dr. Pisarenko that nerves are information, preparation goes deeper than repetition, and listening beats fear. Here is how adults can use those lessons at home."
+ },
+ {
+  "slug": "maria-yudina-the-uncompromising-pianist",
+  "date": "2026-11-01",
+  "title": "Maria Yudina: The Pianist Who Would Not Compromise",
+  "summary": "Maria Yudina, pupil of Leonid Nikolayev and teacher of my teacher Yuri Vladimirovich Ponizovkin, played with conviction at real cost; her example can teach adult learners to play sincerely."
+ },
+ {
+  "slug": "choosing-your-first-piano-piece",
+  "date": "2026-11-02",
+  "title": "How to Choose a Piece You Will Actually Finish",
+  "summary": "The piece you choose decides more about whether you keep playing than how much you practice does."
+ },
+ {
+  "slug": "alexander-siloti-the-pupil-of-liszt-who-taught-rachmaninoff",
+  "date": "2026-11-03",
+  "title": "Alexander Siloti: Pupil of Liszt, Teacher of Rachmaninoff",
+  "summary": "Siloti studied with Liszt and taught Rachmaninoff and Goldenweiser; his story shows that touch and tone are inherited, and that adult habits can be gently retrained."
+ },
+ {
+  "slug": "why-your-hands-will-not-do-two-things-at-once",
+  "date": "2026-11-04",
+  "title": "Why Your Hands Will Not Do Two Different Things at Once",
+  "summary": "Every pianist starts with the hands coupled. What separates a player who can do it from one who cannot is not the brain they were born with — it is a specific kind of practice."
+ },
+ {
+  "slug": "playing-a-concerto-with-an-orchestra",
+  "date": "2026-11-05",
+  "title": "Playing a Concerto With an Orchestra: A Conversation",
+  "summary": "A concerto soloist is not the loudest voice but the listener responsible for the whole. Dr. Pisarenko explains how soloist and orchestra listen, and how adult solo players can practice it."
+ },
+ {
+  "slug": "why-you-still-cannot-read-music-fluently",
+  "date": "2026-11-06",
+  "title": "Why You Still Cannot Read Music Fluently — and What Actually Fixes It",
+  "summary": "Naming notes and reading music are two different skills. Months of practice at the first one will not produce the second, and almost nobody is told the difference."
+ },
+ {
+  "slug": "from-moscow-to-america-a-pianists-second-education",
+  "date": "2026-11-07",
+  "title": "From Moscow to America: A Pianist's Second Education",
+  "summary": "Dr. Pisarenko describes her second education in the United States, how teaching in English changed her explanations, and how adults can judge explanations of technique for clarity."
+ },
+ {
+  "slug": "rachmaninoff-and-the-adult-hand",
+  "date": "2026-11-08",
+  "title": "Rachmaninoff and the Adult Hand: Big Chords, Smaller Hands",
+  "summary": "Rachmaninoff's music looks impossible with small hands, but rolling chords, a loose arm and careful choices make it playable, and pain is always a reason to stop."
+ },
+ {
+  "slug": "why-piano-fingering-numbers-matter",
+  "date": "2026-11-09",
+  "title": "Those Little Numbers Above the Notes Are Not Suggestions",
+  "summary": "A fingering is a plan for the whole phrase, not a preference about one note. Ignoring it is what puts a permanent stumble in the middle of a piece that is not actually difficult."
+ },
+ {
+  "slug": "when-should-you-start-using-the-piano-pedal",
+  "date": "2026-11-11",
+  "title": "When Should You Start Using the Pedal? And How to Stop It Sounding Like Mud",
+  "summary": "The pedal is not a sustain button. It is a second instrument played with your foot, and it has its own technique — starting with the fact that the foot moves after the hand, never with it."
+ },
+ {
+  "slug": "why-count-out-loud-piano",
+  "date": "2026-11-13",
+  "title": "Counting Out Loud Feels Childish. Do It Anyway.",
+  "summary": "Nobody hears you. And the thing counting fixes is the thing a listener notices first — long before they notice a wrong note."
+ },
+ {
+  "slug": "what-playing-musically-actually-means",
+  "date": "2026-11-16",
+  "title": "\"Play It Musically\" — What That Actually Means, in Practical Terms",
+  "summary": "Your ear already knows what beautiful sounds like. The gap is not taste — it is that nobody has told you which physical movements produce it."
+ },
+ {
+  "slug": "the-left-hand-is-not-the-weak-hand",
+  "date": "2026-11-18",
+  "title": "The Left Hand Is Not the Weak Hand",
+  "summary": "You have spent forty years doing fine work with one hand and carrying things with the other. That is training history, not anatomy, and it can be corrected on purpose."
+ },
+ {
+  "slug": "how-to-read-the-grand-staff",
+  "date": "2026-11-20",
+  "title": "Two Staves, One Instrument: How to Read the Grand Staff Without Getting Lost",
+  "summary": "The two staves are not two pieces of music side by side. They are one keyboard, cut in half at middle C, and reading them is a skill with its own practice."
+ },
+ {
+  "slug": "what-the-time-signature-tells-you",
+  "date": "2026-11-23",
+  "title": "What the Time Signature Is Actually Telling You",
+  "summary": "It is not a fraction and it is not decoration. It tells you how to count, and counting is what holds playing together."
+ },
+ {
+  "slug": "practicing-piano-over-the-holidays",
+  "date": "2026-11-25",
+  "title": "How to Keep Playing Through a Week When Nothing Is Normal",
+  "summary": "The adults who lose months are almost never the ones who missed four days. They are the ones who decided that missing four days meant they had stopped."
+ },
+ {
+  "slug": "should-adults-learn-scales",
+  "date": "2026-11-27",
+  "title": "Should You Learn Scales? Yes — but Not for the Reason You Were Told",
+  "summary": "Not discipline, not finger strength, not because they are good for you. There are three specific things a scale teaches that pieces do not teach efficiently."
+ },
+ {
+  "slug": "how-to-make-the-melody-sing",
+  "date": "2026-11-30",
+  "title": "Two Notes at Once: How to Make the Top One Sing",
+  "summary": "This is the difference between a chord that sounds like a block and a chord that sounds like music with a melody on top of it."
+ },
+ {
+  "slug": "what-piano-or-keyboard-should-i-buy-to-start",
+  "date": "2026-12-02",
+  "title": "What Piano or Keyboard Should You Buy to Start? What Actually Matters",
+  "summary": "One requirement is structural and everything else is preference. Adults put off starting for months over a decision that is simpler than the listings make it look."
+ },
+ {
+  "slug": "how-to-practice-a-piece-you-cannot-play-yet",
+  "date": "2026-12-04",
+  "title": "How to Practice a Piece You Cannot Play Yet",
+  "summary": "Playing and practicing are two different activities. Nobody tells you the difference when you learn alone, and it is the reason an hour of work leaves the difficult passage exactly as difficult."
+ },
+ {
+  "slug": "what-sharps-and-flats-actually-do",
+  "date": "2026-12-07",
+  "title": "What Sharps and Flats Actually Do (and Why One Key Has Two Names)",
+  "summary": "The rule takes ten seconds to learn. What nobody tells adult beginners is how long a sharp stays in force, and why F sharp and G flat are the same key with two names."
+ },
+ {
+  "slug": "why-chord-changes-feel-impossible",
+  "date": "2026-12-09",
+  "title": "Why Chord Changes Feel Impossible &mdash; and the Practice That Fixes Them",
+  "summary": "The problem is almost never speed. It is that you are moving five fingers when the music only asked you to move one."
+ },
+ {
+  "slug": "what-the-metronome-is-actually-for",
+  "date": "2026-12-11",
+  "title": "What a Metronome Is Actually For (It Is Not Making You Play Faster)",
+  "summary": "A metronome does not make you play faster. It shows you where your playing is uneven &mdash; which is uncomfortable, and is exactly the information you need."
+ },
+ {
+  "slug": "how-to-memorize-a-piece-of-music",
+  "date": "2026-12-14",
+  "title": "How to Memorize a Piece of Music: The Four Kinds of Memory",
+  "summary": "If your hands know a piece but you cannot start it from the middle, you have one kind of memory and you need four."
+ },
+ {
+  "slug": "why-you-stop-every-time-you-make-a-mistake",
+  "date": "2026-12-16",
+  "title": "Why You Stop Every Time You Make a Mistake (and How to Stop Stopping)",
+  "summary": "Nobody decides to do this. It happens by itself, it feels responsible, and it quietly builds a piece that has a perfect opening and no ending."
+ },
+ {
+  "slug": "easy-christmas-carols-for-adult-beginners",
+  "date": "2026-12-18",
+  "title": "Easy Christmas Carols for Adult Beginners (and How to Make Them Sound Finished)",
+  "summary": "You do not need more notes to sound better. You need the notes you have to be shaped &mdash; and carols are the easiest place to learn how."
+ },
+ {
+  "slug": "how-to-tell-if-you-are-actually-improving",
+  "date": "2026-12-21",
+  "title": "How to Tell If You Are Actually Improving at the Piano",
+  "summary": "The things that improve first are not the things you are watching. That is why so many adults conclude they are stuck a month before it shows."
+ },
+ {
+  "slug": "what-a-piano-teacher-hears-that-you-do-not",
+  "date": "2026-12-23",
+  "title": "What a Piano Teacher Hears in Your Playing That You Do Not",
+  "summary": "Adults learning alone check for wrong notes, because wrong notes are the only fault they have a name for. A teacher is listening to something else entirely."
+ },
+ {
+  "slug": "you-got-a-keyboard-now-what",
+  "date": "2026-12-25",
+  "title": "You Got a Keyboard for Christmas. Now What?",
+  "summary": "The first week decides whether the instrument becomes a habit or a piece of furniture. Almost none of what matters is about the keyboard itself."
+ },
+ {
+  "slug": "piano-goals-for-the-new-year-that-you-will-keep",
+  "date": "2026-12-28",
+  "title": "Piano Goals for the New Year That You Will Actually Keep",
+  "summary": "\"Practice every day\" and \"learn Clair de Lune\" are the two commonest resolutions, and they fail in opposite ways."
+ },
+ {
+  "slug": "what-the-first-year-of-piano-actually-looks-like",
+  "date": "2026-12-30",
+  "title": "What the First Year of Piano Actually Looks Like",
+  "summary": "Not a promise and not a syllabus &mdash; a description, so you can tell whether what is happening to you is normal. Usually it is."
+ },
+ {
+  "slug": "practicing-on-days-you-do-not-feel-like-it",
+  "date": "2027-01-01",
+  "title": "What to Practice on a Day You Do Not Feel Like Practicing",
+  "summary": "Not a motivation lecture. One specific, small thing to do on the days when sitting down at the piano feels like too much."
+ },
+ {
+  "slug": "how-to-practice-slowly",
+  "date": "2027-01-04",
+  "title": "How to Practice Slowly Without It Becoming Meaningless",
+  "summary": "&ldquo;Practice it slowly&rdquo; is the most-repeated advice in music and the least explained. There is a right way to do it, and most adults are not doing it."
+ },
+ {
+  "slug": "piano-dynamics-markings-explained",
+  "date": "2027-01-06",
+  "title": "How Loud Is Loud? p, mf and f, Explained Practically",
+  "summary": "There is no decibel value for forte. What there is, is a relationship &mdash; and once you see it, the markings stop being guesswork."
+ },
+ {
+  "slug": "how-to-start-sight-reading",
+  "date": "2027-01-08",
+  "title": "How to Start Sight-Reading: A Method You Can Begin This Week",
+  "summary": "You do not get better at reading by learning pieces. You get better by reading things you will never learn."
+ },
+ {
+  "slug": "what-is-a-key-signature",
+  "date": "2027-01-11",
+  "title": "What Is a Key Signature, and Why Does It Change?",
+  "summary": "A key signature is a labor-saving device. Understanding what it is doing makes it far less intimidating than it looks."
+ },
+ {
+  "slug": "five-minute-piano-warm-up",
+  "date": "2027-01-13",
+  "title": "A Five-Minute Warm-Up That Is Actually Worth Doing",
+  "summary": "A warm-up is not practice and it is not an exercise. Its whole job is to get the hand and the ear ready, and that takes five minutes."
+ },
+ {
+  "slug": "finger-independence-exercises",
+  "date": "2027-01-15",
+  "title": "Finger Independence: What Helps, and What Quietly Causes Injury",
+  "summary": "Some of the best-known finger exercises in piano history have injured more hands than they have helped. The anatomy explains why."
+ },
+ {
+  "slug": "reading-ledger-lines",
+  "date": "2027-01-18",
+  "title": "Reading Ledger Lines Without Counting Every Time",
+  "summary": "Those little extra lines are not a new alphabet. Two landmarks and one habit turn them into notes you recognize."
+ },
+ {
+  "slug": "why-you-cannot-play-fast",
+  "date": "2027-01-20",
+  "title": "Why You Cannot Play Fast Yet (It Is Not Your Fingers)",
+  "summary": "Adults assume speed comes with strength or youth. It comes from efficiency of movement, and here is what is eating yours."
+ },
+ {
+  "slug": "tempo-markings-explained",
+  "date": "2027-01-22",
+  "title": "Andante, Allegro, Moderato: What Tempo Markings Actually Mean",
+  "summary": "Beginners look up Allegro, find a number, and set the metronome. That is not quite what the word is for."
+ },
+ {
+  "slug": "arpeggios-for-beginners",
+  "date": "2027-01-25",
+  "title": "Arpeggios: What They Are and Why They Feel Impossible at First",
+  "summary": "If arpeggios feel lumpy and uneven no matter how slowly you go, you are almost certainly missing one specific motion."
+ },
+ {
+  "slug": "when-to-move-on-from-a-piece",
+  "date": "2027-01-27",
+  "title": "When Should You Move On From a Piece?",
+  "summary": "You do not have to finish a piece to have learned from it. Knowing when to let one go is a skill of its own."
+ },
+ {
+  "slug": "repeat-signs-and-road-map",
+  "date": "2027-01-29",
+  "title": "Repeat Signs, D.C., Coda: How to Find Your Way Through a Piece",
+  "summary": "Da capo, dal segno, the coda sign, first and second endings &mdash; these are directions, not music, and they are simpler than they look."
+ }
 ]
