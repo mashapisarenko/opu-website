@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /blog/_queue/
+Disallow: /blog/_published_copies/
 
 Sitemap: https://onlinepianouniversity.com/sitemap.xml

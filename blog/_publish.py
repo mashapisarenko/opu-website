@@ -120,6 +120,8 @@ def main():
         if not src.exists():
             sys.exit("queued article missing on disk: %s" % src.name)
         shutil.move(str(src), str(dst))
+        _t = dst.read_text(encoding='utf-8')  # QUEUE-NOINDEX: queued drafts carry noindex; strip it on publish
+        dst.write_text(_t.replace('<meta name="robots" content="noindex">\n', ''), encoding='utf-8')
         index = insert_after(index, '<div style="margin-top:30px">\n', card(e, d), "card list")
         index = insert_after(index, '"blogPost": [\n', jsonld(e, d), "JSON-LD list")
         sitemap = add_to_sitemap(sitemap, e, d)
