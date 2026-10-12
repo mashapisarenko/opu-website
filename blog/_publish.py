@@ -145,6 +145,14 @@ def main():
     except Exception as exc:                      # never let this break a publish
         print("read-next skipped:", exc)
 
+    # Keep the home page's "Latest from the blog" block in step with the blog index.
+    try:
+        r = subprocess.run([sys.executable, str(BLOG / "refresh_home_blog.py")],
+                           capture_output=True, text=True, cwd=str(BLOG.parent))
+        print((r.stdout or "").strip() or "home blog block: nothing to do")
+    except Exception as exc:
+        print("home blog block skipped:", exc)
+
     # Refresh the sitemap from git rather than appending to it - appending is how the
     # home page ended up listed twice and how 27 lastmod values went stale.
     try:
