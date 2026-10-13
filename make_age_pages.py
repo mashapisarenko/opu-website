@@ -360,7 +360,7 @@ def build_age(a, head_pre, hdr, foot):
 <section style="background:var(--paper)"><div class="wrap" style="max-width:900px">
   <span class="eyebrow">Real students, real words</span>
   <h2>What adult students say</h2>
-  <p class="muted">Written on Yelp by students of Dr. Pisarenko at Las Vegas Piano School &middot; 5.0&#9733; on Yelp (17 reviews), 4.9&#9733; on Google (44 reviews).</p>
+  <p class="muted">What adult students say about Dr. Maria Pisarenko as their teacher &middot; 5.0&#9733; on Yelp, 4.9&#9733; on Google.</p>
   <div class="plan">{reviews}</div>
   <p style="margin-top:14px"><a href="reviews.html">Read more reviews &rarr;</a></p>
 </div></section>
