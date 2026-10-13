@@ -186,3 +186,23 @@ footer p{margin:.35rem 0}
 .kb-tip .midi{font-size:.78rem;color:#9aa3bd}
 .kb-tip .midi b{color:#bfe0c0}
 @media(max-width:640px){.kb{height:130px}}
+
+/* --- contact bands and by-age pages (added by make_age_pages.py) --- */
+.contactband{background:#f4f1ea;border-bottom:1px solid var(--line);font-size:.9rem}
+.contactband .wrap{display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:center;align-items:center;padding:9px 22px}
+.contactband a{color:var(--navy);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(0,0,0,.25)}
+.contactfull{background:#1a2540;color:#fff;padding:42px 0}
+.contactfull h2{color:#fff;margin:0 0 6px}
+.contactfull .cols2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px;margin-top:18px}
+.contactfull a{color:#f2d58f}
+.contactfull .btn{color:#1a2540}
+.contactfull form.opu-capture{display:flex;gap:8px;flex-wrap:wrap}
+.contactfull form.opu-capture input{flex:1 1 200px;padding:11px 12px;border-radius:8px;border:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0;padding:0;list-style:none}
+.chips li{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:.92rem}
+.agegrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:20px}
+.agegrid a.card{text-decoration:none;color:inherit}
+.agegrid a.card:hover{border-color:var(--gold)}
+.pain{margin:0 0 18px}.pain h3{margin:0 0 4px;font-size:1.08rem}.pain p{margin:0;color:#3d4557}
+.plan{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:14px}
+.contactfull .btn.ghost{color:#fff;border:1px solid #fff;background:transparent}
