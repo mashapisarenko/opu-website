@@ -41,6 +41,37 @@ def indexable(p):
     return "noindex" not in t
 
 
+def write_image_sitemap(entries):
+    """sitemap-images.xml: every own-domain photo on each page, so Google Images
+    can tie Dr. Pisarenko's photos to the pages they appear on. Kept separate
+    from sitemap.xml because blog/_publish.py edits that file by pattern."""
+    import html as _h, urllib.parse as _u
+    rows = []
+    for rel, _lm in entries:
+        f = HERE / ("index.html" if rel == "" else (rel + "index.html" if rel.endswith("/") else rel))
+        if not f.exists():
+            continue
+        t = f.read_text(encoding="utf-8", errors="replace")
+        base = f"{SITE}/{rel}"
+        imgs = []
+        for m in re.finditer(r'<img\b[^>]*\bsrc="([^"]+)"', t):
+            src = m.group(1)
+            if src.startswith("http") and not src.startswith(SITE):
+                continue
+            u = _u.urljoin(base, src)
+            if u not in imgs:
+                imgs.append(u)
+        if imgs:
+            rows.append("  <url><loc>%s</loc>\n%s\n  </url>" % (base, "\n".join(
+                "    <image:image><image:loc>%s</image:loc></image:image>" % _h.escape(u) for u in imgs)))
+    out = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+           'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n'
+           + "\n".join(rows) + "\n</urlset>\n")
+    (HERE / "sitemap-images.xml").write_text(out, encoding="utf-8")
+    print(f"sitemap-images.xml: {len(rows)} page(s) with photos")
+
+
 def main():
     entries = []
     for p in sorted(HERE.glob("*.html")):
@@ -72,6 +103,7 @@ def main():
            + "\n".join(rows) + "\n</urlset>\n")
     (HERE / "sitemap.xml").write_text(out, encoding="utf-8")
     print(f"sitemap.xml: {len(rows)} URL(s), lastmod from git, no duplicates")
+    write_image_sitemap(entries)
 
 
 if __name__ == "__main__":

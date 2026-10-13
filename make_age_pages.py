@@ -161,7 +161,7 @@ EXTRA_FAQ = {
  "20s": [("Is 25 too late to get good at piano?","No. Adults in their twenties learn to read music faster than children do, because they understand patterns. What decides how good you get is practice that is ordered and corrected, not the age you start.")],
  "30s": [("Can I learn piano at 35 with no experience?","Yes. Most of my adult students in their thirties started from zero or from a few childhood lessons they barely remember. Twenty focused minutes a day, in the right order, is enough to play real pieces within months.")],
  "40s": [("Can I learn piano at 40 with no experience?","Yes. Starting at 40 means you bring patience, taste and a clear reason, which children do not have. The free course starts from the first note, so no experience is needed.")],
- "50s": [("Is it too late to learn piano at 50?","No. People start at 50 and play the music they love within the first year. The hands need a little more warming up, and the plan on this page is built around that.")],
+ "50s": [("How long does it take to learn piano at 50?","Most adults who start at 50 and practise twenty to thirty minutes a day play simple pieces with both hands within three months, and the music they grew up with within the first year. The hands need a little more warming up; the plan on this page is built around that.")],
  "60s": [("Where should seniors start with piano lessons?","Start with how you sit and how the hand rests on the keys, then a simple melody by ear, then reading. Lesson 1 of the free course does exactly that, at a pace you choose, with large clear notation.")],
  "70s": [("Are there online piano lessons for seniors over 70?","Yes. The free course here is unhurried, uses large clear music on screen, and you can pause and repeat any lesson. You can also send a recording and get a personal written answer from me.")],
 }
@@ -389,6 +389,7 @@ def build_age(a, head_pre, hdr, foot):
 <section><div class="wrap" style="max-width:820px">
   <span class="eyebrow">Your teacher</span>
   <h2>Who is teaching you</h2>
+  <img src="images/dr-maria-pisarenko-concert-pianist-at-piano.jpg" alt="Dr. Maria Pisarenko, DMA, concert pianist and piano teacher for adults in their {esc(a["decade"])}, at the piano" width="1200" height="1648" loading="lazy" style="float:right;width:min(220px,38%);height:auto;margin:0 0 12px 20px;border-radius:10px">
   <p>I am <a href="about.html">Dr. Maria Pisarenko, DMA</a>, a concert pianist and university professor. I trained in the Russian school at the Central Music School of the Moscow Conservatory and the Gnessin Academy, and I teach at the college level. My work with adult beginners is the reason this course exists. You can read what the press and students say on the <a href="press.html">press</a> and <a href="reviews.html">reviews</a> pages.</p>
 </div></section>
 

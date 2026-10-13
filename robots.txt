@@ -5,3 +5,4 @@ Disallow: /blog/_published_copies/
 
 Sitemap: https://onlinepianouniversity.com/sitemap.xml
 Sitemap: https://onlinepianouniversity.com/sitemap-video.xml
+Sitemap: https://onlinepianouniversity.com/sitemap-images.xml
