@@ -39,6 +39,14 @@ def build(spec, out_dir):
             sys.exit("template anchor not found: %r" % old[:60])
         t = t.replace(old, new)
 
+    # SEO_TITLE_FIX 2026-10-13: the template's <title>/og/twitter titles were shortened for
+    # search, so they no longer equal old_title; set them from the spec explicitly.
+    st = spec.get("seo_title", spec["title"])
+    t = re.sub(r"<title>.*?</title>", lambda m: "<title>%s</title>" % st, t, count=1, flags=re.S)
+    for attr in ("og:title", "twitter:title"):
+        t = re.sub(r'(<meta (?:property|name)="%s" content=")[^"]*(")' % attr,
+                   lambda m: m.group(1) + st.replace('"', "&quot;") + m.group(2), t)
+
     # lead photograph
     t = re.sub(r'<img src="\.\./images/blog/[^"]+" alt="[^"]*"',
                '<img src="../images/blog/%s" alt="%s"' % (spec["image"], spec["image_alt"]),

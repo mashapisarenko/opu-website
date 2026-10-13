@@ -161,7 +161,7 @@ EXTRA_FAQ = {
  "20s": [("Is 25 too late to get good at piano?","No. Adults in their twenties learn to read music faster than children do, because they understand patterns. What decides how good you get is practice that is ordered and corrected, not the age you start.")],
  "30s": [("Can I learn piano at 35 with no experience?","Yes. Most of my adult students in their thirties started from zero or from a few childhood lessons they barely remember. Twenty focused minutes a day, in the right order, is enough to play real pieces within months.")],
  "40s": [("Can I learn piano at 40 with no experience?","Yes. Starting at 40 means you bring patience, taste and a clear reason, which children do not have. The free course starts from the first note, so no experience is needed.")],
- "50s": [("How long does it take to learn piano at 50?","Most adults who start at 50 and practise twenty to thirty minutes a day play simple pieces with both hands within three months, and the music they grew up with within the first year. The hands need a little more warming up; the plan on this page is built around that.")],
+ "50s": [("How long does it take to learn piano at 50?","Most adults who start at 50 and practice twenty to thirty minutes a day play simple pieces with both hands within three months, and the music they grew up with within the first year. The hands need a little more warming up; the plan on this page is built around that.")],
  "60s": [("Where should seniors start with piano lessons?","Start with how you sit and how the hand rests on the keys, then a simple melody by ear, then reading. Lesson 1 of the free course does exactly that, at a pace you choose, with large clear notation.")],
  "70s": [("Are there online piano lessons for seniors over 70?","Yes. The free course here is unhurried, uses large clear music on screen, and you can pause and repeat any lesson. You can also send a recording and get a personal written answer from me.")],
 }
@@ -197,6 +197,20 @@ REAL_REVIEWS = [
 ]
 # which three each decade shows, so the pages are not identical
 REV_PICK = {"20s":[0,2,3],"30s":[0,1,2],"40s":[1,0,3],"50s":[1,2,3],"60s":[1,3,2],"70s":[3,1,2]}
+
+GENERAL_LEVERS = [
+ ("Something genuinely new","Reading music and playing with both hands is a skill most adults around you do not have. Within weeks you notice a change you can hear, and that is what keeps people practicing."),
+ ("Something you get back","A private half hour that is yours, the songs you have always loved under your own fingers, and a way to switch off that is not a screen."),
+ ("Something people notice","The person who can sit down and play, properly, at a family evening or a party is remembered. It is a skill, earned, and nobody can take it away."),
+]
+def levers_block(reviews_idx=(0,1,2)):
+    cards = "".join('<div class="card"><h3>%s</h3><p class="muted">%s</p></div>' % (esc(t), esc(b)) for t, b in GENERAL_LEVERS)
+    revs = "".join('<div class="card"><p class="stars" style="color:var(--gold);margin:0 0 6px">&#9733;&#9733;&#9733;&#9733;&#9733;</p><p>&ldquo;%s&rdquo;</p><p class="muted"><b>&mdash; %s</b>, %s &middot; Yelp</p></div>' % (esc(REAL_REVIEWS[i][2]), esc(REAL_REVIEWS[i][0]), esc(REAL_REVIEWS[i][1])) for i in reviews_idx)
+    return ('<section><div class="wrap" style="max-width:980px"><span class="eyebrow">Why adults start, and stay</span>'
+            '<h2>What learning the piano gives you</h2><div class="plan">%s</div></div></section>'
+            '<section style="background:var(--paper)"><div class="wrap" style="max-width:980px"><span class="eyebrow">Real students, real words</span>'
+            '<h2>What adult students say</h2><p class="muted">What adult students say about Dr. Maria Pisarenko as their teacher &middot; 5.0&#9733; on Yelp, 4.9&#9733; on Google.</p>'
+            '<div class="plan">%s</div><p style="margin-top:14px"><a href="reviews.html">Read more reviews &rarr;</a></p></div></section>') % (cards, revs)
 
 PAYOFF_TITLE = "What this gives you"
 
@@ -445,6 +459,7 @@ def build_hub(head_pre, hdr, foot):
   <h2>Where are you in life?</h2>
   <div class="agegrid">{cards}</div>
 </div></section>
+{levers_block()}
 <section style="background:var(--paper)"><div class="wrap" style="max-width:820px">
   <h2>What every adult learner has in common</h2>
   <p>Whatever your age, you are learning without a teacher beside you, you have limited time, and you want to play real music soon. Online Piano University is built around exactly that: a free, ordered course, twenty-minute lessons, and feedback on your own playing from a teacher who has spent a career with adult beginners.</p>
@@ -500,6 +515,9 @@ def add_footer_link_and_bands():
             t = t.replace("</header>\n", "</header>\n" + contact_top(pre), 1)
         elif "</header>" in t:
             t = t.replace("</header>", "</header>\n" + contact_top(pre), 1)
+        t = re.sub(r'<!--opu-levers-->.*?<!--/opu-levers-->\n?', '', t, flags=re.S)
+        if n == "index.html" and '<section data-opu="age-links"' in t:
+            t = t.replace('<section data-opu="age-links"', '<!--opu-levers-->' + levers_block((1, 0, 2)) + '<!--/opu-levers-->\n<section data-opu="age-links"', 1)
         if 'data-opu="age-links"' not in t and not n.startswith("piano-lessons-") and n not in {"privacy.html", "terms.html"}:
             blk = age_links_block(pre, n)
             if '<footer id="footer">' in t:

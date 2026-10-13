@@ -18,6 +18,30 @@ HERE = pathlib.Path(__file__).resolve().parent
 QUEUE = HERE / "_queue"
 
 RELATED = {
+ # --- added 2026-10-13: story and lineage queue ---
+ "a-girl-from-siberia-and-the-piano": ["inside-a-central-music-school-for-gifted-children", "from-moscow-to-america-a-pianists-second-education", "why-i-teach-adults"],
+ "alexander-goldenweiser-from-liszt-to-your-piano": ["alexander-siloti-the-pupil-of-liszt-who-taught-rachmaninoff", "tatiana-nikolayeva-the-teacher-who-heard-me-play", "who-taught-the-person-teaching-you"],
+ "alexander-siloti-the-pupil-of-liszt-who-taught-rachmaninoff": ["alexander-goldenweiser-from-liszt-to-your-piano", "rachmaninoff-and-the-adult-hand", "who-taught-the-person-teaching-you"],
+ "from-moscow-to-america-a-pianists-second-education": ["a-girl-from-siberia-and-the-piano", "russian-school-vs-american-piano-method", "why-i-teach-adults"],
+ "inside-a-central-music-school-for-gifted-children": ["a-girl-from-siberia-and-the-piano", "tatiana-nikolayeva-the-teacher-who-heard-me-play", "what-european-music-schools-teach-that-american-adults-missed"],
+ "leonid-nikolayev-the-teacher-of-yudina-and-shostakovich": ["maria-yudina-the-uncompromising-pianist", "the-gnessin-academy-and-the-teachers-who-shaped-me", "who-taught-the-person-teaching-you"],
+ "maria-yudina-the-uncompromising-pianist": ["leonid-nikolayev-the-teacher-of-yudina-and-shostakovich", "the-gnessin-academy-and-the-teachers-who-shaped-me", "who-taught-the-person-teaching-you"],
+ "playing-a-concerto-with-an-orchestra": ["what-happens-in-a-solo-recital", "the-silence-before-the-first-chord", "what-a-piano-competition-teaches-you"],
+ "rachmaninoff-and-the-adult-hand": ["alexander-siloti-the-pupil-of-liszt-who-taught-rachmaninoff", "piano-hand-position-curved-fingers", "why-your-hands-get-tense-at-the-piano"],
+ "tatiana-nikolayeva-the-teacher-who-heard-me-play": ["alexander-goldenweiser-from-liszt-to-your-piano", "inside-a-central-music-school-for-gifted-children", "who-taught-the-person-teaching-you"],
+ "the-gnessin-academy-and-the-teachers-who-shaped-me": ["maria-yudina-the-uncompromising-pianist", "leonid-nikolayev-the-teacher-of-yudina-and-shostakovich", "from-moscow-to-america-a-pianists-second-education"],
+ "the-silence-before-the-first-chord": ["what-happens-in-a-solo-recital", "playing-a-concerto-with-an-orchestra", "playing-piano-for-other-people"],
+ "what-a-piano-competition-teaches-you": ["playing-a-concerto-with-an-orchestra", "what-happens-in-a-solo-recital", "a-girl-from-siberia-and-the-piano"],
+ "what-happens-in-a-solo-recital": ["the-silence-before-the-first-chord", "playing-a-concerto-with-an-orchestra", "playing-piano-for-other-people"],
+ "who-taught-the-person-teaching-you": ["the-gnessin-academy-and-the-teachers-who-shaped-me", "alexander-goldenweiser-from-liszt-to-your-piano", "russian-school-vs-american-piano-method"],
+ "why-i-teach-adults": ["is-it-too-late-to-learn-piano-at-40-50-60", "from-moscow-to-america-a-pianists-second-education", "returning-to-piano-as-an-adult"],
+ # --- added 2026-10-13: one article per decade ---
+ "learning-piano-at-50": ["is-it-too-late-to-learn-piano-at-40-50-60", "how-to-practice-piano-a-method-not-more-minutes", "piano-bench-height-posture"],
+ "learning-piano-in-your-30s": ["practicing-piano-when-you-have-no-time", "how-long-to-practice-piano-each-day", "why-adult-beginners-quit-piano"],
+ "learning-piano-in-retirement": ["is-it-too-late-to-learn-piano-at-40-50-60", "piano-bench-height-posture", "digital-piano-vs-acoustic-beginner"],
+ "learning-piano-in-your-20s": ["learning-piano-without-a-teacher", "piano-hand-position-curved-fingers", "how-to-read-piano-notes-grand-staff"],
+ "starting-piano-again-at-40": ["returning-to-piano-as-an-adult", "why-adult-beginners-quit-piano", "is-it-too-late-to-learn-piano-at-40-50-60"],
+ "piano-for-seniors-keyboard-light-music": ["learning-piano-after-70", "digital-piano-vs-acoustic-beginner", "does-piano-playing-hurt-hands"],
  # --- added 2026-09-22: the December queue ---
  "what-sharps-and-flats-actually-do": ["why-you-still-cannot-read-music-fluently", "how-to-read-the-grand-staff", "what-the-treble-clef-means", "what-is-a-key-signature"],
  "why-chord-changes-feel-impossible": ["why-your-hands-will-not-do-two-things-at-once", "how-to-practice-a-piece-you-cannot-play-yet", "why-piano-fingering-numbers-matter", "arpeggios-for-beginners"],
@@ -154,7 +178,7 @@ def apply_to(path, slug, T, from_queue):
     Not every article carries the author aside, and two live ones did not - which is
     exactly the kind of thing that makes a 'it worked' report untrue."""
     t = path.read_text(encoding="utf-8")
-    t = re.sub(re.escape(MARK) + r".*?</div>\n", "", t, flags=re.S)   # idempotent
+    t = re.sub(re.escape(MARK) + r".*?</div>\n\n?", "", t, flags=re.S)   # idempotent (also the blank line it adds)
     t = t.replace("<!-- read-next: nothing live to link yet; _publish.py rebuilds this -->\n", "")
     b = block(slug, T, from_queue)
     if not b:
