@@ -206,3 +206,20 @@ footer p{margin:.35rem 0}
 .pain{margin:0 0 18px}.pain h3{margin:0 0 4px;font-size:1.08rem}.pain p{margin:0;color:#3d4557}
 .plan{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:14px}
 .contactfull .btn.ghost{color:#fff;border:1px solid #fff;background:transparent}
+/* --- OPU contact + recording form --- */
+.contactpanel{background:#fbf9f4;border-top:1px solid var(--line)}
+.ofrm label{display:block;font-weight:600;font-size:.88rem;margin:10px 0 4px;color:inherit}
+.ofrm label span{font-weight:400;opacity:.75}
+.ofrm input[type=text],.ofrm input[type=email],.ofrm input[type=tel],.ofrm input:not([type]),.ofrm select,.ofrm textarea{width:100%;box-sizing:border-box;padding:10px 12px;border-radius:8px;border:1px solid rgba(0,0,0,.25);font:inherit;background:#fff;color:#1a2540}
+.ofrm textarea{min-height:92px}
+.ofrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 14px}
+.ofrec{margin-top:12px;padding:12px;border:1px dashed rgba(193,154,75,.8);border-radius:10px}
+.ofrm .ofchk{display:flex;gap:8px;align-items:flex-start;font-weight:400}
+.ofrm .ofchk input{width:auto;margin-top:4px}
+.ofhp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.ofact{margin-top:14px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.ofmsg{margin-top:12px;padding:10px 12px;border-radius:8px}
+.ofmsg.ok{background:#eef6ee;color:#23512a}.ofmsg.err{background:#fbeeee;color:#7a2323}
+.contactfull .ofrm label,.contactfull .ofrm span{color:#fff}
+.contactfull .ofrm .ofalt,.contactfull .ofrm .ofalt a{color:#f2d58f}
+.contactfull .ofmsg.ok{color:#23512a}.contactfull .ofmsg.err{color:#7a2323}

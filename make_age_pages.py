@@ -188,33 +188,30 @@ def esc(s): return html.escape(s, quote=True)
 def read(name): return (HERE / name).read_text(encoding="utf-8")
 
 def contact_top(prefix=""):
-    return ('<div class="contactband" data-opu="contact-top"><div class="wrap">'
+    return ('<!--opu-top--><div class="contactband" data-opu="contact-top"><div class="wrap">'
             '<span>Questions? <a href="mailto:%s">%s</a></span>'
-            '<a href="%scontact.html">Send me a message</a>'
-            '<a href="%ssubmit.html">Send your playing for feedback</a></div></div>' % (EMAIL, EMAIL, prefix, prefix))
+            '<button type="button" class="btn" data-opu-toggle aria-expanded="false" style="padding:6px 14px">Write to me or send your playing &#9662;</button></div>'
+            '<div class="contactpanel" style="display:none"><div class="wrap" style="max-width:760px;padding:16px 22px 22px"><div data-opu-form></div></div></div></div><!--/opu-top-->') % (EMAIL, EMAIL)
 
 def contact_full(prefix=""):
     return ('<section class="contactfull" data-opu="contact-bottom"><div class="wrap">'
-            '<h2>Talk to Dr. Maria Pisarenko</h2>'
-            '<p style="color:#d7dbe8;margin:0;max-width:62ch">Online Piano University is run by one teacher. I read every message and every recording myself.</p>'
-            '<div class="cols2">'
-            '<div><p><b>Write or send your playing</b></p>'
-            '<p><a href="mailto:%s">%s</a></p>'
-            '<p><a class="btn" href="%scontact.html">Send me a message</a></p>'
-            '<p><a class="btn ghost" href="%ssubmit.html">Send a recording for feedback</a></p></div>'
-            '<div><p><b>Get the free Starter Guide</b></p>'
+            '<h2>Write to Dr. Maria Pisarenko, or send your playing</h2>'
+            '<p style="color:#d7dbe8;margin:0;max-width:62ch">Online Piano University is run by one teacher. I read every message and listen to every recording myself.</p>'
+            '<div class="cols2" style="grid-template-columns:minmax(280px,2fr) minmax(240px,1fr)">'
+            '<div class="ofwrap"><div data-opu-form></div></div>'
+            '<div><p><b>Contact</b></p><p><a href="mailto:%s">%s</a></p>'
+            '<p><a href="%scontact.html">Full contact page</a><br><a href="%ssubmit.html">Feedback on your playing</a><br><a href="%sfree-course.html">Free 41-lesson course</a><br><a href="%spiano-lessons-by-age.html">Piano lessons by age</a></p>'
+            '<p style="margin-top:14px"><b>Free Starter Guide</b></p>'
             '<form class="opu-capture"><input type="email" name="email_address" placeholder="Your email" required aria-label="Your email">'
             '<button class="btn" type="submit">Send me the guide</button></form>'
             '<p class="form-ok">&#10003; Thank you &mdash; check your inbox!</p>'
-            '<p style="color:#aeb5cb;font-size:.85rem">No spam &mdash; just piano. Unsubscribe anytime.</p></div>'
-            '<div><p><b>Follow along</b></p>'
+            '<p style="margin-top:14px"><b>Follow along</b></p>'
             '<p><a href="https://www.youtube.com/@ONLINEPIANOUNIVERSITY" target="_blank" rel="noopener">YouTube</a> &middot; '
             '<a href="https://www.instagram.com/online_piano_university/" target="_blank" rel="noopener">Instagram</a> &middot; '
             '<a href="https://www.facebook.com/OnlinePianoUniversity/" target="_blank" rel="noopener">Facebook</a> &middot; '
             '<a href="https://www.tiktok.com/@online.piano.university" target="_blank" rel="noopener">TikTok</a> &middot; '
-            '<a href="https://www.pinterest.com/OnlinePianoUniversity/" target="_blank" rel="noopener">Pinterest</a></p>'
-            '<p><a href="%sfree-course.html">Free 41-lesson course</a><br><a href="%spiano-lessons-by-age.html">Piano lessons by age</a></p></div>'
-            '</div></div></section>') % (EMAIL, EMAIL, prefix, prefix, prefix, prefix)
+            '<a href="https://www.pinterest.com/OnlinePianoUniversity/" target="_blank" rel="noopener">Pinterest</a></p></div>'
+            '</div></div></section>\n<script src="%sjs/opu-form.js" defer></script>') % (EMAIL, EMAIL, prefix, prefix, prefix, prefix, prefix)
 
 
 def shell_parts():
@@ -409,9 +406,12 @@ def add_footer_link_and_bands():
         pre = "../" if in_blog else ""
         t = p.read_text(encoding="utf-8")
         o = t
-        if "</header>" in t and 'data-opu="contact-top"' not in t:
+        t = re.sub(r'<!--opu-top-->.*?<!--/opu-top-->', '', t, flags=re.S)
+        t = re.sub(r'<div class="contactband" data-opu="contact-top"><div class="wrap"><span>Questions\? .*?Send your playing for feedback</a></div></div>', '', t, flags=re.S)
+        t = re.sub(r'<section class="contactfull" data-opu="contact-bottom">.*?</section>(\n<script src="[^"]*js/opu-form\.js" defer></script>)?', '', t, flags=re.S)
+        if "</header>" in t:
             t = t.replace("</header>", "</header>\n" + contact_top(pre), 1)
-        if '<footer id="footer">' in t and 'data-opu="contact-bottom"' not in t and n != "contact.html":
+        if '<footer id="footer">' in t and n != "contact.html":
             t = t.replace('<footer id="footer">', contact_full(pre) + '\n<footer id="footer">', 1)
         if "piano-lessons-by-age.html" not in t.split('<footer id="footer">')[-1]:
             t = re.sub(r'(<p><a href="(?:\.\./)?press\.html">Press</a></p>)',
