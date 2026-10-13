@@ -64,7 +64,7 @@ AGES = [
 
  dict(slug="piano-lessons-for-adults-in-their-40s", decade="40s", label="Your 40s",
   title="Learn Piano in Your 40s | Online Piano University",
-  desc="Starting piano or returning in your 40s? Dr. Maria Pisarenko, DMA, teaches adults who quit as kids or never began. Free course and feedback, Online Piano University.",
+  desc="Starting piano or coming back in your 40s? Free lessons and feedback from concert pianist Dr. Maria Pisarenko, DMA, at Online Piano University.",
   h1="Learn Piano in Your 40s: Start Again, Properly",
   sub="If you stopped at twelve, or never started, this is the right moment. You understand music better than you did then, and you can practice without anyone standing over you.",
   intro=["A lot of adults in their forties come back to the piano with an old wound: a teacher who was impatient, a recital that went badly, a parent who decided when you were done. You can leave all of that behind.",
@@ -87,14 +87,14 @@ AGES = [
 
  dict(slug="piano-lessons-for-adults-in-their-50s", decade="50s", label="Your 50s",
   title="Learn Piano in Your 50s | Online Piano University",
-  desc="Learning piano in your 50s, on your own? Free step-by-step lessons from Dr. Maria Pisarenko, DMA, plus written feedback on your playing. Online Piano University.",
+  desc="Learning piano at 50 or later on your own? Free step-by-step lessons and written feedback from Dr. Maria Pisarenko, DMA. Online Piano University.",
   h1="Learn Piano in Your 50s: Play the Music You Grew Up With",
   sub="The children are older, the calendar has room, and the song you have wanted to play for years is still waiting. This is the course built for you.",
   intro=["Adults in their fifties are the people I built Online Piano University for: never played, or quit around twelve, and now learning alone. Nobody is standing next to you, so the lessons have to do the job a teacher would do at your shoulder.",
          "That means sound before notes, small steps in the right order, and feedback on a recording of your own playing. It is free on YouTube, and you move at your own pace."],
   songs_title="Do you want to play these?",
   songs_sub="The songs from your teens and twenties, and the classical pieces that never left you.",
-  songs=["Piano Man (Billy Joel)","Vienna (Billy Joel)","Your Song (Elton John)","Rocket Man (Elton John)","Don't Stop Believin' (Journey)","Listen to Your Heart (Roxette)","Bohemian Rhapsody (Queen)","Against All Odds (Phil Collins)","Right Here Waiting (Richard Marx)","Let It Be (The Beatles)","Hey Jude (The Beatles)","Chariots of Fire (Vangelis)","The Entertainer (Scott Joplin)","Moonlight Sonata (Beethoven)","Clair de Lune (Debussy)"],
+  songs=["Piano Man (Billy Joel)","Vienna (Billy Joel)","Your Song (Elton John)","Rocket Man (Elton John)","Don't Stop Believin' (Journey)","Listen to Your Heart (Roxette)","Bohemian Rhapsody (Queen)","Against All Odds (Phil Collins)","Right Here Waiting (Richard Marx)","I Will Always Love You (Whitney Houston)","Time After Time (Cyndi Lauper)","Total Eclipse of the Heart (Bonnie Tyler)","Let It Be (The Beatles)","Hey Jude (The Beatles)","Chariots of Fire (Vangelis)","The Entertainer (Scott Joplin)","Moonlight Sonata (Beethoven)","Clair de Lune (Debussy)"],
   pains_title="What is actually in your way in your fifties",
   pains=[("Teaching yourself with nobody to say what is wrong","You can play all the right notes and it still sounds wrong, and you cannot tell why. That is the exact gap the feedback service closes."),
          ("Stiff hands and reading small print","Larger-print music and a good bench and lamp help more than people expect. Warm up gently, and if you have joint pain, ask your doctor first; I am a pianist, not a physician."),
@@ -117,7 +117,7 @@ AGES = [
          "The lessons are free, in order, and unhurried. You can pause, repeat and come back next week without losing anything, and when you are ready you can send a recording and hear from me in writing."],
   songs_title="Do you want to play these?",
   songs_sub="The songs that were the soundtrack of your youth, and the pieces you have always loved to listen to.",
-  songs=["Let It Be (The Beatles)","Hey Jude (The Beatles)","Yesterday (The Beatles)","Imagine (John Lennon)","Rocket Man (Elton John)","Tiny Dancer (Elton John)","You've Got a Friend (Carole King)","Bridge Over Troubled Water (Simon & Garfunkel)","(They Long to Be) Close to You (Carpenters)","Desperado (Eagles)","Just the Way You Are (Billy Joel)","Moon River (Henry Mancini)","Clair de Lune (Debussy)","Für Elise (Beethoven)","Canon in D (Pachelbel)"],
+  songs=["Let It Be (The Beatles)","Hey Jude (The Beatles)","Yesterday (The Beatles)","Imagine (John Lennon)","Rocket Man (Elton John)","Tiny Dancer (Elton John)","You've Got a Friend (Carole King)","Bridge Over Troubled Water (Simon & Garfunkel)","(They Long to Be) Close to You (Carpenters)","The Rose (Bette Midler)","Both Sides Now (Joni Mitchell)","Killing Me Softly (Roberta Flack)","Desperado (Eagles)","Just the Way You Are (Billy Joel)","Moon River (Henry Mancini)","Clair de Lune (Debussy)","Für Elise (Beethoven)","Canon in D (Pachelbel)"],
   pains_title="What is actually in your way in your sixties",
   pains=[("Fingers that are slower than you want","Speed is the last thing to arrive and the least important. The first goals are an even sound and a relaxed hand, and both are achievable at any age. If a joint hurts, check with your doctor first."),
          ("Reading music with tired eyes","Choose editions with large print, put a lamp on the music and stand the book higher. Reading is learned in small steps, and the course introduces each symbol only when you need it."),
@@ -133,14 +133,14 @@ AGES = [
 
  dict(slug="piano-lessons-for-adults-in-their-70s", decade="70s", label="Your 70s and beyond",
   title="Learn Piano in Your 70s and Beyond | Online Piano University",
-  desc="Never too late to play. Free, unhurried piano lessons for adults in their 70s and older, with personal feedback from Dr. Maria Pisarenko, DMA. Online Piano University.",
+  desc="Piano lessons for seniors in their 70s and beyond: free, unhurried lessons and personal feedback from Dr. Maria Pisarenko, DMA. Online Piano University.",
   h1="Learn Piano in Your 70s and Beyond: Play the Songs You Have Always Loved",
   sub="At this age you know exactly which music matters to you. The piano can be the way to make it yours.",
   intro=["Adults past seventy bring things a younger beginner does not: they know exactly which music matters to them, they listen deeply, and they are not trying to impress anyone.",
          "Online Piano University is free and unhurried. There is no timetable, no test and no one to compete with. You can start with a single lesson today, repeat it as many times as you like and ask me a question whenever you need to."],
   songs_title="Do you want to play these?",
   songs_sub="The songs and melodies that many people in their seventies carry with them, on a piano they can play slowly and beautifully.",
-  songs=["Yesterday (The Beatles)","Moon River (Henry Mancini)","Fly Me to the Moon (Bart Howard)","Summertime (George Gershwin)","Can't Help Falling in Love (Elvis Presley)","Unchained Melody (Alex North)","Edelweiss (Rodgers and Hammerstein)","Amazing Grace","The Sound of Silence (Simon & Garfunkel)","As Time Goes By (Herman Hupfeld)","Brahms' Lullaby","Ave Maria (Schubert)","Gymnopédie No. 1 (Satie)","Nocturne in E-flat, Op. 9 No. 2 (Chopin)","Clair de Lune (Debussy)"],
+  songs=["Yesterday (The Beatles)","Moon River (Henry Mancini)","Fly Me to the Moon (Bart Howard)","Summertime (George Gershwin)","Can't Help Falling in Love (Elvis Presley)","Unchained Melody (Alex North)","Edelweiss (Rodgers and Hammerstein)","Over the Rainbow (Harold Arlen)","Que Sera, Sera (Doris Day)","Amazing Grace","The Sound of Silence (Simon & Garfunkel)","As Time Goes By (Herman Hupfeld)","Brahms' Lullaby","Ave Maria (Schubert)","Gymnopédie No. 1 (Satie)","Nocturne in E-flat, Op. 9 No. 2 (Chopin)","Clair de Lune (Debussy)"],
   pains_title="What is actually in your way past seventy",
   pains=[("Hands that tire or stiffen","Short, gentle sessions work best, with rests built in. Warm hands first. If you have arthritis or any pain, ask your doctor what is right for you; I am a pianist, not a physician."),
          ("Eyesight and the size of the music","Large-print editions, good light and a music stand at the right height make a real difference. We start with very little notation and add only what you need."),
@@ -155,6 +155,18 @@ AGES = [
        ("What keyboard should an older beginner choose?","One with 88 weighted keys, a stable stand or bench and headphones if you want quiet. The gear page has my recommendations.")]),
 ]
 
+
+# search phrasings people actually type, answered in the page's own FAQ
+EXTRA_FAQ = {
+ "20s": [("Is 25 too late to get good at piano?","No. Adults in their twenties learn to read music faster than children do, because they understand patterns. What decides how good you get is practice that is ordered and corrected, not the age you start.")],
+ "30s": [("Can I learn piano at 35 with no experience?","Yes. Most of my adult students in their thirties started from zero or from a few childhood lessons they barely remember. Twenty focused minutes a day, in the right order, is enough to play real pieces within months.")],
+ "40s": [("Can I learn piano at 40 with no experience?","Yes. Starting at 40 means you bring patience, taste and a clear reason, which children do not have. The free course starts from the first note, so no experience is needed.")],
+ "50s": [("Is it too late to learn piano at 50?","No. People start at 50 and play the music they love within the first year. The hands need a little more warming up, and the plan on this page is built around that.")],
+ "60s": [("Where should seniors start with piano lessons?","Start with how you sit and how the hand rests on the keys, then a simple melody by ear, then reading. Lesson 1 of the free course does exactly that, at a pace you choose, with large clear notation.")],
+ "70s": [("Are there online piano lessons for seniors over 70?","Yes. The free course here is unhurried, uses large clear music on screen, and you can pause and repeat any lesson. You can also send a recording and get a personal written answer from me.")],
+}
+for _a in AGES:
+    _a["faq"] = _a["faq"] + EXTRA_FAQ.get(_a["decade"], [])
 
 PAYOFF = {
  "20s": [("Something new, in a week","Reading music is a skill almost nobody your age has. Within a few weeks you go from copying colored bars to understanding a page, and every new piece after that starts from something, not from zero."),
@@ -408,7 +420,7 @@ def build_age(a, head_pre, hdr, foot):
 
 def build_hub(head_pre, hdr, foot):
     title = "Piano Lessons for Adults by Age | Online Piano University"
-    desc = "Piano lessons for adults in their 20s, 30s, 40s, 50s, 60s and 70s: songs for your decade, real obstacles, a plan. Dr. Maria Pisarenko, DMA, Online Piano University."
+    desc = "Piano lessons for adults in their 20s to 70s: songs for your decade, honest answers to real obstacles, and a plan. Dr. Maria Pisarenko, Online Piano University."
     cards = "".join('<a class="card" href="%s.html"><h3>%s</h3><p class="muted">%s</p><span class="btn dark" style="margin-top:8px;display:inline-block">Read this page &rarr;</span></a>' % (
         a["slug"], esc(a["label"]), esc(a["sub"])) for a in AGES)
     faq = [("Is there a best age to start learning piano?","The best age is the one you are in. Children and adults learn differently, and adults bring focus, patience and a clear idea of the music they love."),
@@ -452,6 +464,22 @@ def build_hub(head_pre, hdr, foot):
     return head_pre + page_head(title, desc, "piano-lessons-by-age.html", page_ld + "\n" + bc) + body + foot
 
 
+AGE_LEADS = {
+ "is-it-too-late-to-learn-piano-at-40-50-60.html": ("It is not too late", "Here is a realistic plan for your decade, with the music people your age most want to play:"),
+ "returning-to-piano-as-an-adult.html": ("Coming back to the piano", "What changes when you return depends on the decade you return in:"),
+ "practicing-piano-when-you-have-no-time.html": ("Short on time?", "A plan sized for the life you have now:"),
+ "why-adult-beginners-quit-piano.html": ("So you do not quit this time", "Each decade has its own obstacles. Find yours:"),
+ "why-adults-learn-piano-your-reason-matters.html": ("Your reason, your decade", "What people your age want from the piano, and how to get there:"),
+ "learning-piano-without-a-teacher.html": ("Teaching yourself?", "The traps differ by age. Find the plan for yours:"),
+}
+def age_links_block(pre, name):
+    h, lead = AGE_LEADS.get(name, ("Piano lessons by age", "Every decade brings its own music and its own obstacles. Find the plan for yours:"))
+    links = " &middot; ".join('<a href="%s%s.html">Learn piano in your %s</a>' % (pre, a["slug"], a["decade"] + (" and beyond" if a["decade"] == "70s" else "")) for a in AGES)
+    return ('<!--opu-ages--><section data-opu="age-links-auto" style="padding:28px 0"><div class="wrap" style="max-width:820px">'
+            '<h2 style="font-size:1.3rem;margin:0 0 6px">%s</h2><p class="muted" style="margin:0 0 8px">%s</p><p>%s</p>'
+            '</div></section><!--/opu-ages-->') % (h, lead, links)
+
+
 def add_footer_link_and_bands():
     changed = 0
     for p in list(HERE.glob("*.html")) + list((HERE / "blog").glob("*.html")):
@@ -463,11 +491,20 @@ def add_footer_link_and_bands():
         t = p.read_text(encoding="utf-8")
         o = t
         for tag in ("top", "mid"):
-            t = re.sub(r'<!--opu-%s-->.*?<!--/opu-%s-->' % (tag, tag), '', t, flags=re.S)
+            t = re.sub(r'\n?<!--opu-%s-->.*?<!--/opu-%s-->\n?' % (tag, tag), '\n' if tag == 'top' else '', t, flags=re.S)
         t = re.sub(r'<div class="contactband" data-opu="contact-top"><div class="wrap"><span>Questions\? .*?Send your playing for feedback</a></div></div>', '', t, flags=re.S)
-        t = re.sub(r'<section class="contactfull" data-opu="contact-bottom">.*?</section>(\n<script src="[^"]*js/opu-form\.js" defer></script>)?', '', t, flags=re.S)
-        if "</header>" in t:
+        t = re.sub(r'<section class="contactfull" data-opu="contact-bottom">.*?</section>(\n<script src="[^"]*js/opu-form\.js" defer></script>)?\n?', '', t, flags=re.S)
+        t = re.sub(r'<!--opu-ages-->.*?<!--/opu-ages-->\n?', '', t, flags=re.S)
+        if "</header>\n" in t:
+            t = t.replace("</header>\n", "</header>\n" + contact_top(pre), 1)
+        elif "</header>" in t:
             t = t.replace("</header>", "</header>\n" + contact_top(pre), 1)
+        if 'data-opu="age-links"' not in t and not n.startswith("piano-lessons-") and n not in {"privacy.html", "terms.html"}:
+            blk = age_links_block(pre, n)
+            if '<footer id="footer">' in t:
+                t = t.replace('<footer id="footer">', blk + '\n<footer id="footer">', 1)
+            elif "</body>" in t:
+                t = t.replace("</body>", blk + "\n</body>", 1)
         if '<footer id="footer">' in t:
             t = t.replace('<footer id="footer">', contact_full(pre) + '\n<footer id="footer">', 1)
         elif n == "start.html" and "</body>" in t:
