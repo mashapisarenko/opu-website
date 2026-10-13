@@ -155,6 +155,39 @@ AGES = [
        ("What keyboard should an older beginner choose?","One with 88 weighted keys, a stable stand or bench and headphones if you want quiet. The gear page has my recommendations.")]),
 ]
 
+
+PAYOFF = {
+ "20s": [("Something new, in a week","Reading music is a skill almost nobody your age has. Within a few weeks you go from copying colored bars to understanding a page, and every new piece after that starts from something, not from zero."),
+         ("What you can do that you could not before","Play the themes you already love (Ghibli, Zelda, Zimmer, Billie Eilish) from the score or by ear, and write your own simple accompaniments instead of waiting for someone to post a tutorial."),
+         ("How it looks to people who matter","Most friends and partners can scroll. Few can sit down and play. Being the person who plays, properly, is a quiet, durable kind of standing that no feed gives you.")],
+ "30s": [("Something new that fits in a lunch break","Twenty minutes, one clear thing to do, and a recording you can send for a written reply. The newness is not another app: it is feeling yourself get better week by week."),
+         ("What you get back","A private hour that is yours, a skill you can pass to your children by sitting next to them at the keyboard, and the songs of your own childhood, finally playable."),
+         ("Your standing at home and at work","Being the one who can play at a family evening, a wedding or a party, and the one who finished what they started, is respected by the people whose opinion you care about.")],
+ "40s": [("A new part of you, not a new chore","Midlife is usually full of things you maintain. Piano is the rare thing you build from nothing, with a visible result each week."),
+         ("What you reclaim","The instrument you gave up, or never got. The music you hummed at twenty. A way to switch off from work that is not a screen."),
+         ("Your standing, on your terms","The adult who studies with a real concert pianist, in an ordered course, is taken seriously by people who also gave something up. You are not a hobbyist with an app; you are in a program.")],
+ "50s": [("A brand-new skill when your days have become predictable","New learning is what the brain notices most. Your hands, your ears and your eyes all start working together in a new way."),
+         ("What you get back","Time you finally own, music you can make for yourself and for the people you love, and a goal that has nothing to do with work or with other people's schedules."),
+         ("Standing among friends and family","Being able to sit at the piano and play Clair de Lune or a hymn for a friend, a spouse or a grandchild is a gift people remember and talk about. It also shows you can still do the hard thing.")],
+ "60s": [("A fresh challenge you chose","Retirement is a rare time when nobody sets your goals. A structured course gives your days a shape and your week a reason to look forward."),
+         ("What you get back","The pieces you promised yourself, a real daily practice, and a way to keep your mind and your fingers working at something beautiful."),
+         ("Standing that is earned, not given","To become, in your sixties, the person who plays the piano at the family gathering or for the church choir, is a status of skill. It does not depend on your title, and it cannot be taken away.")],
+ "70s": [("A new subject, taught patiently","At any age, learning something new is a way to meet your own mind again. Lessons here are short, in order, and you set the pace."),
+         ("What you get back","Songs from your own life, a way to keep your hands moving, and something to do that is entirely yours, whenever you want it."),
+         ("Your place in the family","Playing for your family, in your own home, makes you the center of a moment, not a bystander. People remember it.")],
+}
+
+REAL_REVIEWS = [
+ ("Sterling D.","adult student","I've spent years struggling to find the passion to stick with piano, and I finally found a teacher who exceeded any expectations I had for myself. Dr. Pisarenko's No Red Button philosophy has transformed me from a timid perfectionist into a player with realistic goals, a clear understanding of what it takes to achieve them, and a step by step path to actualize my version of success with the piano."),
+ ("Guillo L.","returning adult student","After being away from piano lessons for 15 years, I'd always wanted to start up again... Dr. Pisarenko is a great instructor for me. She's kind and patient and encouraging... very reasonable rates and top notch instruction. She's the best!"),
+ ("Sarah K.","adult beginner","I took piano lessons for a few years as a kid... Dr Pisarenko has been wonderful!!! She is very patient, very flexible with scheduling and I have learned so much from her in such a short period of time!"),
+ ("Katerina W.","adult student","A very knowledgeable teacher and an outstanding pianist... Her attention to detail and expression is incredible. I recommend Masha to all of my friends and everyone is delighted with her instruction."),
+]
+# which three each decade shows, so the pages are not identical
+REV_PICK = {"20s":[0,2,3],"30s":[0,1,2],"40s":[1,0,3],"50s":[1,2,3],"60s":[1,3,2],"70s":[3,1,2]}
+
+PAYOFF_TITLE = "What this gives you"
+
 BOOK_BLOCK = """<section style="background:var(--paper);padding:36px 0"><div class="wrap" style="max-width:820px">
 <span class="eyebrow">Coming soon</span>
 <h2>My method book and a practice app are on the way</h2>
@@ -285,6 +318,8 @@ def build_age(a, head_pre, hdr, foot):
         "author":{"@type":"Person","name":"Dr. Maria Pisarenko","honorificSuffix":"DMA"},
         "audience":{"@type":"PeopleAudience","audienceType":"Adult piano learners in their "+a["decade"]}})
     bc = breadcrumb([("Online Piano University",""),("Piano Lessons by Age","piano-lessons-by-age.html"),(a["label"],a["slug"]+".html")])
+    payoff = "".join('<div class="card"><h3>%s</h3><p class="muted">%s</p></div>' % (esc(t), esc(b)) for t, b in PAYOFF[a["decade"]])
+    reviews = "".join('<div class="card"><p class="stars" style="color:var(--gold);margin:0 0 6px">&#9733;&#9733;&#9733;&#9733;&#9733;</p><p>&ldquo;%s&rdquo;</p><p class="muted"><b>&mdash; %s</b>, %s &middot; Yelp</p></div>' % (esc(REAL_REVIEWS[i][2]), esc(REAL_REVIEWS[i][0]), esc(REAL_REVIEWS[i][1])) for i in REV_PICK[a["decade"]])
     other_links = " &middot; ".join('<a href="%s.html">%s</a>' % (o["slug"], esc(o["label"])) for o in others)
     body = f'''{hdr}
 {contact_top()}
@@ -304,7 +339,21 @@ def build_age(a, head_pre, hdr, foot):
   <p>{esc(a["intro"][1])}</p>
 </div></section>
 
+<section><div class="wrap" style="max-width:900px">
+  <span class="eyebrow">Why it is worth starting now</span>
+  <h2>{PAYOFF_TITLE}</h2>
+  <div class="plan">{payoff}</div>
+</div></section>
+
 <section style="background:var(--paper)"><div class="wrap" style="max-width:900px">
+  <span class="eyebrow">Real students, real words</span>
+  <h2>What adult students say</h2>
+  <p class="muted">Written on Yelp by students of Dr. Pisarenko at Las Vegas Piano School &middot; 5.0&#9733; on Yelp (17 reviews), 4.9&#9733; on Google (44 reviews).</p>
+  <div class="plan">{reviews}</div>
+  <p style="margin-top:14px"><a href="reviews.html">Read more reviews &rarr;</a></p>
+</div></section>
+
+<section><div class="wrap" style="max-width:900px">
   <span class="eyebrow">Songs for your decade</span>
   <h2>{esc(a["songs_title"])}</h2>
   <p class="muted">{esc(a["songs_sub"])}</p>
