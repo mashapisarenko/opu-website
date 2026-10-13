@@ -16,8 +16,8 @@
       '<form class="ofrm" novalidate>' +
       '<div class="ofrow"><div><label for="' + p + 'name">Your name</label><input id="' + p + 'name" name="name" autocomplete="name"></div>' +
       '<div><label for="' + p + 'email">Email *</label><input id="' + p + 'email" name="email" type="email" autocomplete="email" required></div></div>' +
-      '<div class="ofrow"><div><label for="' + p + 'phone">Phone <span>(optional)</span></label><input id="' + p + 'phone" name="phone" type="tel" autocomplete="tel"></div>' +
-      '<div><label for="' + p + 'found">How did you find us?</label><select id="' + p + 'found" name="found_via"><option value="">Choose one</option>' +
+      '<div class="ofrow"><div><label for="' + p + 'phone">Phone *</label><input id="' + p + 'phone" name="phone" type="tel" autocomplete="tel" required></div>' +
+      '<div><label for="' + p + 'found">How did you find us? *</label><select id="' + p + 'found" name="found_via" required><option value="">Choose one</option>' +
       '<option value="youtube">YouTube</option><option value="google">Google or another search engine</option><option value="instagram">Instagram</option>' +
       '<option value="facebook">Facebook</option><option value="tiktok">TikTok</option><option value="pinterest">Pinterest</option>' +
       '<option value="blog">An article on this site</option><option value="friend">A friend or a recommendation</option>' +
@@ -51,6 +51,8 @@
     f.addEventListener("submit", function (ev) {
       ev.preventDefault(); err.style.display = "none";
       if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v("email"))) { err.textContent = "Please enter your email so I can reply."; err.style.display = "block"; return; }
+      if (v("phone").replace(/\D/g, "").length < 7) { err.textContent = "Please enter your phone number."; err.style.display = "block"; return; }
+      if (!v("found_via")) { err.textContent = "Please tell me how you found us."; err.style.display = "block"; return; }
       var hasFile = file.files.length > 0;
       if (hasFile && (!v("lesson") || !f.elements.consent.checked)) { err.textContent = "For a recording, please choose the lesson and tick the box."; err.style.display = "block"; return; }
       if (!backend) { window.location.href = mailto(); return; }

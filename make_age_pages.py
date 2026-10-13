@@ -187,11 +187,18 @@ def esc(s): return html.escape(s, quote=True)
 
 def read(name): return (HERE / name).read_text(encoding="utf-8")
 
+def _formband(tag, heading, sub):
+    return ('<!--opu-%s--><div class="contactband" data-opu="contact-%s"><div class="wrap" style="display:block;max-width:820px;padding:20px 22px 24px">'
+            '<h2 style="margin:0 0 4px;font-size:1.25rem">%s</h2><p class="muted" style="margin:0 0 6px">%s</p>'
+            '<div data-opu-form></div></div></div><!--/opu-%s-->') % (tag, tag, heading, sub, tag)
+
 def contact_top(prefix=""):
-    return ('<!--opu-top--><div class="contactband" data-opu="contact-top"><div class="wrap">'
-            '<span>Questions? <a href="mailto:%s">%s</a></span>'
-            '<button type="button" class="btn" data-opu-toggle aria-expanded="false" style="padding:6px 14px">Write to me or send your playing &#9662;</button></div>'
-            '<div class="contactpanel" style="display:none"><div class="wrap" style="max-width:760px;padding:16px 22px 22px"><div data-opu-form></div></div></div></div><!--/opu-top-->') % (EMAIL, EMAIL)
+    return _formband("top", "Write to Dr. Maria Pisarenko, or send your playing",
+                     "Leave your email, phone and how you found us. I read every message and listen to every recording myself.") 
+
+def contact_mid(prefix=""):
+    return _formband("mid", "Questions? Want feedback on your playing?",
+                     "Send a message or attach a recording. Email, phone and how you found us help me answer you properly.")
 
 def contact_full(prefix=""):
     return ('<section class="contactfull" data-opu="contact-bottom"><div class="wrap">'
@@ -406,13 +413,27 @@ def add_footer_link_and_bands():
         pre = "../" if in_blog else ""
         t = p.read_text(encoding="utf-8")
         o = t
-        t = re.sub(r'<!--opu-top-->.*?<!--/opu-top-->', '', t, flags=re.S)
+        for tag in ("top", "mid"):
+            t = re.sub(r'<!--opu-%s-->.*?<!--/opu-%s-->' % (tag, tag), '', t, flags=re.S)
         t = re.sub(r'<div class="contactband" data-opu="contact-top"><div class="wrap"><span>Questions\? .*?Send your playing for feedback</a></div></div>', '', t, flags=re.S)
         t = re.sub(r'<section class="contactfull" data-opu="contact-bottom">.*?</section>(\n<script src="[^"]*js/opu-form\.js" defer></script>)?', '', t, flags=re.S)
         if "</header>" in t:
             t = t.replace("</header>", "</header>\n" + contact_top(pre), 1)
-        if '<footer id="footer">' in t and n != "contact.html":
+        if '<footer id="footer">' in t:
             t = t.replace('<footer id="footer">', contact_full(pre) + '\n<footer id="footer">', 1)
+        elif n == "start.html" and "</body>" in t:
+            t = t.replace("</body>", contact_full(pre) + "\n</body>", 1)
+        if n != "contact.html":
+            # middle: before the middle <section> (or the middle <h2> when the page has few sections)
+            body_start = t.index("</header>") + 9
+            body_end = t.index('<section class="contactfull"') if '<section class="contactfull"' in t else len(t)
+            seg = t[body_start:body_end]
+            secs = [m.start() for m in re.finditer(r'<section\b', seg)]
+            if len(secs) < 4:
+                secs = [m.start() for m in re.finditer(r'<h2\b', seg)] or secs
+            if secs:
+                pos = body_start + secs[len(secs) // 2]
+                t = t[:pos] + contact_mid(pre) + "\n" + t[pos:]
         if "piano-lessons-by-age.html" not in t.split('<footer id="footer">')[-1]:
             t = re.sub(r'(<p><a href="(?:\.\./)?press\.html">Press</a></p>)',
                        lambda m: m.group(1) + '\n      <p><a href="%spiano-lessons-by-age.html">Piano by Age</a></p>' % pre, t, count=1)
