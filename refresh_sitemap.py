@@ -26,6 +26,16 @@ DEFAULT = ("monthly", "0.7")
 
 
 def git_date(path):
+    # 2026-10-15: a file with uncommitted edits is being changed today (e.g. by the
+    # blog publisher before its commit step) -- git log would return the previous
+    # commit's date, so stamp it with today instead.
+    try:
+        dirty = subprocess.run(["git", "status", "--porcelain", "--", str(path)],
+                               cwd=HERE, capture_output=True, text=True, timeout=20).stdout.strip()
+        if dirty:
+            return datetime.date.today().isoformat()
+    except Exception:
+        pass
     try:
         d = subprocess.run(["git", "log", "-1", "--format=%cs", "--", str(path)],
                            cwd=HERE, capture_output=True, text=True, timeout=20).stdout.strip()

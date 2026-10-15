@@ -30,7 +30,6 @@ def build(spec, out_dir):
                "places, and an adult learning alone needs to know where.")
 
     for old, new in ((old_title, spec["title"]),
-                     (old_desc, spec["description"]),
                      (old_sub, spec["sub"]),
                      (OLD_SLUG, spec["slug"]),
                      ("2026-09-14", spec["date"]),
@@ -46,6 +45,26 @@ def build(spec, out_dir):
     for attr in ("og:title", "twitter:title"):
         t = re.sub(r'(<meta (?:property|name)="%s" content=")[^"]*(")' % attr,
                    lambda m: m.group(1) + st.replace('"', "&quot;") + m.group(2), t)
+
+    # DESC_NOINDEX_FIX 2026-10-15: the template's description was shortened, so the old
+    # literal anchor stopped matching and drafts inherited the template's description.
+    # Set all three descriptions from the spec, and mark the draft noindex in the exact
+    # form blog/_publish.py strips on publication.
+    desc = spec["description"].replace("&", "&amp;").replace('"', "&quot;")
+    if len(spec["description"]) > 160:
+        sys.exit("description over 160 chars: %s" % spec["slug"])
+    for attr in ("description", "og:description", "twitter:description"):
+        t, k = re.subn(r'(<meta (?:property|name)="%s" content=")[^"]*(")' % attr,
+                       lambda m: m.group(1) + desc + m.group(2), t, count=1)
+        if not k:
+            sys.exit("template has no %s meta" % attr)
+    if len(spec.get("seo_title", spec["title"])) > 60:
+        sys.exit("title over 60 chars, add seo_title: %s" % spec["slug"])
+    t = re.sub(r'("@type": "BlogPosting",\s*"headline": "[^"]*",\s*"description": )"(?:[^"\\]|\\.)*"',
+               lambda m: m.group(1) + json.dumps(spec["description"], ensure_ascii=False), t, count=1)
+    NOINDEX = '<meta name="robots" content="noindex">\n'
+    if NOINDEX not in t:
+        t = t.replace('<meta charset="utf-8">\n', '<meta charset="utf-8">\n' + NOINDEX, 1)
 
     # lead photograph
     t = re.sub(r'<img src="\.\./images/blog/[^"]+" alt="[^"]*"',
