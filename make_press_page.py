@@ -23,6 +23,8 @@ Same discipline as make_first_piece_page.py: cloned from a LIVE page so the head
 analytics, nav, footer and CSS cannot drift.
 
 Run from opu-website/:  python3 make_press_page.py
+!! STALE 2026-10-15: press.html has since been post-processed (schema, title, forms,
+!! age links, footer). Re-running this overwrites all of that. Edit press.html directly.
 """
 import pathlib, re, sys
 
@@ -422,6 +424,39 @@ __PLAYING__
           Novosibirsk, Kharkov and Zaporozhye philharmonics &middot; Bangkok &middot; Pamukkale,
           Turkey.</p>
       </div>
+      <div class="card">
+        <h3>Leadership and festivals</h3>
+        <ul class="muted" style="padding-left:18px;margin:.4rem 0 0;line-height:1.7">
+          <li>President and board director, <b>International Cultural Seasons</b>, a non-profit for
+            music, culture and education, 2019&ndash;present</li>
+          <li>Board member and 1st Vice President of Programs, <b>Las Vegas Music Teachers
+            Association</b>, 2009&ndash;present</li>
+          <li>Founder and artistic director, 1st Annual St. Paul&rsquo;s Music Festival, 2011</li>
+          <li>Creative and artistic director, 1st Annual Russian Music &amp; Culture Festival,
+            College of Southern Nevada, 2019</li>
+          <li>Baikal Summer Music Festival, Irkutsk region, 2008&ndash;2016</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Lecture-recitals</h3>
+        <ul class="muted" style="padding-left:18px;margin:.4rem 0 0;line-height:1.7">
+          <li>University of Nevada, Las Vegas &mdash; <i>Cultural Influences upon Soviet-era
+            Programmatic Piano Music for Children</i>, 2017</li>
+          <li>Irkutsk College of Music &mdash; Soviet-era programmatic piano music, 2016</li>
+          <li>College of Southern Nevada and the Clark County Library &mdash; Russian music
+            and culture, 2019</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Professional memberships</h3>
+        <p class="muted" style="margin:.4rem 0 0;line-height:1.7">Music Teachers National Association
+          &middot; American College of Musicians / National Guild of Piano Teachers &middot; Southern
+          Nevada Musical Arts Society &middot; Las Vegas Chamber Music Society &middot; Irkutsk
+          Philharmonic.</p>
+      </div>
+
       <div class="card">
         <h3>Also on file</h3>
         <p class="muted" style="margin:.4rem 0 0">Southern Utah University, on a letter in my file:
