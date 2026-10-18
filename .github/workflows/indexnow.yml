@@ -1,0 +1,37 @@
+name: Tell search engines about new and changed pages (IndexNow)
+
+# IndexNow reaches Bing, Yahoo, DuckDuckGo (through Bing), Yandex, Seznam and
+# Naver with no account. Google reads sitemap.xml (listed in robots.txt and
+# submitted in Search Console) on its own schedule.
+#  - on every push of Maria's: the pages that commit changed
+#  - every Monday: the whole sitemap, so nothing is ever left unannounced
+# The blog scheduler pings its own new article (see publish-blog.yml),
+# because pushes made by the workflow token do not start other workflows.
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '10 16 * * 1'   # Monday 16:10 UTC
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Wait for GitHub Pages to serve the new version
+        run: sleep 150
+      - name: Ping IndexNow
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            urls=$(git diff --name-only HEAD~1 HEAD -- '*.html' | grep -v '^blog/_' | grep -v '^studio.html$' \
+                   | sed -e 's#^index.html$##' -e 's#/index.html$#/#' -e 's#^#https://onlinepianouniversity.com/#')
+            if [ -z "$urls" ]; then echo "no public page changed"; exit 0; fi
+            python3 indexnow_ping.py $urls https://onlinepianouniversity.com/sitemap.xml
+          else
+            python3 indexnow_ping.py
+          fi
