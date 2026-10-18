@@ -74,7 +74,7 @@ RELATED = {
  "the-silence-before-the-first-chord": ["what-happens-in-a-solo-recital", "playing-a-concerto-with-an-orchestra", "playing-piano-for-other-people"],
  "what-a-piano-competition-teaches-you": ["playing-a-concerto-with-an-orchestra", "what-happens-in-a-solo-recital", "a-girl-from-siberia-and-the-piano"],
  "what-happens-in-a-solo-recital": ["the-silence-before-the-first-chord", "playing-a-concerto-with-an-orchestra", "playing-piano-for-other-people"],
- "who-taught-the-person-teaching-you": ["the-gnessin-academy-and-the-teachers-who-shaped-me", "alexander-goldenweiser-from-liszt-to-your-piano", "russian-school-vs-american-piano-method"],
+ "who-taught-the-person-teaching-you": ["the-gnessin-academy-and-the-teachers-who-shaped-me", "alexander-goldenweiser-from-liszt-to-your-piano", "russian-school-vs-american-piano-method", "a-girl-from-siberia-and-the-piano"],
  "why-i-teach-adults": ["is-it-too-late-to-learn-piano-at-40-50-60", "from-moscow-to-america-a-pianists-second-education", "returning-to-piano-as-an-adult"],
  # --- added 2026-10-13: one article per decade ---
  "learning-piano-at-50": ["is-it-too-late-to-learn-piano-at-40-50-60", "how-to-practice-piano-a-method-not-more-minutes", "piano-bench-height-posture"],
@@ -144,9 +144,9 @@ RELATED = {
  # --- teaching, method, gear ---
  "learning-piano-without-a-teacher": ["run-your-own-piano-lesson", "how-to-choose-a-piano-teacher", "right-notes-still-sounds-wrong"],
  "how-to-choose-a-piano-teacher": ["learning-piano-without-a-teacher", "run-your-own-piano-lesson", "russian-school-vs-american-piano-method"],
- "russian-school-vs-american-piano-method": ["what-european-music-schools-teach-that-american-adults-missed", "right-notes-still-sounds-wrong", "reading-music-or-playing-by-ear"],
+ "russian-school-vs-american-piano-method": ["who-taught-the-person-teaching-you", "what-european-music-schools-teach-that-american-adults-missed", "right-notes-still-sounds-wrong", "reading-music-or-playing-by-ear"],
  "what-european-music-schools-teach-that-american-adults-missed": ["russian-school-vs-american-piano-method", "reading-music-or-playing-by-ear", "adults-learn-piano-differently"],
- "right-notes-still-sounds-wrong": ["russian-school-vs-american-piano-method", "choosing-your-first-piano-piece", "how-to-count-music-out-loud", "why-your-hands-get-tense-at-the-piano"],
+ "right-notes-still-sounds-wrong": ["the-silence-before-the-first-chord", "russian-school-vs-american-piano-method", "choosing-your-first-piano-piece", "how-to-count-music-out-loud", "why-your-hands-get-tense-at-the-piano"],
  "digital-piano-vs-acoustic-beginner": ["how-many-keys-do-i-need-piano", "practicing-piano-in-an-apartment", "piano-bench-height-posture", "is-it-too-late-to-learn-piano-at-40-50-60"],
  "how-many-keys-do-i-need-piano": ["digital-piano-vs-acoustic-beginner", "piano-bench-height-posture", "how-to-find-any-note-on-the-piano"],
 
