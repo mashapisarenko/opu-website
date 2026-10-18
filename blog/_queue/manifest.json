@@ -1,9 +1,21 @@
 [
   {
+    "slug": "piano-and-the-aging-brain",
+    "date": "2026-10-19",
+    "title": "Does Playing Piano Keep Your Brain Sharp? What Research Says",
+    "summary": "Keeping the mind sharp is one of the best reasons to start. It is also the reason most often oversold. Here is what the studies show, and how to practice so the work counts."
+  },
+  {
     "slug": "inside-a-central-music-school-for-gifted-children",
     "date": "2026-10-20",
     "title": "Inside a Russian Music School for Gifted Children",
     "summary": "Russian special music schools combine ordinary schooling with daily musical training in ear, theory and ensemble; I describe the Central Music School and what adult beginners can borrow from it."
+  },
+  {
+    "slug": "piano-for-stress-relief",
+    "date": "2026-10-20",
+    "title": "Piano for Stress Relief: Why Playing Quiets a Busy Mind",
+    "summary": "For twenty minutes, your hands, eyes and ears are fully occupied. There is no room left for the day you have had. Here is how to keep it that way."
   },
   {
     "slug": "piano-plateau-month-four",
@@ -12,10 +24,22 @@
     "summary": "It arrives at around the same time for almost everyone, it feels like proof that you have no talent, and it is in fact a specific and well-understood thing."
   },
   {
+    "slug": "piano-apps-vs-a-real-teacher",
+    "date": "2026-10-21",
+    "title": "Piano Apps vs a Real Teacher: What an App Cannot Hear",
+    "summary": "An app knows whether you pressed the right key at the right time. It does not know how you pressed it. That second question is most of what playing the piano is."
+  },
+  {
     "slug": "tatiana-nikolayeva-the-teacher-who-heard-me-play",
     "date": "2026-10-22",
     "title": "Tatiana Nikolayeva: The Teacher Who Heard Me Play",
     "summary": "Dr. Pisarenko recalls playing for the pianist Tatiana Nikolayeva, whose pupil taught her, and shares practical steps for adults who dread playing for other people."
+  },
+  {
+    "slug": "learning-piano-with-arthritis",
+    "date": "2026-10-22",
+    "title": "Learning Piano With Arthritis or Stiff Hands",
+    "summary": "Stiff hands change how you practice, not whether you can play. Here is how to work with them instead of against them."
   },
   {
     "slug": "playing-piano-for-other-people",
@@ -24,10 +48,22 @@
     "summary": "You have played it forty times alone and it was fine. Someone walks into the room and your hands are suddenly not yours. There are reasons, and there are things that work."
   },
   {
+    "slug": "piano-method-book-for-adult-beginners",
+    "date": "2026-10-23",
+    "title": "How to Choose a Piano Method Book for Adult Beginners",
+    "summary": "A method book is a teacher you take home. Most adults choose one by its cover. Here is what a trained musician looks at instead."
+  },
+  {
     "slug": "what-happens-in-a-solo-recital",
     "date": "2026-10-24",
     "title": "What Really Happens in a Solo Piano Recital",
     "summary": "A solo recital is built from invisible decisions: programming, layered memory, the hall and the opening silence. Dr. Pisarenko turns them into advice for adults who play for family."
+  },
+  {
+    "slug": "piano-as-a-hobby-for-burnout",
+    "date": "2026-10-24",
+    "title": "Piano for Burnout: A Skill That Belongs Only to You",
+    "summary": "At work, effort disappears into other people's priorities. At the piano, every honest minute stays with you. That is why so many tired professionals end up here."
   },
   {
     "slug": "the-gnessin-academy-and-the-teachers-who-shaped-me",
@@ -36,10 +72,22 @@
     "summary": "Dr. Pisarenko describes the Gnessin Russian Academy of Music, her teachers and masterclasses, and explains why collaborative piano trains listening and lets adults make music with others."
   },
   {
+    "slug": "embarrassed-to-be-an-adult-piano-beginner",
+    "date": "2026-10-25",
+    "title": "Embarrassed to Be an Adult Piano Beginner? Read This",
+    "summary": "You are competent at many things, and at the piano you are not yet. That feeling is uncomfortable, it is normal, and it passes faster than you expect."
+  },
+  {
     "slug": "run-your-own-piano-lesson",
     "date": "2026-10-26",
     "title": "How to Run Your Own Piano Lesson When You Do Not Have a Teacher",
     "summary": "Most of what a teacher does in an hour, you can do for yourself once you know what the hour is supposed to contain. One part you cannot, and it is worth knowing which."
+  },
+  {
+    "slug": "empty-nest-hobby-piano",
+    "date": "2026-10-26",
+    "title": "Empty Nest Hobby: Why the Piano Is Worth Starting Now",
+    "summary": "For years your evenings belonged to everyone else. Now the house is quiet, the calendar has room, and the piano in the corner is waiting."
   },
   {
     "slug": "leonid-nikolayev-the-teacher-of-yudina-and-shostakovich",
@@ -48,10 +96,22 @@
     "summary": "Leonid Nikolayev taught Yudina, Sofronitsky and Shostakovich and wanted thinking musicians, not just pianists; this phrase shapes how I teach adult beginners to listen, reason and play."
   },
   {
+    "slug": "online-piano-lessons-vs-in-person",
+    "date": "2026-10-27",
+    "title": "Online Piano Lessons vs In-Person: An Honest Comparison",
+    "summary": "The question is not online or in person. It is who is teaching you, and whether anyone is actually listening to your playing."
+  },
+  {
     "slug": "adults-learn-piano-differently",
     "date": "2026-10-28",
     "title": "Adults Learn Piano Differently From Children &mdash; and Mostly Better",
     "summary": "The comparison is always made in one direction. Having taught both for years, I think the balance is considerably more even than adults are told."
+  },
+  {
+    "slug": "piano-duets-for-adult-beginners",
+    "date": "2026-10-28",
+    "title": "Piano Duets for Adult Beginners: Music Is Better Shared",
+    "summary": "Most adults learn the piano alone. Playing with one other person changes how you listen, how you count, and how much you enjoy it."
   },
   {
     "slug": "alexander-goldenweiser-from-liszt-to-your-piano",
@@ -610,65 +670,5 @@
     "date": "2027-01-29",
     "title": "Repeat Signs, D.C., Coda: How to Find Your Way Through a Piece",
     "summary": "Da capo, dal segno, the coda sign, first and second endings &mdash; these are directions, not music, and they are simpler than they look."
-  },
-  {
-    "slug": "piano-and-the-aging-brain",
-    "date": "2027-01-30",
-    "title": "Does Playing Piano Keep Your Brain Sharp? What Research Says",
-    "summary": "Keeping the mind sharp is one of the best reasons to start. It is also the reason most often oversold. Here is what the studies show, and how to practice so the work counts."
-  },
-  {
-    "slug": "piano-for-stress-relief",
-    "date": "2027-01-31",
-    "title": "Piano for Stress Relief: Why Playing Quiets a Busy Mind",
-    "summary": "For twenty minutes, your hands, eyes and ears are fully occupied. There is no room left for the day you have had. Here is how to keep it that way."
-  },
-  {
-    "slug": "piano-apps-vs-a-real-teacher",
-    "date": "2027-02-01",
-    "title": "Piano Apps vs a Real Teacher: What an App Cannot Hear",
-    "summary": "An app knows whether you pressed the right key at the right time. It does not know how you pressed it. That second question is most of what playing the piano is."
-  },
-  {
-    "slug": "learning-piano-with-arthritis",
-    "date": "2027-02-02",
-    "title": "Learning Piano With Arthritis or Stiff Hands",
-    "summary": "Stiff hands change how you practice, not whether you can play. Here is how to work with them instead of against them."
-  },
-  {
-    "slug": "piano-method-book-for-adult-beginners",
-    "date": "2027-02-03",
-    "title": "How to Choose a Piano Method Book for Adult Beginners",
-    "summary": "A method book is a teacher you take home. Most adults choose one by its cover. Here is what a trained musician looks at instead."
-  },
-  {
-    "slug": "piano-as-a-hobby-for-burnout",
-    "date": "2027-02-04",
-    "title": "Piano for Burnout: A Skill That Belongs Only to You",
-    "summary": "At work, effort disappears into other people's priorities. At the piano, every honest minute stays with you. That is why so many tired professionals end up here."
-  },
-  {
-    "slug": "embarrassed-to-be-an-adult-piano-beginner",
-    "date": "2027-02-05",
-    "title": "Embarrassed to Be an Adult Piano Beginner? Read This",
-    "summary": "You are competent at many things, and at the piano you are not yet. That feeling is uncomfortable, it is normal, and it passes faster than you expect."
-  },
-  {
-    "slug": "empty-nest-hobby-piano",
-    "date": "2027-02-06",
-    "title": "Empty Nest Hobby: Why the Piano Is Worth Starting Now",
-    "summary": "For years your evenings belonged to everyone else. Now the house is quiet, the calendar has room, and the piano in the corner is waiting."
-  },
-  {
-    "slug": "online-piano-lessons-vs-in-person",
-    "date": "2027-02-07",
-    "title": "Online Piano Lessons vs In-Person: An Honest Comparison",
-    "summary": "The question is not online or in person. It is who is teaching you, and whether anyone is actually listening to your playing."
-  },
-  {
-    "slug": "piano-duets-for-adult-beginners",
-    "date": "2027-02-08",
-    "title": "Piano Duets for Adult Beginners: Music Is Better Shared",
-    "summary": "Most adults learn the piano alone. Playing with one other person changes how you listen, how you count, and how much you enjoy it."
   }
 ]
