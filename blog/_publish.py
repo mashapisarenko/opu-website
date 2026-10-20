@@ -122,6 +122,16 @@ def main():
         shutil.move(str(src), str(dst))
         _t = dst.read_text(encoding='utf-8')  # QUEUE-NOINDEX: queued drafts carry noindex; strip it on publish
         dst.write_text(_t.replace('<meta name="robots" content="noindex">\n', ''), encoding='utf-8')
+        # Safety net: never publish an article without the three contact forms.
+        try:
+            import _contact_blocks
+            _t = dst.read_text(encoding='utf-8')
+            _n = _contact_blocks.ensure(_t)
+            if _n != _t:
+                dst.write_text(_n, encoding='utf-8')
+                print("contact forms added on publish: %s" % dst.name)
+        except Exception as exc:              # never let this break a publish
+            print("contact forms WARNING: %s: %s" % (dst.name, exc))
         index = insert_after(index, '<div style="margin-top:30px">\n', card(e, d), "card list")
         index = insert_after(index, '"blogPost": [\n', jsonld(e, d), "JSON-LD list")
         sitemap = add_to_sitemap(sitemap, e, d)

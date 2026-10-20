@@ -83,6 +83,10 @@ def build(spec, out_dir):
                lambda m: m.group(1) + spec["body"].strip() + m.group(2),
                t, count=1, flags=re.S)
 
+    # The three contact/feedback forms (top, middle, bottom) - Masha's rule of 2026-10-13.
+    import _contact_blocks
+    t = _contact_blocks.ensure(t)
+
     out = pathlib.Path(out_dir) / (spec["slug"] + ".html")
     out.write_text(t, encoding="utf-8")
     return out
