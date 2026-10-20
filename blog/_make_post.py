@@ -83,6 +83,14 @@ def build(spec, out_dir):
                lambda m: m.group(1) + spec["body"].strip() + m.group(2),
                t, count=1, flags=re.S)
 
+    # A title with its own double quotes once broke the og/twitter titles and the breadcrumb
+    # JSON-LD of a queued article (16 Nov). Refuse to write any article whose JSON-LD does not parse.
+    for _m in re.finditer(r'<script type="application/ld\+json"[^>]*>(.*?)</script>', t, re.S):
+        try:
+            json.loads(_m.group(1))
+        except ValueError as exc:
+            sys.exit("broken JSON-LD in %s (%s) - use typographic quotes in the title" % (spec["slug"], exc))
+
     # The three contact/feedback forms (top, middle, bottom) - Masha's rule of 2026-10-13.
     import _contact_blocks
     t = _contact_blocks.ensure(t)
