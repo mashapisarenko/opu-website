@@ -155,6 +155,15 @@ def main():
     except Exception as exc:                      # never let this break a publish
         print("read-next skipped:", exc)
 
+    # Links from live articles to articles still in the queue: parked until the target is
+    # published, then restored (blog/_pending_links.py).
+    try:
+        r = subprocess.run([sys.executable, str(BLOG / "_pending_links.py")],
+                           capture_output=True, text=True, cwd=str(BLOG.parent))
+        print((r.stdout or "").strip() or "pending links: nothing to do")
+    except Exception as exc:
+        print("pending links skipped:", exc)
+
     # Keep the home page's "Latest from the blog" block in step with the blog index.
     try:
         r = subprocess.run([sys.executable, str(BLOG / "refresh_home_blog.py")],
