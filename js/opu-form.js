@@ -71,6 +71,7 @@
         var bad = res.filter(function (d) { return !(d && d.ok); })[0];
         if (bad) throw new Error(bad.error || "failed");
         f.querySelectorAll("input,select,textarea,button").forEach(function (x) { x.disabled = true; });
+        btn.textContent = "Sent \u2713";
         ok.style.display = "block";
         if (window.gtag) gtag("event", "opu_form_sent", { found_via: v("found_via"), recording: hasFile ? 1 : 0 });
       }).catch(function (e) {
