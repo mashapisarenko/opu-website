@@ -61,7 +61,7 @@ def jsonld(entry, d):
         '      "author": {\n'
         '        "@id": "%s/#maria"\n'
         '      }\n'
-        '    },\n' % (json.dumps(entry["title"], ensure_ascii=False),
+        '    },\n' % (json.dumps(__import__("html").unescape(entry["title"]), ensure_ascii=False),
                       SITE, entry["slug"], d.isoformat(), SITE))
 
 
