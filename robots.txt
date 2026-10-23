@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /blog/_queue/
 Disallow: /blog/_published_copies/
+Disallow: /_health/
 
 Sitemap: https://onlinepianouniversity.com/sitemap.xml
 Sitemap: https://onlinepianouniversity.com/sitemap-video.xml

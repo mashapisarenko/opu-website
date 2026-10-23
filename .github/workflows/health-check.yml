@@ -1,0 +1,39 @@
+name: Site health check
+
+# Runs _health/check_site.py against the repository: broken links, raw "&" in
+# <meta>, JSON-LD that does not parse, sitemap lastmod vs git, queue / noindex
+# parity, the three form blocks per article, og:image files, the video sitemap.
+# A red run here means a real fault on the site. NOTICE lines (empty PAY_ slots
+# and other pending decisions) are printed but never fail the run.
+#  - on every push (pushes made by the blog scheduler's token do not start
+#    workflows, so the nightly run covers those)
+#  - every night at 23:40 UTC, after the day's scheduled publish
+#  - by hand from the Actions tab
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '40 23 * * *'   # 23:40 UTC = 16:40 in Las Vegas (PDT)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0      # sitemap lastmod is compared with each file's git history
+      - name: Run the site check
+        run: python3 _health/check_site.py | tee "$RUNNER_TEMP/check.txt"; exit ${PIPESTATUS[0]}
+        shell: bash
+      - name: Summary
+        if: always()
+        run: |
+          if [ -f "$RUNNER_TEMP/check.txt" ]; then
+            { echo '```'; cat "$RUNNER_TEMP/check.txt"; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          fi
