@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://onlinepianouniversity.com/</loc>
+<video:video><video:thumbnail_loc>https://i.ytimg.com/vi/AzU01rYWHK8/hqdefault.jpg</video:thumbnail_loc><video:title>Piano Lesson 1 — Warm Up the Keyboard</video:title><video:description>Your very first piano lesson: how to sit, find your hand shape, and get comfortable at the keyboard.</video:description><video:player_loc>https://www.youtube-nocookie.com/embed/AzU01rYWHK8</video:player_loc><video:publication_date>2026-07-06T14:10:02-07:00</video:publication_date></video:video>
+</url>
 <url><loc>https://onlinepianouniversity.com/about.html</loc>
 <video:video><video:thumbnail_loc>https://i.ytimg.com/vi/3ZXkzkgqb2Y/hqdefault.jpg</video:thumbnail_loc><video:title>Grieg: Piano Concerto in A minor, live with orchestra - Dr. Maria Pisarenko</video:title><video:description>Concert pianist Dr. Maria Pisarenko, DMA, performs Grieg's Piano Concerto in A minor live with orchestra.</video:description><video:player_loc>https://www.youtube.com/embed/3ZXkzkgqb2Y</video:player_loc></video:video>
 <video:video><video:thumbnail_loc>https://i.ytimg.com/vi/3fSFw776XXs/hqdefault.jpg</video:thumbnail_loc><video:title>Mozart: Piano Concerto No. 21, live with orchestra - Dr. Maria Pisarenko</video:title><video:description>Concert pianist Dr. Maria Pisarenko, DMA, performs Mozart's Piano Concerto No. 21 live with orchestra.</video:description><video:player_loc>https://www.youtube.com/embed/3fSFw776XXs</video:player_loc></video:video>
