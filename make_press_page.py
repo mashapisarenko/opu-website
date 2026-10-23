@@ -26,6 +26,7 @@ Run from opu-website/:  python3 make_press_page.py
 !! STALE 2026-10-15: press.html has since been post-processed (schema, title, forms,
 !! age links, footer). Re-running this overwrites all of that. Edit press.html directly.
 """
+import html
 import pathlib, re, sys
 
 # The day every external link on this page was last opened in a real browser.
@@ -511,7 +512,9 @@ def main():
     old_title = "Free Piano Course for Adult Beginners — 41 Lessons in Order"
     old_desc = ("Forty-one free piano lessons for adults, in order - reading, chords, pedal, both "
                 "hands. The university curriculum Dr. Maria Pisarenko, DMA, teaches at college.")
-    for old, new in ((old_title, TITLE + " | Online Piano University"),
+    # old_title only occurs inside og:title/twitter:title attributes, so the replacement
+    # must be attribute-escaped (a raw "&" there broke both tags on the live page).
+    for old, new in ((old_title, html.escape(TITLE + " | Online Piano University", quote=True)),
                      (old_desc, DESC),
                      ("free-course.html", "press.html")):
         if old not in t:
