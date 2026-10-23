@@ -5,7 +5,7 @@ Every part that differs between articles is replaced explicitly; anything not
 listed here (nav, footer, capture form, course CTA, analytics) is carried over
 untouched, so a new article can never drift away from the rest of the site.
 """
-import re, sys, json, datetime, pathlib
+import re, sys, json, html, datetime, pathlib
 
 HERE = pathlib.Path(__file__).resolve().parent
 TEMPLATE = HERE / "russian-school-vs-american-piano-method.html"
@@ -13,6 +13,30 @@ SITE = "https://onlinepianouniversity.com"
 OLD_SLUG = "russian-school-vs-american-piano-method"
 MONTHS = ("January February March April May June July August September "
           "October November December").split()
+
+
+# ESCAPING_FIX 2026-10-22: spec text arrives in two conventions - plain ("Bach & Chopin")
+# and pre-entitied ("Later &mdash; and"). Normalise to plain text first, then escape for
+# the exact context it lands in, so neither a raw "&" nor a double-escaped "&amp;mdash;"
+# can reach the page.
+def plain(s):
+    return html.unescape(s)
+
+
+def attr(s):
+    """Text for inside a double-quoted HTML attribute: & < > " escaped."""
+    return html.escape(plain(s), quote=True)
+
+
+def text(s):
+    """Text for an HTML element body (h1, sub line, card): & < > escaped."""
+    return html.escape(plain(s), quote=False)
+
+
+def jsonstr(s):
+    """A complete JSON string literal (with its quotes) for JSON-LD."""
+    # "</" is escaped so no title can close the surrounding <script> element early.
+    return json.dumps(plain(s), ensure_ascii=False).replace("</", "<\\/")
 
 
 def build(spec, out_dir):
@@ -29,8 +53,17 @@ def build(spec, out_dir):
                "The two traditions are not better and worse. They are strong in different "
                "places, and an adult learning alone needs to know where.")
 
-    for old, new in ((old_title, spec["title"]),
-                     (old_sub, spec["sub"]),
+    # The template's title occurs exactly three times: JSON-LD headline, breadcrumb JSON-LD
+    # name, and the h1. Each gets the escaping of its own context.
+    for old, new in (('"headline": "%s"' % old_title, '"headline": ' + jsonstr(spec["title"])),
+                     ('"name": "%s"' % old_title, '"name": ' + jsonstr(spec["title"])),
+                     (">%s</h1>" % old_title, ">%s</h1>" % text(spec["title"]))):
+        if t.count(old) != 1:
+            sys.exit("template title anchor not found exactly once: %r" % old[:60])
+        t = t.replace(old, new)
+    if old_title in t:
+        sys.exit("template title occurs in an unhandled place: %s" % spec["slug"])
+    for old, new in ((old_sub, text(spec["sub"])),
                      (OLD_SLUG, spec["slug"]),
                      ("2026-09-14", spec["date"]),
                      ("September 14, 2026", human)):
@@ -41,42 +74,44 @@ def build(spec, out_dir):
     # SEO_TITLE_FIX 2026-10-13: the template's <title>/og/twitter titles were shortened for
     # search, so they no longer equal old_title; set them from the spec explicitly.
     st = spec.get("seo_title", spec["title"])
-    t = re.sub(r"<title>.*?</title>", lambda m: "<title>%s</title>" % st, t, count=1, flags=re.S)
-    for attr in ("og:title", "twitter:title"):
-        t = re.sub(r'(<meta (?:property|name)="%s" content=")[^"]*(")' % attr,
-                   lambda m: m.group(1) + st.replace('"', "&quot;") + m.group(2), t)
+    t = re.sub(r"<title>.*?</title>", lambda m: "<title>%s</title>" % text(st), t, count=1, flags=re.S)
+    for name in ("og:title", "twitter:title"):
+        t, k = re.subn(r'(<meta (?:property|name)="%s" content=")[^"]*(")' % name,
+                       lambda m: m.group(1) + attr(st) + m.group(2), t)
+        if not k:
+            sys.exit("template has no %s meta" % name)
 
     # DESC_NOINDEX_FIX 2026-10-15: the template's description was shortened, so the old
     # literal anchor stopped matching and drafts inherited the template's description.
     # Set all three descriptions from the spec, and mark the draft noindex in the exact
     # form blog/_publish.py strips on publication.
-    desc = spec["description"].replace("&", "&amp;").replace('"', "&quot;")
-    if len(spec["description"]) > 160:
+    desc = attr(spec["description"])
+    if len(plain(spec["description"])) > 160:
         sys.exit("description over 160 chars: %s" % spec["slug"])
-    for attr in ("description", "og:description", "twitter:description"):
-        t, k = re.subn(r'(<meta (?:property|name)="%s" content=")[^"]*(")' % attr,
+    for name in ("description", "og:description", "twitter:description"):
+        t, k = re.subn(r'(<meta (?:property|name)="%s" content=")[^"]*(")' % name,
                        lambda m: m.group(1) + desc + m.group(2), t, count=1)
         if not k:
-            sys.exit("template has no %s meta" % attr)
-    if len(spec.get("seo_title", spec["title"])) > 60:
+            sys.exit("template has no %s meta" % name)
+    if len(plain(st)) > 60:
         sys.exit("title over 60 chars, add seo_title: %s" % spec["slug"])
     t = re.sub(r'("@type": "BlogPosting",\s*"headline": "[^"]*",\s*"description": )"(?:[^"\\]|\\.)*"',
-               lambda m: m.group(1) + json.dumps(spec["description"], ensure_ascii=False), t, count=1)
+               lambda m: m.group(1) + jsonstr(spec["description"]), t, count=1)
     NOINDEX = '<meta name="robots" content="noindex">\n'
     if NOINDEX not in t:
         t = t.replace('<meta charset="utf-8">\n', '<meta charset="utf-8">\n' + NOINDEX, 1)
 
     # lead photograph
     t = re.sub(r'<img src="\.\./images/blog/[^"]+" alt="[^"]*"',
-               '<img src="../images/blog/%s" alt="%s"' % (spec["image"], spec["image_alt"]),
+               lambda m: '<img src="../images/blog/%s" alt="%s"' % (attr(spec["image"]), attr(spec["image_alt"])),
                t, count=1)
 
     # the small course card under the title
+    card = ('<div class="card" style="margin:26px 0;padding:18px 20px"><p style="margin:0">'
+            '<strong>%s</strong> <a href="%s" target="_blank" rel="noopener">%s</a></p></div>'
+            % (text(spec["cta_text"]), attr(spec["cta_href"]), text(spec["cta_link"])))
     t = re.sub(r'<div class="card" style="margin:26px 0;padding:18px 20px"><p style="margin:0">.*?</p></div>',
-               '<div class="card" style="margin:26px 0;padding:18px 20px"><p style="margin:0">'
-               '<strong>%s</strong> <a href="%s" target="_blank" rel="noopener">%s</a></p></div>'
-               % (spec["cta_text"], spec["cta_href"], spec["cta_link"]),
-               t, count=1, flags=re.S)
+               lambda m: card, t, count=1, flags=re.S)
 
     # the article body
     t = re.sub(r'(<article class="post">\n).*?(\n    </article>)',
@@ -89,7 +124,11 @@ def build(spec, out_dir):
         try:
             json.loads(_m.group(1))
         except ValueError as exc:
-            sys.exit("broken JSON-LD in %s (%s) - use typographic quotes in the title" % (spec["slug"], exc))
+            sys.exit("broken JSON-LD in %s (%s)" % (spec["slug"], exc))
+    # ...and any <meta> whose content still carries a raw "&" or "<".
+    for _m in re.finditer(r'<meta\b[^>]*\bcontent="([^"]*)"', t):
+        if "<" in _m.group(1) or re.search(r'&(?![a-zA-Z][a-zA-Z0-9]*;|#[0-9]+;|#x[0-9a-fA-F]+;)', _m.group(1)):
+            sys.exit("unescaped meta content in %s: %r" % (spec["slug"], _m.group(1)[:60]))
 
     # The three contact/feedback forms (top, middle, bottom) - Masha's rule of 2026-10-13.
     import _contact_blocks
