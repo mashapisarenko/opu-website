@@ -43,13 +43,20 @@ jobs:
           git commit -m "Blog published on schedule:${slugs:+ }$slugs"
           git push
 
-      - name: Tell Bing, Yahoo and the other IndexNow engines about the new article
+      - name: Tell Bing, Yahoo and the other IndexNow engines about every page the publish changed
         if: success()
         continue-on-error: true
         run: |
           slugs=$(sed -n 's/^PUBLISHED=//p' "$RUNNER_TEMP/publish.log" | tr ',' ' ')
           [ -z "$slugs" ] && exit 0
+          # only announce a commit this run actually made
+          [ "$(git rev-parse HEAD)" = "$GITHUB_SHA" ] && { echo "no publish commit in this run"; exit 0; }
+          # every public page the publish commit touched: the new articles, the blog
+          # index, the home page cards, related-article links in older posts, ...
+          urls=$(git diff --name-only --diff-filter=d HEAD~1 HEAD -- '*.html' \
+                 | grep -v '^blog/_' | grep -v '^_health/' | grep -v '^studio.html$' \
+                 | sed -e 's#^index.html$##' -e 's#/index.html$#/#' -e 's#^#https://onlinepianouniversity.com/#')
+          [ -z "$urls" ] && { echo "publish commit changed no public page"; exit 0; }
+          echo "$urls"
           sleep 150
-          urls="https://onlinepianouniversity.com/blog/ https://onlinepianouniversity.com/sitemap.xml"
-          for s in $slugs; do urls="$urls https://onlinepianouniversity.com/blog/$s.html"; done
-          python3 indexnow_ping.py $urls
+          python3 indexnow_ping.py $urls https://onlinepianouniversity.com/sitemap.xml
