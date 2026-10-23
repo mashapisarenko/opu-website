@@ -3,7 +3,9 @@ name: Tell search engines about new and changed pages (IndexNow)
 # IndexNow reaches Bing, Yahoo, DuckDuckGo (through Bing), Yandex, Seznam and
 # Naver with no account. Google reads sitemap.xml (listed in robots.txt and
 # submitted in Search Console) on its own schedule.
-#  - on every push of Maria's: the pages that commit changed
+#  - on every push of Maria's: every public page changed anywhere in the pushed
+#    range (before..sha), not just the last commit - a Push origin often carries
+#    several local commits. Unknown or unreachable 'before' -> whole sitemap.
 #  - every Monday: the whole sitemap, so nothing is ever left unannounced
 # The blog scheduler pings its own new article (see publish-blog.yml),
 # because pushes made by the workflow token do not start other workflows.
@@ -22,15 +24,30 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 2
+          fetch-depth: 0
       - name: Wait for GitHub Pages to serve the new version
         run: sleep 150
       - name: Ping IndexNow
+        env:
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          SHA: ${{ github.sha }}
         run: |
-          if [ "${{ github.event_name }}" = "push" ]; then
-            urls=$(git diff --name-only HEAD~1 HEAD -- '*.html' | grep -v '^blog/_' | grep -v '^studio.html$' \
+          if [ "$EVENT" = "push" ]; then
+            case "$BEFORE" in
+              ""|0000000000000000000000000000000000000000)
+                echo "no previous commit for this push - announcing the whole sitemap"
+                python3 indexnow_ping.py; exit 0 ;;
+            esac
+            if ! git cat-file -e "$BEFORE^{commit}" 2>/dev/null; then
+              echo "previous commit $BEFORE not in history - announcing the whole sitemap"
+              python3 indexnow_ping.py; exit 0
+            fi
+            urls=$(git diff --name-only --diff-filter=d "$BEFORE" "$SHA" -- '*.html' \
+                   | grep -v '^blog/_' | grep -v '^_health/' | grep -v '^studio.html$' \
                    | sed -e 's#^index.html$##' -e 's#/index.html$#/#' -e 's#^#https://onlinepianouniversity.com/#')
-            if [ -z "$urls" ]; then echo "no public page changed"; exit 0; fi
+            if [ -z "$urls" ]; then echo "no public page changed in $BEFORE..$SHA"; exit 0; fi
+            echo "$urls"
             python3 indexnow_ping.py $urls https://onlinepianouniversity.com/sitemap.xml
           else
             python3 indexnow_ping.py
