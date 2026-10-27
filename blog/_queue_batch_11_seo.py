@@ -1,0 +1,266 @@
+# -*- coding: utf-8 -*-
+# Written 2026-10-27 after the SEO research pass (query map in the Project doc
+# claude/OPU_SEO_Query_Map_and_Plan_2026-10-27.md): three articles for queries the blog
+# did not yet answer on a page of its own - easy songs, the first three chords, and the
+# 80/20 practice question. Queued one a day after the last queued date.
+# Her rules: first person, no invented students, numbers, prices or dates, public-domain
+# melodies only and no sheet music, plain music theory only, US spelling, no Las Vegas.
+import json, pathlib
+L1 = "https://youtu.be/AzU01rYWHK8"
+
+
+def spec(slug, date, title, desc, sub, image, alt, cta, body, faq):
+    return {"slug": slug, "date": date, "title": title, "description": desc, "sub": sub,
+            "image": image, "image_alt": alt, "cta_text": cta, "cta_href": L1,
+            "cta_link": "Start at Lesson 1 &rarr;", "body": body, "faq": faq}
+
+
+SPECS = [
+spec("easy-piano-songs-for-adult-beginners", "2027-01-30",
+ "Easy Piano Songs for Adult Beginners (and How to Learn Them)",
+ "Ten easy piano songs for adult beginners, all public-domain melodies, from Ode to Joy to the Swan Lake theme, each with one practice tip from a concert pianist.",
+ "A melody you already know is the fastest way into the piano. Here are ten of them, in the order I would learn them, and what to do with each.",
+ "lead-at-the-piano.jpg", "Dr. Maria Pisarenko at the piano",
+ "Forty-one lessons in order, free, at your own pace:",
+"""
+<p>The easiest piano songs for adult beginners are melodies you already know that move mostly by step inside a small group of notes. Ode to Joy, Amazing Grace, Twinkle Twinkle, Jingle Bells, Au Clair de la Lune and When the Saints Go Marching In are where I would start. Minuet in G, the opening of F&uuml;r Elise, Grieg's Morning and the Swan Lake theme are the next step up.</p>
+
+<p>Why a tune you already know? Because your ear is far ahead of your hands. If you can hum a melody, you will hear immediately when your fingers get it wrong, and that is half of learning it. All ten of these are old melodies that belong to everyone, so free editions are easy to find. I am not printing any music here, only how I would think about each piece, and one practice tip for each.</p>
+
+<h2>Four habits for every song on this list</h2>
+
+<p>The same four habits apply to all ten songs, and they are the habits I use on any new piece.</p>
+
+<p><strong>Hum it twice before your hands touch a key.</strong> If you cannot hum it, you do not yet know what you are trying to play, and your hands will be guessing.</p>
+
+<p><strong>Clap the rhythm and count out loud.</strong> Count the beats, not the notes. In four-four time you say one, two, three, four in every bar, however many notes the bar holds. <a href="how-to-count-music-out-loud.html">How to count out loud without losing your place</a> shows the order I use.</p>
+
+<p><strong>Play hands separately for longer than feels necessary.</strong> When two hands struggle together you cannot tell which one is causing it. Separately, each hand can be listened to and fixed.</p>
+
+<p><strong>Use landmarks instead of counting up from the bottom.</strong> C is the white key immediately to the left of every group of two black keys, and F is the white key immediately to the left of every group of three. In the bass clef, middle C, the F on the fourth line and the low G on the first line are the three positions to know cold. Read every other note as a step or a skip from the nearest one. If you want the full method, see <a href="how-to-find-any-note-on-the-piano.html">how to find notes on the piano</a> and <a href="how-to-read-the-bass-clef.html">how to read bass clef notes</a>.</p>
+
+<h2>The first six: where I would start</h2>
+
+<h3>1. Ode to Joy</h3>
+
+<p>Beethoven's tune moves almost entirely by step, and its first phrase fits the five notes C, D, E, F and G under five fingers, so the hand never has to move. That is why it is the first piece in my method. In the free course it arrives in Lesson 3, which you can find in the <a href="../alfred-adult-all-in-one-book-1.html">lesson list by book page</a>, and I teach it by ear on its own page: <a href="../first-piece.html">play Ode to Joy by ear</a>. <em>Practice tip:</em> count it out loud and hold the half notes for their full two counts. It is the best place to learn that a long note still gets its counts.</p>
+
+<h3>2. Amazing Grace</h3>
+
+<p>A slow hymn tune in three-four time, built from only five different notes in its usual form, with a melody that is easy to sing. That is why adults love it: you can hear it as you play. It begins with a single pickup note before the first full bar, in most editions. It comes near the end of the free course, in Lesson 40, and you will meet the pickup measure earlier, in Lesson 15 (see the <a href="../alfred-adult-all-in-one-book-1.html">book page list</a>). <em>Practice tip:</em> count one, two, three aloud, and start on the last count of the bar before the music begins, so the pickup lands inside a pulse.</p>
+
+<h3>3. Twinkle Twinkle (Ah! vous dirai-je, maman)</h3>
+
+<p>The tune is an old French melody, and it is built from pairs: C C G G A A G, then F F E E D D C. Pairs are easy to read and easy to remember. It reaches the A, one note beyond a five-finger position, so it is also your first small shift of the hand. <em>Practice tip:</em> find C by the two black keys, name each note out loud as you press it, and practice the leap from C up to G on its own before you play the whole line.</p>
+
+<h3>4. Jingle Bells</h3>
+
+<p>The chorus begins with E E E, twice, and then runs E, G, C, D, E, which all sit inside the C five-finger position. In the free course it is Lesson 10, played hands separately first and then together. <em>Practice tip:</em> repeated notes are where an adult hand tightens. Keep the fingers curved, land on the fingertips, keep the wrist level, and listen to every repeated note until it disappears before you play the next.</p>
+
+<h3>5. Au Clair de la Lune</h3>
+
+<p>An old French folk tune whose first line uses only three notes, C, D and E. It is the smallest tune on this list, which makes it ideal for a lesson in sound rather than notes. <em>Practice tip:</em> let the weight of your arm fall through a fingertip, release, and ask whether the second note is exactly as full as the first. Three notes are enough to practice a beautiful sound.</p>
+
+<h3>6. When the Saints Go Marching In</h3>
+
+<p>A traditional tune with a short, rising opening that is easy to hum, and an incomplete first bar, or pickup, so you start before the first bar line. In the free course it is Lesson 15, with the melody in the right hand first and then in the left. Playing the same melody in the left hand teaches you the bass clef landmarks. <em>Practice tip:</em> count one whole empty bar aloud before you start, at the speed you intend, so the first note arrives inside a pulse.</p>
+
+<h2>The next four: when both hands are ready</h2>
+
+<h3>7. Minuet in G</h3>
+
+<p>A famous little dance in three-four time and the key of G major, now credited to Christian Petzold. It has one sharp, F sharp, and a left hand that does real work, so it is often the first piece in which an adult feels like a pianist. <em>Practice tip:</em> read the bass line first. Most people read the melody first every time, which is why the right hand gets many repetitions and the left gets few.</p>
+
+<h3>8. The opening of F&uuml;r Elise</h3>
+
+<p>Beethoven's famous opening switches back and forth between E and D sharp in the right hand, a half step apart, before it falls through B, D, C to A. Learn only this opening, as a small piece in itself. The rest of the piece is not for a beginner, and nothing is lost by saying so. <em>Practice tip:</em> go slowly enough that the wrist stays level and the fingers stay curved, because the quick back-and-forth is exactly where tension arrives. Feel the notes in groups of three.</p>
+
+<h3>9. Morning (Grieg)</h3>
+
+<p>From the Peer Gynt music. Its melody is made of short phrases that return in a new place, and it moves in six-eight, two big beats each divided into three. It teaches you to shape a phrase, which is a different pleasure from pressing the right keys. <em>Practice tip:</em> count one, two, three, four, five, six, with a gentle lean on one and on four, and sing the phrases before you play them. Choose an arrangement with few sharps or flats.</p>
+
+<h3>10. The Swan Lake theme</h3>
+
+<p>Tchaikovsky's long, sweeping melody is the most demanding tune on this list, so it comes last. Simplified arrangements exist, so choose one you can read comfortably. <em>Practice tip:</em> play the right hand alone and sing it, and decide where each phrase breathes. Here the melody is the whole point.</p>
+
+<h2>Pick one, not ten</h2>
+
+<p>Adults often start four pieces and finish none. Choose the song you can hum best, and learn it all the way through: the hum, the count, hands separately, slowly, and then once through for pleasure at the end. When you are not sure where to begin, <a href="../free-course.html">start the free course at Lesson 1</a>, or <a href="../lessons.html">book a private online lesson</a> and I will watch your hands. For the songs people your own age most often want to play, see <a href="../piano-lessons-for-adults-in-their-50s.html">piano lessons for adults in their 50s</a> and the other pages in <a href="../piano-lessons-by-age.html">piano lessons by age</a>.</p>
+""",
+ [("What is the easiest song to learn on piano?",
+   "Au Clair de la Lune is the smallest tune on my list, because its first line uses only three notes, C, D and E. Ode to Joy is almost as easy: its first phrase fits the five notes C to G under five fingers, so the hand never has to move."),
+  ("Which songs are in the free course?",
+   "Ode to Joy is in Lesson 3, Jingle Bells in Lesson 10, When the Saints Go Marching In in Lesson 15 and Amazing Grace in Lesson 40. The lesson list by book page shows where each one sits."),
+  ("How do I learn a piano song hands separately?",
+   "Hum the tune twice, clap the rhythm and count out loud, then play each hand alone until it is comfortable. Put the hands together only when each one is easy, and expect to go back to separate hands several times. That is not remedial. It is how the work is done.")]),
+
+spec("first-piano-chords-for-beginners", "2027-01-31",
+ "First Piano Chords for Beginners: The Three to Learn First",
+ "The first piano chords for beginners are C, F and G major. A concert pianist shows how to find each one, the hand shape, a five-minute daily drill, and songs.",
+ "Three chords, C, F and G, will accompany a surprising amount of music. Here is how to find them, shape your hand for them, and practice them in five minutes a day.",
+ "lead-at-the-piano.jpg", "Dr. Maria Pisarenko at the piano",
+ "Forty-one lessons in order, free, at your own pace:",
+"""
+<p>The first piano chords for a beginner to learn are C major, F major and G major, played in root position. In the key of C they are the I, IV and V chords, and together they will accompany a surprising amount of music, including three public-domain songs you probably already know: Amazing Grace, When the Saints Go Marching In and Jingle Bells.</p>
+
+<p>Many adults think of chords as something advanced, reserved for people who play by ear or play in bands. They are not. A chord is simply three notes sounded together, and the three in this article can be found by landmarks, without counting from the bottom of the keyboard. If you have never read a note, you can still begin today. Nothing here needs a theory degree, only a keyboard, a few minutes a day, and a willingness to listen to what you play. I will keep the vocabulary plain and explain each word the first time it appears.</p>
+
+<h2>What a triad is</h2>
+
+<p>The chords here are triads: three notes, built by stacking every other letter. Start on a note, called the root, skip a letter and take the next, which is the third, then skip another and take the next, which is the fifth. From C that gives C, E and G. A major triad has a particular sound because of the distances: from the root to the third is four half steps, and from the third to the fifth is three. A half step is the shortest distance between two keys, and a whole step is two half steps, which the free course explains in Lesson 30 (see the <a href="../alfred-adult-all-in-one-book-1.html">lesson list by book page</a>).</p>
+
+<p>Root position means the root is the lowest of the three notes. That is the simplest way to see a chord and the one to learn first.</p>
+
+<h2>Why these three</h2>
+
+<p>Line up the C major scale: C, D, E, F, G, A, B. A chord built on the first note is called I, on the fourth note IV, and on the fifth note V. In C those are C, F and G, and they are called the primary chords. Put the three triads side by side, C-E-G, F-A-C and G-B-D, and you will find that between them they contain every note of the C major scale. That is why so many simple tunes in C sit comfortably on these three chords and little else. The same three chords, in a particular order, make the twelve-bar blues, which the free course reaches in Lesson 32.</p>
+
+<h2>Find each chord with landmarks</h2>
+
+<p>You do not need to count keys. You need two landmarks, which are in <a href="how-to-find-any-note-on-the-piano.html">how to find notes on the piano</a>: C is the white key immediately to the left of every group of two black keys, and F is the white key immediately to the left of every group of three black keys.</p>
+
+<p><strong>C major: C, E, G.</strong> Find any C by the two black keys. Play C, skip D, play E, skip F, play G. The chord is every other white key, three of them.</p>
+
+<p><strong>F major: F, A, C.</strong> Find F at the left of a group of three black keys. Play F, skip G, play A, skip B, play the next C.</p>
+
+<p><strong>G major: G, B, D.</strong> Within the group of three black keys, the white key between the first and second black keys is G. Play G, skip A, play B, skip C, play D. Or simply find F, and G is the next white key to the right.</p>
+
+<p>The free course teaches these in context: the C major chord in Lesson 11 and the F major chord in Lesson 15. The G chord arrives there as G7 in Lesson 12, with a simplified three-note version, and Lesson 32 ties C, F and G7 together as the primary chords in C major. This article stays with the plain G major triad.</p>
+
+<h2>The hand shape</h2>
+
+<p>The hand shape for a chord is the same one as for a single note: fingers gently curved, as if you were holding a small apple, playing on the fingertips, with the wrist level with the hand. <a href="piano-hand-position-curved-fingers.html">Piano hand position: why curved fingers matter</a> explains why. For a triad in root position, the right hand normally uses the thumb, the middle finger and the little finger, which are fingers 1, 3 and 5, and the left hand uses 5, 3 and 1. The thumb and the little finger are the outer notes of the chord, and the middle finger sits between them.</p>
+
+<p>Press all three notes at the same moment, and listen for whether they sound together. Chords played evenly sound like one note with three colors. If one note speaks before the others, the weaker finger needs more attention, not more force.</p>
+
+<h2>A five-minute daily drill</h2>
+
+<p>Five minutes is enough if you use them in order.</p>
+
+<p><strong>Minute one: set the hand.</strong> Rub your palms warm, make a fist and snap the fingers open, five times. Sit at the middle of the keyboard with your forearm level with the keys.</p>
+
+<p><strong>Minutes two and three: find and name.</strong> Right hand alone, find C, F and G in turn, press each triad, and say the name of each note out loud as you press it: C, E, G. Then the left hand alone.</p>
+
+<p><strong>Minutes four and five: change.</strong> Play C, then F, then G, then C again, four beats on each, counting one, two, three, four out loud. Slowly enough that the change is easy, not just possible. During the last beat of each chord, look at the place your hand is going next and let it travel there as one shape. Chord changes feel impossible when the hand is rebuilt note by note at every move.</p>
+
+<p>Do this daily for a week and then add the left hand, one chord per bar, under a melody you already play.</p>
+
+<h2>Three problems you will meet</h2>
+
+<p><strong>One note louder than the others.</strong> It is almost always the thumb or the little finger, and it is usually a sign of pushing rather than weight. Play the chord again, slowly, thinking of the weight of the arm falling evenly into all three fingertips.</p>
+
+<p><strong>A wrist that drops.</strong> Reaching for the fifth finger pulls the wrist down. Keep the wrist level with the hand, and if it collapses, stop and reset the shape rather than pushing through. Playing should never hurt.</p>
+
+<p><strong>Looking at your hands the whole time.</strong> At first you must look. Then practice finding each chord with one look, and eventually with none, by feeling where the black keys are. The black keys are your map in the dark.</p>
+
+<h2>Songs that use only these three chords</h2>
+
+<p>In the key of C, many simple songs can be accompanied with just C, F and G. Three public-domain examples:</p>
+
+<ul>
+<li><strong>Amazing Grace</strong> can be played with only C, F and G, though fuller arrangements add more chords.</li>
+<li><strong>When the Saints Go Marching In</strong> is a classic C, F and G piece, with a G7 for the G chord in many versions.</li>
+<li><strong>Jingle Bells</strong>, in its chorus, moves between the same three chords.</li>
+</ul>
+
+<p>All three are in the free course, in Lessons 40, 15 and 10 (see the <a href="../alfred-adult-all-in-one-book-1.html">lesson list by book page</a>), where you also meet the melodies. For the melodies themselves, see <a href="easy-piano-songs-for-adult-beginners.html">easy piano songs for adult beginners</a>.</p>
+
+<h2>Where to go next</h2>
+
+<p>When the three chords feel easy, play them as you would a pattern, not as three separate shapes: the same relation between the three in any key. For a plan that fits a working week, the page for <a href="../piano-lessons-for-adults-in-their-40s.html">piano lessons for adults in their 40s</a> and the others under <a href="../piano-lessons-by-age.html">piano lessons by age</a> show a first three months. You can <a href="../free-course.html">start the free online piano course</a>, or work with me live in <a href="../lessons.html">private online piano lessons for adults on Zoom</a>, where the camera lets me see your hands and your wrist.</p>
+""",
+ [("What are the first piano chords to learn?",
+   "C major, F major and G major, in root position. In the key of C they are the I, IV and V chords, and together they accompany a surprising amount of simple music."),
+  ("What is a triad on the piano?",
+   "A triad is three notes built by stacking every other letter: a root, a third and a fifth. From C that gives C, E and G. In root position the root is the lowest of the three."),
+  ("Which songs can I play with only C, F and G?",
+   "Amazing Grace, When the Saints Go Marching In and Jingle Bells can all be accompanied with just these three chords in the key of C. Some versions use G7 in place of the plain G chord, and fuller arrangements add more chords.")]),
+
+spec("80-20-rule-for-piano-practice", "2027-02-01",
+ "The 80/20 Rule for Piano Practice: What Actually Moves You",
+ "The 80/20 rule for piano practice, from a concert pianist: the few habits that give most of the progress, why 80/20 is a rule of thumb, and a 20-minute plan.",
+ "A few practice habits give most of the progress. Here are the five I would keep if I could keep only five, and the things I would stop doing.",
+ "lead-at-the-piano.jpg", "Dr. Maria Pisarenko at the piano",
+ "Forty-one lessons in order, free, at your own pace:",
+"""
+<p>The 80/20 rule for piano practice says that a few habits give most of your progress. I want to be plain about one thing first: 80/20 is a rule of thumb, not a measurement. I cannot tell you that these habits produce eighty percent of anything, and I will not invent a number. What I can tell you, from teaching adults, is which habits matter most and which you can stop worrying about.</p>
+
+<h2>What is the 80/20 rule for learning piano?</h2>
+
+<p>The idea behind 80/20 is that a small share of causes often produces most of an effect. Applied to practice, it is a way of choosing, and choosing is exactly what a busy adult needs. You have twenty minutes, perhaps, not two hours, and the question is where the twenty minutes should go. The answer is not more minutes. It is a method, and the five habits below are the method in its shortest form. None of them requires talent, a special book or an expensive instrument, and all of them can start tonight.</p>
+
+<p>I have taught students who practice forty minutes a day and progress slowly, and students who practice fifteen and progress quickly. The difference is rarely talent and rarely discipline. It is what happens during the minutes. My full account of that is in <a href="how-to-practice-piano-a-method-not-more-minutes.html">how to practice piano: a method, not just more minutes</a>.</p>
+
+<h2>The five habits that carry most of the progress</h2>
+
+<h3>1. Diagnose, do not repeat</h3>
+
+<p>When something goes wrong, stop and ask what went wrong, specifically. Not "I keep messing this up," but: my fourth finger is late, or my hand is still in the old position when the new note arrives. Almost every persistent mistake has one identifiable cause, and once it is named it usually takes a few minutes to fix. Left unnamed, it survives months of daily repetition. Adults are very good at this kind of diagnosis, far better than children, and it is one of the real advantages of starting later.</p>
+
+<h3>2. Slow enough to be correct</h3>
+
+<p>Never play a passage faster than you can play it correctly. If it goes wrong at speed, the speed is the error, not the passage. Slow down until it is easy, not until it is merely possible. At the speed where it is merely possible you are rehearsing your own unsteadiness, and at the speed where it is easy you are rehearsing accuracy, which is what gets faster on its own.</p>
+
+<h3>3. Hands separately</h3>
+
+<p>When two hands struggle together, you cannot tell which one is the problem, and neither can your brain. Separately, each hand can go faster, be listened to properly, and be fixed. Put them together only when each is comfortable, and expect to go back to separate hands several times. That is not a step backward. It is how the work is done.</p>
+
+<h3>4. Count out loud</h3>
+
+<p>Rhythm, not only the right notes, is what makes playing sound musical. Counting out loud is the cheapest way to fix it. It feels awkward for about three days, and then it holds your rhythm steady in a way that counting in your head does not, because your voice keeps the pulse going when your hands are busy. <a href="how-to-count-music-out-loud.html">How to count rhythm out loud</a> has the order I use.</p>
+
+<h3>5. Play through, for pleasure</h3>
+
+<p>End each session by playing something you can already play, all the way through, mistakes allowed. This is not wasted time. It is what makes you come back tomorrow, and coming back tomorrow is the entire game. The session should end with music, not with a problem.</p>
+
+<h2>What sits in the other 80</h2>
+
+<p>These are the things that feel like practice and often do very little:</p>
+
+<ul>
+<li><strong>Playing a piece from the top every time.</strong> The opening becomes beautiful and the middle never becomes anything at all. Begin at the difficult place while you are fresh.</li>
+<li><strong>Repeating without changing anything.</strong> Playing something ten times is not practice unless something changed between attempts. Every time you play a passage you cannot yet do, you are practicing doing it badly.</li>
+<li><strong>Counting minutes.</strong> Twenty focused minutes beat two distracted hours, and six short sessions beat one long weekend marathon, because skills consolidate between sessions.</li>
+<li><strong>Collecting methods.</strong> Adults often buy three method books and finish none. Choose one good book and work through it in order.</li>
+</ul>
+
+<p>I do not mean these are worthless. Playing through a piece is a pleasure, and I am all for it. I mean they are not where the progress comes from.</p>
+
+<h2>The five habits in twenty minutes</h2>
+
+<p>Here is how the habits fit into one session. The shape is the same one I describe in <a href="practicing-piano-when-you-have-no-time.html">how to practice piano with a busy schedule</a>.</p>
+
+<p><strong>Three minutes, the body.</strong> Set the bench so your forearm is level with the tops of the keys, then play one note, letting the weight of the arm fall through a firm fingertip and releasing. Listen until the note disappears.</p>
+
+<p><strong>Eight minutes, the hard bar.</strong> Not the piece, the bar. Find the one place that breaks and take the two bars around it. Diagnose it, play it slowly enough that it cannot go wrong, hands separately if it is a two-hand problem, and count out loud. Five clean repetitions. If the sixth goes wrong, you were going too fast.</p>
+
+<p><strong>Six minutes, one new thing.</strong> The next page or the next idea, small and deliberate. One new thing per session is a good rate. Two is usually none.</p>
+
+<p><strong>Three minutes, play through.</strong> Something you already play, for pleasure.</p>
+
+<p>If the day collapses, cut the new thing first. At five minutes, keep only the single-note exercise and one slow pass of your hard bar. That is a legitimate practice.</p>
+
+<h2>A week built on the rule</h2>
+
+<p>Six short sessions a week will do more than one long one, because the hand files what it learned while you sleep. Give five of those sessions the structure above. Give the sixth to a different job: play your piece through twice, and film one minute of it on your phone. Watch it that evening, with the sound on, and write down one thing you noticed. It is the cheapest teacher in the world, and it is the habit that most adults skip. Then use the one thing you noticed to choose the hard bar for the coming week.</p>
+
+<p>That is the whole plan. It does not need a special book, an app or a bigger block of time. It needs the same few habits, in the same order, most days. If you take only one sentence from this article, take this one: the difference between students is rarely talent and rarely discipline. It is method, and method can be learned in a single afternoon.</p>
+
+<h2>How to know it is working</h2>
+
+<p>You will not feel a percentage. You will notice that a line of music takes less time to read, that your hands begin to do what you ask, and that a bar which failed last week now goes right on the second try. Progress arrives in plateaus and sudden jumps, and the plateau is where the learning is being consolidated. Please do not quit during it. For a longer view, see <a href="how-long-to-practice-piano-each-day.html">how long you should practice piano each day</a>.</p>
+
+<p>The one thing five habits cannot give you is another pair of ears. You cannot easily tell whether your own third finger is collapsing, because you hear what you meant to play. <a href="../submit.html">Send me a recording</a> and I will tell you the one thing to change first. If your week is full, the page for <a href="../piano-lessons-for-adults-in-their-30s.html">piano lessons for adults in their 30s</a>, and the others under <a href="../piano-lessons-by-age.html">piano lessons by age</a>, show how to fit it in. You can <a href="../free-course.html">start the free online piano course</a> or work with me in <a href="../lessons.html">private online piano lessons</a>.</p>
+""",
+ [("What is the 80/20 rule for piano practice?",
+   "It is a rule of thumb that a few habits give most of your progress. It is not a measurement, and I will not give you a percentage. The habits I would keep are diagnosing instead of repeating, practicing slowly enough to be correct, working hands separately, counting out loud and finishing by playing something through for pleasure."),
+  ("How long should I practice piano each day to make progress?",
+   "For an adult beginner, 20 to 30 minutes of concentrated practice, most days, is enough to make real, visible progress. Six short sessions beat one long weekend marathon, because skills consolidate between sessions, during rest and sleep."),
+  ("What should I cut when I only have five minutes?",
+   "Cut the new thing first. At five minutes, keep only the single-note weight exercise and one slow pass of your hard bar. That is a legitimate practice, even though it will not feel like one.")]),
+]
+
+if __name__ == "__main__":
+    out = pathlib.Path(__file__).resolve().parent / "_specs_batch_11_seo.json"
+    out.write_text(json.dumps(SPECS, indent=1, ensure_ascii=False), encoding="utf-8")
+    print("wrote", out.name, len(SPECS))

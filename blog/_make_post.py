@@ -114,8 +114,30 @@ def build(spec, out_dir):
                lambda m: card, t, count=1, flags=re.S)
 
     # the article body
+    body = spec["body"].strip()
+    # SEO_FAQ 2026-10-27: a spec may carry "faq": [[question, answer], ...]. It then gets a
+    # visible "Questions adults ask" block, FAQPage JSON-LD in the head, the author box and the
+    # author's sameAs links, the same pattern the live articles received in the SEO pass.
+    if spec.get("faq"):
+        body += "\n\n<h2>Questions adults ask</h2>\n" + "\n".join(
+            "<details><summary>%s</summary><p>%s</p></details>" % (text(q), text(a)) for q, a in spec["faq"])
+        _ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+            {"@type": "Question", "name": plain(q),
+             "acceptedAnswer": {"@type": "Answer", "text": plain(a)}} for q, a in spec["faq"]]}
+        t = t.replace("</head>", '<script type="application/ld+json">%s</script>\n</head>' %
+                      json.dumps(_ld, ensure_ascii=False).replace("</", "<\\/"), 1)
+        _box_src = (HERE / "how-to-read-piano-notes-grand-staff.html").read_text(encoding="utf-8")
+        _box = re.search(r'<aside class="card" style="display:flex;gap:16px;align-items:center;margin:34px 0 0;padding:18px 20px">.*?</aside>', _box_src, re.S)
+        if _box and "piano-teacher-author.jpg" not in body:
+            body += "\n\n" + _box.group(0)
+        _same = ["https://www.mariapisarenko.com", "https://www.linkedin.com/in/mariapisarenko/",
+                 "https://www.youtube.com/@ONLINEPIANOUNIVERSITY", "https://www.facebook.com/OnlinePianoUniversity",
+                 "https://www.instagram.com/online_piano_university/", "https://www.tiktok.com/@online.piano.university",
+                 "https://www.pinterest.com/OnlinePianoUniversity/"]
+        t = re.sub(r'("honorificSuffix": "DMA",\s*"url": "https://onlinepianouniversity.com/about.html")(\s*\})',
+                   lambda m: m.group(1) + ',\n    "sameAs": ' + json.dumps(_same) + m.group(2), t, count=1)
     t = re.sub(r'(<article class="post">\n).*?(\n    </article>)',
-               lambda m: m.group(1) + spec["body"].strip() + m.group(2),
+               lambda m: m.group(1) + body + m.group(2),
                t, count=1, flags=re.S)
 
     # A title with its own double quotes once broke the og/twitter titles and the breadcrumb

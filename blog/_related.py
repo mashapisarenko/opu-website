@@ -175,6 +175,10 @@ RELATED = {
  "empty-nest-hobby-piano": ["learning-piano-at-50", "returning-to-piano-as-an-adult", "what-the-first-year-of-piano-actually-looks-like"],
  "online-piano-lessons-vs-in-person": ["how-to-choose-a-piano-teacher", "who-taught-the-person-teaching-you", "piano-apps-vs-a-real-teacher"],
  "piano-duets-for-adult-beginners": ["playing-for-a-small-audience-at-home", "learning-piano-in-retirement", "chamber-music-playing-with-strings"],
+ # --- added 2026-10-27: SEO batch (easy songs, first chords, 80/20), 30 Jan - 1 Feb 2027 ---
+ "easy-piano-songs-for-adult-beginners": ["how-to-count-music-out-loud", "how-to-find-any-note-on-the-piano", "piano-method-book-for-adult-beginners"],
+ "first-piano-chords-for-beginners": ["piano-hand-position-curved-fingers", "how-to-find-any-note-on-the-piano", "how-to-read-piano-notes-grand-staff"],
+ "80-20-rule-for-piano-practice": ["how-to-practice-piano-a-method-not-more-minutes", "how-long-to-practice-piano-each-day", "practicing-piano-when-you-have-no-time"],
 }
 
 ANCHOR = '<aside class="card" style="display:flex;gap:16px;align-items:center;margin:34px 0 0;padding:18px 20px">'
