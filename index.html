@@ -35,7 +35,8 @@
 <link rel="apple-touch-icon" href="images/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" type="image/webp" href="images/dr-maria-pisarenko-concert-pianist-at-piano-840.webp" imagesrcset="images/dr-maria-pisarenko-concert-pianist-at-piano-600.webp 600w, images/dr-maria-pisarenko-concert-pianist-at-piano-840.webp 840w" imagesizes="(max-width:880px) 330px, 420px" fetchpriority="high">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="css/site.css">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "@id": "https://onlinepianouniversity.com/#faq", "mainEntity": [{"@type": "Question", "name": "Am I too old to start?", "acceptedAnswer": {"@type": "Answer", "text": "No. Adults learn piano beautifully — the key is a proper method and a steady path, which is exactly what this course gives you."}}, {"@type": "Question", "name": "Is it really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — the full beginner course lives on YouTube, free. The website simply helps you follow it in order and go deeper."}}, {"@type": "Question", "name": "Where do lessons take place?", "acceptedAnswer": {"@type": "Answer", "text": "Everything is online: the free course lives on YouTube, and 1-on-1 lessons happen worldwide via Zoom. I teach students across the U.S., Europe and Asia."}}, {"@type": "Question", "name": "Do I need a real piano?", "acceptedAnswer": {"@type": "Answer", "text": "A digital piano with 88 weighted keys is perfect to start — see the recommended keyboards above."}}, {"@type": "Question", "name": "Do you teach 1-on-1 online?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, via Zoom — tailored to your level and goals, from anywhere. Details & pricing"}}]}</script>
 <script type="application/ld+json">
@@ -128,7 +129,7 @@
         </div>
       </div>
       <div class="hero-photo">
-        <img src="images/dr-maria-pisarenko-concert-pianist-at-piano.jpg" alt="Dr. Maria Pisarenko, DMA, concert pianist and piano teacher, at the grand piano, teacher of Online Piano University" width="1200" height="1648" fetchpriority="high">
+        <picture><source type="image/webp" srcset="images/dr-maria-pisarenko-concert-pianist-at-piano-600.webp 600w, images/dr-maria-pisarenko-concert-pianist-at-piano-840.webp 840w" sizes="(max-width:880px) 330px, 420px"><img src="images/dr-maria-pisarenko-concert-pianist-at-piano.jpg" alt="Dr. Maria Pisarenko, DMA, concert pianist and piano teacher, at the grand piano, teacher of Online Piano University" width="1200" height="1648" decoding="async" fetchpriority="high"></picture>
         <div class="plate"><b>Dr. Maria Pisarenko</b><span>DMA · Concert Pianist · Your teacher</span></div>
       </div>
     </div>
@@ -393,8 +394,8 @@
     </div>
 </footer>
 
-<script src="js/config.js"></script>
-<script src="js/site.js"></script>
-<script src="js/keyboard.js"></script>
+<script src="js/config.js" defer></script>
+<script src="js/site.js" defer></script>
+<script src="js/keyboard.js" defer></script>
 </body>
 </html>
