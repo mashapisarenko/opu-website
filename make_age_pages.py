@@ -20,16 +20,17 @@ AGES = [
  dict(slug="piano-lessons-for-adults-in-their-20s", decade="20s", label="Your 20s",
   title="Learning Piano in Your 20s: Lessons for Young Adults",
   desc="Learning piano in your 20s? Skip the bad habits apps and videos teach. Free, ordered lessons for young adults from concert pianist Dr. Maria Pisarenko, DMA.",
+  payoff_title="Why learn piano in your 20s",
   h1="Learning Piano in Your 20s, Without Teaching Yourself Bad Habits",
   answer="Yes, you can learn piano properly in your twenties, and the fastest route is to be taught the sound, the hand and the page in the right order instead of copying falling colored bars from a video. I am a concert pianist and university professor, and this free course is built for exactly that.",
   related="If you have already tried an app, read <a href=\"blog/piano-apps-vs-a-real-teacher.html\">piano apps versus a real teacher</a>. You can <a href=\"free-course.html\">start the free online piano course</a>, or work with me live in <a href=\"lessons.html\">private online piano lessons for adults on Zoom</a>.",
   sub="You can learn almost anything from a screen. Piano is the one skill where the screen quietly teaches your hands to do the wrong thing. Here is how to avoid that, for free.",
   intro=["You are probably learning from videos, an app, or both. That works for the first month. Then the same thing happens to almost everyone: you can follow the colored bars, you cannot read a page of music, and the pieces you actually want stay out of reach.",
          "I am Dr. Maria Pisarenko, a concert pianist and university professor, and Online Piano University is the free course I built for adults who teach themselves. It starts with the sound and the hand, so your first year is not something you have to undo later."],
-  songs_title="Do you want to play these?",
+  songs_title="Songs adults in their 20s want to play",
   songs_sub="The music of your teens and early twenties, the pieces people in your decade most often hum at a keyboard.",
   songs=["Perfect (Ed Sheeran)","drivers license (Olivia Rodrigo)","when the party's over (Billie Eilish)","Ocean Eyes (Billie Eilish)","Love Story (Taylor Swift)","Someone You Loved (Lewis Capaldi)","Let Her Go (Passenger)","River Flows in You (Yiruma)","Cornfield Chase (Hans Zimmer, Interstellar)","One Summer's Day (Joe Hisaishi, Spirited Away)","Comptine d'un autre été (Yann Tiersen)","Hedwig's Theme (John Williams)","Merry-Go-Round of Life (Joe Hisaishi, Howl's Moving Castle)","Always With Me (Youmi Kimura, Spirited Away)","Zelda's Lullaby (Koji Kondo)","Megalovania (Toby Fox, Undertale)","Clair de Lune (Debussy)","Experience (Ludovico Einaudi)"],
-  pains_title="What is actually in your way at 20-something",
+  pains_title="How hard is it to learn piano in your 20s? What really gets in the way",
   pains=[("Falling-bar videos teach you to copy, not to read","Tutorials where colored bars fall onto a keyboard get you through one song. They do not teach you the page, so every new piece starts from zero. Reading is a skill that takes weeks, not years, if it is taught in the right order."),
          ("Your wrists and shoulders learn the wrong shape","Hunching over a laptop keyboard or a cheap stand-alone keyboard sets the hand up to squeeze instead of to carry weight. It feels fine for a month and then your forearm tells you otherwise."),
          ("You want the pretty pieces, fast","That is a good instinct, and we use it. The free course gets you playing a real melody on day one, and it builds the specific skills (finger independence, pedal, a singing line) that Clair de Lune and River Flows in You need."),
@@ -45,16 +46,17 @@ AGES = [
  dict(slug="piano-lessons-for-adults-in-their-30s", decade="30s", label="Your 30s",
   title="Can You Learn Piano at 30? Piano Lessons in Your 30s",
   desc="Can you learn piano at 30? Yes, with twenty focused minutes a day. A free, ordered course and written feedback from concert pianist Dr. Maria Pisarenko, DMA.",
+  payoff_title="Why learn piano in your 30s",
   h1="Can You Learn Piano at 30? Yes, With a Job, a Family and Twenty Minutes",
   answer="Yes, you can learn piano at 30, and twenty focused minutes a day is enough to begin. For most adults in their thirties the problem was never talent; it was a plan, and I built the free course here as that plan.",
   related="To see how much time you really need, read <a href=\"blog/how-long-to-practice-piano-each-day.html\">how long you should practice piano each day</a>. You can <a href=\"free-course.html\">start the free online piano course</a>, or work with me live in <a href=\"lessons.html\">private online piano lessons for adults on Zoom</a>.",
   sub="You do not need an hour a day. You need twenty focused minutes and someone who tells you what to do with them.",
   intro=["Most people in their thirties have tried piano already: an app, a keyboard bought during a lockdown, a few lessons as a kid. The keyboard is probably still in a corner. The problem was never talent. It was a plan.",
          "Online Piano University is a free, ordered course for adults who learn on their own. Each lesson fits in a lunch break, and you can send me a recording and get a written answer, so you are not guessing whether you are improving."],
-  songs_title="Do you want to play these?",
+  songs_title="Songs adults in their 30s want to play",
   songs_sub="The songs and themes that were everywhere when you were growing up.",
   songs=["Someone Like You (Adele)","All of Me (John Legend)","Viva la Vida (Coldplay)","Clocks (Coldplay)","A Thousand Miles (Vanessa Carlton)","How to Save a Life (The Fray)","Let It Go (Idina Menzel)","Hallelujah (Leonard Cohen)","Love Song (Sara Bareilles)","Comptine d'un autre été (Yann Tiersen)","Hedwig's Theme (John Williams)","He's a Pirate (Pirates of the Caribbean)","Bella's Lullaby (Carter Burwell)","Nuvole Bianche (Ludovico Einaudi)","Merry-Go-Round of Life (Joe Hisaishi, Howl's Moving Castle)","Zelda's Lullaby (Koji Kondo)"],
-  pains_title="What is actually in your way in your thirties",
+  pains_title="Is it too late to learn piano at 30? What really gets in the way",
   pains=[("Fifteen minutes is all you have","Fifteen to twenty focused minutes, six days a week, beats one long session. The trick is knowing exactly what to do in them: five minutes slowly on one thing, ten on the smallest broken spot, five playing something you already enjoy."),
          ("Apps keep you busy and do not make you better","An app can tell you that you hit the right note. It cannot tell you your hand is tight, your rhythm is rushed or your sound is thin. That is what feedback on a real recording is for."),
          ("You quit last time and you do not trust yourself","Almost every adult who quits does so in the first three months, usually because the pieces were too hard or the plan was unclear. We start with a melody on day one so you win early."),
@@ -70,16 +72,17 @@ AGES = [
  dict(slug="piano-lessons-for-adults-in-their-40s", decade="40s", label="Your 40s",
   title="Can You Learn Piano at 40? Piano Lessons for Adults 40+",
   desc="Can you learn piano at 40? Yes. Piano lessons for adults 40+ and returning players: a free course and feedback from concert pianist Dr. Maria Pisarenko, DMA.",
+  payoff_title="Why learn piano in your 40s",
   h1="Can You Learn Piano at 40? Yes: Start Again, Properly",
   answer="Yes, you can learn piano at 40, and starting now has real advantages: you bring patience, taste and a clear reason. As a concert pianist and teacher, I can tell you that what decides the outcome is being taught the sound and the hand from the first lesson.",
   related="If you are wondering about your age, read <a href=\"blog/is-it-too-late-to-learn-piano-at-40-50-60.html\">is it too late to learn piano at 40, 50 or 60</a>, and for the practice method, <a href=\"blog/how-to-practice-piano-a-method-not-more-minutes.html\">how to practice piano: a method, not just more minutes</a>. You can <a href=\"free-course.html\">start the free online piano course</a>, or work with me live in <a href=\"lessons.html\">private online piano lessons for adults on Zoom</a>.",
   sub="If you stopped at twelve, or never started, this is the right moment. You understand music better than you did then, and you can practice without anyone standing over you.",
   intro=["A lot of adults in their forties come back to the piano with an old wound: a teacher who was impatient, a recital that went badly, a parent who decided when you were done. You can leave all of that behind.",
          "Online Piano University is built for adults who teach themselves. It is free, it is in order, and the person on the other side of your recordings is a teacher who understands exactly that fear."],
-  songs_title="Do you want to play these?",
+  songs_title="Songs adults in their 40s want to play",
   songs_sub="The music of your high school and college years, plus the classical pieces everybody half-remembers.",
   songs=["Fallin' (Alicia Keys)","If I Ain't Got You (Alicia Keys)","Angel (Sarah McLachlan)","Mad World (Gary Jules)","My Immortal (Evanescence)","Because of You (Kelly Clarkson)","Bad Day (Daniel Powter)","Hallelujah (Leonard Cohen)","My Heart Will Go On (Celine Dion)","Clocks (Coldplay)","Canon in D (Pachelbel)","Für Elise (Beethoven)","Gymnopédie No. 1 (Satie)","Moonlight Sonata, first movement (Beethoven)"],
-  pains_title="What is actually in your way in your forties",
+  pains_title="Is it too late to learn piano at 40? What really gets in the way",
   pains=[("The old teacher is still in the room","Many adults flinch at a wrong note because someone once flinched for them. The cure is a practice style where mistakes are information, and a teacher whose feedback is specific and calm."),
          ("Perfectionism","You want the piece to be good immediately, and you notice every flaw. The method here slows you down on purpose, so you build the piece in small parts that are right."),
          ("You understand the music faster than your hands can play it","That gap is normal for adults and it is not a sign something is wrong. It closes with the right exercises, not with more hours."),
@@ -95,16 +98,17 @@ AGES = [
  dict(slug="piano-lessons-for-adults-in-their-50s", decade="50s", label="Your 50s",
   title="Can You Learn Piano at 50? Piano Lessons for Adults 50+",
   desc="Can you learn piano at 50? Yes. Piano lessons for adults 50+: free step-by-step lessons and written feedback from concert pianist Dr. Maria Pisarenko, DMA.",
+  payoff_title="Why learn piano in your 50s",
   h1="Can You Learn Piano at 50? Play the Music You Grew Up With",
   answer="Yes, you can learn piano at 50. Adults can learn to read, to play with both hands and to make a real sound at any age; the pace is different and the results are real. I am a concert pianist and teacher, and this is the course I built for adults like you.",
   related="To see what the first months look like, read <a href=\"blog/how-long-to-learn-piano-adult.html\">how long it takes to learn piano as an adult</a>. You can <a href=\"free-course.html\">start the free online piano course</a>, or work with me live in <a href=\"lessons.html\">private online piano lessons for adults on Zoom</a>.",
   sub="The children are older, the calendar has room, and the song you have wanted to play for years is still waiting. This is the course built for you.",
   intro=["Adults in their fifties are the people I built Online Piano University for: never played, or quit around twelve, and now learning alone. Nobody is standing next to you, so the lessons have to do the job a teacher would do at your shoulder.",
          "That means sound before notes, small steps in the right order, and feedback on a recording of your own playing. It is free on YouTube, and you move at your own pace."],
-  songs_title="Do you want to play these?",
+  songs_title="Songs adults in their 50s want to play",
   songs_sub="The songs from your teens and twenties, and the classical pieces that never left you.",
   songs=["Piano Man (Billy Joel)","Vienna (Billy Joel)","Your Song (Elton John)","Rocket Man (Elton John)","Don't Stop Believin' (Journey)","Listen to Your Heart (Roxette)","Bohemian Rhapsody (Queen)","Against All Odds (Phil Collins)","Right Here Waiting (Richard Marx)","I Will Always Love You (Whitney Houston)","Time After Time (Cyndi Lauper)","Total Eclipse of the Heart (Bonnie Tyler)","Let It Be (The Beatles)","Hey Jude (The Beatles)","Chariots of Fire (Vangelis)","The Entertainer (Scott Joplin)","Moonlight Sonata (Beethoven)","Clair de Lune (Debussy)"],
-  pains_title="What is actually in your way in your fifties",
+  pains_title="Is it too late to learn piano at 50? What really gets in the way",
   pains=[("Teaching yourself with nobody to say what is wrong","You can play all the right notes and it still sounds wrong, and you cannot tell why. That is the exact gap the feedback service closes."),
          ("Stiff hands and reading small print","Larger-print music and a good bench and lamp help more than people expect. Warm up gently, and if you have joint pain, ask your doctor first; I am a pianist, not a physician."),
          ("A method book written for children","Many first books are slow, babyish or both. The course here follows an adult method book, lesson by lesson, with explanations that treat you as an adult."),
@@ -120,16 +124,17 @@ AGES = [
  dict(slug="piano-lessons-for-adults-in-their-60s", decade="60s", label="Your 60s",
   title="Can You Learn Piano at 60? Piano Lessons for Adults 60+",
   desc="Can you learn piano at 60? Yes. Gentle, ordered piano lessons for adults 60+ and retirees, with personal feedback from concert pianist Dr. Maria Pisarenko, DMA.",
+  payoff_title="Why learn piano in your 60s",
   h1="Can You Learn Piano at 60? It Is Not Too Late, and Here Is the Plan",
   answer="Yes, you can learn piano at 60 and beyond; it is not too late. Many adults start in their sixties and play real pieces within months, and this course moves at your pace, with nothing timed. I am a concert pianist and teacher, and I will show you the order in which to use your time.",
   related="If you are wondering about your age, read <a href=\"blog/is-it-too-late-to-learn-piano-at-40-50-60.html\">is it too late to learn piano at 40, 50 or 60</a>, and if your hands are stiff, <a href=\"blog/learning-piano-with-arthritis.html\">learning piano with arthritis or stiff hands</a>. You can <a href=\"free-course.html\">start the free online piano course</a>, or work with me live in <a href=\"lessons.html\">private online piano lessons for adults on Zoom</a>.",
   sub="Retirement gives you the one thing a pianist needs most: unhurried time. This course gives you the order in which to use it.",
   intro=["People begin in their sixties because there is finally time, or because a parent's piano is now in their living room, or because they have wanted to play for fifty years. All three are good reasons.",
          "The lessons are free, in order, and unhurried. You can pause, repeat and come back next week without losing anything, and when you are ready you can send a recording and hear from me in writing."],
-  songs_title="Do you want to play these?",
+  songs_title="Songs adults in their 60s want to play",
   songs_sub="The songs that were the soundtrack of your youth, and the pieces you have always loved to listen to.",
   songs=["Let It Be (The Beatles)","Hey Jude (The Beatles)","Yesterday (The Beatles)","Imagine (John Lennon)","Rocket Man (Elton John)","Tiny Dancer (Elton John)","You've Got a Friend (Carole King)","Bridge Over Troubled Water (Simon & Garfunkel)","(They Long to Be) Close to You (Carpenters)","The Rose (Bette Midler)","Both Sides Now (Joni Mitchell)","Killing Me Softly (Roberta Flack)","Desperado (Eagles)","Just the Way You Are (Billy Joel)","Moon River (Henry Mancini)","Clair de Lune (Debussy)","Für Elise (Beethoven)","Canon in D (Pachelbel)"],
-  pains_title="What is actually in your way in your sixties",
+  pains_title="Is it too late to learn piano at 60? What really gets in the way",
   pains=[("Fingers that are slower than you want","Speed is the last thing to arrive and the least important. The first goals are an even sound and a relaxed hand, and both are achievable at any age. If a joint hurts, check with your doctor first."),
          ("Reading music with tired eyes","Choose editions with large print, put a lamp on the music and stand the book higher. Reading is learned in small steps, and the course introduces each symbol only when you need it."),
          ("Remembering what you learned yesterday","Short daily practice beats long weekly sessions. A one-line log of what you practiced keeps the thread."),
@@ -145,16 +150,17 @@ AGES = [
  dict(slug="piano-lessons-for-adults-in-their-70s", decade="70s", label="Your 70s and beyond",
   title="Piano Lessons for Seniors: Learning Piano at 70 and Beyond",
   desc="Piano lessons for seniors: learning piano at 70 and beyond with free, unhurried lessons and personal feedback from concert pianist Dr. Maria Pisarenko, DMA.",
+  payoff_title="Why learn piano at 70 and beyond",
   h1="Piano Lessons for Seniors: Learning Piano at 70 and Beyond, the Songs You Have Always Loved",
   answer="Yes, you can learn piano at 70 and beyond. You can start with a single lesson today, repeat it as many times as you like, and aim at one favorite song. I am a concert pianist and teacher, and I built this course to be unhurried.",
   related="For what changes and what does not at this age, read <a href=\"blog/learning-piano-after-70.html\">learning piano after 70</a>. You can <a href=\"free-course.html\">start the free online piano course</a>, or work with me live in <a href=\"lessons.html\">private online piano lessons for adults on Zoom</a>.",
   sub="At this age you know exactly which music matters to you. The piano can be the way to make it yours.",
   intro=["Adults past seventy bring things a younger beginner does not: they know exactly which music matters to them, they listen deeply, and they are not trying to impress anyone.",
          "Online Piano University is free and unhurried. There is no timetable, no test and no one to compete with. You can start with a single lesson today, repeat it as many times as you like and ask me a question whenever you need to."],
-  songs_title="Do you want to play these?",
+  songs_title="Songs seniors love to play",
   songs_sub="The songs and melodies that many people in their seventies carry with them, on a piano they can play slowly and beautifully.",
   songs=["Yesterday (The Beatles)","Moon River (Henry Mancini)","Fly Me to the Moon (Bart Howard)","Summertime (George Gershwin)","Can't Help Falling in Love (Elvis Presley)","Unchained Melody (Alex North)","Edelweiss (Rodgers and Hammerstein)","Over the Rainbow (Harold Arlen)","Que Sera, Sera (Doris Day)","Amazing Grace","The Sound of Silence (Simon & Garfunkel)","As Time Goes By (Herman Hupfeld)","Brahms' Lullaby","Ave Maria (Schubert)","Gymnopédie No. 1 (Satie)","Nocturne in E-flat, Op. 9 No. 2 (Chopin)","Clair de Lune (Debussy)"],
-  pains_title="What is actually in your way past seventy",
+  pains_title="Is it too late to learn piano at 70? What really gets in the way",
   pains=[("Hands that tire or stiffen","Short, gentle sessions work best, with rests built in. Warm hands first. If you have arthritis or any pain, ask your doctor what is right for you; I am a pianist, not a physician."),
          ("Eyesight and the size of the music","Large-print editions, good light and a music stand at the right height make a real difference. We start with very little notation and add only what you need."),
          ("Memory and repetition","Play a little, then rest, then play again tomorrow. A short notebook entry after each session keeps your place."),
@@ -382,7 +388,7 @@ def build_age(a, head_pre, hdr, foot):
 
 <section><div class="wrap" style="max-width:900px">
   <span class="eyebrow">Why it is worth starting now</span>
-  <h2>{PAYOFF_TITLE}</h2>
+  <h2>{esc(a["payoff_title"])}</h2>
   <div class="plan">{payoff}</div>
 </div></section>
 
@@ -410,14 +416,14 @@ def build_age(a, head_pre, hdr, foot):
 
 <section style="background:var(--paper)"><div class="wrap" style="max-width:900px">
   <span class="eyebrow">A realistic start</span>
-  <h2>Your first three months</h2>
+  <h2>Your first three months of piano lessons</h2>
   <div class="plan">{plan}</div>
   <p style="margin-top:18px"><a class="btn" href="free-course.html">&#9654; Begin with Lesson 1</a></p>
 </div></section>
 
 <section><div class="wrap" style="max-width:820px">
   <span class="eyebrow">Your teacher</span>
-  <h2>Who is teaching you</h2>
+  <h2>Who is teaching you: Dr. Maria Pisarenko, concert pianist</h2>
   <img src="images/dr-maria-pisarenko-concert-pianist-at-piano.jpg" alt="Dr. Maria Pisarenko, DMA, concert pianist and piano teacher for adults in their {esc(a["decade"])}, at the piano" width="1200" height="1648" loading="lazy" style="float:right;width:min(220px,38%);height:auto;margin:0 0 12px 20px;border-radius:10px">
   <p>I am <a href="about.html">Dr. Maria Pisarenko, DMA</a>, a concert pianist and university professor. I trained in the Russian school at the Central Music School of the Moscow Conservatory and the Gnessin Academy, and I teach at the college level. My work with adult beginners is the reason this course exists. You can read what the press and students say on the <a href="press.html">press</a> and <a href="reviews.html">reviews</a> pages.</p>
 </div></section>
@@ -474,7 +480,7 @@ def build_hub(head_pre, hdr, foot):
   <p>Yes, you can learn piano at any adult age, from your 20s to your 70s and beyond. I am Dr. Maria Pisarenko, a concert pianist and teacher, and each page below gives the music, the obstacles and the plan for your decade.</p>
 </div></section>
 <section><div class="wrap" style="max-width:980px">
-  <h2>Where are you in life?</h2>
+  <h2>Piano lessons for every age: where are you in life?</h2>
   <div class="agegrid">{cards}</div>
 </div></section>
 {levers_block()}
