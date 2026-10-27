@@ -13,13 +13,16 @@ import pathlib, re, json, html
 HERE = pathlib.Path(__file__).resolve().parent
 SITE = "https://onlinepianouniversity.com"
 EMAIL = "maria@onlinepianouniversity.com"
+SAMEAS = ["https://www.mariapisarenko.com", "https://www.linkedin.com/in/mariapisarenko/", "https://www.youtube.com/@ONLINEPIANOUNIVERSITY", "https://www.facebook.com/OnlinePianoUniversity", "https://www.instagram.com/online_piano_university/", "https://www.tiktok.com/@online.piano.university", "https://www.pinterest.com/OnlinePianoUniversity/"]
 
 # ---------------------------------------------------------------- content
 AGES = [
  dict(slug="piano-lessons-for-adults-in-their-20s", decade="20s", label="Your 20s",
-  title="Learn Piano in Your 20s | Online Piano University",
-  desc="Teaching yourself piano in your 20s? Skip the bad habits apps and tutorials teach. Free lessons from Dr. Maria Pisarenko, DMA, Online Piano University.",
-  h1="Learn Piano in Your 20s, Without Teaching Yourself Bad Habits",
+  title="Learning Piano in Your 20s: Lessons for Young Adults",
+  desc="Learning piano in your 20s? Skip the bad habits apps and videos teach. Free, ordered lessons for young adults from concert pianist Dr. Maria Pisarenko, DMA.",
+  h1="Learning Piano in Your 20s, Without Teaching Yourself Bad Habits",
+  answer="Yes, you can learn piano properly in your twenties, and the fastest route is to be taught the sound, the hand and the page in the right order instead of copying falling colored bars from a video. I am a concert pianist and university professor, and this free course is built for exactly that.",
+  related="If you have already tried an app, read <a href=\"blog/piano-apps-vs-a-real-teacher.html\">piano apps versus a real teacher</a>. You can <a href=\"free-course.html\">start the free online piano course</a>, or work with me live in <a href=\"lessons.html\">private online piano lessons for adults on Zoom</a>.",
   sub="You can learn almost anything from a screen. Piano is the one skill where the screen quietly teaches your hands to do the wrong thing. Here is how to avoid that, for free.",
   intro=["You are probably learning from videos, an app, or both. That works for the first month. Then the same thing happens to almost everyone: you can follow the colored bars, you cannot read a page of music, and the pieces you actually want stay out of reach.",
          "I am Dr. Maria Pisarenko, a concert pianist and university professor, and Online Piano University is the free course I built for adults who teach themselves. It starts with the sound and the hand, so your first year is not something you have to undo later."],
@@ -40,9 +43,11 @@ AGES = [
        ("Do I need an expensive keyboard?","No. A digital piano with 88 weighted keys is the right target, and a good one costs far less than an acoustic piano. The gear page lists the ones I recommend.")]),
 
  dict(slug="piano-lessons-for-adults-in-their-30s", decade="30s", label="Your 30s",
-  title="Learn Piano in Your 30s | Online Piano University",
-  desc="Learning piano in your 30s with a job, family and twenty free minutes? A clear free course by Dr. Maria Pisarenko, DMA, Online Piano University, plus feedback.",
-  h1="Learn Piano in Your 30s With a Job, a Family and Twenty Minutes",
+  title="Can You Learn Piano at 30? Piano Lessons in Your 30s",
+  desc="Can you learn piano at 30? Yes, with twenty focused minutes a day. A free, ordered course and written feedback from concert pianist Dr. Maria Pisarenko, DMA.",
+  h1="Can You Learn Piano at 30? Yes, With a Job, a Family and Twenty Minutes",
+  answer="Yes, you can learn piano at 30, and twenty focused minutes a day is enough to begin. For most adults in their thirties the problem was never talent; it was a plan, and I built the free course here as that plan.",
+  related="To see how much time you really need, read <a href=\"blog/how-long-to-practice-piano-each-day.html\">how long you should practice piano each day</a>. You can <a href=\"free-course.html\">start the free online piano course</a>, or work with me live in <a href=\"lessons.html\">private online piano lessons for adults on Zoom</a>.",
   sub="You do not need an hour a day. You need twenty focused minutes and someone who tells you what to do with them.",
   intro=["Most people in their thirties have tried piano already: an app, a keyboard bought during a lockdown, a few lessons as a kid. The keyboard is probably still in a corner. The problem was never talent. It was a plan.",
          "Online Piano University is a free, ordered course for adults who learn on their own. Each lesson fits in a lunch break, and you can send me a recording and get a written answer, so you are not guessing whether you are improving."],
@@ -63,9 +68,11 @@ AGES = [
        ("Can I learn piano if I can't read music?","Yes. You start by ear and by shape, and reading comes in step by step once your hand knows what to do.")]),
 
  dict(slug="piano-lessons-for-adults-in-their-40s", decade="40s", label="Your 40s",
-  title="Learn Piano in Your 40s | Online Piano University",
-  desc="Starting piano or coming back in your 40s? Free lessons and feedback from concert pianist Dr. Maria Pisarenko, DMA, at Online Piano University.",
-  h1="Learn Piano in Your 40s: Start Again, Properly",
+  title="Can You Learn Piano at 40? Piano Lessons for Adults 40+",
+  desc="Can you learn piano at 40? Yes. Piano lessons for adults 40+ and returning players: a free course and feedback from concert pianist Dr. Maria Pisarenko, DMA.",
+  h1="Can You Learn Piano at 40? Yes: Start Again, Properly",
+  answer="Yes, you can learn piano at 40, and starting now has real advantages: you bring patience, taste and a clear reason. As a concert pianist and teacher, I can tell you that what decides the outcome is being taught the sound and the hand from the first lesson.",
+  related="If you are wondering about your age, read <a href=\"blog/is-it-too-late-to-learn-piano-at-40-50-60.html\">is it too late to learn piano at 40, 50 or 60</a>, and for the practice method, <a href=\"blog/how-to-practice-piano-a-method-not-more-minutes.html\">how to practice piano: a method, not just more minutes</a>. You can <a href=\"free-course.html\">start the free online piano course</a>, or work with me live in <a href=\"lessons.html\">private online piano lessons for adults on Zoom</a>.",
   sub="If you stopped at twelve, or never started, this is the right moment. You understand music better than you did then, and you can practice without anyone standing over you.",
   intro=["A lot of adults in their forties come back to the piano with an old wound: a teacher who was impatient, a recital that went badly, a parent who decided when you were done. You can leave all of that behind.",
          "Online Piano University is built for adults who teach themselves. It is free, it is in order, and the person on the other side of your recordings is a teacher who understands exactly that fear."],
@@ -86,9 +93,11 @@ AGES = [
        ("Can I learn Canon in D or Für Elise as an adult beginner?","Yes, after you can read the page and keep a steady rhythm in both hands. The free course builds those skills in order, and both pieces are common first goals.")]),
 
  dict(slug="piano-lessons-for-adults-in-their-50s", decade="50s", label="Your 50s",
-  title="Learn Piano in Your 50s | Online Piano University",
-  desc="Learning piano at 50 or later on your own? Free step-by-step lessons and written feedback from Dr. Maria Pisarenko, DMA. Online Piano University.",
-  h1="Learn Piano in Your 50s: Play the Music You Grew Up With",
+  title="Can You Learn Piano at 50? Piano Lessons for Adults 50+",
+  desc="Can you learn piano at 50? Yes. Piano lessons for adults 50+: free step-by-step lessons and written feedback from concert pianist Dr. Maria Pisarenko, DMA.",
+  h1="Can You Learn Piano at 50? Play the Music You Grew Up With",
+  answer="Yes, you can learn piano at 50. Adults can learn to read, to play with both hands and to make a real sound at any age; the pace is different and the results are real. I am a concert pianist and teacher, and this is the course I built for adults like you.",
+  related="To see what the first months look like, read <a href=\"blog/how-long-to-learn-piano-adult.html\">how long it takes to learn piano as an adult</a>. You can <a href=\"free-course.html\">start the free online piano course</a>, or work with me live in <a href=\"lessons.html\">private online piano lessons for adults on Zoom</a>.",
   sub="The children are older, the calendar has room, and the song you have wanted to play for years is still waiting. This is the course built for you.",
   intro=["Adults in their fifties are the people I built Online Piano University for: never played, or quit around twelve, and now learning alone. Nobody is standing next to you, so the lessons have to do the job a teacher would do at your shoulder.",
          "That means sound before notes, small steps in the right order, and feedback on a recording of your own playing. It is free on YouTube, and you move at your own pace."],
@@ -109,9 +118,11 @@ AGES = [
        ("Can I learn Piano Man or Let It Be as a beginner?","Yes. Both are built on chords and a steady left hand, which the course teaches. Many adults pick one of them as their first goal.")]),
 
  dict(slug="piano-lessons-for-adults-in-their-60s", decade="60s", label="Your 60s",
-  title="Learn Piano in Your 60s | Online Piano University",
-  desc="Learning piano in your 60s or in retirement? Gentle, ordered free lessons and personal feedback from Dr. Maria Pisarenko, DMA, at Online Piano University.",
-  h1="Learn Piano in Your 60s: It Is Not Too Late, and Here Is the Plan",
+  title="Can You Learn Piano at 60? Piano Lessons for Adults 60+",
+  desc="Can you learn piano at 60? Yes. Gentle, ordered piano lessons for adults 60+ and retirees, with personal feedback from concert pianist Dr. Maria Pisarenko, DMA.",
+  h1="Can You Learn Piano at 60? It Is Not Too Late, and Here Is the Plan",
+  answer="Yes, you can learn piano at 60 and beyond; it is not too late. Many adults start in their sixties and play real pieces within months, and this course moves at your pace, with nothing timed. I am a concert pianist and teacher, and I will show you the order in which to use your time.",
+  related="If you are wondering about your age, read <a href=\"blog/is-it-too-late-to-learn-piano-at-40-50-60.html\">is it too late to learn piano at 40, 50 or 60</a>, and if your hands are stiff, <a href=\"blog/learning-piano-with-arthritis.html\">learning piano with arthritis or stiff hands</a>. You can <a href=\"free-course.html\">start the free online piano course</a>, or work with me live in <a href=\"lessons.html\">private online piano lessons for adults on Zoom</a>.",
   sub="Retirement gives you the one thing a pianist needs most: unhurried time. This course gives you the order in which to use it.",
   intro=["People begin in their sixties because there is finally time, or because a parent's piano is now in their living room, or because they have wanted to play for fifty years. All three are good reasons.",
          "The lessons are free, in order, and unhurried. You can pause, repeat and come back next week without losing anything, and when you are ready you can send a recording and hear from me in writing."],
@@ -132,9 +143,11 @@ AGES = [
        ("Can I play Let It Be or Moon River as a beginner?","Yes, after the first stages of the course. Both rely on chords and a calm left hand, and both are very common first goals.")]),
 
  dict(slug="piano-lessons-for-adults-in-their-70s", decade="70s", label="Your 70s and beyond",
-  title="Learn Piano in Your 70s and Beyond | Online Piano University",
-  desc="Piano lessons for seniors in their 70s and beyond: free, unhurried lessons and personal feedback from Dr. Maria Pisarenko, DMA. Online Piano University.",
-  h1="Learn Piano in Your 70s and Beyond: Play the Songs You Have Always Loved",
+  title="Piano Lessons for Seniors: Learning Piano at 70 and Beyond",
+  desc="Piano lessons for seniors: learning piano at 70 and beyond with free, unhurried lessons and personal feedback from concert pianist Dr. Maria Pisarenko, DMA.",
+  h1="Piano Lessons for Seniors: Learning Piano at 70 and Beyond, the Songs You Have Always Loved",
+  answer="Yes, you can learn piano at 70 and beyond. You can start with a single lesson today, repeat it as many times as you like, and aim at one favorite song. I am a concert pianist and teacher, and I built this course to be unhurried.",
+  related="For what changes and what does not at this age, read <a href=\"blog/learning-piano-after-70.html\">learning piano after 70</a>. You can <a href=\"free-course.html\">start the free online piano course</a>, or work with me live in <a href=\"lessons.html\">private online piano lessons for adults on Zoom</a>.",
   sub="At this age you know exactly which music matters to you. The piano can be the way to make it yours.",
   intro=["Adults past seventy bring things a younger beginner does not: they know exactly which music matters to them, they listen deeply, and they are not trying to impress anyone.",
          "Online Piano University is free and unhurried. There is no timetable, no test and no one to compete with. You can start with a single lesson today, repeat it as many times as you like and ask me a question whenever you need to."],
@@ -316,7 +329,7 @@ def page_head(title, desc, canon, extra_ld, og_title=None):
 <link rel="icon" href="images/icon-192.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'"><noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="css/site.css">
 {extra_ld}
 </head>
@@ -339,9 +352,9 @@ def build_age(a, head_pre, hdr, foot):
     faq = "".join('<details class="faq-q"><summary>%s</summary><p>%s</p></details>' % (esc(q), esc(an)) for q, an in a["faq"])
     faq_ld = ld({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
         {"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":an}} for q, an in a["faq"]]})
-    page_ld = ld({"@context":"https://schema.org","@type":"WebPage","name":a["h1"],"url":f"{SITE}/{a['slug']}.html",
+    page_ld = ld({"@context":"https://schema.org","@type":"WebPage","name":a["title"],"url":f"{SITE}/{a['slug']}.html",
         "description":a["desc"],"isPartOf":{"@type":"WebSite","name":"Online Piano University","url":SITE+"/"},
-        "author":{"@type":"Person","name":"Dr. Maria Pisarenko","honorificSuffix":"DMA"},
+        "author":{"@type":"Person","name":"Dr. Maria Pisarenko","honorificSuffix":"DMA","url":SITE+"/about.html","sameAs":SAMEAS},
         "audience":{"@type":"PeopleAudience","audienceType":"Adult piano learners in their "+a["decade"]}})
     bc = breadcrumb([("Online Piano University",""),("Piano Lessons by Age","piano-lessons-by-age.html"),(a["label"],a["slug"]+".html")])
     payoff = "".join('<div class="card"><h3>%s</h3><p class="muted">%s</p></div>' % (esc(t), esc(b)) for t, b in PAYOFF[a["decade"]])
@@ -361,8 +374,10 @@ def build_age(a, head_pre, hdr, foot):
 <div class="strip"><div class="wrap"><span>Free &amp; in order: <b>41 lessons</b></span><span>Taught by <b>Dr. Maria Pisarenko, DMA</b></span><span>Written feedback on your own playing</span></div></div>
 
 <section><div class="wrap" style="max-width:820px">
+  <p>{esc(a["answer"])}</p>
   <p>{esc(a["intro"][0])}</p>
   <p>{esc(a["intro"][1])}</p>
+  <p>{a["related"]}</p>
 </div></section>
 
 <section><div class="wrap" style="max-width:900px">
@@ -434,8 +449,8 @@ def build_age(a, head_pre, hdr, foot):
 
 
 def build_hub(head_pre, hdr, foot):
-    title = "Piano Lessons for Adults by Age | Online Piano University"
-    desc = "Piano lessons for adults in their 20s to 70s: songs for your decade, honest answers to real obstacles, and a plan. Dr. Maria Pisarenko, Online Piano University."
+    title = "Piano Lessons for Adults by Age: From Your 20s to 70s+"
+    desc = "Piano lessons for adults by age, from your 20s to 70s and beyond: the music, the obstacles and a plan for your decade from concert pianist Dr. Maria Pisarenko."
     cards = "".join('<a class="card" href="%s.html"><h3>%s</h3><p class="muted">%s</p><span class="btn dark" style="margin-top:8px;display:inline-block">Read this page &rarr;</span></a>' % (
         a["slug"], esc(a["label"]), esc(a["sub"])) for a in AGES)
     faq = [("Is there a best age to start learning piano?","The best age is the one you are in. Children and adults learn differently, and adults bring focus, patience and a clear idea of the music they love."),
@@ -444,17 +459,20 @@ def build_hub(head_pre, hdr, foot):
     faq_html = "".join('<details class="faq-q"><summary>%s</summary><p>%s</p></details>' % (esc(q), esc(an)) for q, an in faq)
     faq_ld = ld({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":an}} for q, an in faq]})
     bc = breadcrumb([("Online Piano University",""),("Piano Lessons by Age","piano-lessons-by-age.html")])
-    page_ld = ld({"@context":"https://schema.org","@type":"CollectionPage","name":"Piano Lessons for Adults by Age","url":SITE+"/piano-lessons-by-age.html","description":desc,
-                  "hasPart":[{"@type":"WebPage","name":a["h1"],"url":f"{SITE}/{a['slug']}.html"} for a in AGES]})
+    page_ld = ld({"@context":"https://schema.org","@type":"CollectionPage","name":title,"url":SITE+"/piano-lessons-by-age.html","description":desc,
+                  "hasPart":[{"@type":"WebPage","name":a["title"],"url":f"{SITE}/{a['slug']}.html"} for a in AGES]})
     body = f'''{hdr}
 {contact_top()}
 <section class="pagehero"><div class="wrap">
   <span class="eyebrow" style="color:var(--gold)">Piano lessons for adults &middot; every age</span>
-  <h1>Piano Lessons for Adults, by Age</h1>
+  <h1>Piano Lessons for Adults by Age: From Your 20s to 70s and Beyond</h1>
   <p class="sub">Your twenties and your seventies need different encouragement, different songs and a different plan. Choose your decade, and start the free course whenever you are ready.</p>
   <div class="cta" style="margin-top:24px"><a class="btn" href="free-course.html">&#9654; Start the free course</a></div>
 </div></section>
 <div class="strip"><div class="wrap"><span>Free &amp; in order: <b>41 lessons</b></span><span>Taught by <b>Dr. Maria Pisarenko, DMA</b></span><span>Written feedback on your own playing</span></div></div>
+<section><div class="wrap" style="max-width:820px">
+  <p>Yes, you can learn piano at any adult age, from your 20s to your 70s and beyond. I am Dr. Maria Pisarenko, a concert pianist and teacher, and each page below gives the music, the obstacles and the plan for your decade.</p>
+</div></section>
 <section><div class="wrap" style="max-width:980px">
   <h2>Where are you in life?</h2>
   <div class="agegrid">{cards}</div>

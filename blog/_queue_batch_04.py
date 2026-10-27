@@ -139,8 +139,8 @@ SPECS = [
 {
  "slug": "learning-piano-without-a-teacher",
  "date": "2026-10-05",
- "title": "Learning Piano Without a Teacher: What You Can and Cannot Diagnose Alone",
- "description": "A concert pianist is honest about self-teaching the piano — the parts an adult can genuinely do alone, the four faults that are almost impossible to catch in yourself, and how to cover the gap without weekly lessons.",
+ "title": "Can You Teach Yourself Piano? Learning Without a Teacher",
+ "description": "Can you teach yourself piano as an adult? A concert pianist explains what you can learn alone, the four faults you cannot hear yourself, and how to cover them.",
  "sub": "Most of learning the piano can now be done alone, and done well. Four specific things cannot &mdash; and knowing which four is the whole difference.",
  "image": "lead-pink-floor.jpg",
  "image_alt": "Dr. Maria Pisarenko, concert pianist and university professor",
