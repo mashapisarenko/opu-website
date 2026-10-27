@@ -16,15 +16,15 @@ SHELL = HERE / "free-course.html"
 OUT = HERE / "first-piece.html"
 SITE = "https://onlinepianouniversity.com"
 
-TITLE = "Your First Piece, Free — Play Ode to Joy by Ear Today"
+TITLE = "Your First Piano Song: Play Ode to Joy by Ear, Free"
 DESC = ("One page from an adult piano method: the opening of Ode to Joy by ear, five fingers that never move, nothing to decode. Free from a concert pianist.")
 
 BODY = """
 <section class="pagehero">
   <div class="wrap">
     <span class="eyebrow">Free &middot; one page from the method</span>
-    <h1>Play your first real piece today &mdash; by ear</h1>
-    <p class="sub">Most piano books put a month of reading between you and anything that sounds like
+    <h1>Your First Piano Song: Play Ode to Joy by Ear, Free</h1>
+    <p class="sub">The first piano song to learn is the opening of Beethoven&rsquo;s <em>Ode to Joy</em>: you already know how it goes, so you can play it by ear with five fingers that never move. Most piano books put a month of reading between you and anything that sounds like
       music. This is the page that comes first in mine: the opening of Beethoven&rsquo;s
       <em>Ode to Joy</em>, five fingers that never move, and nothing on the sheet to decode.</p>
   </div>
