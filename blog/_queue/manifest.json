@@ -18,16 +18,34 @@
     "summary": "How Goldenweiser, a pupil of Liszt's pupil Siloti, shaped the Russian school, and why what a tradition hands down is a way of listening that adults can learn."
   },
   {
+    "slug": "easy-piano-songs-for-adult-beginners",
+    "date": "2026-10-29",
+    "title": "Easy Piano Songs for Adult Beginners (and How to Learn Them)",
+    "summary": "A melody you already know is the fastest way into the piano. Here are ten of them, in the order I would learn them, and what to do with each."
+  },
+  {
     "slug": "practicing-piano-in-an-apartment",
     "date": "2026-10-30",
     "title": "How to Practice Piano in an Apartment Without Annoying Anyone",
     "summary": "A surprising share of adults stop playing for a reason that has nothing to do with the piano: they are worried about being heard."
   },
   {
+    "slug": "first-piano-chords-for-beginners",
+    "date": "2026-10-30",
+    "title": "First Piano Chords for Beginners: The Three to Learn First",
+    "summary": "Three chords, C, F and G, will accompany a surprising amount of music. Here is how to find them, shape your hand for them, and practice them in five minutes a day."
+  },
+  {
     "slug": "what-a-piano-competition-teaches-you",
     "date": "2026-10-31",
     "title": "What a Piano Competition Teaches You About Nerves",
     "summary": "Competitions taught Dr. Pisarenko that nerves are information, preparation goes deeper than repetition, and listening beats fear. Here is how adults can use those lessons at home."
+  },
+  {
+    "slug": "80-20-rule-for-piano-practice",
+    "date": "2026-10-31",
+    "title": "The 80/20 Rule for Piano Practice: What Actually Moves You",
+    "summary": "A few practice habits give most of the progress. Here are the five I would keep if I could keep only five, and the things I would stop doing."
   },
   {
     "slug": "maria-yudina-the-uncompromising-pianist",
@@ -568,23 +586,5 @@
     "date": "2027-01-29",
     "title": "Repeat Signs, D.C., Coda: How to Find Your Way Through a Piece",
     "summary": "Da capo, dal segno, the coda sign, first and second endings &mdash; these are directions, not music, and they are simpler than they look."
-  },
-  {
-    "slug": "easy-piano-songs-for-adult-beginners",
-    "date": "2027-01-30",
-    "title": "Easy Piano Songs for Adult Beginners (and How to Learn Them)",
-    "summary": "A melody you already know is the fastest way into the piano. Here are ten of them, in the order I would learn them, and what to do with each."
-  },
-  {
-    "slug": "first-piano-chords-for-beginners",
-    "date": "2027-01-31",
-    "title": "First Piano Chords for Beginners: The Three to Learn First",
-    "summary": "Three chords, C, F and G, will accompany a surprising amount of music. Here is how to find them, shape your hand for them, and practice them in five minutes a day."
-  },
-  {
-    "slug": "80-20-rule-for-piano-practice",
-    "date": "2027-02-01",
-    "title": "The 80/20 Rule for Piano Practice: What Actually Moves You",
-    "summary": "A few practice habits give most of the progress. Here are the five I would keep if I could keep only five, and the things I would stop doing."
   }
 ]

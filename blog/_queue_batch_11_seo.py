@@ -16,7 +16,7 @@ def spec(slug, date, title, desc, sub, image, alt, cta, body, faq):
 
 
 SPECS = [
-spec("easy-piano-songs-for-adult-beginners", "2027-01-30",
+spec("easy-piano-songs-for-adult-beginners", "2026-10-29",
  "Easy Piano Songs for Adult Beginners (and How to Learn Them)",
  "Ten easy piano songs for adult beginners, all public-domain melodies, from Ode to Joy to the Swan Lake theme, each with one practice tip from a concert pianist.",
  "A melody you already know is the fastest way into the piano. Here are ten of them, in the order I would learn them, and what to do with each.",
@@ -94,7 +94,7 @@ spec("easy-piano-songs-for-adult-beginners", "2027-01-30",
   ("How do I learn a piano song hands separately?",
    "Hum the tune twice, clap the rhythm and count out loud, then play each hand alone until it is comfortable. Put the hands together only when each one is easy, and expect to go back to separate hands several times. That is not remedial. It is how the work is done.")]),
 
-spec("first-piano-chords-for-beginners", "2027-01-31",
+spec("first-piano-chords-for-beginners", "2026-10-30",
  "First Piano Chords for Beginners: The Three to Learn First",
  "The first piano chords for beginners are C, F and G major. A concert pianist shows how to find each one, the hand shape, a five-minute daily drill, and songs.",
  "Three chords, C, F and G, will accompany a surprising amount of music. Here is how to find them, shape your hand for them, and practice them in five minutes a day.",
@@ -176,7 +176,7 @@ spec("first-piano-chords-for-beginners", "2027-01-31",
   ("Which songs can I play with only C, F and G?",
    "Amazing Grace, When the Saints Go Marching In and Jingle Bells can all be accompanied with just these three chords in the key of C. Some versions use G7 in place of the plain G chord, and fuller arrangements add more chords.")]),
 
-spec("80-20-rule-for-piano-practice", "2027-02-01",
+spec("80-20-rule-for-piano-practice", "2026-10-31",
  "The 80/20 Rule for Piano Practice: What Actually Moves You",
  "The 80/20 rule for piano practice, from a concert pianist: the few habits that give most of the progress, why 80/20 is a rule of thumb, and a 20-minute plan.",
  "A few practice habits give most of the progress. Here are the five I would keep if I could keep only five, and the things I would stop doing.",
