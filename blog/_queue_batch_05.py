@@ -148,7 +148,7 @@ SPECS = [
 {
  "slug": "how-many-keys-do-i-need-piano",
  "date": "2026-10-12",
- "title": "61, 76 or 88 Keys: What You Can and Cannot Play on Each",
+ "title": "How Many Keys Does a Beginner Keyboard Need? 61, 76, 88",
  "description": "How many keys an adult beginner actually needs, what each size can and cannot play, and why the number of keys matters far less than whether they are weighted.",
  "sub": "A straight answer about key counts &mdash; what runs out, when it runs out, and the question that matters considerably more than this one.",
  "image": "lead-piano-strings.jpg",

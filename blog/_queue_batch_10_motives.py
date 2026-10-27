@@ -19,7 +19,7 @@ def spec(slug, date, title, desc, sub, image, alt, cta, body, seo_title=None):
 
 SPECS = [
 spec("piano-and-the-aging-brain", "2027-01-30",
- "Does Playing Piano Keep Your Brain Sharp? What Research Says",
+ "Is Playing Piano Good for Your Brain? What Research Says",
  "Does learning piano help the aging brain? What controlled studies of older adults found, what they did not, and how to practice if brain health is your reason.",
  "Keeping the mind sharp is one of the best reasons to start. It is also the reason most often oversold. Here is what the studies show, and how to practice so the work counts.",
  "lead-at-the-piano.jpg", "Dr. Maria Pisarenko at the piano",
