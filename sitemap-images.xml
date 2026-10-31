@@ -41,6 +41,10 @@
     <image:image><image:loc>https://onlinepianouniversity.com/images/letters/steinway-2018-thumb.jpg</image:loc></image:image>
     <image:image><image:loc>https://onlinepianouniversity.com/images/letters/snmas-2013-thumb.jpg</image:loc></image:image>
   </url>
+  <url><loc>https://onlinepianouniversity.com/blog/80-20-rule-for-piano-practice.html</loc>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/blog/lead-at-the-piano.jpg</image:loc></image:image>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/blog/dr-maria-pisarenko-piano-teacher-author.jpg</image:loc></image:image>
+  </url>
   <url><loc>https://onlinepianouniversity.com/blog/a-girl-from-siberia-and-the-piano.html</loc>
     <image:image><image:loc>https://onlinepianouniversity.com/images/blog/dr-maria-pisarenko-piano-concert-gown.jpg</image:loc></image:image>
   </url>
@@ -201,6 +205,9 @@
     <image:image><image:loc>https://onlinepianouniversity.com/images/blog/dr-maria-pisarenko-piano-concert-gown.jpg</image:loc></image:image>
   </url>
   <url><loc>https://onlinepianouniversity.com/blog/the-silence-before-the-first-chord.html</loc>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/blog/dr-maria-pisarenko-piano-concert-gown.jpg</image:loc></image:image>
+  </url>
+  <url><loc>https://onlinepianouniversity.com/blog/what-a-piano-competition-teaches-you.html</loc>
     <image:image><image:loc>https://onlinepianouniversity.com/images/blog/dr-maria-pisarenko-piano-concert-gown.jpg</image:loc></image:image>
   </url>
   <url><loc>https://onlinepianouniversity.com/blog/what-european-music-schools-teach-that-american-adults-missed.html</loc>
