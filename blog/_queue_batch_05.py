@@ -61,7 +61,7 @@ SPECS = [
   <li><strong>Shoulders.</strong> Drop them. Then begin.</li>
 </ol>
 
-<p>Do this once, note where the towel or the bench setting needs to be, and you never think about it again.</p>
+<p>Do this once, note where the towel or the bench setting needs to be, and you never think about it again. If your bench or stand is the problem, I keep a short list of <a href="../shop/piano-benches-and-stands.html">adjustable piano benches and keyboard stands</a>.</p>
 
 <h2>Check it from the side, not from inside</h2>
 
@@ -201,7 +201,7 @@ SPECS = [
 
 <p>Solid stand, bench that adjusts, weighted keys. In that order of neglect, and roughly that order of importance. The rest of the specification sheet can be ignored.</p>
 
-<p>My notes on instruments and the book I teach from are on my <a href="../books.html">books and gear page</a>. But do not let any of it delay you: the best instrument for an adult beginner is the one that is in the room, today.</p>
+<p>My notes on instruments and the book I teach from are on my <a href="../books.html">books and gear page</a>, and a short list of <a href="../shop/keyboards.html">keyboards and MIDI controllers</a> is in my shop. But do not let any of it delay you: the best instrument for an adult beginner is the one that is in the room, today.</p>
 """
 },
 ]

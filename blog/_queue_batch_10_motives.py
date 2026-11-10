@@ -331,7 +331,7 @@ spec("piano-method-book-for-adult-beginners", "2027-02-03",
 
 <h2>One book is enough</h2>
 
-<p>Adults often buy three methods and finish none of them. Choose one good book and work through it in order, page by page. Add pieces you love alongside it; <a href="choosing-your-first-piano-piece.html">here is how to choose one you will actually finish</a>. For the books and keyboards I currently recommend, see <a href="../books.html">recommended books</a>, and to begin at the first lesson, <a href="../start.html">start here</a>.</p>
+<p>Adults often buy three methods and finish none of them. Choose one good book and work through it in order, page by page. Add pieces you love alongside it; <a href="choosing-your-first-piano-piece.html">here is how to choose one you will actually finish</a>. For the books and keyboards I currently recommend, see <a href="../books.html">recommended books</a> and my shop page of <a href="../shop/piano-books-and-sheet-music.html">piano books and sheet music</a>, and to begin at the first lesson, <a href="../start.html">start here</a>.</p>
 """),
 
 spec("piano-as-a-hobby-for-burnout", "2027-02-04",

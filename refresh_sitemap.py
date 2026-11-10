@@ -96,6 +96,12 @@ def main():
         if p.name == "index.html" or not indexable(p):
             continue
         entries.append(("blog/" + p.name, git_date(p)))
+    shop_dir = HERE / "shop"
+    if (shop_dir / "index.html").exists():
+        entries.append(("shop/", git_date(shop_dir / "index.html")))
+        for p in sorted(shop_dir.glob("*.html")):
+            if p.name != "index.html":
+                entries.append(("shop/" + p.name, git_date(p)))
 
     seen, rows = set(), []
     for rel, lm in entries:
