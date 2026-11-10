@@ -6,10 +6,22 @@
     "summary": "The pedal is not a sustain button. It is a second instrument played with your foot, and it has its own technique — starting with the fact that the foot moves after the hand, never with it."
   },
   {
+    "slug": "best-digital-piano-for-adult-beginners",
+    "date": "2026-11-11",
+    "title": "Best Digital Piano for Adult Beginners (Teacher's Pick)",
+    "summary": "What to look for, which to buy, and what to skip when you start the piano as an adult."
+  },
+  {
     "slug": "learning-piano-in-your-30s",
     "date": "2026-11-12",
     "title": "The Keyboard in the Corner: Piano Practice in a Full Home",
     "summary": "Most people in their thirties have tried piano before. The problem was never talent. It was what to do with the twenty minutes you actually have."
+  },
+  {
+    "slug": "digital-piano-vs-keyboard",
+    "date": "2026-11-12",
+    "title": "Digital Piano vs Keyboard: What to Buy to Learn",
+    "summary": "The difference that matters is under your fingers. Here is how to choose between a digital piano and a keyboard."
   },
   {
     "slug": "why-count-out-loud-piano",
@@ -18,10 +30,22 @@
     "summary": "Nobody hears you. And the thing counting fixes is the thing a listener notices first — long before they notice a wrong note."
   },
   {
+    "slug": "weighted-vs-semi-weighted-keys",
+    "date": "2026-11-13",
+    "title": "Weighted vs Semi-Weighted Keys: What to Buy to Learn",
+    "summary": "The key action is the single most important thing you can choose in an instrument. Here is how to tell them apart."
+  },
+  {
     "slug": "learning-piano-in-retirement",
     "date": "2026-11-14",
     "title": "Set Up the Room First: A Retirement Piano Routine",
     "summary": "For the first time in decades, nobody else sets your goals. A structured course gives the days a shape, and the piano gives them something beautiful."
+  },
+  {
+    "slug": "best-keyboard-for-beginners",
+    "date": "2026-11-14",
+    "title": "Best Keyboard for Beginners: A Piano Teacher's Pick",
+    "summary": "A good beginner keyboard is touch-sensitive, full-size and quiet when you need it. Here is how to choose."
   },
   {
     "slug": "learning-piano-in-your-20s",
@@ -30,10 +54,22 @@
     "summary": "You can learn almost anything from a screen. Piano is the one skill where the screen can quietly teach your hands the wrong thing. Here is how to keep the speed and lose the habits."
   },
   {
+    "slug": "61-vs-76-vs-88-keys",
+    "date": "2026-11-15",
+    "title": "61 vs 76 vs 88 Keys: How Many Do You Need?",
+    "summary": "Key count decides which music you can play. Here is the honest comparison, from a concert pianist."
+  },
+  {
     "slug": "what-playing-musically-actually-means",
     "date": "2026-11-16",
     "title": "\"Play It Musically\" — What That Actually Means, in Practical Terms",
     "summary": "Your ear already knows what beautiful sounds like. The gap is not taste — it is that nobody has told you which physical movements produce it."
+  },
+  {
+    "slug": "yamaha-p145-vs-p225",
+    "date": "2026-11-16",
+    "title": "Yamaha P-145 vs P-225: Which Should You Buy?",
+    "summary": "Same keys, different engines. Here is the spec-by-spec comparison and my verdict for adult beginners."
   },
   {
     "slug": "starting-piano-again-at-40",
@@ -42,10 +78,22 @@
     "summary": "You understand music better than you did at ten. Your hands remember less than you hoped. And somewhere in your head, an old teacher is still frowning. All three can be worked with."
   },
   {
+    "slug": "roland-fp30x-vs-yamaha-p225",
+    "date": "2026-11-17",
+    "title": "Roland FP-30X vs Yamaha P-225: Which Is Better?",
+    "summary": "Two of the most popular portable digital pianos, side by side, with the numbers from the makers' own pages."
+  },
+  {
     "slug": "the-left-hand-is-not-the-weak-hand",
     "date": "2026-11-18",
     "title": "The Left Hand Is Not the Weak Hand",
     "summary": "You have spent forty years doing fine work with one hand and carrying things with the other. That is training history, not anatomy, and it can be corrected on purpose."
+  },
+  {
+    "slug": "best-headphones-for-digital-piano",
+    "date": "2026-11-18",
+    "title": "Best Headphones for Digital Piano: A Teacher's Picks",
+    "summary": "Daily practice without disturbing the house depends on a good pair of headphones. Here is how to choose."
   },
   {
     "slug": "piano-for-seniors-keyboard-light-music",
@@ -54,16 +102,34 @@
     "summary": "Lessons here are short, in order and unhurried. You set the pace, and the first piece you play can be one you have loved all your life."
   },
   {
+    "slug": "best-sustain-pedal-for-digital-piano",
+    "date": "2026-11-19",
+    "title": "Best Sustain Pedal for Digital Piano: What to Buy",
+    "summary": "The pedal in the box is only a start. Here is how to choose a pedal that teaches the foot properly."
+  },
+  {
     "slug": "how-to-read-the-grand-staff",
     "date": "2026-11-20",
     "title": "Two Staves, One Instrument: How to Read the Grand Staff Without Getting Lost",
     "summary": "The two staves are not two pieces of music side by side. They are one keyboard, cut in half at middle C, and reading them is a skill with its own practice."
   },
   {
+    "slug": "how-to-choose-a-piano-bench-and-sit-at-the-right-height",
+    "date": "2026-11-20",
+    "title": "Piano Bench Height: How to Sit and Choose a Bench",
+    "summary": "Sitting height changes your sound and your comfort. Here is the setup I teach, and the benches that make it easy."
+  },
+  {
     "slug": "chopin-sonata-no-2-what-to-listen-for",
     "date": "2026-11-21",
     "title": "Chopin's Funeral March Sonata: What to Listen For",
     "summary": "Chopin's Second Sonata is famous for its funeral march, but the whole work tells one story. Here is what to listen for in each of its four movements."
+  },
+  {
+    "slug": "best-microphone-for-recording-piano-at-home",
+    "date": "2026-11-21",
+    "title": "Best Microphone for Recording Piano at Home",
+    "summary": "Hear what a listener hears, and send it to a teacher: simple, affordable ways to record yourself at the piano."
   },
   {
     "slug": "brahms-rhapsodies-op-79-for-the-listener",

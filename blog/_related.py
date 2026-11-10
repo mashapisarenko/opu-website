@@ -179,6 +179,26 @@ RELATED = {
  "easy-piano-songs-for-adult-beginners": ["how-to-count-music-out-loud", "how-to-find-any-note-on-the-piano", "piano-method-book-for-adult-beginners"],
  "first-piano-chords-for-beginners": ["piano-hand-position-curved-fingers", "how-to-find-any-note-on-the-piano", "how-to-read-piano-notes-grand-staff"],
  "80-20-rule-for-piano-practice": ["how-to-practice-piano-a-method-not-more-minutes", "how-long-to-practice-piano-each-day", "practicing-piano-when-you-have-no-time"],
+ # --- added 2026-11-10: buyer guides and holiday gift guides ---
+ "black-friday-digital-piano-and-keyboard-guide-2026": ["best-digital-piano-for-adult-beginners", "digital-piano-vs-keyboard", "what-piano-or-keyboard-should-i-buy-to-start"],
+ "best-gifts-for-piano-players-2026": ["gifts-for-adult-piano-beginners", "stocking-stuffers-for-piano-players", "gifts-for-piano-teachers"],
+ "gifts-for-adult-piano-beginners": ["best-gifts-for-piano-players-2026", "what-piano-or-keyboard-should-i-buy-to-start", "adults-learn-piano-differently"],
+ "gifts-for-piano-teachers": ["best-gifts-for-piano-players-2026", "gratitude-and-the-teachers-who-pass-music-on", "how-to-choose-a-piano-teacher"],
+ "stocking-stuffers-for-piano-players": ["best-gifts-for-piano-players-2026", "christmas-gifts-for-musicians", "gifts-for-adult-piano-beginners"],
+ "christmas-gifts-for-musicians": ["best-gifts-for-piano-players-2026", "stocking-stuffers-for-piano-players", "hanukkah-gifts-for-music-lovers"],
+ "hanukkah-gifts-for-music-lovers": ["christmas-gifts-for-musicians", "best-gifts-for-piano-players-2026", "stocking-stuffers-for-piano-players"],
+ "gifts-for-seniors-learning-piano": ["learning-piano-in-retirement", "piano-for-seniors-keyboard-light-music", "best-gifts-for-piano-players-2026"],
+ "best-digital-piano-for-adult-beginners": ["digital-piano-vs-keyboard", "what-piano-or-keyboard-should-i-buy-to-start", "weighted-vs-semi-weighted-keys"],
+ "digital-piano-vs-keyboard": ["best-digital-piano-for-adult-beginners", "weighted-vs-semi-weighted-keys", "what-piano-or-keyboard-should-i-buy-to-start"],
+ "weighted-vs-semi-weighted-keys": ["digital-piano-vs-keyboard", "best-digital-piano-for-adult-beginners", "61-vs-76-vs-88-keys"],
+ "best-keyboard-for-beginners": ["61-vs-76-vs-88-keys", "digital-piano-vs-keyboard", "what-piano-or-keyboard-should-i-buy-to-start"],
+ "61-vs-76-vs-88-keys": ["best-keyboard-for-beginners", "weighted-vs-semi-weighted-keys", "best-digital-piano-for-adult-beginners"],
+ "yamaha-p145-vs-p225": ["best-digital-piano-for-adult-beginners", "roland-fp30x-vs-yamaha-p225", "weighted-vs-semi-weighted-keys"],
+ "roland-fp30x-vs-yamaha-p225": ["yamaha-p145-vs-p225", "best-digital-piano-for-adult-beginners", "weighted-vs-semi-weighted-keys"],
+ "best-headphones-for-digital-piano": ["best-digital-piano-for-adult-beginners", "how-to-practice-slowly", "best-sustain-pedal-for-digital-piano"],
+ "best-sustain-pedal-for-digital-piano": ["when-should-you-start-using-the-piano-pedal", "best-digital-piano-for-adult-beginners", "best-headphones-for-digital-piano"],
+ "how-to-choose-a-piano-bench-and-sit-at-the-right-height": ["piano-bench-height-posture", "does-piano-playing-hurt-hands", "best-digital-piano-for-adult-beginners"],
+ "best-microphone-for-recording-piano-at-home": ["practicing-with-a-recording", "best-headphones-for-digital-piano", "how-to-practice-slowly"],
 }
 
 ANCHOR = '<aside class="card" style="display:flex;gap:16px;align-items:center;margin:34px 0 0;padding:18px 20px">'

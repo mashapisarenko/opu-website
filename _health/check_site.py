@@ -120,7 +120,7 @@ ALLOW_ISE = {
     # morning check on text that is right - the fault was the list, not the article.
     "imprecise","precisely","stepwise","clockwise","counterclockwise","crosswise",
     "lengthwise","edgewise","sidewise","anticlockwise","turnwise","piecewise",
-    "poise","poised","noisewise","bruise","bruised","bruises","guise","appraise",
+    "polonaise","poise","poised","noisewise","bruise","bruised","bruises","guise","appraise",
     "appraised","appraises","reprise","valise","treatise","expertise",
     # 2026-10-15: improvisation is the American spelling too (no -ization form).
     "improvisation","improvisations","improvisational",
