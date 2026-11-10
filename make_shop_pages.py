@@ -2,7 +2,8 @@
 """Builds the affiliate shop: shop/*.html, from _shop/products.json (outside the repo).
 
 Run from opu-website/:  python3 make_shop_pages.py [path/to/products.json]
-Rules baked in: no prices, no ratings or review counts, no Amazon images; every link is
+Rules baked in: no prices, no ratings or review counts, no Amazon images (cards use our own
+type illustrations from images/shop/types/, mapped in shop_illus.py); every link is
 https://www.amazon.com/dp/{ASIN}?tag=musicalgalaxi-20 with rel="sponsored nofollow noopener".
 price_usd_seen is used only to bucket gift guides, and is never printed.
 """
@@ -10,7 +11,7 @@ import json, html, re, sys, pathlib, importlib.util, collections
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
-import shop_content as C, shop_notes as N, shop_depth as D
+import shop_content as C, shop_notes as N, shop_depth as D, shop_illus as SI
 from shop_text import ARTICLE, GUIDES, HUB
 
 SITE = "https://onlinepianouniversity.com"
@@ -19,6 +20,7 @@ DISC = ("As an Amazon Associate I earn from qualifying purchases. Some links on 
         "buying through them costs you nothing extra.")
 TIERS = [("budget", "Budget"), ("mid", "Mid-range"), ("premium", "Premium"), ("luxury", "Luxury")]
 TIER_LABEL = dict(TIERS)
+ILLUS_NOTE = "Illustrations show the type of product; see the exact item and its photos on Amazon."
 OUT = HERE / "shop"
 PRODUCTS = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else HERE.parent / "_shop" / "products.json"
 
@@ -60,14 +62,20 @@ for p in DATA:
 def url(p): return "https://www.amazon.com/dp/%s?tag=%s" % (p["asin"], TAG)
 
 def card(p, i, cat, group=None, tier_tag=True):
+    """Product card: our own type illustration on top (never an Amazon photo), the whole card clickable.
+    tier_tag is kept for callers; the card now shows brand + product type under the picture."""
     b = N.brand_of(p)
     name = N.short_name(p)
-    meta = '<span class="pbrand">%s</span>' % esc(b) if b else '<span class="pbrand">Online Piano University pick</span>'
-    if tier_tag and p.get("tier") in TIER_LABEL:
-        meta += '<span class="ptier">%s</span>' % TIER_LABEL[p["tier"]]
-    return ('<article class="pcard"><div class="pmeta">%s</div><h3>%s</h3><p>%s</p>'
-            '<a class="btn shop-btn" href="%s" rel="sponsored nofollow noopener" target="_blank" data-asin="%s" data-category="%s">Check today&#39;s price on Amazon</a></article>'
-            % (meta, esc(name), esc(N.note(p, i, group)), url(p), p["asin"], attr(cat)))
+    ty, label = SI.type_of(p)
+    full = ((b + " ") if b else "") + name
+    link = 'href="%s" rel="sponsored nofollow noopener" target="_blank" data-asin="%s" data-category="%s"' % (url(p), p["asin"], attr(cat))
+    meta = '<span class="pbrand">%s</span>' % (esc(b) if b else "Online Piano University pick")
+    meta += '<span class="ptype">%s</span>' % esc(label)
+    img = ('<a class="pimg" %s><img src="../images/shop/types/%s.svg" width="600" height="450" loading="lazy" decoding="async" alt="%s"></a>'
+           % (link, ty, attr(SI.alt_text(label, full))))
+    return ('<article class="pcard">%s<div class="pmeta">%s</div><h3>%s</h3><p>%s</p>'
+            '<a class="btn shop-btn" %s>Check today&#39;s price on Amazon</a></article>'
+            % (img, meta, esc(name), esc(N.note(p, i, group)), link))
 
 def item_list_ld(products, name):
     return {"@context": "https://schema.org", "@type": "ItemList", "name": name,
@@ -119,8 +127,9 @@ def page(slug, title, desc, h1, eyebrow, sub, body, lds, crumb, canon=None):
     ld = "\n".join('<script type="application/ld+json">%s</script>' % jd(o) for o in lds)
     crumbs = '<p class="shop-crumb"><a href="../index.html">Home</a> / %s</p>' % crumb
     hero = ('<section class="pagehero"><div class="wrap">%s<span class="eyebrow" style="color:var(--gold)">%s</span><h1>%s</h1>'
-            '<p class="sub">%s</p><p class="aff-note" role="note"><strong>Affiliate disclosure.</strong> %s</p></div></section>'
-            % (crumbs, esc(eyebrow), esc(h1), sub, DISC))
+            '<p class="sub">%s</p><p class="aff-note" role="note"><strong>Affiliate disclosure.</strong> %s</p>'
+            '<p class="illus-note">%s</p></div></section>'
+            % (crumbs, esc(eyebrow), esc(h1), sub, DISC, ILLUS_NOTE))
     mid = BLOCKS["mid"]
     return (HEAD_PRE + og + HEAD_MID + ld + "\n</head>\n<body class=\"shop-page\">\n\n" + HEADER + "\n" + BLOCKS["top"] + hero + "\n" + BANNER + "\n" +
             body + "\n" + mid + "\n" + CAPTURE + "\n" + BLOCKS["ages"] + "\n" + BLOCKS["bottom"] + "\n" + cb.SCRIPT + "\n" + FOOTER +
