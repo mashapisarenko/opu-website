@@ -223,3 +223,4 @@ footer p{margin:.35rem 0}
 .contactfull .ofrm label,.contactfull .ofrm span{color:#fff}
 .contactfull .ofrm .ofalt,.contactfull .ofrm .ofalt a{color:#f2d58f}
 .contactfull .ofmsg.ok{color:#23512a}.contactfull .ofmsg.err{color:#7a2323}
+@media (max-width:640px){.contactfull .cols2{grid-template-columns:1fr !important}.contactfull a{overflow-wrap:anywhere}}
