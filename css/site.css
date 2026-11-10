@@ -238,3 +238,18 @@ footer p{margin:.35rem 0}
 .opu-gift-band p{margin:0;color:var(--ink);flex:1 1 320px}
 .opu-gift-band p b{color:var(--gold-d)}
 .opu-gift-band .btn{padding:10px 20px;font-size:.95rem}
+
+/* How to pay */
+.btn.alt{background:transparent;color:var(--navy);border:1.5px solid var(--navy);padding:11.5px 22px}
+.btn.alt:hover{background:var(--navy);color:#fff}
+.paygrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:26px}
+.paycard{text-align:center;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0;overflow-wrap:anywhere}
+.paycard-wide{grid-column:1/-1}
+.paycard .payhandle{font-weight:600;color:var(--navy);margin:0 0 6px}
+.paycard p{margin:6px 0}
+.payqr{width:100%;max-width:180px;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff;margin:6px 0}
+.paytag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);border:1px solid var(--line);border-radius:999px;padding:2px 10px;background:var(--cream)}
+.paytag.worldwide{background:var(--gold);border-color:var(--gold);color:#fff}
+.paylist{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 18px;width:100%;text-align:left}
+.paylist a{display:block;border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--cream);font-weight:600}
+.paylist a:hover{border-color:var(--gold)}
