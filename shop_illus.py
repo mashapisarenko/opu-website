@@ -106,6 +106,12 @@ RULES = [
     (r".", r"coaster|keychain|key chain|magnet|phone case|iphone", "mug-gift", "Small gift"),
     (r"luxury-gifts", r"glenn gould|michelangeli|barenboim|recordings|collection", "gift-box", "Recording box set"),
     (r"luxury-gifts", r"fountain pen", "gift-box", "Fountain pen"),
+    (r".", r"kalimba", "gift-box", "Kalimba"),
+    (r".", r"figurine", "gift-box", "Figurine"),
+    (r".", r"night light", "gift-box", "Night light"),
+    (r".", r"tote|book bag", "textile", "Tote bag"),
+    (r".", r"record wall mount|wall mount shelves", "wall-art", "Record display shelves"),
+    (r".", r"bookend|book end", "gift-box", "Bookends"),
     (r".", r"clock", "gift-box", "Wall clock"),
     (r".", r"", "gift-box", None),
 ]
@@ -120,7 +126,7 @@ def type_of(p):
     return "gift-box", TYPES["gift-box"][0]
 
 
-MASS = {"bedding", "sheet music", "wall art", "jewelry", "piano care", "manuscript paper",
+MASS = {"bookends", "record display shelves", "bedding", "sheet music", "wall art", "jewelry", "piano care", "manuscript paper",
         "piano humidifier care", "sheet music accessory"}
 
 

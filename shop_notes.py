@@ -228,6 +228,19 @@ NAME_OVERRIDES = {
  "B0CTH1YXG5": "Metal Music Note Wall Sign",
  "B0C5LGBX5M": "Musical Note Metal Bookend",
  "B09CH2DD2Q": "Music Notes Wall Decor, 3 Pieces",
+ "B072JNCY6M": "Black and White Music Note Piano Socks",
+ "B0768YHXFT": "Piano Key Chain",
+ "B0FG3HRM14": "Music Keychain for Musicians",
+ "B0CCP4888Z": "Music Socks, 6 Pairs",
+ "B06Y4D4YXD": "Music Charm Bracelet",
+ "B00NMRZPFS": "Music Note Beaded Bracelet",
+ "B0BM7HHBZ4": "Music-Themed Bracelet",
+ "B01CKN37FE": "Sterling Silver Music Note and Treble Clef Earrings",
+ "B0086WQNZ0": "The Complete Bach Collection",
+ "B000TJQ75E": "The Complete Original Jacket Collection",
+ "B01I4CK604": "Complete Recordings on Deutsche Grammophon",
+ "B08GRQ8SCB": "Complete Beethoven Piano Sonatas and Diabelli Variations",
+ "B0DGNV226S": "Piano and Music Note Ceramic Coasters",
 }
 
 def esc(s): return html.escape(s, quote=False)

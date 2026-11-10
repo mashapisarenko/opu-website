@@ -56,3 +56,40 @@
 .pcard .pmeta{flex-wrap:wrap}
 .illus-note{margin:10px 0 0;font-size:.82rem;color:#c9cfdf;font-style:italic;max-width:70ch}
 @media(max-width:480px){.pcard .pimg{margin:-16px -16px 12px}}
+/* 2026-11-10 store layer: department nav, who-it's-for line, shop by need / budget, holiday strip, gift card */
+.shop-nav{background:var(--paper);border-bottom:1px solid var(--line)}
+.shop-nav ul{display:flex;gap:6px;list-style:none;margin:0;padding:10px 0;overflow-x:auto;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.shop-nav li{flex:0 0 auto}
+.shop-nav a{display:block;padding:7px 14px;border-radius:999px;border:1px solid var(--line);font-size:.86rem;color:var(--ink);white-space:nowrap;background:#fff}
+.shop-nav a:hover,.shop-nav a[aria-current]{border-color:var(--gold);background:#f4ecd8}
+.tier-head h3{margin:0;font-size:1.3rem}
+.pcard p.pfor{flex:0 0 auto;font-size:.86rem;background:#f7f1e3;border-radius:10px;padding:8px 12px;color:#3d4050;margin:-4px 0 16px}
+.intl-note{margin:10px 0 0;font-size:.86rem;color:#e9e6df;max-width:70ch}
+.needgrid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(100%,150px),1fr));margin-top:14px}
+.needcard{display:block;background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;color:var(--ink);transition:box-shadow .15s,transform .15s,border-color .15s}
+.needcard:hover{box-shadow:0 10px 24px rgba(30,42,68,.12);transform:translateY(-2px);border-color:var(--gold)}
+.needcard img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:#1e2a44}
+.needcard h3{font-size:1rem;margin:10px 12px 4px}
+.needcard p{font-size:.84rem;color:var(--muted);margin:0 12px 12px}
+.budgetgrid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));margin:14px 0 8px}
+.budgetcard{display:block;border-radius:14px;padding:18px 20px;border:1px solid var(--line);background:linear-gradient(145deg,#fffdf8,#f4ecd8);color:var(--ink);transition:border-color .15s,box-shadow .15s}
+.budgetcard:hover{border-color:var(--gold);box-shadow:0 10px 24px rgba(30,42,68,.1)}
+.budgetcard .lvl{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-d);font-weight:600}
+.budgetcard h3{margin:4px 0 6px;font-size:1.2rem}
+.budgetcard p{margin:0;font-size:.9rem;color:#3d4050}
+.holiday-strip{background:linear-gradient(135deg,#1e2a44,#2c3d63);color:#fff;border-radius:16px;padding:24px 22px;margin:30px 0 0}
+.holiday-strip h2{color:#fff;margin:0 0 6px}
+.holiday-strip p{color:#d7dbe8;margin:0}
+.holrow{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));margin-top:16px}
+.holrow a{display:flex;gap:10px;align-items:center;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);color:#fff;font-weight:600;font-size:.95rem}
+.holrow a:hover{background:rgba(193,154,75,.25);border-color:var(--gold)}
+.holrow a span{font-size:1.3rem}
+.giftcard{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;background:var(--paper);border:2px solid var(--gold);border-radius:18px;padding:22px;color:var(--ink);margin:30px 0 0;box-shadow:0 10px 26px rgba(30,42,68,.08)}
+.giftcard:hover{box-shadow:0 14px 32px rgba(30,42,68,.14)}
+.giftcard .gc-art{width:96px;height:96px;border-radius:20px;display:grid;place-items:center;font-size:3rem;background:linear-gradient(145deg,#f4ecd8,#ecdcb4)}
+.giftcard .gc-eyebrow{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-d);font-weight:600}
+.giftcard h3{margin:4px 0 6px;font-size:1.3rem}
+.giftcard p{margin:0 0 12px;color:#3d4050}
+@media(max-width:560px){.giftcard{grid-template-columns:1fr;padding:18px}.giftcard .gc-art{width:64px;height:64px;font-size:2rem}}
+.readnext{columns:2 260px;padding-left:20px;margin:8px 0 0}
+.readnext li{margin:6px 0;break-inside:avoid}
