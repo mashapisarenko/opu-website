@@ -155,6 +155,9 @@ def build(spec, out_dir):
     # The three contact/feedback forms (top, middle, bottom) - Masha's rule of 2026-10-13.
     import _contact_blocks
     t = _contact_blocks.ensure(t)
+    # MONEY_BOX 2026-11-10: every post closes with the 'Keep going' box (gift certificate, one shop page, lessons).
+    import _money_box
+    t = _money_box.apply(t, spec["slug"], plain(spec["title"]))
 
     out = pathlib.Path(out_dir) / (spec["slug"] + ".html")
     out.write_text(t, encoding="utf-8")
