@@ -23,7 +23,7 @@
       '<option value="blog">An article on this site</option><option value="friend">A friend or a recommendation</option>' +
       '<option value="concert">A concert, or mariapisarenko.com</option><option value="other">Somewhere else</option></select></div></div>' +
       '<div class="ofrow"><div><label for="' + p + 'need">What can I help with?</label><select id="' + p + 'need" name="need">' +
-      '<option value="feedback">Feedback on my playing</option><option value="lessons">Private 1-on-1 lessons on Zoom</option>' +
+      '<option value="feedback">Feedback on my playing</option><option value="lessons">Private 1-on-1 lessons on Zoom</option><option value="gift">Gift certificate</option>' +
       '<option value="returning">I played as a child and want to come back</option><option value="course">A question about the free course</option>' +
       '<option value="book">A question about a book</option><option value="press">Press, concerts or collaboration</option><option value="other">Something else</option></select></div>' +
       '<div><label for="' + p + 'where">Where exactly? <span>(optional)</span></label><input id="' + p + 'where" name="found_other" placeholder="e.g. the video on middle C"></div></div>' +

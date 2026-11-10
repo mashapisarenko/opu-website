@@ -98,11 +98,11 @@ def related_html(slugs):
 
 OPU_PATH = """<section class="shop-cta"><h2>Your path into Online Piano University</h2>
 <p>The shop exists to support your learning. The learning itself is free: all 41 lessons of my beginner course are published, and I give feedback on your playing at no charge.</p>
-<p class="shop-links"><a class="btn" href="../free-course.html">&#9654; Start the free 41-lesson course</a> <a class="btn ghost" href="../submit.html">Send me your playing for feedback &rarr;</a> <a class="btn ghost" href="../lessons.html#book">Give online piano lessons</a></p></section>"""
+<p class="shop-links"><a class="btn" href="../free-course.html">&#9654; Start the free 41-lesson course</a> <a class="btn ghost" href="../submit.html">Send me your playing for feedback &rarr;</a> <a class="btn ghost" href="../gift-certificate.html">Give online piano lessons</a></p></section>"""
 
 BANNER_LEAD = "Black Friday at Online Piano University"  # change to "Holiday gifts at Online Piano University" later
 BANNER_REST = "lock in 2026 lesson prices. Prices increase January 1, 2027 \u2014 gift certificates bought by December 31 keep today's price."
-BANNER = ('<aside class="bf-banner" role="note"><div class="wrap"><a href="../lessons.html#book"><strong>%s:</strong> %s</a></div></aside>'
+BANNER = ('<aside class="bf-banner" role="note"><div class="wrap"><a href="../gift-certificate.html"><strong>%s:</strong> %s</a></div></aside>'
           % (BANNER_LEAD, BANNER_REST.replace("'", "&#39;")))
 
 def page(slug, title, desc, h1, eyebrow, sub, body, lds, crumb, canon=None):
