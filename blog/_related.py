@@ -107,7 +107,7 @@ RELATED = {
  "what-the-time-signature-tells-you": ["why-count-out-loud-piano", "how-to-read-sheet-music-treble-clef-rhythm", "right-notes-still-sounds-wrong"],
  "practicing-piano-over-the-holidays": ["practicing-piano-when-you-have-no-time", "piano-plateau-month-four", "why-adult-beginners-quit-piano"],
  "should-adults-learn-scales": ["why-piano-fingering-numbers-matter", "the-left-hand-is-not-the-weak-hand", "how-to-practice-a-piece-you-cannot-play-yet", "why-you-cannot-play-fast"],
- "how-to-make-the-melody-sing": ["what-playing-musically-actually-means", "when-should-you-start-using-the-piano-pedal", "right-notes-still-sounds-wrong"],
+ "how-to-make-the-melody-sing": ["when-should-you-start-using-the-piano-pedal", "what-playing-musically-actually-means", "right-notes-still-sounds-wrong"],
  "what-piano-or-keyboard-should-i-buy-to-start": ["how-many-keys-do-i-need-piano", "digital-piano-vs-acoustic-beginner", "piano-bench-height-posture"],
  "how-to-practice-a-piece-you-cannot-play-yet": ["practicing-piano-when-you-have-no-time", "choosing-your-first-piano-piece", "why-count-out-loud-piano", "how-to-practice-slowly"],
  # --- reading music ---
@@ -120,27 +120,27 @@ RELATED = {
  "reading-music-or-playing-by-ear": ["what-european-music-schools-teach-that-american-adults-missed", "how-to-read-sheet-music-treble-clef-rhythm", "russian-school-vs-american-piano-method"],
  # --- the body ---
  "piano-hand-position-curved-fingers": ["why-your-hands-get-tense-at-the-piano", "piano-wrist-position-adults", "piano-bench-height-posture"],
- "why-your-hands-get-tense-at-the-piano": ["piano-wrist-position-adults", "does-piano-playing-hurt-hands", "piano-hand-position-curved-fingers", "five-minute-piano-warm-up"],
+ "why-your-hands-get-tense-at-the-piano": ["why-your-hands-will-not-do-two-things-at-once", "piano-wrist-position-adults", "does-piano-playing-hurt-hands", "piano-hand-position-curved-fingers", "five-minute-piano-warm-up"],
  "piano-wrist-position-adults": ["piano-hand-position-curved-fingers", "why-your-hands-get-tense-at-the-piano", "piano-bench-height-posture"],
  "piano-bench-height-posture": ["piano-wrist-position-adults", "piano-hand-position-curved-fingers", "why-your-hands-get-tense-at-the-piano"],
  "does-piano-playing-hurt-hands": ["learning-piano-with-arthritis", "why-your-hands-get-tense-at-the-piano", "piano-wrist-position-adults", "piano-bench-height-posture", "finger-independence-exercises"],
  # --- practice ---
- "how-to-practice-piano-a-method-not-more-minutes": ["practicing-piano-when-you-have-no-time", "practicing-piano-in-an-apartment", "how-long-to-practice-piano-each-day", "run-your-own-piano-lesson", "80-20-rule-for-piano-practice"],
- "how-long-to-practice-piano-each-day": ["how-to-practice-piano-a-method-not-more-minutes", "why-adult-beginners-quit-piano", "practicing-piano-when-you-have-no-time", "piano-plateau-month-four", "80-20-rule-for-piano-practice"],
+ "how-to-practice-piano-a-method-not-more-minutes": ["80-20-rule-for-piano-practice", "practicing-piano-when-you-have-no-time", "practicing-piano-in-an-apartment", "how-long-to-practice-piano-each-day", "run-your-own-piano-lesson"],
+ "how-long-to-practice-piano-each-day": ["80-20-rule-for-piano-practice", "how-to-practice-piano-a-method-not-more-minutes", "why-adult-beginners-quit-piano", "practicing-piano-when-you-have-no-time", "piano-plateau-month-four"],
  "practicing-piano-when-you-have-no-time": ["piano-as-a-hobby-for-burnout", "how-to-practice-piano-a-method-not-more-minutes", "how-long-to-practice-piano-each-day", "run-your-own-piano-lesson"],
  "run-your-own-piano-lesson": ["learning-piano-without-a-teacher", "how-to-practice-piano-a-method-not-more-minutes", "how-to-choose-a-piano-teacher"],
  "piano-plateau-month-four": ["why-adult-beginners-quit-piano", "how-long-to-learn-piano-adult", "how-to-practice-piano-a-method-not-more-minutes", "when-to-move-on-from-a-piece"],
  # --- the adult learner ---
- "is-it-too-late-to-learn-piano-at-40-50-60": ["piano-and-the-aging-brain", "why-adults-learn-piano-your-reason-matters", "why-adult-beginners-quit-piano", "learning-piano-after-70", "adults-learn-piano-differently", "first-piano-chords-for-beginners"],
+ "is-it-too-late-to-learn-piano-at-40-50-60": ["first-piano-chords-for-beginners", "piano-and-the-aging-brain", "why-adults-learn-piano-your-reason-matters", "why-adult-beginners-quit-piano", "learning-piano-after-70", "adults-learn-piano-differently"],
  "learning-piano-after-70": ["learning-piano-with-arthritis", "is-it-too-late-to-learn-piano-at-40-50-60", "adults-learn-piano-differently", "does-piano-playing-hurt-hands"],
  "adults-learn-piano-differently": ["embarrassed-to-be-an-adult-piano-beginner", "is-it-too-late-to-learn-piano-at-40-50-60", "what-european-music-schools-teach-that-american-adults-missed", "learning-piano-without-a-teacher"],
  "why-adults-learn-piano-your-reason-matters": ["piano-and-the-aging-brain", "is-it-too-late-to-learn-piano-at-40-50-60", "returning-to-piano-as-an-adult", "how-to-practice-piano-a-method-not-more-minutes"],
  "returning-to-piano-as-an-adult": ["why-adults-learn-piano-your-reason-matters", "adults-learn-piano-differently", "piano-plateau-month-four"],
  "why-adult-beginners-quit-piano": ["piano-plateau-month-four", "practicing-piano-when-you-have-no-time", "how-long-to-learn-piano-adult", "practicing-on-days-you-do-not-feel-like-it"],
  "how-long-to-learn-piano-adult": ["piano-plateau-month-four", "choosing-your-first-piano-piece", "how-to-practice-piano-a-method-not-more-minutes", "why-adult-beginners-quit-piano"],
- "playing-piano-for-other-people": ["piano-plateau-month-four", "why-your-hands-get-tense-at-the-piano", "how-to-practice-piano-a-method-not-more-minutes", "piano-duets-for-adult-beginners"],
+ "playing-piano-for-other-people": ["piano-duets-for-adult-beginners", "piano-plateau-month-four", "why-your-hands-get-tense-at-the-piano", "how-to-practice-piano-a-method-not-more-minutes"],
  "practicing-piano-in-an-apartment": ["practicing-piano-when-you-have-no-time", "digital-piano-vs-acoustic-beginner", "how-to-practice-piano-a-method-not-more-minutes"],
- "choosing-your-first-piano-piece": ["how-long-to-learn-piano-adult", "right-notes-still-sounds-wrong", "how-to-practice-piano-a-method-not-more-minutes", "first-piano-chords-for-beginners"],
+ "choosing-your-first-piano-piece": ["first-piano-chords-for-beginners", "how-long-to-learn-piano-adult", "right-notes-still-sounds-wrong", "how-to-practice-piano-a-method-not-more-minutes"],
  # --- teaching, method, gear ---
  "learning-piano-without-a-teacher": ["piano-apps-vs-a-real-teacher", "run-your-own-piano-lesson", "how-to-choose-a-piano-teacher", "right-notes-still-sounds-wrong"],
  "how-to-choose-a-piano-teacher": ["online-piano-lessons-vs-in-person", "learning-piano-without-a-teacher", "run-your-own-piano-lesson", "russian-school-vs-american-piano-method"],
@@ -152,7 +152,7 @@ RELATED = {
 
  # --- added 2026-09-24: the January 2027 queue ---
  "practicing-on-days-you-do-not-feel-like-it": ["why-adult-beginners-quit-piano", "practicing-piano-when-you-have-no-time", "how-long-to-practice-piano-each-day"],
- "how-to-practice-slowly": ["how-to-practice-a-piece-you-cannot-play-yet", "why-you-cannot-play-fast", "how-to-practice-piano-a-method-not-more-minutes"],
+ "how-to-practice-slowly": ["why-your-hands-will-not-do-two-things-at-once", "how-to-practice-a-piece-you-cannot-play-yet", "why-you-cannot-play-fast", "how-to-practice-piano-a-method-not-more-minutes"],
  "piano-dynamics-markings-explained": ["what-playing-musically-actually-means", "how-to-make-the-melody-sing", "right-notes-still-sounds-wrong"],
  "how-to-start-sight-reading": ["why-you-still-cannot-read-music-fluently", "reading-ledger-lines", "how-to-read-the-grand-staff"],
  "what-is-a-key-signature": ["what-sharps-and-flats-actually-do", "should-adults-learn-scales", "how-to-read-the-grand-staff"],
@@ -176,7 +176,7 @@ RELATED = {
  "online-piano-lessons-vs-in-person": ["how-to-choose-a-piano-teacher", "who-taught-the-person-teaching-you", "piano-apps-vs-a-real-teacher"],
  "piano-duets-for-adult-beginners": ["playing-for-a-small-audience-at-home", "learning-piano-in-retirement", "chamber-music-playing-with-strings"],
  # --- added 2026-10-27: SEO batch (easy songs, first chords, 80/20), 30 Jan - 1 Feb 2027 ---
- "easy-piano-songs-for-adult-beginners": ["how-to-count-music-out-loud", "how-to-find-any-note-on-the-piano", "piano-method-book-for-adult-beginners", "piano-duets-for-adult-beginners"],
+ "easy-piano-songs-for-adult-beginners": ["piano-duets-for-adult-beginners", "how-to-count-music-out-loud", "how-to-find-any-note-on-the-piano", "piano-method-book-for-adult-beginners"],
  "first-piano-chords-for-beginners": ["piano-hand-position-curved-fingers", "how-to-find-any-note-on-the-piano", "how-to-read-piano-notes-grand-staff"],
  "80-20-rule-for-piano-practice": ["how-to-practice-piano-a-method-not-more-minutes", "how-long-to-practice-piano-each-day", "practicing-piano-when-you-have-no-time"],
  # --- added 2026-11-10: buyer guides and holiday gift guides ---
@@ -188,7 +188,7 @@ RELATED = {
  "christmas-gifts-for-musicians": ["best-gifts-for-piano-players-2026", "stocking-stuffers-for-piano-players", "hanukkah-gifts-for-music-lovers"],
  "hanukkah-gifts-for-music-lovers": ["christmas-gifts-for-musicians", "best-gifts-for-piano-players-2026", "stocking-stuffers-for-piano-players"],
  "gifts-for-seniors-learning-piano": ["learning-piano-in-retirement", "piano-for-seniors-keyboard-light-music", "best-gifts-for-piano-players-2026"],
- "best-digital-piano-for-adult-beginners": ["digital-piano-vs-keyboard", "what-piano-or-keyboard-should-i-buy-to-start", "weighted-vs-semi-weighted-keys"],
+ "best-digital-piano-for-adult-beginners": ["when-should-you-start-using-the-piano-pedal", "digital-piano-vs-keyboard", "what-piano-or-keyboard-should-i-buy-to-start", "weighted-vs-semi-weighted-keys"],
  "digital-piano-vs-keyboard": ["best-digital-piano-for-adult-beginners", "weighted-vs-semi-weighted-keys", "what-piano-or-keyboard-should-i-buy-to-start"],
  "weighted-vs-semi-weighted-keys": ["digital-piano-vs-keyboard", "best-digital-piano-for-adult-beginners", "61-vs-76-vs-88-keys"],
  "best-keyboard-for-beginners": ["61-vs-76-vs-88-keys", "digital-piano-vs-keyboard", "what-piano-or-keyboard-should-i-buy-to-start"],
