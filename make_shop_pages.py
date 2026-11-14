@@ -33,9 +33,9 @@ PRODUCTS = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else HERE.parent / "_s
 # International buyers. Amazon OneLink is NOT active on the musicalgalaxi-20 account yet, so the
 # visible line only says the links go to Amazon.com. Once OneLink is live, set this to True and
 # regenerate: the OneLink sentence replaces the visible line on every shop page.
-ONELINK_ACTIVE = False
+ONELINK_ACTIVE = True
 INTL_VISIBLE = "Links go to Amazon.com; Amazon ships many items internationally."
-INTL_ONELINK = "Shopping from the UK, Canada, Germany or Australia? Amazon links open your local store when available."
+INTL_ONELINK = "Shopping from the UK, Canada, Australia or Europe? Amazon links open your local Amazon store when available."
 
 def intl_note():
     if ONELINK_ACTIVE:
