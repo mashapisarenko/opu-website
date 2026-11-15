@@ -29,7 +29,7 @@ def patch(N, S):
         "case": ["Measure your keyboard against the inside size before you order.", "A good case protects an instrument you have already paid for.", "Padding matters more to me than pockets.", "Think about how you will carry it before you buy."]})
     rules = [
         (r"^digital-pianos-home$", r"", "digital-piano-console", None),
-        (r"^hybrid-digital-pianos$", r"GP-3", "grand-piano", "Digital grand piano"),
+        (r"^hybrid-digital-pianos$", r"GP-3|DG30", "grand-piano", "Digital grand piano"),
         (r"^hybrid-digital-pianos$", r"", "digital-piano-console", "Wooden-key digital piano"),
         (r"^stage-pianos$", r"", "digital-piano-portable", "Stage piano"),
         (r"^arranger-keyboards$", r"", "keyboard-61", "Arranger keyboard"),
@@ -66,14 +66,14 @@ PAGES = [
         ("Can I use headphones with a home digital piano?", "Yes. Digital pianos have a headphone jack, which is the main reason many adults choose them over an acoustic piano in an apartment.")],
   related=["digital-pianos", "hybrid-and-digital-grand-pianos", "piano-benches-and-stands"]),
 
- dict(slug="hybrid-and-digital-grand-pianos", icon="🎼", label="Hybrid and Digital Grand Pianos",
-  asins=["B0CJ5NPG1M", "B08M3P4XL4", "B077YT617Y", "B08V95SZD8", "B0C6BVTKH4", "B07MV2B48Q", "B07FRVJ54X", "B0C6BVT77Q", "B0BSKN3HNT"],
-  blurb="Wooden-key and grand-style digital pianos.",
-  h1="Hybrid and Digital Grand Pianos: Wooden Keys and Grand Design",
-  title="Hybrid and Digital Grand Pianos for Serious Players",
-  desc="Hybrid pianos with wooden-key actions and a digital grand, chosen by a concert pianist for returning and advanced players, premium to luxury.",
-  answer="A hybrid digital piano pairs a wooden-key hammer action with electronic sound, and a digital grand puts a digital piano inside a grand-piano shape. They suit returning and advanced players who want the closest feel to an acoustic piano that still has a volume control.",
-  intro="At this level the keys matter more than the sound. A hybrid or wooden-key digital piano is built so that the key moves the way an acoustic key does, with a hammer mechanism under it, and the sound is made electronically so that you can use headphones. A digital grand goes one step further in appearance. These are instruments for a returning player who knows what a good touch is, and they are an investment. I list what each listing states and leave the rest to your hands in a shop.",
+ dict(slug="hybrid-and-digital-grand-pianos", icon="🎼", label="Digital Grand and Wooden-Key Pianos",
+  asins=["B0CJ5NPG1M", "B0FL3G4S3D", "B0CQCV986L", "B0C6BVT77Q", "B0FTRF67DM", "B0CSMM5M1Z", "B0D15QXV5B", "B0BSKN3HNT"],
+  blurb="Wooden-key console and grand-style digital pianos.",
+  h1="Digital Grand and Wooden-Key Pianos: Premium to Luxury",
+  title="Digital Grand and Wooden-Key Pianos for Players",
+  desc="Wooden-key digital pianos and digital grands, chosen by a concert pianist for returning and advanced players: Kawai, Roland, Casio and Yamaha.",
+  answer="A wooden-key digital piano gives the closest touch to an acoustic piano that still has a volume control, and a digital grand puts a digital piano inside a grand-piano shape. A true hybrid, with a real hammer action, is a different instrument: I could not verify one sold by its maker or an authorized dealer on Amazon, so this page lists the wooden-key and digital-grand models I can.",
+  intro="At this level the keys matter more than the sound. These pianos have long wooden-style keys and a graded hammer action, and the sound is made electronically so that you can use headphones. A digital grand goes one step further in appearance. True hybrid pianos, such as the Yamaha AvantGrand and N-series, the Kawai Novus and the Casio Celviano Grand Hybrid, add a real hammer mechanism; on November 14, 2026 I could not find them on Amazon sold by their maker or an authorized dealer, so for those I suggest a piano dealer. These are instruments for a returning player who knows what a good touch is, and they are an investment. I list what each listing states and leave the rest to your hands in a shop.",
   criteria=["<strong>Wooden keys or a hammer mechanism</strong> that the listing names, because that is what separates this class from a portable.",
             "<strong>Key length and weight.</strong> Longer keys, as on a grand, give you more control of soft playing.",
             "<strong>Triple pedals</strong>, including a soft pedal and a middle pedal, which advanced repertoire uses.",
@@ -81,6 +81,7 @@ PAGES = [
             "<strong>Honest priorities.</strong> Try the touch in a shop if you can, because no description replaces your own hands."],
   faqs=[("What is a hybrid piano?", "A piano that combines an acoustic-style keyboard mechanism, often with wooden keys and hammers, with an electronic sound source. You get the touch of a piano and the convenience of headphones and no tuning."),
         ("Is a digital grand piano worth the money?", "It is worth it when you want the look and the footprint of a grand and the volume control of a digital. If you only need the touch, a wooden-key upright-style or portable hybrid gives you that for less."),
+        ("Can I buy a true hybrid piano on Amazon?", "On November 14, 2026 I searched for the Yamaha AvantGrand and N-series, the Kawai Novus and the Casio Celviano Grand Hybrid and could not verify any as sold by the maker or an authorized dealer. The pianos on this page are wooden-key digital pianos and digital grands, which are not hybrids. For a hybrid, visit a piano dealer and play it first."),
         ("Do I need a hybrid piano as an adult beginner?", "No. A good digital piano with weighted keys is enough for the first years. I would consider a hybrid when you are returning after a long break or working on advanced repertoire."),
         ("Can I buy an acoustic upright or grand piano on Amazon?", "I searched Amazon by brand and model for uprights and grands on November 14, 2026 and found digital instruments and accessories, but no acoustic piano I could verify as sold and shipped there. A real piano should be played, delivered by movers and tuned, so I suggest a local piano dealer.")],
   related=["home-digital-pianos", "stage-pianos", "headphones-for-piano"]),
@@ -151,7 +152,7 @@ META_UPDATES = {
 
 Q_NEW = {
  "home-digital-pianos": ("What should I look for in a home digital piano?", "How does a home digital piano help you learn?", "Which home digital piano should I buy?", "What do adults ask before buying a home digital piano?"),
- "hybrid-and-digital-grand-pianos": ("What should I look for in a hybrid or digital grand piano?", "How does a wooden-key piano help you learn?", "Which hybrid or digital grand piano should I consider?", "What do players ask about hybrid pianos?"),
+ "hybrid-and-digital-grand-pianos": ("What should I look for in a wooden-key or digital grand piano?", "How does a wooden-key piano help you learn?", "Which wooden-key or digital grand piano should I consider?", "What do players ask about hybrid and digital grand pianos?"),
  "stage-pianos": ("What should I look for in a stage piano?", "How does a stage piano help you learn?", "Which stage piano should I buy?", "What do players ask about stage pianos?"),
  "microphones-and-audio-interfaces": ("What do I need to record piano?", "How does recording help you learn?", "Which microphone, recorder or interface should I buy?", "What do students ask about recording piano?"),
  "keyboard-cases-and-covers": ("What should I look for in a keyboard case?", "How does a good case help you practice?", "Which keyboard case or cover should I buy?", "What do owners ask about keyboard cases?"),
@@ -173,8 +174,8 @@ DEPTH_NEW = {
 <p>If you can, press the keys in a shop. Play one note softly and one note loudly, and listen for a clear difference. Then sit at the cabinet and see where your knees fall under the keyboard: you should not have to push them against the sides.</p>
 """,
 "hybrid-and-digital-grand-pianos": """
-<h2>When is a hybrid or digital grand worth it?</h2>
-<p>I would not send a first-year adult beginner to this page. A good weighted digital piano teaches the first years well. A hybrid or wooden-key instrument becomes worth it when your ear and your hands have grown enough to notice what a better key action gives you: more control over the softest sounds, a more even repeated note, and a key that returns the way an acoustic key does.</p>
+<h2>When is a wooden-key or digital grand piano worth it?</h2>
+<p>I would not send a first-year adult beginner to this page. A good weighted digital piano teaches the first years well. A wooden-key instrument becomes worth it when your ear and your hands have grown enough to notice what a better key action gives you: more control over the softest sounds, a more even repeated note, and a key that returns the way an acoustic key does.</p>
 <h3>Honest limits</h3>
 <p>Even the best of these makes its sound with speakers or headphones, not strings. The advantages are quiet practice, no tuning and a volume control. If what you want is an acoustic piano in a room, the right place to look is a local piano dealer, where you can hear and touch an instrument and have it delivered and tuned.</p>
 """,
@@ -194,7 +195,7 @@ BLOG_NEW = {
  "keyboard-cases-and-covers": ["practicing-piano-in-an-apartment", "digital-piano-vs-keyboard"],
 }
 
-NAV_ADD = [("pianos", "Pianos"), ("home-digital-pianos", "Home pianos"), ("hybrid-and-digital-grand-pianos", "Hybrid &amp; grand"),
+NAV_ADD = [("pianos", "Pianos"), ("home-digital-pianos", "Home pianos"), ("hybrid-and-digital-grand-pianos", "Grand &amp; wooden-key"),
            ("stage-pianos", "Stage pianos"), ("microphones-and-audio-interfaces", "Microphones"), ("keyboard-cases-and-covers", "Cases")]
 
 def apply(C, GUIDES, HUB, ARTICLE, D, S, N, blog_extra=None):
@@ -246,12 +247,10 @@ START_HERE = """<div class="howbox start-here"><h2>Not sure which piano? Start h
 def pianos_body(ctx):
     """Returns the HTML body of shop/pianos.html. ctx supplies helpers from make_shop_pages."""
     esc, section, faq_html, related_html, read_next, tiers_html, pick = (ctx[k] for k in ("esc", "section", "faq_html", "related_html", "read_next", "tiers_html", "pick"))
-    ladder = pick(["B0G2YQP8KL", "B07X9SD5JR", "B0CQ7VD34X", "B01LY8OUQW", "B07MH391ZF", "B09GG8SCBF", "B0DP1HLNZB", "B0FDPGR3LX", "B08SBZW46G",
-                   "B0CBN7HYKB", "B0GJX8NJS8", "B0H27C52DP", "B0DR38F47F", "B08SC23H65", "B0FLF823ZQ", "B077YT617Y", "B08V95SZD8",
-                   "B0C6BVT77Q", "B0BSKN3HNT", "B07FRVJ54X"])
+    ladder = pick(["B01DZXE9NC", "B07X9SD5JR", "B0CQ7VD34X", "B07MH391ZF", "B01LY8OUQW", "B09GG8SCBF", "B0FDPGR3LX", "B0CBN7HYKB", "B08SBZW46G", "B0GJX8NJS8", "B0DR38F47F", "B08SC23H65", "B0H27C52DP", "B077YT617Y", "B08V95SZD8", "B0CQCV986L", "B0C6BVT77Q", "B0FTRF67DM", "B0CSMM5M1Z", "B0BSKN3HNT", "B0D15QXV5B"])
     cards = [("digital-pianos", "🎹", "Portable Digital Pianos", "88 weighted keys that fit a small room. The place to start."),
              ("home-digital-pianos", "🏠", "Home Digital Pianos", "Console and upright-style cabinets with their own pedals."),
-             ("hybrid-and-digital-grand-pianos", "🎼", "Hybrid and Digital Grand Pianos", "Wooden-key actions and a grand-style digital."),
+             ("hybrid-and-digital-grand-pianos", "🎼", "Digital Grand and Wooden-Key Pianos", "Wooden-key consoles and a grand-style digital."),
              ("stage-pianos", "🎤", "Stage Pianos", "Weighted 88-key keyboards for playing out."),
              ("keyboards", "🎛️", "Keyboards", "61-key, arranger and MIDI keyboards.")]
     catgrid = '<div class="catgrid">%s</div>' % "".join('<a class="catcard" href="%s.html"><div class="ico">%s</div><h3>%s</h3><p>%s</p></a>' % (s, i, esc(t), esc(b)) for s, i, t, b in cards)

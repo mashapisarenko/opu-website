@@ -253,3 +253,7 @@ footer p{margin:.35rem 0}
 .paylist{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 18px;width:100%;text-align:left}
 .paylist a{display:block;border:1px solid var(--line);border-radius:10px;padding:10px 14px;background:var(--cream);font-weight:600}
 .paylist a:hover{border-color:var(--gold)}
+
+/* 2026-11-14: shop pointer near the top of buyer articles (blog/_shop_links.py, markers <!--opu-shoptop-->) */
+.opu-shoptop{background:var(--paper,#fffdf8);border:1px solid var(--line,#e6dfcf);border-left:4px solid var(--gold,#c19a4b);border-radius:12px;padding:12px 18px;margin:18px 0}
+.opu-shoptop p{margin:0}

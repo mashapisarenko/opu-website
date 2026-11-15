@@ -99,3 +99,20 @@
 .start-here .start-q>li{margin:0 0 14px}
 .start-here .start-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .start-here .start-links .btn{padding:8px 14px;font-size:.9rem}
+
+/* 2026-11-14 conversion layer: top picks, badges, pair strip, best-guide callout */
+.top3{margin:6px 0 8px}
+.top3 h2{margin:0 0 4px}
+.pcard .pbadge{margin:0 0 8px;flex:0 0 auto;align-self:flex-start;background:var(--navy);color:#f2d58f;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;padding:5px 10px;border-radius:999px}
+.pcard-top{border-color:var(--gold)}
+.bestguide{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:14px 18px;margin:22px 0 6px}
+.bestguide ul{margin:6px 0 4px;padding-left:20px;font-size:1.05rem;font-weight:600}
+.bestguide span{font-size:.86rem;color:var(--muted)}
+.pairstrip{margin:26px 0 6px}
+.pairstrip h2{margin:0 0 10px}
+.pairgrid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr))}
+.paircard{display:block;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;color:var(--ink);transition:border-color .15s,box-shadow .15s}
+.paircard:hover{border-color:var(--gold);box-shadow:0 8px 20px rgba(30,42,68,.1)}
+.paircard strong{display:block;margin-bottom:4px}
+.paircard span{font-size:.86rem;color:var(--muted)}
+.shop-cta.cross{margin:26px 0 10px}

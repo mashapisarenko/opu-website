@@ -87,7 +87,7 @@ P.ARTICLE_PATCH(ARTICLE)
 
 def url(p): return "https://www.amazon.com/dp/%s?tag=%s" % (p["asin"], TAG)
 
-def card(p, i, cat, group=None, tier_tag=True):
+def card(p, i, cat, group=None, tier_tag=True, badge=None):
     """Product card: our own type illustration on top (never an Amazon photo), the whole card clickable,
     the listing-based note, and a "who it's for" line."""
     b = N.brand_of(p)
@@ -97,12 +97,13 @@ def card(p, i, cat, group=None, tier_tag=True):
     link = 'href="%s" rel="sponsored nofollow noopener" target="_blank" data-asin="%s" data-category="%s"' % (url(p), p["asin"], attr(cat))
     meta = '<span class="pbrand">%s</span>' % (esc(b) if b else "Online Piano University pick")
     meta += '<span class="ptype">%s</span>' % esc(label)
-    img = ('<a class="pimg" %s><img src="../images/shop/types/%s.svg" width="600" height="450" loading="lazy" decoding="async" alt="%s"></a>'
+    img = ('<a class="pimg" tabindex="-1" %s><img src="../images/shop/types/%s.svg" width="600" height="450" loading="lazy" decoding="async" alt="%s"></a>'
            % (link, ty, attr(SI.alt_text(label, full))))
-    return ('<article class="pcard">%s<div class="pmeta">%s</div><h3>%s</h3><p>%s</p>'
+    flag = ('<p class="pbadge">%s</p>' % esc(badge)) if badge else ""
+    return ('<article class="pcard%s">%s%s<div class="pmeta">%s</div><h3>%s</h3><p>%s</p>'
             '<p class="pfor"><strong>I suggest it for</strong> %s</p>'
             '<a class="btn shop-btn" %s>See it on Amazon</a></article>'
-            % (img, meta, esc(name), esc(N.note(p, i, group)), esc(S.who_for(p)), link))
+            % (" pcard-top" if badge else "", img, flag, meta, esc(name), esc(N.note(p, i, group)), esc(S.who_for(p)), link))
 
 def item_list_ld(products, name):
     return {"@context": "https://schema.org", "@type": "ItemList", "name": name,
@@ -158,8 +159,80 @@ def read_next(slug):
               '<li><a href="../lessons.html">Private online piano lessons with me</a></li>')
     return '<h2 style="margin-top:40px">Where should you read next?</h2><ul class="readnext">%s</ul>' % items
 
+
+# ---------------------------------------------------------------- conversion layer (2026-11-14)
+PIANO_SLUGS = {"pianos", "digital-pianos", "home-digital-pianos", "hybrid-and-digital-grand-pianos", "stage-pianos", "keyboards",
+               "which-digital-piano-to-buy"}
+PAIR_PIANO = [("piano-benches-and-stands", "A bench or keyboard stand", "Sit at the right height; a stand that does not wobble."),
+              ("headphones-for-piano", "Headphones", "Practice at any hour without disturbing anyone."),
+              ("piano-pedals", "A sustain pedal", "Piano-style pedals that stay put."),
+              ("keyboard-cases-and-covers", "A case or cover", "Carry it, or keep dust off it."),
+              ("piano-accessories", "Every accessory", "The short list of what a digital piano really needs.")]
+PAIR_GEAR = [("pianos", "All pianos", "Digital, hybrid, stage and grand, budget to luxury."),
+             ("digital-pianos", "Portable digital pianos", "88 weighted keys that fit a small room."),
+             ("home-digital-pianos", "Home digital pianos", "Cabinet pianos with their own stand and pedals."),
+             ("which-digital-piano-to-buy", "Which digital piano to buy", "My long guide for adult beginners.")]
+GEAR_SLUGS = {"piano-benches-and-stands", "headphones-for-piano", "piano-pedals", "keyboard-cases-and-covers", "piano-accessories",
+              "speakers-for-keyboards", "stand-lights", "music-stands", "metronomes-and-tuners", "piano-care", "record-yourself-playing",
+              "microphones-and-audio-interfaces", "practice-tools"}
+
+def pair_strip(slug):
+    """Links between related shop categories: a piano page points to bench, headphones, pedal, stand/case; gear pages point back to pianos."""
+    if slug in PIANO_SLUGS:
+        title, items = "Which gear goes with the piano?", PAIR_PIANO
+    elif slug in GEAR_SLUGS:
+        title, items = "Still choosing the piano itself?", PAIR_GEAR
+    else:
+        return ""
+    chips = "".join('<a class="paircard" href="%s.html"><strong>%s</strong><span>%s</span></a>' % (s_, esc(t), esc(b))
+                    for s_, t, b in items if s_ != slug)
+    return '<div class="pairstrip"><h2>%s</h2><div class="pairgrid">%s</div></div>' % (title, chips)
+
+def guide_callout(slug):
+    """Every shop page points to its best guide article, near the top."""
+    arts = S.BLOG.get(slug, [])
+    if not arts: return ""
+    return ('<div class="bestguide"><strong>Read first</strong><ul>%s</ul>'
+            '<span>My guide on this, written for adults learning alone.</span></div>' % blog_item(arts[0]))
+
+def cross_sell(slug):
+    """On piano and keyboard pages: the free course, the gift certificate and the upcoming method book series."""
+    if slug not in PIANO_SLUGS: return ""
+    return ('<section class="shop-cta cross"><h2>Got the piano? Start with the free course</h2>'
+            '<p>An instrument is only the beginning. My 41-lesson beginner course is free and I read the playing you send me at no charge. '
+            'I am also preparing a method book series for adults who learn alone; the email list on this page hears first.</p>'
+            '<p class="shop-links"><a class="btn" href="../free-course.html">&#9654; Start the free course</a> '
+            '<a class="btn ghost" href="../gift-certificate.html">Give online piano lessons as a gift</a></p></section>')
+
+def _score(p):
+    return (p.get("rating") or 0) * min(1.0, (p.get("rating_count") or 0) / 300.0) + (0.01 if p.get("in_stock") else 0)
+
+def top3(prods):
+    """Best overall / best value / premium, from tiers. Rating data is internal and only breaks ties; it is never printed."""
+    by = collections.defaultdict(list)
+    for p in prods: by[p["tier"]].append(p)
+    best = lambda ps: max(ps, key=_score) if ps else None
+    overall = best(by["mid"]) or best(by["premium"]) or best(by["budget"]) or best(prods)
+    value = best([p for p in by["budget"] if p is not overall]) or best([p for p in by["mid"] if p is not overall])
+    prem = best(by["premium"] + by["luxury"])
+    out = []
+    for lab, p in (("Best overall", overall), ("Best value", value), ("Premium pick", prem)):
+        if p is not None and all(p is not q for _, q in out): out.append((lab, p))
+    return out
+
+def top3_html(prods, cat, labelled=None):
+    picks = labelled if labelled is not None else top3(prods)
+    if len(picks) < 2: return ""
+    cards = "".join(card(p, k, cat, badge=lab) for k, (lab, p) in enumerate(picks))
+    return ('<div class="top3"><h2>My top %d picks, before the long list</h2>'
+            '<p class="muted">If you only read one section, read this: one pick for most people, one for a careful budget, one to grow into.</p>'
+            '<div class="pgrid">%s</div></div>' % (len(picks), cards))
+
+def head_block(slug, top):
+    return top + guide_callout(slug) + pair_strip(slug) + cross_sell(slug)
+
 OPU_PATH = """<section class="shop-cta"><h2>Would you rather learn than buy more gear?</h2>
-<p>The shop exists to support your learning. The learning itself can start free: all 41 lessons of my beginner course are published, and I give feedback on your playing at no charge. When you want a teacher, I take private students online.</p>
+<p>The shop exists to support your learning. The learning itself can start free: all 41 lessons of my beginner course are published, and I give feedback on your playing at no charge. When you want a teacher, I take private students online. I am also preparing a method book series for adults who learn alone.</p>
 <p class="shop-links"><a class="btn" href="../free-course.html">&#9654; Start the free 41-lesson course</a> <a class="btn ghost" href="../lessons.html">Private online lessons</a> <a class="btn ghost" href="../submit.html">Send me your playing for feedback &rarr;</a> <a class="btn ghost" href="../gift-certificate.html">Give online piano lessons</a></p></section>"""
 
 GIFT_CARD = ('<a class="giftcard" href="../gift-certificate.html"><div class="gc-art" aria-hidden="true">🎁</div><div>'
@@ -175,7 +248,7 @@ BANNER = ('<aside class="bf-banner" role="note"><div class="wrap"><a href="../gi
 
 # department nav shown under the banner on every shop page
 NAV = [("index", "Shop home"), ("pianos", "Pianos"), ("digital-pianos", "Digital pianos"), ("home-digital-pianos", "Home pianos"),
-       ("hybrid-and-digital-grand-pianos", "Hybrid &amp; grand"), ("stage-pianos", "Stage pianos"), ("keyboards", "Keyboards"), ("piano-accessories", "Accessories"),
+       ("hybrid-and-digital-grand-pianos", "Grand &amp; wooden-key"), ("stage-pianos", "Stage pianos"), ("keyboards", "Keyboards"), ("piano-accessories", "Accessories"),
        ("headphones-for-piano", "Headphones"), ("microphones-and-audio-interfaces", "Microphones"), ("keyboard-cases-and-covers", "Cases"), ("piano-benches-and-stands", "Benches"), ("piano-pedals", "Pedals"),
        ("music-stands", "Music stands"), ("metronomes-and-tuners", "Metronomes"), ("stand-lights", "Piano lamps"),
        ("piano-books-and-sheet-music", "Books"), ("record-yourself-playing", "Recording"), ("music-home-decor", "Decor"),
@@ -256,6 +329,7 @@ def build_category(pg):
     if links:
         morelinks = '<p class="shop-links">' + " ".join('<a class="btn dark" href="%s">%s</a>' % (h, esc(t)) for h, t in links) + "</p>"
     body = section(
+        head_block(slug, top3_html(prods, slug)) +
         '<div class="shop-prose"><p class="lead">%s</p></div>' % esc(pg["intro"]) +
         '<div class="howbox"><h2>Why trust a concert pianist&#39;s picks?</h2><p style="margin:0">%s</p></div>' % esc(why) +
         '<div class="howbox"><h2>%s</h2><ul>%s</ul></div>' % (esc(look), crit) +
@@ -318,6 +392,7 @@ def build_guide(slug):
     inner, total = guide_sections(sections, slug)
     assert len(total) >= 6, (slug, "thin page", len(total))
     body = section(
+        head_block(slug, top3_html(None, slug, [(sec[0], sec[2][0]) for sec in sections if sec[2]][:3])) +
         '<div class="shop-prose">%s</div>' % g["intro_html"] +
         (GIFT_CARD if g.get("gift_card") else "") +
         '<div class="howbox"><h2>%s</h2><p style="margin:0">%s</p></div>' % (esc(g.get("q_why", "Why trust a concert pianist's list?")),
@@ -338,7 +413,8 @@ def build_article():
                 ("Mid-range picks", None, [p for p in dp if p["tier"] == "mid"]),
                 ("Premium picks", None, [p for p in dp if p["tier"] == "premium"])]
     picks_html, total = guide_sections(sections, "which-digital-piano-to-buy")
-    body = section('<div class="shop-prose">%s</div>' % a["html_before"] + picks_html +
+    body = section(head_block("which-digital-piano-to-buy", top3_html(dp, "which-digital-piano-to-buy")) +
+                   '<div class="shop-prose">%s</div>' % a["html_before"] + picks_html +
                    '<div class="shop-prose">%s</div>' % a["html_after"] +
                    '<h2 style="margin-top:40px">What else do adults ask about buying a digital piano?</h2><div class="shop-faq">%s</div>' % faq_html(a["faqs"]) +
                    read_next("which-digital-piano-to-buy") +
@@ -367,7 +443,7 @@ BUDGETS = [("budget-small", "Small gifts", "Clips, journals, metronomes and musi
            ("budget-mid", "Mid-range", "A better pedal, a bench, studio headphones or a classic metronome.", ("mid",),
             ["B00HVLUR54", "B000K19HYY", "B0D945K8FN", "B0C7GR2YKZ"]),
            ("budget-splurge", "Splurge", "A digital piano to keep, reference headphones or a great box set.", ("premium", "luxury"),
-            ["B0CBN7HYKB", "B08J9MVB6W", "B0086WQNZ0", "B07N3S4X3P"])]
+            ["B08V95SZD8", "B08J9MVB6W", "B0086WQNZ0", "B07N3S4X3P"])]
 
 HOLIDAY = [("🎄", "Christmas gifts for pianists", "christmas-gifts-for-pianists.html"),
            ("🕎", "Hanukkah gifts for musicians", "christmas-gifts-for-pianists.html#hanukkah-gifts-for-musicians"),
@@ -449,13 +525,14 @@ def build_hub():
 def build_pianos_hub():
     ctx = dict(esc=esc, section=section, faq_html=faq_html, related_html=related_html, read_next=read_next, tiers_html=tiers_html, pick=pick)
     body, faqs, ladder = P.pianos_body(ctx)
-    title = "Pianos: Digital, Hybrid, Stage and Grand Pianos Shop"
+    body_top = section(head_block("pianos", top3_html(ladder, "pianos")))
+    title = "Pianos: Digital, Wooden-Key, Stage and Grand Pianos Shop"
     desc = "Shop digital pianos, hybrid pianos, digital grands, stage pianos and keyboards, from budget to luxury, chosen by a concert pianist who teaches adults."
     h1 = "Pianos: Digital, Hybrid, Stage and Digital Grand Pianos"
     answer = ("The best piano for an adult starts with weighted keys and a real piano sound. This department takes you from a portable digital piano "
-              "to a home cabinet, a wooden-key hybrid, a digital grand and a stage piano, and says which one fits your room and your budget.")
+              "to a home cabinet, a wooden-key console, a digital grand and a stage piano, and says which one fits your room and your budget.")
     lds = [item_list_ld(ladder, h1), faq_ld(faqs), crumb_ld("Pianos", "pianos")]
-    html_ = page("pianos", title, desc, h1, "The piano department", esc(answer), body + AUTHOR_SECTION(), lds, '<a href="index.html">Shop</a> / Pianos')
+    html_ = page("pianos", title, desc, h1, "The piano department", esc(answer), body_top + body + AUTHOR_SECTION(), lds, '<a href="index.html">Shop</a> / Pianos')
     (OUT / "pianos.html").write_text(html_, encoding="utf-8")
     REPORT.append(("pianos.html", title, desc, len(ladder)))
 
@@ -478,5 +555,18 @@ def main():
     assert len(set(t)) == len(t), "duplicate titles"
     assert len(set(d)) == len(d), "duplicate descriptions"
 
+def write_blog_map():
+    """Tell the blog which shop page an article should send buyers to (inverse of S.BLOG) and what each page is called, then re-apply."""
+    labels = {pg["slug"]: pg["label"] for pg in C.PAGES}
+    labels.update({k: v["label"] for k, v in GUIDES.items()})
+    labels["pianos"] = "Pianos"; labels["which-digital-piano-to-buy"] = "Which digital piano to buy"
+    inv = {}
+    for page, arts in S.BLOG.items():
+        for a in arts: inv.setdefault(a, []).append(page)
+    (HERE / "blog" / "_shop_map.json").write_text(json.dumps({"labels": labels, "inverse": inv}, indent=1, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")
+    spec_ = importlib.util.spec_from_file_location("shoplinks", HERE / "blog" / "_shop_links.py")
+    sl = importlib.util.module_from_spec(spec_); spec_.loader.exec_module(sl); sl.main()
+
 if __name__ == "__main__":
     main()
+    write_blog_map()

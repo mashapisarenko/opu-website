@@ -158,6 +158,8 @@ def build(spec, out_dir):
     # MONEY_BOX 2026-11-10: every post closes with the 'Keep going' box (gift certificate, one shop page, lessons).
     import _money_box
     t = _money_box.apply(t, spec["slug"], plain(spec["title"]))
+    import _shop_links  # 2026-11-14: buyer articles link to their best shop pages at the top and at the end
+    t = _shop_links.apply(t, spec["slug"])
 
     out = pathlib.Path(out_dir) / (spec["slug"] + ".html")
     out.write_text(t, encoding="utf-8")

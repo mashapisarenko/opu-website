@@ -49,8 +49,7 @@ SPECS.append(spec("what-is-a-hybrid-piano", "2026-11-22",
  "Kawai lists an 88-key digital piano with a grade-weighted hammer-action wooden-key keyboard and built-in speakers, in a rosewood cabinet. It is the most expensive piano in this guide, and it is a cabinet, so measure the room.") +
  item("B07MV2B48Q", "Yamaha CP88", "A performing pianist who wants Yamaha's stage action.",
  "The listing says 88 natural wood keys with synthetic ebony and ivory key tops and a Graded Hammer (GH3) action, three premium grand pianos, two upright pianos and five electric pianos, and a sustain pedal included. It is a stage piano, so it has no cabinet.") +
- item("B07FRVJ54X", "Kawai MP11SE", "A pianist who wants a wooden-key stage piano.",
- "Kawai describes a class-leading Grand Feel wooden-key keyboard action, with SK-EX, SK-5 and EX acoustic grand piano sounds. Like the CP88, it is built for stage and studio use.") + """
+ "" + """
 <p>For more, see the shop's page on <a href="../shop/hybrid-and-digital-grand-pianos.html">hybrid and digital grand pianos</a> and the longer list of <a href="../shop/home-digital-pianos.html">home digital pianos</a>.</p>
 
 <h2>What are the honest limits of a hybrid piano?</h2>
@@ -75,8 +74,7 @@ SPECS.append(spec("best-premium-digital-pianos-for-returning-players", "2026-11-
  "Yamaha lists a Graded Hammer 3 (GH3) action with synthetic ivory key tops and the CFX Premium Grand Piano voice.") +
  item("B0C6BVTKH4", "Kawai CN201", "A player who wants a Kawai cabinet.",
  "The listing says an 88-key digital piano with 19 sounds and built-in speakers, in a premium satin black cabinet.") +
- item("B0FLF823ZQ", "Kawai CX102", "A home player who values the sound of a concert grand.",
- "Kawai lists the Shigeru Kawai SK-EX concert grand piano sound with Harmonic Imaging technology.") +
+ "" +
  item("B0DR38F47F", "Casio Celviano AP-S200", "A living room that wants a slim console.",
  "Casio lists a new concert grand piano tone with damper and sympathetic resonance and a smart scaled hammer action with 88 fully weighted keys, in a slim console.") +
  item("B08SC23H65", "Roland FP-60X", "A player who wants a portable piano with a strong built-in amplifier.",
@@ -134,11 +132,10 @@ SPECS.append(spec("best-digital-pianos-for-adult-beginners-in-the-uk", "2026-11-
  "The listing describes a pro performance 88-note digital piano with a powerful built-in amplifier. Amazon UK lists the FP-60X.") +
  item("B09GG8SCBF", "Casio Privia PX-S1100", "A small flat where a slim piano helps.",
  "The listing describes 88 touch-responsive weighted keys in an ultra-portable slim body. Amazon UK lists the PX-S1100 as a stage piano in black and white.") +
- item("B0G2YQP8KL", "Alesis Recital Pro", "A careful first budget with fully weighted keys.",
- "The listing says 88 weighted hammer-action keys with adjustable touch response. Amazon UK lists the Recital Pro.") +
+ "" +
  item("B0GJX8NJS8", "Yamaha Arius YDP-105", "A family that wants a cabinet piano.",
  "An upright-style cabinet with graded hammer action. Amazon UK lists the Arius YDP-105.") + """
-<p>Not every model in my US shop is sold in the UK; the Roland FP-30X, for example, did not appear in my search on Amazon UK. When you click a link, check that the page that opens is the model you expect. For the longer shop lists, see <a href="../shop/digital-pianos.html">portable digital pianos</a>, <a href="../shop/home-digital-pianos.html">home digital pianos</a> and the <a href="../shop/pianos.html">pianos department</a>. Then add a <a href="../shop/piano-benches-and-stands.html">bench</a>, a <a href="../shop/piano-pedals.html">pedal</a> and <a href="../shop/headphones-for-piano.html">headphones</a>.</p>
+<p>Not every model in my US shop is sold in the UK; a listing number that is the model you want in the US can be missing, or can be a different model, on Amazon UK. When you click a link, check that the page that opens is the model you expect. For the longer shop lists, see <a href="../shop/digital-pianos.html">portable digital pianos</a>, <a href="../shop/home-digital-pianos.html">home digital pianos</a> and the <a href="../shop/pianos.html">pianos department</a>. Then add a <a href="../shop/piano-benches-and-stands.html">bench</a>, a <a href="../shop/piano-pedals.html">pedal</a> and <a href="../shop/headphones-for-piano.html">headphones</a>.</p>
 """ + OUT,
  [("Do these links work in the UK?", "Yes. They go to Amazon.com and open Amazon UK when the model is sold there. Check the page that opens is the model you expect."),
   ("What is a piano stool in the UK?", "The same thing as a piano bench in the US. Choose an adjustable one so your forearms sit level with the keys."),

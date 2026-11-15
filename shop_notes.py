@@ -299,15 +299,68 @@ CAT_GROUP = {"digital-pianos":"digital","acoustic-and-hybrid-pianos":"digital","
  "stand-lights":"tools","sheet-music-holders":"tools","piano-care":"care","music-wellbeing":"wellbeing","gifts-home-decor":"gift",
  "home-music-decor":"gift","music-textiles-small-gifts":"gift","jewelry-and-accessories":"gift","luxury-gifts":"luxury"}
 
+# 2026-11-14 conversion pass: the second sentence of every card is now chosen by what the product IS
+# (its illustration type from shop_illus), not rotated by position, so a brain-and-music book no longer
+# gets a line about pedals. Each line says, in a teacher's voice, why a pianist who teaches adults
+# recommends this kind of thing. Only general teaching reasons: no specs, prices or ratings.
+WHY = {
+ "headphones": ["Headphones are what make daily practice possible in a shared home, and I ask only that they stay comfortable for an hour and tell the truth about your touch.",
+                "I recommend headphones because a short practice every day beats a long one on Sunday, and this is how a household lets you do it."],
+ "digital-piano-portable": ["I start with the keys: a hand learns to shade soft and loud from the key itself, so I recommend this kind of piano to adults who want to learn properly.",
+                            "A teacher listens for touch first, and a weighted-key piano like this is the kind that rewards a careful hand."],
+ "digital-piano-console": ["A piano that sits in the room like furniture gets played more often, and I would rather my students walk past it ten times a day than put it away.",
+                           "A home piano with its own stand and pedals removes the setup excuse, which is where many adults stop."],
+ "keyboard-61": ["I recommend a keyboard like this as a stepping stone when space or budget is tight, as long as you plan the move to weighted keys.",
+                 "A 61-key keyboard will carry a first year of beginner pieces; I tell students to treat it as a start, not the destination."],
+ "midi-controller": ["It is a tool for playing into a computer or app, so I recommend it only to a learner who already records or composes."],
+ "piano-bench": ["Sitting at the right height changes how you sound, and a dining chair is almost always too low; I recommend an adjustable bench to every adult I teach.",
+                 "I look at a student's seat before I listen to a note, because forearms level with the keys are what let the weight of the arm reach the key."],
+ "keyboard-stand": ["A stand must not move when you play with the weight of your arm; I recommend a firm one over a clever one."],
+ "sustain-pedal": ["The pedal is part of the instrument, and a piano-style pedal that stays put teaches your foot the movement it will use on any piano."],
+ "method-book": ["I recommend it because adults learn best from one good book worked through in order, with real music as early as possible."],
+ "usb-microphone": ["I ask my students to send me a recording, and a clean, simple setup like this is all a teacher needs to hear your touch."],
+ "audio-interface": ["I recommend it for a student ready to grow a home recording setup beyond one simple microphone."],
+ "handheld-recorder": ["A recorder you can switch on at the piano makes the recording habit easy, and a recording is the fastest way to hear what a teacher hears."],
+ "wireless-mic": ["I recommend it for lessons and performances where you speak to a camera, not for recording the piano."],
+ "webcam": ["Online lessons depend on a clear picture of your hands and posture, which is why I recommend a good camera before anything fancier."],
+ "ring-light": ["A teacher cannot correct what she cannot see, and good light on your hands makes a recording or a lesson far more useful."],
+ "phone-tripod": ["I recommend a steady phone setup because a simple recording of your hands is enough for me to give feedback."],
+ "studio-speakers": ["I want to hear my own touch honestly, so I look for faithful sound over loudness whenever I recommend speakers."],
+ "metronome": ["A steady beat is the first thing a teacher asks a student to build, and a metronome is the simplest honest teacher at home."],
+ "music-stand": ["Music at eye level lets your head and shoulders stay relaxed, which is why I recommend a stand that holds the page firmly."],
+ "stand-light": ["Evening is when most adults practice, and a clear, even light on the page protects your eyes and your reading."],
+ "page-turner": ["Turning a page with your foot keeps both hands on the keys when you read from a tablet."],
+ "piano-care": ["Looking after your instrument costs far less than replacing it, and small care items are easy to forget."],
+ "wellbeing": ["Listening and quiet reading are part of a musician's life, and I recommend them as a companion to practice, not a replacement."],
+ "gift-box": ["I like gifts that put music in a room or on a shelf, and I would be glad to see this one in a student's home."],
+ "grand-piano": ["A piano keepsake is a small way to put music in view, and a good gift for someone who loves the instrument."],
+ "turntable": ["Serious listening trains the ear, and a record player is a pleasant way to give a music lover that habit."],
+ "singing-bowl": ["A moment of quiet listening before or after practice helps many of my adult students settle."],
+ "textile": ["A small music-themed gift for someone who loves piano, chosen to be useful rather than ornamental."],
+ "jewelry": ["A music-themed gift for a pianist, easy to wear to a recital or to give after one."],
+ "wall-art": ["A music corner at home invites practice, and I like decor that makes the instrument look like it belongs in the room."],
+ "mug-gift": ["A small music gift that suits a teacher's desk or a student's practice break."],
+}
+WHY_DEFAULT = ["I recommend it because it is useful to an adult learning piano and is described honestly by its own listing."]
+
 def note(p, i, group=None):
-    g = group or CAT_GROUP.get(p["category"], "gift")
+    from shop_illus import type_of
+    ty, label = type_of(p)
     f = _clean_reason(p["reason"]) or short_name(p)
     if "semi-weighted" in f.lower() and "88" in f:
-        lens = "Semi-weighted keys are a step below the hammer-action feel I would prefer for serious study."
+        why = "Semi-weighted keys are a step below the hammer-action feel I would prefer for serious study, so I suggest it only as a first budget."
     else:
-        lens = LENS[g][i % len(LENS[g])]
-    fl = _lower(f)
-    fr = FRAMES[(i // 2 + i) % len(FRAMES)]
-    s = fr.format(F=f[0].upper() + f[1:], f=fl, L=lens)
+        t = (p["title"] + " " + p["reason"]).lower()
+        if ty == "studio-speakers" and re.search(r"echo dot|sonos|smart speaker|portable|waterproof|soundlink|bluetooth", t):
+            why = "It is a speaker for the house, not for the piano: I list it for the music lover, not for hearing your touch."
+        elif ty == "piano-bench" and re.search(r"\bfixed\b", t):
+            why = "A fixed-height bench suits one player whose height it already fits; if more than one person plays, I would choose an adjustable one."
+        elif ty == "headphones" and re.search(r"noise.cancel|wireless|bluetooth|quietcomfort", t):
+            why = "It is better for listening away from the piano; for daily practice I prefer a wired pair that shows my touch honestly."
+        else:
+            opts = WHY.get(ty) or WHY.get(p["category"]) or WHY_DEFAULT
+            why = opts[i % len(opts)]
+    f = f[0].upper() + f[1:]
+    s = "%s. %s" % (f.rstrip("."), why)
     s = s.replace("Chopin Heroic Polonaise", "Chopin heroic-dance").replace("..", ".").replace(". .", ".")
     return s
