@@ -31,7 +31,17 @@ def main():
             p.write_text(n, encoding="utf-8")
             changed += 1
             print("pending links updated:", p.name)
-    print("pending links: %d live article(s) updated" % changed)
+    # shop pages (../shop/*.html) park their links to queued articles the same way
+    SHOP = re.compile(r'<span data-link-pending="([a-z0-9-]+)" data-shop="1">(.*?)</span>', re.S)
+    for p in sorted((HERE.parent / "shop").glob("*.html")):
+        t = p.read_text(encoding="utf-8")
+        n = SHOP.sub(lambda m: '<a href="../blog/%s.html">%s</a>' % (m.group(1), m.group(2))
+                     if m.group(1) in live else m.group(0), t)
+        if n != t:
+            p.write_text(n, encoding="utf-8")
+            changed += 1
+            print("pending links updated: shop/" + p.name)
+    print("pending links: %d page(s) updated" % changed)
 
 
 if __name__ == "__main__":
