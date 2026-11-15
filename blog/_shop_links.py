@@ -69,7 +69,7 @@ def apply(t, slug, m=None):
     m = m or load_map()
     labels = m.get("labels", {})
     pages = pages_for(t, slug, m)
-    t = re.sub(re.escape(TOP_S) + r".*?" + re.escape(TOP_E) + r"\n?", "", t, flags=re.S)
+    t = re.sub(r"\n*" + re.escape(TOP_S) + r".*?" + re.escape(TOP_E) + r"\n*", "\n\n", t, flags=re.S)
     if not pages:
         return t
     # top: after the first paragraph of the article
@@ -86,7 +86,7 @@ def apply(t, slug, m=None):
     if i != -1 and j != -1:
         blk = t[i:j]
         new = "\n".join('    <li><a href="../shop/%s.html">%s</a></li>' % (p, labels[p]) for p in pages)
-        blk2, n = re.subn(r'[ ]*<li><a href="\.\./shop/[a-z0-9-]+\.html">[^<]*</a></li>', new, blk, count=1)
+        blk2, n = re.subn(r'(?:[ ]*<li><a href="\.\./shop/[a-z0-9-]+\.html">[^<]*</a></li>[ ]*\n?)+', new + "\n", blk, count=1)
         if n:
             t = t[:i] + blk2 + t[j:]
     return t

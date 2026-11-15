@@ -84,6 +84,8 @@ P.apply(C, GUIDES, HUB, ARTICLE, D, S, N, P.NEW_ARTICLES)
 for _k, _v in P.BLOG_MORE.items():
     S.BLOG[_k] = list(S.BLOG.get(_k, [])) + [b for b in _v if b not in S.BLOG.get(_k, [])]
 P.ARTICLE_PATCH(ARTICLE)
+import shop_tech as TECH
+TECH.apply(C, GUIDES, HUB, ARTICLE, D, S, N, SI)
 
 def url(p): return "https://www.amazon.com/dp/%s?tag=%s" % (p["asin"], TAG)
 
@@ -174,7 +176,7 @@ PAIR_GEAR = [("pianos", "All pianos", "Digital, hybrid, stage and grand, budget 
              ("which-digital-piano-to-buy", "Which digital piano to buy", "My long guide for adult beginners.")]
 GEAR_SLUGS = {"piano-benches-and-stands", "headphones-for-piano", "piano-pedals", "keyboard-cases-and-covers", "piano-accessories",
               "speakers-for-keyboards", "stand-lights", "music-stands", "metronomes-and-tuners", "piano-care", "record-yourself-playing",
-              "microphones-and-audio-interfaces", "practice-tools"}
+              "microphones-and-audio-interfaces", "practice-tools"} | set(TECH.TECH_SLUGS)
 
 def pair_strip(slug):
     """Links between related shop categories: a piano page points to bench, headphones, pedal, stand/case; gear pages point back to pianos."""
@@ -251,7 +253,8 @@ NAV = [("index", "Shop home"), ("pianos", "Pianos"), ("digital-pianos", "Digital
        ("hybrid-and-digital-grand-pianos", "Grand &amp; wooden-key"), ("stage-pianos", "Stage pianos"), ("keyboards", "Keyboards"), ("piano-accessories", "Accessories"),
        ("headphones-for-piano", "Headphones"), ("microphones-and-audio-interfaces", "Microphones"), ("keyboard-cases-and-covers", "Cases"), ("piano-benches-and-stands", "Benches"), ("piano-pedals", "Pedals"),
        ("music-stands", "Music stands"), ("metronomes-and-tuners", "Metronomes"), ("stand-lights", "Piano lamps"),
-       ("piano-books-and-sheet-music", "Books"), ("record-yourself-playing", "Recording"), ("music-home-decor", "Decor"),
+       ("piano-books-and-sheet-music", "Books"),
+       ("audio-interfaces-for-home-recording", "Interfaces"), ("studio-monitors-for-home-recording", "Studio monitors"), ("midi-keyboard-controllers", "MIDI keyboards"), ("ipad-music-stands-and-page-turners", "Tablet stands"), ("record-yourself-playing", "Recording"), ("music-home-decor", "Decor"),
        ("gifts-for-pianists", "Gifts"), ("christmas-gifts-for-pianists", "Christmas")]
 
 def shop_nav(slug):
@@ -459,7 +462,9 @@ HUB_FAQS = [("Is this an online piano store?", "Yes, a curated one: it is my sto
 
 def build_hub():
     h = HUB
-    cat_pages = [pg for pg in C.PAGES if prods_of(pg)]
+    all_cat_pages = [pg for pg in C.PAGES if prods_of(pg)]
+    cat_pages = [pg for pg in all_cat_pages if pg["slug"] not in TECH.TECH_SLUGS]
+    tech_pages = [pg for pg in all_cat_pages if pg["slug"] in TECH.TECH_SLUGS]
     cat_guides = [(k, v) for k, v in GUIDES.items() if v.get("category")]
     gift_guides = [(k, v) for k, v in GUIDES.items() if not v.get("category")]
     catcard = lambda s, ico, lab, bl: '<a class="catcard" href="%s.html"><div class="ico">%s</div><h3>%s</h3><p>%s</p></a>' % (s, ico, esc(lab), esc(bl))
@@ -494,6 +499,8 @@ def build_hub():
             section('<h2>Which department are you shopping for?</h2><p class="muted">Each page starts with the question a buyer asks and ends with a way into the lessons.</p>'
                     '<div class="catgrid">%s</div>' % cats +
                     '<div class="howbox"><h2>Why trust a concert pianist&#39;s store?</h2><p style="margin:0">%s</p></div>' % esc(D.WHY)) +
+            section('<h2 id="music-tech">Which music tech and home studio gear do you need?</h2><p class="muted">For adults who want to record themselves, read music from a tablet or connect a keyboard to a computer. The gear is optional; the course and my feedback are free.</p>'
+                    '<div class="catgrid">%s</div>' % "".join(catcard(pg["slug"], pg["icon"], pg["label"], pg["blurb"]) for pg in tech_pages)) +
             section("<h2>Where should a new pianist start?</h2><p class=\"muted\">My top picks: eight places to start, each described only by its own listing.</p>" + top_html) +
             section('<h2>How much do you want to spend?</h2><p class="muted">Shop by budget, described in words. Open any listing on Amazon to see today&#39;s price.</p>'
                     '<div class="budgetgrid">%s</div>' % brow + bgroups) +
@@ -509,7 +516,7 @@ def build_hub():
             "about": "Piano gear, piano accessories and music gifts recommended by Dr. Maria Pisarenko, D.M.A.",
             "isPartOf": {"@type": "WebSite", "name": "Online Piano University", "url": SITE + "/"},
             "publisher": {"@type": "Organization", "name": "Online Piano University", "url": SITE + "/"}}
-    allpages = [(k, v["label"]) for k, v in cat_guides] + [(pg["slug"], pg["label"]) for pg in cat_pages] + [(k, v["label"]) for k, v in gift_guides] + \
+    allpages = [(k, v["label"]) for k, v in cat_guides] + [(pg["slug"], pg["label"]) for pg in cat_pages] + [(pg["slug"], pg["label"]) for pg in tech_pages] + [(k, v["label"]) for k, v in gift_guides] + \
                [("which-digital-piano-to-buy", "Which Digital Piano to Buy")]
     il = {"@context": "https://schema.org", "@type": "ItemList", "name": "Online piano store departments",
           "itemListElement": [{"@type": "ListItem", "position": k + 1, "name": lab, "url": "%s/shop/%s.html" % (SITE, s)}

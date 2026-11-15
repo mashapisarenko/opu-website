@@ -24,11 +24,16 @@
    "christmas-gifts-for-pianists"
   ],
   "best-headphones-for-digital-piano": [
-   "headphones-for-piano"
+   "headphones-for-piano",
+   "studio-monitors-for-home-recording"
   ],
   "best-microphone-for-recording-piano-at-home": [
    "record-yourself-playing",
-   "microphones-and-audio-interfaces"
+   "microphones-and-audio-interfaces",
+   "audio-interfaces-for-home-recording",
+   "music-cables-and-power",
+   "home-studio-starter-kits",
+   "mic-stands-and-studio-accessories"
   ],
   "best-premium-digital-pianos-for-returning-players": [
    "digital-pianos",
@@ -68,7 +73,9 @@
   ],
   "digital-piano-vs-keyboard": [
    "stage-pianos",
-   "keyboard-cases-and-covers"
+   "keyboard-cases-and-covers",
+   "midi-keyboard-controllers",
+   "keyboard-amplifiers"
   ],
   "easy-piano-songs-for-adult-beginners": [
    "piano-books-and-sheet-music"
@@ -117,6 +124,9 @@
   "how-to-read-sheet-music-treble-clef-rhythm": [
    "music-stands"
   ],
+  "how-to-start-sight-reading": [
+   "ipad-music-stands-and-page-turners"
+  ],
   "piano-and-the-aging-brain": [
    "music-and-wellbeing"
   ],
@@ -126,7 +136,8 @@
   "piano-bench-height-posture": [
    "piano-benches-and-stands",
    "music-stands",
-   "piano-accessories"
+   "piano-accessories",
+   "mic-stands-and-studio-accessories"
   ],
   "piano-for-stress-relief": [
    "music-and-wellbeing",
@@ -145,7 +156,15 @@
    "headphones-for-piano",
    "speakers-for-keyboards",
    "piano-accessories",
-   "keyboard-cases-and-covers"
+   "keyboard-cases-and-covers",
+   "studio-monitors-for-home-recording",
+   "keyboard-amplifiers"
+  ],
+  "practicing-with-a-recording": [
+   "audio-interfaces-for-home-recording"
+  ],
+  "reading-music-or-playing-by-ear": [
+   "ipad-music-stands-and-page-turners"
   ],
   "returning-to-piano-as-an-adult": [
    "piano-care"
@@ -155,7 +174,9 @@
   ],
   "run-your-own-piano-lesson": [
    "record-yourself-playing",
-   "microphones-and-audio-interfaces"
+   "microphones-and-audio-interfaces",
+   "audio-interfaces-for-home-recording",
+   "home-studio-starter-kits"
   ],
   "stocking-stuffers-for-piano-players": [
    "music-home-decor",
@@ -165,7 +186,8 @@
   ],
   "weighted-vs-semi-weighted-keys": [
    "hybrid-and-digital-grand-pianos",
-   "stage-pianos"
+   "stage-pianos",
+   "midi-keyboard-controllers"
   ],
   "what-is-a-hybrid-piano": [
    "hybrid-and-digital-grand-pianos",
@@ -173,9 +195,13 @@
   ],
   "why-you-still-cannot-read-music-fluently": [
    "stand-lights"
+  ],
+  "you-got-a-keyboard-now-what": [
+   "music-cables-and-power"
   ]
  },
  "labels": {
+  "audio-interfaces-for-home-recording": "Audio Interfaces",
   "christmas-gifts-for-pianists": "Christmas Gifts for Pianists",
   "digital-pianos": "Digital Pianos",
   "gifts-for-adult-beginners": "Gifts for Adult Beginners",
@@ -184,13 +210,19 @@
   "gifts-for-piano-teachers": "Gifts for Music Teachers",
   "headphones-for-piano": "Headphones",
   "home-digital-pianos": "Home Digital Pianos",
+  "home-studio-starter-kits": "Home Studio Starter Kits",
   "hybrid-and-digital-grand-pianos": "Digital Grand and Wooden-Key Pianos",
+  "ipad-music-stands-and-page-turners": "Tablet Stands and Page Turners",
+  "keyboard-amplifiers": "Keyboard Amplifiers",
   "keyboard-cases-and-covers": "Keyboard Cases and Covers",
   "keyboards": "Keyboards and MIDI",
   "luxury-gifts-for-pianists": "Luxury Gifts",
   "metronomes-and-tuners": "Metronomes and Tuners",
+  "mic-stands-and-studio-accessories": "Mic Stands and Studio Accessories",
   "microphones-and-audio-interfaces": "Microphones and Interfaces",
+  "midi-keyboard-controllers": "MIDI Keyboard Controllers",
   "music-and-wellbeing": "Music and Wellbeing",
+  "music-cables-and-power": "Music Cables and Power",
   "music-home-decor": "Music Home Decor",
   "music-stands": "Music Stands",
   "piano-accessories": "Piano Accessories",
@@ -205,6 +237,7 @@
   "stage-pianos": "Stage Pianos",
   "stand-lights": "Stand Lights",
   "stocking-stuffers-for-musicians": "Stocking Stuffers for Musicians",
+  "studio-monitors-for-home-recording": "Studio Monitors",
   "which-digital-piano-to-buy": "Which digital piano to buy"
  }
 }
