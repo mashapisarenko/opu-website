@@ -62,8 +62,7 @@ HEADER = HEADER.replace('<a href="index.html">Blog</a>', '<a href="../blog/index
 FOOTER = TPL[TPL.index('<footer id="footer">'):TPL.index("</footer>") + 9]
 FOOTER = FOOTER.replace('<a href="index.html">Blog</a>', '<a href="../blog/index.html">Blog</a>')
 FOOTER = re.sub(r'<p class="disclaimer"[^>]*>As an Amazon Associate I earn from qualifying purchases\.</p>',
-                '<p class="shop-disc-foot">' + DISC + '</p>', FOOTER)
-assert DISC in FOOTER
+                '<p class="shop-disc-foot">As an Amazon Associate I earn from qualifying purchases.</p>', FOOTER)
 AUTHOR = ('<aside class="card" style="display:flex;gap:16px;align-items:center;margin:34px 0 0;padding:18px 20px">'
           '<img src="../images/blog/dr-maria-pisarenko-piano-concert-gown.jpg" alt="Dr. Maria Pisarenko, concert pianist" width="96" height="96" style="width:96px;height:96px;border-radius:50%;object-fit:cover" loading="lazy">'
           '<p style="margin:0"><strong>Dr. Maria Pisarenko, D.M.A.</strong> is a concert pianist and university piano professor. She teaches adults online at Online Piano University and chooses everything in this shop herself.</p></aside>')
@@ -89,6 +88,22 @@ TECH.apply(C, GUIDES, HUB, ARTICLE, D, S, N, SI)
 
 def url(p): return "https://www.amazon.com/dp/%s?tag=%s" % (p["asin"], TAG)
 
+SEEN_FOR = set()
+PAGE_TEXT = {}
+
+def _who_unique(p, full):
+    w = S.who_for(p)
+    if w in SEEN_FOR:
+        w = w.rstrip(".") + "; this one is the %s." % full
+    SEEN_FOR.add(w)
+    return w
+
+def _texts(p, i, group, full):
+    k = p["asin"]
+    if k not in PAGE_TEXT:
+        PAGE_TEXT[k] = (N.note(p, i, group), _who_unique(p, full))
+    return PAGE_TEXT[k]
+
 def card(p, i, cat, group=None, tier_tag=True, badge=None):
     """Product card: our own type illustration on top (never an Amazon photo), the whole card clickable,
     the listing-based note, and a "who it's for" line."""
@@ -105,7 +120,7 @@ def card(p, i, cat, group=None, tier_tag=True, badge=None):
     return ('<article class="pcard%s">%s%s<div class="pmeta">%s</div><h3>%s</h3><p>%s</p>'
             '<p class="pfor"><strong>I suggest it for</strong> %s</p>'
             '<a class="btn shop-btn" %s>See it on Amazon</a></article>'
-            % (" pcard-top" if badge else "", img, flag, meta, esc(name), esc(N.note(p, i, group)), esc(S.who_for(p)), link))
+            % (" pcard-top" if badge else "", img, flag, meta, esc(name), esc(_texts(p, i, group, full)[0]), esc(_texts(p, i, group, full)[1]), link))
 
 def item_list_ld(products, name):
     return {"@context": "https://schema.org", "@type": "ItemList", "name": name,
@@ -170,7 +185,7 @@ PAIR_PIANO = [("piano-benches-and-stands", "A bench or keyboard stand", "Sit at 
               ("piano-pedals", "A sustain pedal", "Piano-style pedals that stay put."),
               ("keyboard-cases-and-covers", "A case or cover", "Carry it, or keep dust off it."),
               ("piano-accessories", "Every accessory", "The short list of what a digital piano really needs.")]
-PAIR_GEAR = [("pianos", "All pianos", "Digital, hybrid, stage and grand, budget to luxury."),
+PAIR_GEAR = [("pianos", "All pianos", "Digital, wooden-key, stage and digital grand, budget to luxury."),
              ("digital-pianos", "Portable digital pianos", "88 weighted keys that fit a small room."),
              ("home-digital-pianos", "Home digital pianos", "Cabinet pianos with their own stand and pedals."),
              ("which-digital-piano-to-buy", "Which digital piano to buy", "My long guide for adult beginners.")]
@@ -250,7 +265,7 @@ BANNER = ('<aside class="bf-banner" role="note"><div class="wrap"><a href="../gi
 
 # department nav shown under the banner on every shop page
 NAV = [("index", "Shop home"), ("pianos", "Pianos"), ("digital-pianos", "Digital pianos"), ("home-digital-pianos", "Home pianos"),
-       ("hybrid-and-digital-grand-pianos", "Grand &amp; wooden-key"), ("stage-pianos", "Stage pianos"), ("keyboards", "Keyboards"), ("piano-accessories", "Accessories"),
+       ("hybrid-and-digital-grand-pianos", "Grand & wooden-key"), ("stage-pianos", "Stage pianos"), ("keyboards", "Keyboards"), ("piano-accessories", "Accessories"),
        ("headphones-for-piano", "Headphones"), ("microphones-and-audio-interfaces", "Microphones"), ("keyboard-cases-and-covers", "Cases"), ("piano-benches-and-stands", "Benches"), ("piano-pedals", "Pedals"),
        ("music-stands", "Music stands"), ("metronomes-and-tuners", "Metronomes"), ("stand-lights", "Piano lamps"),
        ("piano-books-and-sheet-music", "Books"),
@@ -262,6 +277,7 @@ def shop_nav(slug):
     return '<nav class="shop-nav" aria-label="Shop departments"><div class="wrap"><ul>%s</ul></div></nav>' % lis
 
 def page(slug, title, desc, h1, eyebrow, sub, body, lds, crumb, canon=None):
+    N.SEEN.clear(); SEEN_FOR.clear(); PAGE_TEXT.clear()
     assert len(title) <= 60, (slug, len(title), title)
     assert 110 <= len(desc) <= 155, (slug, len(desc), desc)
     canon = canon or "%s/shop/%s.html" % (SITE, slug)
@@ -431,7 +447,7 @@ def build_article():
     print("article words (excluding product cards and FAQ):", words)
 
 # ---------------------------------------------------------------- hub
-NEEDS = [("Browse all pianos", "pianos", "digital-piano-console", "Digital, hybrid, stage and grand."),
+NEEDS = [("Browse all pianos", "pianos", "digital-piano-console", "Digital, wooden-key, stage and digital grand."),
          ("Start learning", "digital-pianos", "digital-piano-portable", "A piano with weighted keys."),
          ("Practice quietly", "headphones-for-piano", "headphones", "Headphones for any hour."),
          ("Sit correctly", "piano-benches-and-stands", "piano-bench", "Benches at the right height."),
@@ -468,7 +484,7 @@ def build_hub():
     cat_guides = [(k, v) for k, v in GUIDES.items() if v.get("category")]
     gift_guides = [(k, v) for k, v in GUIDES.items() if not v.get("category")]
     catcard = lambda s, ico, lab, bl: '<a class="catcard" href="%s.html"><div class="ico">%s</div><h3>%s</h3><p>%s</p></a>' % (s, ico, esc(lab), esc(bl))
-    cats = catcard("pianos", "🎹", "Pianos Department", "Digital, hybrid, stage and grand pianos, budget to luxury.")
+    cats = catcard("pianos", "🎹", "Pianos Department", "Digital, wooden-key, stage and digital grand pianos, budget to luxury.")
     cats += "".join(catcard(k, v["icon"], v["label"], v["blurb"]) for k, v in cat_guides)
     cats += "".join(catcard(pg["slug"], pg["icon"], pg["label"], pg["blurb"]) for pg in cat_pages)
     guides = "".join(catcard(k, v.get("icon", "🎁"), v["label"], v["blurb"]) for k, v in gift_guides)
@@ -533,9 +549,9 @@ def build_pianos_hub():
     ctx = dict(esc=esc, section=section, faq_html=faq_html, related_html=related_html, read_next=read_next, tiers_html=tiers_html, pick=pick)
     body, faqs, ladder = P.pianos_body(ctx)
     body_top = section(head_block("pianos", top3_html(ladder, "pianos")))
-    title = "Pianos: Digital, Wooden-Key, Stage and Grand Pianos Shop"
-    desc = "Shop digital pianos, hybrid pianos, digital grands, stage pianos and keyboards, from budget to luxury, chosen by a concert pianist who teaches adults."
-    h1 = "Pianos: Digital, Hybrid, Stage and Digital Grand Pianos"
+    title = "Pianos: Digital, Wooden-Key, Stage and Grand Pianos"
+    desc = "Shop digital pianos, wooden-key home pianos, digital grands, stage pianos and keyboards, budget to luxury, chosen by a concert pianist who teaches adults."
+    h1 = "Pianos: Digital, Wooden-Key, Stage and Grand Pianos"
     answer = ("The best piano for an adult starts with weighted keys and a real piano sound. This department takes you from a portable digital piano "
               "to a home cabinet, a wooden-key console, a digital grand and a stage piano, and says which one fits your room and your budget.")
     lds = [item_list_ld(ladder, h1), faq_ld(faqs), crumb_ld("Pianos", "pianos")]

@@ -44,6 +44,9 @@ TYPES = {
 
 # (category regex, title regex, type, label override or None)
 RULES = [
+    (r"^stage-pianos$", r"", "digital-piano-portable", "Stage piano"),
+    (r"^hybrid-digital-pianos$", r"grand", "grand-piano", "Digital grand piano"),
+    (r"^digital-pianos-home$", r"", "digital-piano-console", None),
     (r"digital-pianos|acoustic-and-hybrid", r"console|PX-770|YDP|DDP-|upright", "digital-piano-console", None),
     (r"digital-pianos|acoustic-and-hybrid", r"", "digital-piano-portable", None),
     (r"portable-keyboards", r"88-Key", "digital-piano-portable", "88-key keyboard"),

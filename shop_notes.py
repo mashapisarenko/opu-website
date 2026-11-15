@@ -256,7 +256,7 @@ def short_name(p):
     t = p["title"]
     b = brand_of(p)
     if b: t = re.sub(r"^" + re.escape(b) + r"\s+", "", t, flags=re.I)
-    t = re.split(r",| - | – |: | with | for | \(", t)[0].strip()
+    t = re.split(r",| - | – |: |\s*\|\s*| with | for | \(", t)[0].strip()
     if len(t) > 55: t = t[:55].rsplit(" ", 1)[0]
     return t
 
@@ -343,24 +343,58 @@ WHY = {
 }
 WHY_DEFAULT = ["I recommend it because it is useful to an adult learning piano and is described honestly by its own listing."]
 
+SEEN = set()   # sentences already used on the page being built (reset by make_shop_pages.page())
+
+PIANO_WHY = {
+ "Stage piano": ["A stage piano is built to be played out and carried, so I would send an adult beginner to a home piano first and keep this for a player who already has a touch to protect.",
+                 "It has no cabinet, so you will also want a stand and a sustain pedal; the instrument is the keybed and the sound, which is the part a pianist judges first.",
+                 "I would choose a stage piano for its action and its piano voices, and treat the extra sounds as a bonus.",
+                 "It suits a player who gigs or plays with others, and it is fully usable at home with headphones."],
+ "Digital grand piano": ["A digital grand puts a digital piano in a grand-piano shape, with a volume control and a headphone jack, for a room that has space for it.",
+                         "Try the key action before you commit: the grand shape is the look, and the touch is what you will practice on."],
+ "Digital piano": ["I start with the keys: a hand learns to shade soft and loud from the key itself, so I look for weighted keys in any piano I recommend to adults.",
+                   "A teacher listens for touch first, and a weighted-key piano is the kind that rewards a careful hand.",
+                   "Weighted keys and a clean piano sound matter more to me than a long list of extra voices.",
+                   "It is a practical piano for a home with neighbors: it stays in tune and has a headphone jack."],
+}
+
+def _tier_phrase(p):
+    return {"budget": "careful first-budget", "mid": "mid-range", "premium": "premium", "luxury": "luxury"}.get(p.get("tier"), "chosen")
+
 def note(p, i, group=None):
     from shop_illus import type_of
     ty, label = type_of(p)
     f = _clean_reason(p["reason"]) or short_name(p)
+    nm = ((brand_of(p) + " ") if brand_of(p) else "") + short_name(p)
     if "semi-weighted" in f.lower() and "88" in f:
-        why = "Semi-weighted keys are a step below the hammer-action feel I would prefer for serious study, so I suggest it only as a first budget."
+        opts = ["Semi-weighted keys are a step below the hammer-action feel I would prefer for serious study, so I suggest it only as a first budget."]
     else:
         t = (p["title"] + " " + p["reason"]).lower()
         if ty == "studio-speakers" and re.search(r"echo dot|sonos|smart speaker|portable|waterproof|soundlink|bluetooth", t):
-            why = "It is a speaker for the house, not for the piano: I list it for the music lover, not for hearing your touch."
+            opts = ["It is a speaker for the house, not for the piano: I list it for the music lover, not for hearing your touch."]
         elif ty == "piano-bench" and re.search(r"\bfixed\b", t):
-            why = "A fixed-height bench suits one player whose height it already fits; if more than one person plays, I would choose an adjustable one."
+            opts = ["A fixed-height bench suits one player whose height it already fits; if more than one person plays, I would choose an adjustable one."]
         elif ty == "headphones" and re.search(r"noise.cancel|wireless|bluetooth|quietcomfort", t):
-            why = "It is better for listening away from the piano; for daily practice I prefer a wired pair that shows my touch honestly."
+            opts = ["It is better for listening away from the piano; for daily practice I prefer a wired pair that shows my touch honestly."]
+        elif label in PIANO_WHY:
+            opts = PIANO_WHY[label]
+        elif ty == "grand-piano" and p["category"] not in ("hybrid-digital-pianos",):
+            opts = WHY.get(ty) or WHY_DEFAULT
         else:
             opts = WHY.get(ty) or WHY.get(p["category"]) or WHY_DEFAULT
-            why = opts[i % len(opts)]
     f = f[0].upper() + f[1:]
-    s = "%s. %s" % (f.rstrip("."), why)
+    first = f.rstrip(".") + "."
+    if first in SEEN:
+        first = "%s: %s." % (nm, f[0].lower() + f[1:].rstrip("."))
+    SEEN.add(first)
+    why = None
+    for k in range(len(opts)):
+        c = opts[(i + k) % len(opts)]
+        if c not in SEEN:
+            why = c; break
+    if why is None:
+        why = "The %s is one of my %s picks for this list." % (nm, _tier_phrase(p))
+    SEEN.add(why)
+    s = "%s %s" % (first, why)
     s = s.replace("Chopin Heroic Polonaise", "Chopin heroic-dance").replace("..", ".").replace(". .", ".")
     return s

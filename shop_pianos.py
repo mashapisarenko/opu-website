@@ -19,7 +19,18 @@ def patch(N, S):
     _short = N.short_name
     N.short_name = lambda p: p.get("short") or _short(p)
     _who = S.who_for
-    S.who_for = lambda p: p.get("who") or _who(dict(p, category="digital-pianos") if p["category"] in ("digital-pianos-home", "hybrid-digital-pianos", "stage-pianos") else p)
+    def _who2(p):
+        c, t, tier = p["category"], p["tier"], p["tier"]
+        tl = p["title"].lower()
+        if c == "stage-pianos":
+            if "speakers" in tl: return "a player who wants a stage-style keyboard that sounds without a separate amplifier."
+            if tier == "luxury": return "a serious player or gigging musician who wants a flagship stage instrument and has the touch to use it."
+            if tier == "premium": return "a returning player who gigs or plays with others and wants a stage action to grow into."
+            return "a player who wants a weighted stage piano for gigs and for home practice with headphones."
+        if c == "hybrid-digital-pianos":
+            return "a player with the room for a grand-shaped digital piano who wants a volume control and a headphone jack."
+        return None
+    S.who_for = lambda p: p.get("who") or _who2(p) or _who(dict(p, category="digital-pianos") if p["category"] in ("digital-pianos-home", "hybrid-digital-pianos", "stage-pianos") else p)
     N.CAT_GROUP.update({"digital-pianos-home": "home", "hybrid-digital-pianos": "hybrid", "stage-pianos": "stage",
                         "arranger-keyboards": "keyboard", "microphones-interfaces": "record", "cases-and-covers": "case"})
     N.LENS.update({
@@ -195,7 +206,7 @@ BLOG_NEW = {
  "keyboard-cases-and-covers": ["practicing-piano-in-an-apartment", "digital-piano-vs-keyboard"],
 }
 
-NAV_ADD = [("pianos", "Pianos"), ("home-digital-pianos", "Home pianos"), ("hybrid-and-digital-grand-pianos", "Grand &amp; wooden-key"),
+NAV_ADD = [("pianos", "Pianos"), ("home-digital-pianos", "Home pianos"), ("hybrid-and-digital-grand-pianos", "Grand & wooden-key"),
            ("stage-pianos", "Stage pianos"), ("microphones-and-audio-interfaces", "Microphones"), ("keyboard-cases-and-covers", "Cases")]
 
 def apply(C, GUIDES, HUB, ARTICLE, D, S, N, blog_extra=None):
