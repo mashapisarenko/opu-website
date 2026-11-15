@@ -79,6 +79,11 @@ for p in DATA:
     BY_ASIN.setdefault(p["asin"], p)
 
 S.apply(C.PAGES, GUIDES, HUB, ARTICLE, D)
+import shop_pianos as P
+P.apply(C, GUIDES, HUB, ARTICLE, D, S, N, P.NEW_ARTICLES)
+for _k, _v in P.BLOG_MORE.items():
+    S.BLOG[_k] = list(S.BLOG.get(_k, [])) + [b for b in _v if b not in S.BLOG.get(_k, [])]
+P.ARTICLE_PATCH(ARTICLE)
 
 def url(p): return "https://www.amazon.com/dp/%s?tag=%s" % (p["asin"], TAG)
 
@@ -96,7 +101,7 @@ def card(p, i, cat, group=None, tier_tag=True):
            % (link, ty, attr(SI.alt_text(label, full))))
     return ('<article class="pcard">%s<div class="pmeta">%s</div><h3>%s</h3><p>%s</p>'
             '<p class="pfor"><strong>I suggest it for</strong> %s</p>'
-            '<a class="btn shop-btn" %s>Check today&#39;s price on Amazon</a></article>'
+            '<a class="btn shop-btn" %s>See it on Amazon</a></article>'
             % (img, meta, esc(name), esc(N.note(p, i, group)), esc(S.who_for(p)), link))
 
 def item_list_ld(products, name):
@@ -111,23 +116,44 @@ def crumb_ld(label, slug):
         {"@type": "ListItem", "position": 2, "name": "Shop", "item": SITE + "/shop/"},
         {"@type": "ListItem", "position": 3, "name": label, "item": SITE + "/shop/" + slug + ".html"}]}
 
+def with_intl(faqs):
+    faqs = list(faqs)
+    if not any(q.startswith("Shopping outside the US") for q, a in faqs):
+        faqs.append(P.INTL_FAQ)
+    return faqs
+
 def faq_ld(faqs):
+    faqs = with_intl(faqs)
     return {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs]}
 
 def faq_html(faqs):
+    faqs = with_intl(faqs)
     return "".join("<details><summary>%s</summary><p>%s</p></details>" % (esc(q), esc(a)) for q, a in faqs)
 
 def related_html(slugs):
     names = {pg["slug"]: (pg["icon"], pg["label"], pg["blurb"]) for pg in C.PAGES}
     names.update({k: (v.get("icon", "🎁"), v["label"], v["blurb"]) for k, v in GUIDES.items()})
+    names["pianos"] = ("🎹", "Pianos Department", "Every kind of piano, budget to luxury.")
     names["which-digital-piano-to-buy"] = ("🎹", "Which Digital Piano to Buy", "A long guide for adult beginners.")
     cards = "".join('<a class="catcard" href="%s.html"><div class="ico">%s</div><h3>%s</h3><p>%s</p></a>' %
                     (s, names[s][0], esc(names[s][1]), esc(names[s][2])) for s in slugs)
     return '<div class="catgrid">%s</div>' % cards
 
+def blog_item(b):
+    live = (HERE / "blog" / (b + ".html")).exists()
+    queued = (HERE / "blog" / "_queue" / (b + ".html")).exists()
+    if b not in S.BLOG_TITLES:
+        m = re.search(r"<h1[^>]*>(.*?)</h1>", (HERE / "blog" / (b + ".html") if live else HERE / "blog" / "_queue" / (b + ".html")).read_text(encoding="utf-8"), re.S)
+        S.BLOG_TITLES[b] = html.unescape(re.sub(r"<[^>]+>", "", m.group(1)).strip())
+    title = esc(S.BLOG_TITLES[b])
+    if live or not queued:
+        return '<li><a href="../blog/%s.html">%s</a></li>' % (b, title)
+    # parked until the article is published (blog/_pending_links.py restores the link on the day)
+    return '<li><span data-link-pending="%s" data-shop="1">%s</span></li>' % (b, title)
+
 def read_next(slug):
-    items = "".join('<li><a href="../blog/%s.html">%s</a></li>' % (b, esc(S.BLOG_TITLES[b])) for b in S.BLOG.get(slug, []))
+    items = "".join(blog_item(b) for b in S.BLOG.get(slug, []))
     items += ('<li><a href="../gift-certificate.html">Give online piano lessons as a gift</a></li>'
               '<li><a href="../lessons.html">Private online piano lessons with me</a></li>')
     return '<h2 style="margin-top:40px">Where should you read next?</h2><ul class="readnext">%s</ul>' % items
@@ -148,8 +174,9 @@ BANNER = ('<aside class="bf-banner" role="note"><div class="wrap"><a href="../gi
           % (BANNER_LEAD, BANNER_REST.replace("'", "&#39;")))
 
 # department nav shown under the banner on every shop page
-NAV = [("index", "Shop home"), ("digital-pianos", "Digital pianos"), ("keyboards", "Keyboards"), ("piano-accessories", "Accessories"),
-       ("headphones-for-piano", "Headphones"), ("piano-benches-and-stands", "Benches"), ("piano-pedals", "Pedals"),
+NAV = [("index", "Shop home"), ("pianos", "Pianos"), ("digital-pianos", "Digital pianos"), ("home-digital-pianos", "Home pianos"),
+       ("hybrid-and-digital-grand-pianos", "Hybrid &amp; grand"), ("stage-pianos", "Stage pianos"), ("keyboards", "Keyboards"), ("piano-accessories", "Accessories"),
+       ("headphones-for-piano", "Headphones"), ("microphones-and-audio-interfaces", "Microphones"), ("keyboard-cases-and-covers", "Cases"), ("piano-benches-and-stands", "Benches"), ("piano-pedals", "Pedals"),
        ("music-stands", "Music stands"), ("metronomes-and-tuners", "Metronomes"), ("stand-lights", "Piano lamps"),
        ("piano-books-and-sheet-music", "Books"), ("record-yourself-playing", "Recording"), ("music-home-decor", "Decor"),
        ("gifts-for-pianists", "Gifts"), ("christmas-gifts-for-pianists", "Christmas")]
@@ -325,7 +352,8 @@ def build_article():
     print("article words (excluding product cards and FAQ):", words)
 
 # ---------------------------------------------------------------- hub
-NEEDS = [("Start learning", "digital-pianos", "digital-piano-portable", "A piano with weighted keys."),
+NEEDS = [("Browse all pianos", "pianos", "digital-piano-console", "Digital, hybrid, stage and grand."),
+         ("Start learning", "digital-pianos", "digital-piano-portable", "A piano with weighted keys."),
          ("Practice quietly", "headphones-for-piano", "headphones", "Headphones for any hour."),
          ("Sit correctly", "piano-benches-and-stands", "piano-bench", "Benches at the right height."),
          ("Record yourself", "record-yourself-playing", "usb-microphone", "Microphones, mounts, light."),
@@ -351,7 +379,6 @@ HOLIDAY = [("🎄", "Christmas gifts for pianists", "christmas-gifts-for-pianist
 HUB_FAQS = [("Is this an online piano store?", "Yes, a curated one: it is my store of recommendations. You browse here, and every purchase happens on Amazon, which sells, ships and handles returns. I choose each item as a concert pianist who teaches adults."),
             ("What should an adult beginner buy first?", "An 88-key digital piano with weighted keys, a sustain pedal, an adjustable bench and a pair of closed-back headphones. Nothing else is needed to start."),
             ("Which piano accessories do I really need?", "A piano-style sustain pedal, an adjustable bench, headphones and a light for the page. A metronome, a book clip and a dust cover come next."),
-            ("Can I buy from outside the US?", "The links go to Amazon.com, and Amazon ships many items internationally. Check delivery to your country on the listing before you order."),
             ("Are these affiliate links?", "Yes. As an Amazon Associate I earn from qualifying purchases, at no extra cost to you. I do not print prices; open the listing on Amazon to check today's price.")]
 
 def build_hub():
@@ -360,7 +387,8 @@ def build_hub():
     cat_guides = [(k, v) for k, v in GUIDES.items() if v.get("category")]
     gift_guides = [(k, v) for k, v in GUIDES.items() if not v.get("category")]
     catcard = lambda s, ico, lab, bl: '<a class="catcard" href="%s.html"><div class="ico">%s</div><h3>%s</h3><p>%s</p></a>' % (s, ico, esc(lab), esc(bl))
-    cats = "".join(catcard(k, v["icon"], v["label"], v["blurb"]) for k, v in cat_guides)
+    cats = catcard("pianos", "🎹", "Pianos Department", "Digital, hybrid, stage and grand pianos, budget to luxury.")
+    cats += "".join(catcard(k, v["icon"], v["label"], v["blurb"]) for k, v in cat_guides)
     cats += "".join(catcard(pg["slug"], pg["icon"], pg["label"], pg["blurb"]) for pg in cat_pages)
     guides = "".join(catcard(k, v.get("icon", "🎁"), v["label"], v["blurb"]) for k, v in gift_guides)
     guides += catcard("which-digital-piano-to-buy", "🎹", "Which Digital Piano to Buy", "A long guide for adult beginners.")
@@ -381,7 +409,7 @@ def build_hub():
     hol += '<a href="../gift-certificate.html"><span aria-hidden="true">🎁</span>Gift online lessons</a>'
     tops = pick(h["top"])
     top_html = '<div class="pgrid">' + "".join(card(p, i, "top-picks") for i, p in enumerate(tops)) + "</div>"
-    body = (section('<div class="shop-prose"><p class="lead">%s</p></div>' % esc(h["intro"]) +
+    body = (section('<div class="shop-prose"><p class="lead">%s</p></div>' % esc(h["intro"]) + P.START_HERE +
                     '<h2 style="margin-top:30px">What do you need today?</h2><p class="muted">Shop by need: start with the problem you want to solve.</p>' +
                     '<div class="needgrid">%s</div>' % needs +
                     GIFT_CARD +
@@ -418,12 +446,30 @@ def build_hub():
     (OUT / "index.html").write_text(html_, encoding="utf-8")
     REPORT.append(("index.html", h["title"], h["desc"], len(tops)))
 
+def build_pianos_hub():
+    ctx = dict(esc=esc, section=section, faq_html=faq_html, related_html=related_html, read_next=read_next, tiers_html=tiers_html, pick=pick)
+    body, faqs, ladder = P.pianos_body(ctx)
+    title = "Pianos: Digital, Hybrid, Stage and Grand Pianos Shop"
+    desc = "Shop digital pianos, hybrid pianos, digital grands, stage pianos and keyboards, from budget to luxury, chosen by a concert pianist who teaches adults."
+    h1 = "Pianos: Digital, Hybrid, Stage and Digital Grand Pianos"
+    answer = ("The best piano for an adult starts with weighted keys and a real piano sound. This department takes you from a portable digital piano "
+              "to a home cabinet, a wooden-key hybrid, a digital grand and a stage piano, and says which one fits your room and your budget.")
+    lds = [item_list_ld(ladder, h1), faq_ld(faqs), crumb_ld("Pianos", "pianos")]
+    html_ = page("pianos", title, desc, h1, "The piano department", esc(answer), body + AUTHOR_SECTION(), lds, '<a href="index.html">Shop</a> / Pianos')
+    (OUT / "pianos.html").write_text(html_, encoding="utf-8")
+    REPORT.append(("pianos.html", title, desc, len(ladder)))
+
+def AUTHOR_SECTION():
+    return section(OPU_PATH + AUTHOR)
+
+
 def TYPES_ALT(ty):
     return SI.TYPES[ty][1]
 
 def main():
     OUT.mkdir(exist_ok=True)
     build_hub()
+    build_pianos_hub()
     for pg in C.PAGES: build_category(pg)
     for s in GUIDES: build_guide(s)
     build_article()

@@ -93,3 +93,9 @@
 @media(max-width:560px){.giftcard{grid-template-columns:1fr;padding:18px}.giftcard .gc-art{width:64px;height:64px;font-size:2rem}}
 .readnext{columns:2 260px;padding-left:20px;margin:8px 0 0}
 .readnext li{margin:6px 0;break-inside:avoid}
+
+.start-here{margin:26px 0 8px}
+.start-here .start-q{margin:0;padding-left:20px}
+.start-here .start-q>li{margin:0 0 14px}
+.start-here .start-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.start-here .start-links .btn{padding:8px 14px;font-size:.9rem}

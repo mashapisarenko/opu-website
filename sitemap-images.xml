@@ -342,6 +342,7 @@
     <image:image><image:loc>https://onlinepianouniversity.com/images/blog/dr-maria-pisarenko-piano-seated-black.jpg</image:loc></image:image>
   </url>
   <url><loc>https://onlinepianouniversity.com/shop/</loc>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/digital-piano-console.svg</image:loc></image:image>
     <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/digital-piano-portable.svg</image:loc></image:image>
     <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/headphones.svg</image:loc></image:image>
     <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/piano-bench.svg</image:loc></image:image>
@@ -430,6 +431,20 @@
     <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/headphones.svg</image:loc></image:image>
     <image:image><image:loc>https://onlinepianouniversity.com/images/blog/dr-maria-pisarenko-piano-concert-gown.jpg</image:loc></image:image>
   </url>
+  <url><loc>https://onlinepianouniversity.com/shop/home-digital-pianos.html</loc>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/digital-piano-console.svg</image:loc></image:image>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/blog/dr-maria-pisarenko-piano-concert-gown.jpg</image:loc></image:image>
+  </url>
+  <url><loc>https://onlinepianouniversity.com/shop/hybrid-and-digital-grand-pianos.html</loc>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/digital-piano-portable.svg</image:loc></image:image>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/digital-piano-console.svg</image:loc></image:image>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/grand-piano.svg</image:loc></image:image>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/blog/dr-maria-pisarenko-piano-concert-gown.jpg</image:loc></image:image>
+  </url>
+  <url><loc>https://onlinepianouniversity.com/shop/keyboard-cases-and-covers.html</loc>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/piano-care.svg</image:loc></image:image>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/blog/dr-maria-pisarenko-piano-concert-gown.jpg</image:loc></image:image>
+  </url>
   <url><loc>https://onlinepianouniversity.com/shop/keyboards.html</loc>
     <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/keyboard-61.svg</image:loc></image:image>
     <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/midi-controller.svg</image:loc></image:image>
@@ -445,6 +460,13 @@
   </url>
   <url><loc>https://onlinepianouniversity.com/shop/metronomes-and-tuners.html</loc>
     <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/metronome.svg</image:loc></image:image>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/blog/dr-maria-pisarenko-piano-concert-gown.jpg</image:loc></image:image>
+  </url>
+  <url><loc>https://onlinepianouniversity.com/shop/microphones-and-audio-interfaces.html</loc>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/usb-microphone.svg</image:loc></image:image>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/handheld-recorder.svg</image:loc></image:image>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/audio-interface.svg</image:loc></image:image>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/wireless-mic.svg</image:loc></image:image>
     <image:image><image:loc>https://onlinepianouniversity.com/images/blog/dr-maria-pisarenko-piano-concert-gown.jpg</image:loc></image:image>
   </url>
   <url><loc>https://onlinepianouniversity.com/shop/music-and-wellbeing.html</loc>
@@ -497,6 +519,12 @@
     <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/sustain-pedal.svg</image:loc></image:image>
     <image:image><image:loc>https://onlinepianouniversity.com/images/blog/dr-maria-pisarenko-piano-concert-gown.jpg</image:loc></image:image>
   </url>
+  <url><loc>https://onlinepianouniversity.com/shop/pianos.html</loc>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/digital-piano-portable.svg</image:loc></image:image>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/digital-piano-console.svg</image:loc></image:image>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/grand-piano.svg</image:loc></image:image>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/blog/dr-maria-pisarenko-piano-concert-gown.jpg</image:loc></image:image>
+  </url>
   <url><loc>https://onlinepianouniversity.com/shop/practice-tools.html</loc>
     <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/metronome.svg</image:loc></image:image>
     <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/page-turner.svg</image:loc></image:image>
@@ -518,6 +546,10 @@
   </url>
   <url><loc>https://onlinepianouniversity.com/shop/speakers-for-keyboards.html</loc>
     <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/studio-speakers.svg</image:loc></image:image>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/blog/dr-maria-pisarenko-piano-concert-gown.jpg</image:loc></image:image>
+  </url>
+  <url><loc>https://onlinepianouniversity.com/shop/stage-pianos.html</loc>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/shop/types/digital-piano-portable.svg</image:loc></image:image>
     <image:image><image:loc>https://onlinepianouniversity.com/images/blog/dr-maria-pisarenko-piano-concert-gown.jpg</image:loc></image:image>
   </url>
   <url><loc>https://onlinepianouniversity.com/shop/stand-lights.html</loc>
