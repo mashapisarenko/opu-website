@@ -55,6 +55,10 @@
     <image:image><image:loc>https://onlinepianouniversity.com/images/letters/steinway-2018-thumb.jpg</image:loc></image:image>
     <image:image><image:loc>https://onlinepianouniversity.com/images/letters/snmas-2013-thumb.jpg</image:loc></image:image>
   </url>
+  <url><loc>https://onlinepianouniversity.com/blog/61-vs-76-vs-88-keys.html</loc>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/blog/lead-at-the-piano.jpg</image:loc></image:image>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/blog/dr-maria-pisarenko-piano-teacher-author.jpg</image:loc></image:image>
+  </url>
   <url><loc>https://onlinepianouniversity.com/blog/80-20-rule-for-piano-practice.html</loc>
     <image:image><image:loc>https://onlinepianouniversity.com/images/blog/lead-at-the-piano.jpg</image:loc></image:image>
     <image:image><image:loc>https://onlinepianouniversity.com/images/blog/dr-maria-pisarenko-piano-teacher-author.jpg</image:loc></image:image>
@@ -193,6 +197,9 @@
   </url>
   <url><loc>https://onlinepianouniversity.com/blog/learning-piano-in-retirement.html</loc>
     <image:image><image:loc>https://onlinepianouniversity.com/images/blog/lead-burgundy-sofa.jpg</image:loc></image:image>
+  </url>
+  <url><loc>https://onlinepianouniversity.com/blog/learning-piano-in-your-20s.html</loc>
+    <image:image><image:loc>https://onlinepianouniversity.com/images/blog/lead-pink-floor.jpg</image:loc></image:image>
   </url>
   <url><loc>https://onlinepianouniversity.com/blog/learning-piano-in-your-30s.html</loc>
     <image:image><image:loc>https://onlinepianouniversity.com/images/blog/lead-seated-black.jpg</image:loc></image:image>
