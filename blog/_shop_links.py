@@ -81,14 +81,23 @@ def apply(t, slug, m=None):
         if e != -1:
             e += len("</p>")
             t = t[:e] + "\n\n" + box + t[e:]
-    # end: replace the shop line of the Keep going box with the same pages
+    # end: put the computed shop pages (marked data-auto) at the top of the closing box's list. Hand-written
+    # shop links already in the list are KEPT (2026-11-14 fix: the first version replaced them), except one that
+    # duplicates a computed page. Idempotent: earlier auto items are removed and rebuilt each run.
     i, j = t.find(MONEY_S), t.find(MONEY_E)
     if i != -1 and j != -1:
         blk = t[i:j]
-        new = "\n".join('    <li><a href="../shop/%s.html">%s</a></li>' % (p, labels[p]) for p in pages)
-        blk2, n = re.subn(r'(?:[ ]*<li><a href="\.\./shop/[a-z0-9-]+\.html">[^<]*</a></li>[ ]*\n?)+', new + "\n", blk, count=1)
-        if n:
-            t = t[:i] + blk2 + t[j:]
+        m = re.search(r'<ul>\n', blk)
+        if m:
+            pos = m.end()
+            head, rest = blk[:pos], blk[pos:]
+            def _drop(mm):
+                if 'data-auto="1"' in mm.group(0):
+                    return ""
+                return "" if mm.group(1) in pages else mm.group(0)
+            rest = re.sub(r'[ ]*<li[^>]*><a href="\.\./shop/([a-z0-9-]+)\.html">[^<]*</a></li>[ ]*\n?', _drop, rest)
+            new = "".join('    <li data-auto="1"><a href="../shop/%s.html">%s</a></li>\n' % (p, labels[p]) for p in pages)
+            t = t[:i] + head + new + rest + t[j:]
     return t
 
 
