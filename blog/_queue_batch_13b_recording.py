@@ -251,7 +251,8 @@ S.append(spec("best-studio-monitors-under-300", "2026-11-27",
  pick("e5pair", "The one I would pick for a pianist who wants to hear the middle of the piano clearly.") + pick("bx4", "For a very small desk.") + pick("bx5bt", "If you also want to stream music.") + """
 <h2>Comparison</h2>""" +
  table(["Type", "Size", "Sold as"], trows(["e5pair", "bx4", "bx5bt"], ["type", "size", "sold"])) + """
-<p>I do not print wattage or frequency range, because I could not open a maker page with those figures on November 14, 2026. Check the listing.</p>
+<!-- Source for the Eris E5 figures, opened 2026-11-16: https://www.presonus.com/products/Eris-E5 -->
+<p>For the PreSonus Eris E5, PreSonus&#39;s own page lists 80 W total (Class AB) and balanced XLR, balanced 1/4-inch TRS and RCA inputs. I do not print wattage or frequency range for the two M-Audio pairs, because I did not open a maker page with those figures; check the listing.</p>
 <h2>How to choose</h2>
 <ul><li>Make sure the listing is for a pair, as these are. Many monitors are sold singly.</li><li>Place them at ear height, forming a triangle with your head.</li><li>If you only use headphones, you do not need monitors: see """ + lk("best-headphones-for-digital-piano", "headphones for digital piano") + """.</li></ul>""" +
  closing([("studio-monitors-for-home-recording", "studio monitors"), ("speakers-for-keyboards", "speakers for keyboards"), ("music-cables-and-power", "cables")]) + trust("listening"),
@@ -390,12 +391,18 @@ S.append(spec("krk-rokit-5-vs-yamaha-hs5", "2026-11-30",
  "Two famous five-inch monitors. I could not verify all their specifications, so here is what I can tell you and how I would choose.",
  meta_line() + """
 <p>For monitoring piano I would choose the Yamaha HS5 if you want the plainest, least flattering sound, and the KRK Rokit 5 G5 if you want the more familiar, bass-forward character it is known for. Both are 5-inch powered monitors. Amazon lists the KRK as a pair and the HS5 as a single speaker or as a matched pair, so check which you are buying.</p>
-<p><strong>A note on data.</strong> On November 14, 2026 I could not open a maker page that listed full specifications for both, so I do not print wattage or frequency ranges. What I say about sound is reputation and what I listen for, not measurement.</p>
+<p><strong>A note on data.</strong> The specifications below come from the makers&#39; own pages, opened on November 16, 2026. Yamaha&#39;s page does not list the HS5&#39;s maximum SPL or weight, so those cells say so. The two makers quote frequency response to different tolerances, so do not read the two figures as a contest. What I say about sound is reputation and what I listen for, not measurement.</p>
 """ + DISC + quick([("Plainest sound", "hs5pair", "a matched pair of 5-inch monitors"),
  ("More familiar bass-forward character", "krk", "a pair of fifth-generation 5-inch powered monitors")], title="Quick verdict") + """
 <h2>What the listings say</h2>""" +
- table(["Yamaha HS5", "KRK Rokit 5 G5"], [["Listing (pair)", "A matched pair of 5-inch monitors", "A pair of fifth-generation 5-inch powered monitors"],
-  ["Listing (single)", "A 5-inch powered monitor is also sold singly", "Listed as a pair"], ["Size", "5-inch", "5-inch"]], first="Item") + """
+ "<!-- Specs sources, opened 2026-11-16: Yamaha HS5 https://usa.yamaha.com/products/proaudio/speakers/hs_series/index.html (HS5 overview); KRK Rokit 5 G5 https://cdn.shopify.com/s/files/1/0566/0809/6342/files/Rokit-5-Generation-Five-Specification-Data-Sheet.pdf (KRK's own data sheet, krkmusic.com) -->" + table(["Yamaha HS5", "KRK Rokit 5 G5"], [["Listing (pair)", "A matched pair of 5-inch monitors", "A pair of fifth-generation 5-inch powered monitors"],
+  ["Listing (single)", "A 5-inch powered monitor is also sold singly", "Listed as a pair"],
+  ["Drivers", "5-inch cone woofer, 1-inch dome tweeter, 2-way bass-reflex", "5-inch woven Kevlar woofer, 1-inch silk-dome tweeter"],
+  ["Amplifier power (per speaker)", "Bi-amplified: 45 W low, 25 W high, 70 W total", "Bi-amplified Class D: 35 W low, 20 W high, 55 W total"],
+  ["Frequency response", "54 Hz to 30 kHz (-10 dB); 74 Hz to 24 kHz (-3 dB)", "54 Hz to 30 kHz (&plusmn;3 dB); 43 Hz to 40 kHz (+3/-10 dB)"],
+  ["Inputs", "XLR and TRS phone jacks, balanced or unbalanced", "Balanced XLR / 1/4-inch TRS combo"],
+  ["Maximum SPL", "Not stated on Yamaha&#39;s page", "104 dB"],
+  ["Weight (each)", "Not stated on Yamaha&#39;s page", "4.95 kg (10.91 lb)"]], first="Item") + """
 <h2>What I listen for in a monitor for piano</h2>
 <ul><li><strong>The middle.</strong> A piano&#39;s melody lives between roughly the middle of the keyboard and the treble; a monitor must keep it clear.</li>
 <li><strong>The bass.</strong> A monitor that flatters the bass makes you play the left hand too softly in your own recordings.</li>
@@ -415,11 +422,18 @@ S.append(spec("yamaha-hs5-vs-presonus-eris-e5", "2026-11-30",
  "Yamaha HS5 or PreSonus Eris E5 for monitoring piano? A concert pianist compares what the listings say, the size, and what to listen for.",
  "Two popular five-inch monitors at different prices. Here is what the listings say and how I would choose.",
  meta_line() + """
-<p>The PreSonus Eris E5 is the better value for most pianists: Amazon lists a pair of 5.25-inch two-way near-field monitors at a lower cost than a pair of Yamaha HS5. The Yamaha HS5 is the one to choose if you want its plain, flat reputation and are willing to pay for it. Neither verdict is a measurement; I could not open a maker page with full specifications on November 14, 2026.</p>
+<p>The PreSonus Eris E5 is the better value for most pianists: Amazon lists a pair of 5.25-inch two-way near-field monitors at a lower cost than a pair of Yamaha HS5. The Yamaha HS5 is the one to choose if you want its plain, flat reputation and are willing to pay for it. Neither verdict is a measurement; the specifications in the table come from the makers&#39; own pages, opened on November 16, 2026.</p>
 """ + DISC + quick([("Better value", "e5pair", "a pair of 5.25-inch two-way near-field monitors"),
  ("Plainer reputation", "hs5pair", "a matched pair of 5-inch monitors")], title="Quick verdict") + """
 <h2>What the listings say</h2>""" +
- table(["Yamaha HS5 (pair)", "PreSonus Eris E5 (pair)"], [["Listing", "A matched pair of 5-inch monitors", "A pair of 5.25-inch two-way near-field monitors"], ["Sold as", "Pair", "Pair"]], first="Item") + """
+ "<!-- Specs sources, opened 2026-11-16: Yamaha HS5 https://usa.yamaha.com/products/proaudio/speakers/hs_series/index.html (HS5 overview); PreSonus Eris E5 https://www.presonus.com/products/Eris-E5 -->" + table(["Yamaha HS5 (pair)", "PreSonus Eris E5 (pair)"], [["Listing", "A matched pair of 5-inch monitors", "A pair of 5.25-inch two-way near-field monitors"], ["Sold as", "Pair", "Pair"],
+  ["Drivers", "5-inch cone woofer, 1-inch dome tweeter, 2-way bass-reflex", "5.25-inch woven-composite woofer, 1-inch silk-dome tweeter"],
+  ["Amplifier power (per speaker)", "Bi-amplified: 45 W low, 25 W high, 70 W total", "80 W total, Class AB"],
+  ["Frequency response", "54 Hz to 30 kHz (-10 dB); 74 Hz to 24 kHz (-3 dB)", "Not stated on PreSonus&#39;s page"],
+  ["Crossover", "Not stated on Yamaha&#39;s page", "3 kHz"],
+  ["Inputs", "XLR and TRS phone jacks, balanced or unbalanced", "Balanced XLR, balanced 1/4-inch TRS, unbalanced RCA, plus a front 1/8-inch stereo input"],
+  ["Peak SPL", "Not stated on Yamaha&#39;s page", "102 dB at 1 m"]], first="Item") + """
+<p>Watts are not loudness and the two makers do not give the same figures, so I would not choose on this table alone; it tells you what each can connect to and how it is built.</p>
 <h2>How I would choose</h2>
 <ul><li>If budget matters, the Eris E5 pair.</li><li>If you want the flattest sound by reputation, the HS5.</li><li>If you can, listen to both with a recording you know well.</li></ul>""" +
  pick("e5pair", "The one I would buy first for a pianist on a budget.") + pick("hs5pair", "The one I would choose for accuracy.") + """
@@ -430,26 +444,27 @@ S.append(spec("yamaha-hs5-vs-presonus-eris-e5", "2026-11-30",
   ("Do I need monitors if I use headphones?", "No. Monitors are for listening without headphones.")]))
 
 # 29 Zoom --------------------------------------------------------------
-zoom_rows = [["Microphones", "Onboard stereo microphones (listing)", "Built-in 90-degree XY stereo microphones", "XYH-5 XY capsule, changeable"],
- ["External inputs", "Not stated on the listing", "Two XLR/TRS combo inputs plus a 3.5 mm input", "Two XLR/TRS combo inputs"],
- ["Phantom power", "Not stated on the listing", "Yes, on the XLR inputs", "Yes, selectable"],
- ["Recording format", "Not stated on the listing", "WAV, 32-bit float, up to 96 kHz", "WAV, 16- or 24-bit, up to 96 kHz"],
- ["Storage", "Not stated on the listing", "microSDHC 4-32 GB, microSDXC 64 GB-1 TB", "SD or SDHC, up to 32 GB"],
- ["Power", "Not stated on the listing", "Two AA batteries, AC adaptor or USB", "Two AA batteries, USB or AC adaptor"],
- ["USB audio interface", "Not stated on the listing", "Yes, USB-C", "Yes"], ["Weight", "Not stated on the listing", "243 g with batteries", "Not stated on Zoom&#39;s page"]]
+zoom_rows = [["Microphones", "Unidirectional condenser, 90-degree XY stereo", "Built-in 90-degree XY stereo microphones", "XYH-5 XY capsule, changeable"],
+ ["External inputs", "One 1/8-inch stereo input (2.5 V plug-in power)", "Two XLR/TRS combo inputs plus a 3.5 mm input", "Two XLR/TRS combo inputs"],
+ ["Phantom power", "No phantom power listed", "Yes, on the XLR inputs", "Yes, selectable"],
+ ["Recording format", "WAV 44.1 or 48 kHz/16-bit, 48 kHz/24-bit, 96 kHz/24-bit; MP3", "WAV, 32-bit float, up to 96 kHz", "WAV, 16- or 24-bit, up to 96 kHz"],
+ ["Storage", "microSD/microSDHC, Class 4 or higher, up to 32 GB", "microSDHC 4-32 GB, microSDXC 64 GB-1 TB", "SD or SDHC, up to 32 GB"],
+ ["Power", "Two AAA batteries, AC adapter or USB", "Two AA batteries, AC adaptor or USB", "Two AA batteries, USB or AC adaptor"],
+ ["USB audio interface", "Yes, 44.1/48 kHz, 16-bit, 2-in/2-out", "Yes, USB-C", "Yes"], ["Weight", "60 g without batteries", "243 g with batteries", "Not stated on Zoom&#39;s page"]]
 S.append(spec("zoom-h1n-vs-h4-essential-vs-h5", "2026-12-01",
  "Zoom H1n vs H4 Essential vs H5: Which Recorder for Piano?",
  "Zoom H1n vs H4 Essential vs H5 for Piano (2026)",
  "Zoom H1n, H4 Essential or H5 for recording piano practice? A concert pianist compares microphones, inputs, recording format and storage from Zoom&#39;s own pages.",
  "Three Zoom handheld recorders for recording your piano. Here is the comparison, and which I would choose.",
  meta_line() + """
-<p>For recording piano practice I would choose the Zoom H4 Essential: Zoom lists built-in XY stereo microphones, XLR inputs and 32-bit float WAV recording. The H1n is the simplest, with onboard stereo microphones. The H5 offers changeable microphone capsules but records at 16- or 24-bit. I did not find a Zoom page with H1n specifications on November 14, 2026, so its column uses the Amazon listing only.</p>
+<p>For recording piano practice I would choose the Zoom H4 Essential: Zoom lists built-in XY stereo microphones, XLR inputs and 32-bit float WAV recording. The H1n is the simplest, with onboard stereo microphones. The H5 offers changeable microphone capsules but records at 16- or 24-bit. Zoom&#39;s own H1n page, which I opened on November 16, 2026, lists WAV recording up to 96 kHz/24-bit, and it also says the H1n has been discontinued, so check that the Amazon listing you choose is new stock.</p>
 """ + DISC + quick([("Best overall", "h4ess", "XY microphones, XLR inputs, 32-bit float"),
  ("Simplest", "h1n", "onboard stereo microphones"),
  ("Most expandable", "h5", "changeable microphone capsules")], title="Quick verdict") + """
 <h2>Specifications</h2>""" +
  table(["Zoom H1n", "Zoom H4 Essential", "Zoom H5"], zoom_rows, first="Specification (as listed)") + """
-<p>Sources: Zoom&#39;s pages for the H4 Essential and the H5, and the Amazon listing for the H1n, opened on November 14, 2026.</p>
+<!-- Specs sources: Zoom H1n https://zoomcorp.com/en/us/handheld-recorders/handheld-recorders/h1n-handy-recorder/ (opened 2026-11-16); H4 Essential and H5 from Zoom's product pages as opened 2026-11-14 -->
+<p>Sources: Zoom&#39;s own pages for the H1n (November 16, 2026), the H4 Essential and the H5 (November 14, 2026).</p>
 <h2>What matters for piano</h2>
 <p>The built-in microphones decide most of the sound; the distance from the piano decides the rest. 32-bit float is a safety net for a take recorded too loud. XLR inputs matter if you later add a pair of microphones: see """ + lk("best-stereo-microphones-for-piano", "the best pair of microphones for piano") + """. For a longer list, read """ + lk("best-handheld-recorder-for-piano-practice", "the best handheld recorder for piano practice") + """.</p>""" +
  pick("h4ess", "My choice for most students.") + pick("h1n", "My choice for the student who wants the simplest.") + pick("h5", "My choice if you will change capsules.") +

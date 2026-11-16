@@ -285,12 +285,12 @@ add("h1ess", "Zoom H1 Essential", "B0CSL4PXDV", "A student who wants the simples
  "you want a plain recorder.", "you want external microphone inputs.",
  dict(type="Handheld recorder", feat="Clip-free recorder (listing)"))
 add("h1n", "Zoom H1n", "B078PTM82R", "A student who wants a handheld stereo recorder with built-in stereo microphones.",
- "The listing says a handheld stereo recorder with onboard stereo microphones.",
+ "The listing says a handheld stereo recorder with onboard stereo microphones. Zoom lists a 90-degree XY condenser pair, WAV recording up to 96 kHz/24-bit, microSD storage up to 32 GB, two AAA batteries, AC adapter or USB power, a USB audio interface and a weight of 60 g without batteries, and its page notes the H1n is discontinued.",
  "Onboard stereo microphones let you record the piano with one device and no cables. Place it about arm&#39;s length from the lid, never on the instrument.",
  ["Onboard stereo microphones", "No cables needed"],
  ["No external microphone inputs listed", "Less capable than the H4 Essential or H5"],
  "you want a simple stereo recording of your practice.", "you want to plug in your own microphones.",
- dict(type="Handheld stereo recorder", feat="Onboard stereo microphones (listing)"))
+ dict(type="Handheld stereo recorder", feat="90-degree XY stereo microphones; WAV up to 96 kHz/24-bit"))
 add("h4ess", "Zoom H4 Essential", "B0CSLDLKZJ", "A student who wants a handheld recorder with external inputs and a safety margin on level.",
  "Zoom lists built-in 90-degree XY stereo microphones, two XLR/TRS combo inputs with phantom power and a 3.5 mm input, WAV recording in 32-bit float at up to 96 kHz, a USB-C audio interface function, 2 AA batteries or USB power, microSD cards, and a weight of 243 g with batteries.",
  "32-bit float recording is designed so that a take recorded too loud or too quiet can be corrected afterward, which is what a beginner needs when a loud chord arrives.",
@@ -364,10 +364,10 @@ add("sm81", "Shure SM81-LC", "B0002D0JHE", "A recordist who wants a single instr
 
 # ---------------- monitors and speakers ----------------
 add("e5pair", "PreSonus Eris E5 (pair)", "B0GT2JFDD1", "A pianist who wants honest two-way monitors for a desk or a small room, bought as a pair.",
- "The listing says a pair of 5.25-inch two-way near-field monitors.",
+ "The listing says a pair of 5.25-inch two-way near-field monitors. PreSonus lists a 5.25-inch woven-composite woofer, a 1-inch silk-dome tweeter, 80 W total Class AB, XLR, TRS and RCA inputs and a 102 dB peak SPL.",
  "A monitor should show you what your playing really sounds like, including the unflattering parts. I listen for a clear middle range, because that is where a piano&#39;s melody lives.",
  ["Sold as a pair", "5.25-inch two-way design"],
- ["The listing gives few specifications", "Needs a place on a desk or stands"],
+ ["Read the full specifications on the maker's page, not just the listing", "Needs a place on a desk or stands"],
  "you want a pair that is simple to set up.", "you will only listen on headphones.",
  dict(type="Pair, two-way near-field", size="5.25-inch", sold="Pair"))
 add("bx4", "M-Audio BX4 (pair)", "B08KXTJX16", "A small desk where a keyboard line out goes to two compact monitors.",
@@ -385,17 +385,17 @@ add("bx5bt", "M-Audio BX5BT (pair)", "B0FZLF2S8G", "Someone who also wants to st
  "you want one pair for practice and for streaming.", "you only want a monitor for your piano.",
  dict(type="Pair, desktop, Bluetooth", size="5-inch", sold="Pair"))
 add("krk", "KRK Rokit 5 G5 (pair)", "B0CYM2RH6W", "A recordist who wants a well-known five-inch pair.",
- "The listing says a pair of fifth-generation 5-inch powered monitors.",
+ "The listing says a pair of fifth-generation 5-inch powered monitors. KRK lists a 5-inch Kevlar woofer, a 1-inch silk-dome tweeter, 55 W bi-amplified, a 54 Hz to 30 kHz response (&plusmn;3 dB), an XLR/TRS combo input and a 104 dB maximum SPL.",
  "KRK has a recognizable, bass-forward reputation; I would listen for whether it flatters the piano more than it should.",
  ["Sold as a pair", "Fifth generation"],
- ["The listing gives few specifications", "Higher cost than the Eris pair"],
+ ["Read the full specifications on the maker's page, not just the listing", "Higher cost than the Eris pair"],
  "you want a known name.", "you want the lowest cost.",
  dict(type="Pair, powered", size="5-inch", sold="Pair"))
 add("hs5pair", "Yamaha HS5 (pair)", "B075Q5T7Q1", "A recordist who wants Yamaha&#39;s plain, honest monitors as a matched pair.",
- "The listing says a matched pair of 5-inch monitors.",
+ "The listing says a matched pair of 5-inch monitors. Yamaha lists a 5-inch cone woofer, a 1-inch dome tweeter, 70 W bi-amplified (45 W low, 25 W high), a 54 Hz to 30 kHz response (-10 dB) and XLR and TRS inputs.",
  "The HS series has a reputation for a flat, unflattering response, which is what a teacher wants to hear.",
  ["Matched pair", "Plain, flat reputation"],
- ["The listing gives few specifications", "Higher cost than the Eris pair"],
+ ["Read the full specifications on the maker's page, not just the listing", "Higher cost than the Eris pair"],
  "you want accuracy over flattery.", "you want the lowest cost.",
  dict(type="Pair, powered", size="5-inch", sold="Pair"))
 add("hs5", "Yamaha HS5 (single)", "B00CFOX420", "A recordist who wants to buy one HS5 at a time.",
