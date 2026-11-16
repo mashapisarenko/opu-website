@@ -11,7 +11,7 @@ here: every word of an article is written and checked before it is queued.
 Run by .github/workflows/publish-blog.yml once a day.  Safe to run any number
 of times: a post already published is simply no longer in the manifest.
 """
-import sys
+import sys, subprocess
 import json, re, sys, datetime, shutil, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent   # opu-website/
