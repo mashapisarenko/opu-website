@@ -235,6 +235,17 @@ RELATED = {
  "yamaha-hs5-vs-presonus-eris-e5": ["krk-rokit-5-vs-yamaha-hs5", "best-studio-monitors-under-300", "best-headphones-for-digital-piano"],
  "zoom-h1n-vs-h4-essential-vs-h5": ["best-handheld-recorder-for-piano-practice", "practicing-with-a-recording", "best-stereo-microphones-for-piano"],
  "best-bookshelf-speakers-for-classical-music": ["best-studio-monitors-under-300", "a-holiday-listening-list-ten-piano-pieces", "how-to-listen-to-a-piano-recital"],
+ # --- added 2026-11-16: buyer batch 14, 30 Jan - 8 Feb 2027 ---
+ "do-i-need-an-audio-interface-for-a-digital-piano": ["best-audio-interface-for-beginners", "how-to-connect-a-digital-piano-to-a-computer", "practicing-with-a-recording"],
+ "how-to-record-an-acoustic-piano-with-two-microphones": ["best-stereo-microphones-for-piano", "home-recording-corner-on-a-budget", "best-microphone-for-recording-piano-at-home"],
+ "how-to-record-a-digital-piano-without-a-microphone": ["do-i-need-an-audio-interface-for-a-digital-piano", "practicing-with-a-recording", "how-to-connect-a-digital-piano-to-a-computer"],
+ "how-to-use-a-midi-keyboard-with-a-laptop-or-ipad": ["best-88-key-weighted-midi-controller", "weighted-vs-semi-weighted-keys", "how-to-connect-a-digital-piano-to-a-computer"],
+ "best-closed-back-headphones-for-piano-practice": ["best-headphones-for-digital-piano", "practicing-piano-in-an-apartment", "best-digital-piano-for-adult-beginners"],
+ "best-music-gifts-under-100-for-pianists": ["best-birthday-gifts-for-a-pianist", "best-closed-back-headphones-for-piano-practice", "gifts-for-adult-piano-beginners"],
+ "airturn-bt500s-2-vs-pageflip-dragonfly": ["best-page-turner-pedal-for-ipad", "best-tablet-for-sheet-music", "how-to-start-sight-reading"],
+ "audient-evo-4-vs-focusrite-scarlett-solo": ["best-audio-interface-for-beginners", "focusrite-scarlett-solo-vs-2i2", "do-i-need-an-audio-interface-for-a-digital-piano"],
+ "casio-cdp-s360-review": ["best-digital-piano-for-adult-beginners", "weighted-vs-semi-weighted-keys", "best-portable-digital-piano"],
+ "best-digital-piano-for-adult-beginners-in-australia": ["best-digital-pianos-for-adult-beginners-in-the-uk", "best-digital-pianos-for-adult-beginners-in-canada", "weighted-vs-semi-weighted-keys"],
 }
 
 ANCHOR = '<aside class="card" style="display:flex;gap:16px;align-items:center;margin:34px 0 0;padding:18px 20px">'

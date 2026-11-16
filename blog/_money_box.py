@@ -30,14 +30,15 @@ def pick(slug, title):
     return DEFAULT
 
 
-def box(slug, title):
+def box(slug, title, date=None):
     page, label = pick(slug, title)
+    # The price-increase notice expires with 2026: an article dated 2027 or later must not say "buy by December 31".
+    note = "" if (date or "") >= "2027-01-01" else ("<br>Lesson prices increase January 1, 2027 &mdash; buy by December 31 to keep 2026 prices.")
     return (
         START + "\n"
         '<aside class="opu-money" aria-label="Keep going">\n'
         '  <p class="eyebrow">Keep going</p>\n'
-        '  <p class="opu-money-lead"><a href="../gift-certificate.html">Give the gift of music: online piano lessons with Dr. Maria Pisarenko</a><br>'
-        'Lesson prices increase January 1, 2027 &mdash; buy by December 31 to keep 2026 prices.</p>\n'
+        '  <p class="opu-money-lead"><a href="../gift-certificate.html">Give the gift of music: online piano lessons with Dr. Maria Pisarenko</a>' + note + '</p>\n'
         '  <ul>\n'
         '    <li><a href="../shop/%s.html">%s</a></li>\n'
         '    <li><a href="../lessons.html">Private online lessons</a></li>\n'
@@ -50,9 +51,9 @@ ANCHORS = ("<!-- read-next -->", "<!-- read-next: nothing live",
            "    </article>", "</article>")
 
 
-def apply(t, slug, title):
+def apply(t, slug, title, date=None):
     t = re.sub(re.escape(START) + r".*?" + re.escape(END) + r"\n?", "", t, flags=re.S)
-    b = box(slug, title)
+    b = box(slug, title, date)
     for a in ANCHORS:
         if a in t:
             return t.replace(a, b + "\n" + a, 1) if not a.startswith("    ") else t.replace(a, b + "\n" + a, 1)
