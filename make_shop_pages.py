@@ -16,6 +16,8 @@ import json, html, re, sys, pathlib, importlib.util, collections
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
+sys.path.insert(0, str(HERE / "blog"))
+import _eeat  # E-E-A-T box and Person JSON-LD, shared with the blog (2026-11-20)
 import shop_content as C, shop_notes as N, shop_depth as D, shop_illus as SI
 from shop_text import ARTICLE, GUIDES, HUB
 import shop_seo as S
@@ -307,8 +309,63 @@ def shop_nav(slug):
     lis = "".join('<li><a href="%s.html"%s>%s</a></li>' % (s, ' aria-current="page"' if s == slug else "", esc(t)) for s, t in NAV)
     return '<nav class="shop-nav" aria-label="Shop departments"><div class="wrap"><ul>%s</ul></div></nav>' % lis
 
+# ---- 2026-11-20 SEO layer: freshness, one lite video per big department, page-level author schema ----
+UPDATED_ISO = "2026-11-20"
+FRESH = {  # gift/guide pages: "2026" in the title (<= 60 chars, unique) and a visible Updated line
+    "gifts-for-pianists": "Gifts for Pianists 2026: Piano Gifts by Budget",
+    "christmas-gifts-for-pianists": "Christmas Gifts for Pianists 2026 | Plus Hanukkah Ideas",
+    "gifts-for-adult-beginners": "Gifts for Adult Piano Beginners 2026: What They Need",
+    "luxury-gifts-for-pianists": "Luxury Gifts for Pianists 2026 and Music Lovers",
+    "stocking-stuffers-for-musicians": "Stocking Stuffers for Musicians and Pianists 2026",
+    "gifts-for-music-lovers": "Gifts for Music Lovers 2026: Music Gifts for Adults",
+    "gifts-for-piano-teachers": "Gifts for Music Teachers and Piano Teachers 2026",
+    "which-digital-piano-to-buy": "Which Digital Piano to Buy in 2026: Adult Beginner Guide",
+}
+# Only videos already published on this site (alfred-adult-all-in-one-book-1.html, about.html, sitemap-video.xml).
+VIDEOS = {
+    "pianos": ("AzU01rYWHK8", "Warm-Up, Posture & Finding the Keys: Adult Beginner Piano Lesson 1",
+               "Warm up your hands, sit with correct posture, curve your fingers, number your fingers, read the black-key groups and find every white key (A-G).",
+               "2026-07-06", "PT21M36S", "Before you choose a piano, watch how I teach sitting and finding the keys: this is what any instrument has to support."),
+    "digital-pianos": ("7hBX4TPSqUs", "The D7 Chord & How to Use the Damper (Sustain) Pedal",
+               "The D7 chord and its inversions, the G and D7 chords as block and broken chords, and correct damper-pedal technique.",
+               "2026-07-06", "PT21M2S", "A digital piano needs a real sustain pedal. Here is how I teach the damper pedal in my free course."),
+    "keyboards": ("3FZpHl5RXjc", "Middle C Position on Piano: Where to Put Both Hands",
+               "Setting your left hand (finger 5 on F) and right hand (thumb on middle C) around middle C, with a warm-up in the new position.",
+               "2026-07-06", "PT4M26S", "On any keyboard, a beginner finds the hands the same way. A short lesson from my free course."),
+    "headphones-for-piano": ("OjTvSTq52b0", "Crescendo & Diminuendo on Piano: Dynamics for Adult Beginners",
+               "Reviewing p, mf and f, then crescendo and diminuendo, shaping a phrase, and a song in 3/4 in Middle C Position.",
+               "2026-07-06", "PT7M53S", "Good headphones let you hear soft and loud. Here is how I teach dynamics, the thing headphones help you listen for."),
+    "microphones-and-audio-interfaces": ("rQi6kZEEu2U", "Solo Piano Recital, Southern Utah University - Dr. Maria Pisarenko",
+               "A full solo piano recital by concert pianist Dr. Maria Pisarenko, DMA, at Southern Utah University.",
+               "2026-08-26", None, "A recital recording of mine: the sound you are trying to capture when you record a piano at home."),
+    "gifts-for-pianists": ("3ZXkzkgqb2Y", "Grieg: Piano Concerto in A minor, live with orchestra - Dr. Maria Pisarenko",
+               "Concert pianist Dr. Maria Pisarenko, DMA, performs Grieg's Piano Concerto in A minor live with orchestra.",
+               "2026-08-26", None, "The pianist behind these gift picks, playing Grieg's Piano Concerto live with orchestra."),
+}
+
+def video_block(slug):
+    v = VIDEOS.get(slug)
+    if not v: return "", None
+    vid, name, desc, up, dur, lead = v
+    thumb = "https://i.ytimg.com/vi/%s/hqdefault.jpg" % vid
+    html_ = ('<section class="shop-section"><div class="wrap"><div class="opu-video"><h2>Watch: %s</h2><p class="muted">%s</p>'
+             '<a class="opu-yt" href="https://www.youtube.com/watch?v=%s" data-yt="%s" aria-label="Play video: %s">'
+             '<img src="%s" width="480" height="360" loading="lazy" decoding="async" alt="Video thumbnail: %s"><span class="opu-yt-play" aria-hidden="true">&#9654;</span></a></div></div></section>'
+             % (esc(name), esc(lead), vid, vid, attr(name), thumb, attr(name)))
+    ld = {"@context": "https://schema.org", "@type": "VideoObject", "name": name, "description": desc, "thumbnailUrl": thumb,
+          "uploadDate": up, "embedUrl": "https://www.youtube-nocookie.com/embed/" + vid, "url": "https://www.youtube.com/watch?v=" + vid,
+          "inLanguage": "en"}
+    if dur: ld["duration"] = dur
+    return html_, ld
+
+def webpage_ld(slug, title, desc):
+    return {"@context": "https://schema.org", "@type": "WebPage", "name": title, "description": desc,
+            "url": "%s/shop/%s.html" % (SITE, slug), "dateModified": UPDATED_ISO,
+            "author": dict(_eeat.PERSON), "reviewedBy": dict(_eeat.PERSON)}
+
 def page(slug, title, desc, h1, eyebrow, sub, body, lds, crumb, canon=None):
     N.SEEN.clear(); SEEN_FOR.clear(); PAGE_TEXT.clear()
+    title = FRESH.get(slug, title)
     assert len(title) <= 60, (slug, len(title), title)
     assert 110 <= len(desc) <= 155, (slug, len(desc), desc)
     canon = canon or "%s/shop/%s.html" % (SITE, slug)
@@ -321,16 +378,19 @@ def page(slug, title, desc, h1, eyebrow, sub, body, lds, crumb, canon=None):
           % (attr(title), attr(desc), canon, attr(title), attr(desc), canon, SITE, attr(title), attr(desc), SITE))
     cl = '<link rel="canonical" href="%s">\n' % canon
     og = og.replace(cl, cl + '<link rel="alternate" hreflang="en" href="%s">\n<link rel="alternate" hreflang="x-default" href="%s">\n' % (canon, canon), 1)
+    vid_html, vid_ld = video_block(slug)
+    lds = list(lds) + [webpage_ld(slug, title, desc)] + ([vid_ld] if vid_ld else [])
     ld = "\n".join('<script type="application/ld+json">%s</script>' % jd(o) for o in lds)
     crumbs = '<p class="shop-crumb"><a href="../index.html">Home</a> / %s</p>' % crumb
     hero = ('<section class="pagehero"><div class="wrap">%s<span class="eyebrow" style="color:var(--gold)">%s</span><h1>%s</h1>'
             '<p class="sub">%s</p><p class="aff-note" role="note"><strong>Affiliate disclosure.</strong> %s</p>%s'
-            '<p class="illus-note">%s</p></div></section>'
-            % (crumbs, esc(eyebrow), esc(h1), sub, DISC, intl_note(), ILLUS_NOTE))
+            '<p class="illus-note">%s</p>%s</div></section>'
+            % (crumbs, esc(eyebrow), esc(h1), sub, DISC, intl_note(), ILLUS_NOTE,
+               '<p class="updated-line">Updated <time datetime="2026-11">November 2026</time></p>' if slug in FRESH else ''))
     mid = BLOCKS["mid"]
     return (HEAD_PRE + og + HEAD_MID + ld + "\n</head>\n<body class=\"shop-page\">\n\n" + HEADER + "\n" + BLOCKS["top"] + hero + "\n" + BANNER + "\n" +
-            shop_nav(slug) + "\n" +
-            body + "\n" + mid + "\n" + CAPTURE + "\n" + BLOCKS["ages"] + "\n" + BLOCKS["bottom"] + "\n" + cb.SCRIPT + "\n" + FOOTER +
+            shop_nav(slug) + "\n" + '<div class="wrap">' + _eeat.BOX + '</div>' + "\n" +
+            body + "\n" + vid_html + mid + "\n" + CAPTURE + "\n" + BLOCKS["ages"] + "\n" + BLOCKS["bottom"] + "\n" + cb.SCRIPT + "\n" + FOOTER +
             "\n\n" + SCRIPTS + "\n</body>\n</html>\n")
 
 def section(inner, narrow=False):
