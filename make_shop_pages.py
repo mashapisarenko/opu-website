@@ -87,6 +87,8 @@ for _k, _v in P.BLOG_MORE.items():
 P.ARTICLE_PATCH(ARTICLE)
 import shop_tech as TECH
 TECH.apply(C, GUIDES, HUB, ARTICLE, D, S, N, SI)
+import shop_striking as ST  # 2026-11-20 striking-distance layer
+ST.apply(C.PAGES, GUIDES)
 
 def url(p): return "https://www.amazon.com/dp/%s?tag=%s" % (p["asin"], TAG)
 
@@ -318,7 +320,7 @@ FRESH = {  # gift/guide pages: "2026" in the title (<= 60 chars, unique) and a v
     "luxury-gifts-for-pianists": "Luxury Gifts for Pianists 2026 and Music Lovers",
     "stocking-stuffers-for-musicians": "Stocking Stuffers for Musicians and Pianists 2026",
     "gifts-for-music-lovers": "Gifts for Music Lovers 2026: Music Gifts for Adults",
-    "gifts-for-piano-teachers": "Gifts for Music Teachers and Piano Teachers 2026",
+    "gifts-for-piano-teachers": "Piano Teacher Gifts 2026: Music Teacher Gift Ideas",
     "which-digital-piano-to-buy": "Which Digital Piano to Buy in 2026: Adult Beginner Guide",
 }
 # Only videos already published on this site (alfred-adult-all-in-one-book-1.html, about.html, sitemap-video.xml).
@@ -441,6 +443,7 @@ def build_category(pg):
     if links:
         morelinks = '<p class="shop-links">' + " ".join('<a class="btn dark" href="%s">%s</a>' % (h, esc(t)) for h, t in links) + "</p>"
     body = section(
+        ST.quick_box(slug) +
         head_block(slug, top3_html(prods, slug)) +
         '<div class="shop-prose"><p class="lead">%s</p></div>' % esc(pg["intro"]) +
         '<div class="howbox"><h2>Why trust a concert pianist&#39;s picks?</h2><p style="margin:0">%s</p></div>' % esc(why) +
@@ -450,7 +453,7 @@ def build_category(pg):
         tiers_html(prods, slug) +
         (('<div class="shop-prose">%s</div>' % D.DEPTH[slug]) if slug in D.DEPTH else "") +
         '<h2 style="margin-top:40px">%s</h2><div class="shop-faq">%s</div>%s' % (esc(faqq), faq_html(pg["faqs"]), morelinks) +
-        read_next(slug) +
+        ST.see_also(slug) + read_next(slug) +
         '<h2 style="margin-top:40px">What else might you need?</h2>' + related_html(pg["related"]) +
         OPU_PATH + AUTHOR)
     lds = [item_list_ld(prods, pg["h1"]), faq_ld(pg["faqs"]), crumb_ld(pg["label"], slug)]
@@ -504,6 +507,7 @@ def build_guide(slug):
     inner, total = guide_sections(sections, slug)
     assert len(total) >= 6, (slug, "thin page", len(total))
     body = section(
+        ST.quick_box(slug) +
         head_block(slug, top3_html(None, slug, [(sec[0], sec[2][0]) for sec in sections if sec[2]][:3])) +
         '<div class="shop-prose">%s</div>' % g["intro_html"] +
         (GIFT_CARD if g.get("gift_card") else "") +
@@ -511,7 +515,7 @@ def build_guide(slug):
                                                                            esc(D.WHY_GIFT if g.get("gift", True) else D.WHY)) +
         '<h2 style="margin-top:40px">%s</h2>' % esc(g["q_pick"]) + inner +
         '<h2 style="margin-top:40px">%s</h2><div class="shop-faq">%s</div>' % (esc(g["q_faq"]), faq_html(g["faqs"])) +
-        read_next(slug) +
+        ST.see_also(slug) + read_next(slug) +
         '<h2 style="margin-top:40px">What else might you like?</h2>' + related_html(g["related"]) + OPU_PATH + AUTHOR)
     lds = [item_list_ld(total, g["h1"]), faq_ld(g["faqs"]), crumb_ld(g["label"], slug)]
     html_ = page(slug, g["title"], g["desc"], g["h1"], g["eyebrow"], esc(g["answer"]), body, lds, '<a href="index.html">Shop</a> / %s' % esc(g["label"]))
