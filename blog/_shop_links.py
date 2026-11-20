@@ -11,7 +11,9 @@ page the article is really about. Idempotent: rerunning replaces, never duplicat
 Run:  python3 blog/_shop_links.py   (from opu-website/; make_shop_pages.py does this automatically)
 _make_post.py calls apply() for every new post, so future articles get it for free.
 """
-import json, pathlib, re
+import json, pathlib, re, sys
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import _eeat
 
 HERE = pathlib.Path(__file__).resolve().parent
 MAPF = HERE / "_shop_map.json"
@@ -71,7 +73,7 @@ def apply(t, slug, m=None):
     pages = pages_for(t, slug, m)
     t = re.sub(r"\n*" + re.escape(TOP_S) + r".*?" + re.escape(TOP_E) + r"\n*", "\n\n", t, flags=re.S)
     if not pages:
-        return t
+        return _eeat.strip(t)
     # top: after the first paragraph of the article
     box = (TOP_S + '\n<aside class="opu-shoptop" aria-label="Shop picks for this topic"><p><strong>Shopping for this?</strong> '
            'My picks, chosen by a concert pianist: ' + " and ".join(_link(p, labels) for p in pages) + '.</p></aside>\n' + TOP_E + "\n")
@@ -98,7 +100,7 @@ def apply(t, slug, m=None):
             rest = re.sub(r'[ ]*<li[^>]*><a href="\.\./shop/([a-z0-9-]+)\.html">[^<]*</a></li>[ ]*\n?', _drop, rest)
             new = "".join('    <li data-auto="1"><a href="../shop/%s.html">%s</a></li>\n' % (p, labels[p]) for p in pages)
             t = t[:i] + head + new + rest + t[j:]
-    return t
+    return _eeat.blogposting(_eeat.apply(t))  # E-E-A-T box + Person JSON-LD, 2026-11-20
 
 
 def main():
