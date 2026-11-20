@@ -10,11 +10,11 @@ OVR = {
   title="Sustain Pedal for Digital Piano: Budget to Pro Picks",
   desc="Best sustain pedals for digital pianos and keyboards, budget to pro, chosen by a concert pianist: piano-style, universal and half-pedal.",
   h1="Best Sustain Pedal for Digital Piano: Budget to Pro Picks",
-  answer="The best sustain pedal for a digital piano is a piano-style pedal that suits your instrument: it moves and returns like a real one, fits your jack and, if your piano allows, gives half-pedal control. Every pedal below was listed well under $500 when I last checked.",
-  quick=("A sustain pedal is one of the cheapest upgrades you can make, so a sustain pedal under $500 is easy to find: every pedal on this page was listed well under that figure when I checked (prices change, so look on Amazon). "
+  answer="The best sustain pedal for a digital piano is a piano-style pedal that suits your instrument: it moves and returns like a real one, fits your jack and, if your piano allows, gives half-pedal control. A good pedal is one of the most affordable upgrades a pianist can make.",
+  quick=("A sustain pedal is one of the cheapest upgrades you can make, so you will not need a big budget: the pedals on this page are modest purchases (check today's price on Amazon). "
          "Choose a piano-style pedal made for your brand or marked universal, read your manual for the jack and polarity, and move up to a three-pedal unit only if your piano is built to take one."),
   faqs=[("What is the best sustain pedal under $500?",
-         "You do not need to spend anywhere near that. The pedals on this page were all listed well under $500 when I last checked, and the one that matters most is the one shaped like a piano pedal and made for your keyboard. Prices change, so check Amazon."),
+         "You do not need a large budget for a sustain pedal. The one that matters most is the one shaped like a piano pedal and made for your keyboard. Prices change, so check Amazon."),
         ("What is the difference between a sustain pedal and a footswitch?",
          "A footswitch is a small on-off button. A piano-style sustain pedal is shaped and weighted like a real piano pedal, so your foot learns the right movement from the start."),
         ("Why does my sustain pedal work backwards?",
@@ -26,8 +26,8 @@ OVR = {
   title="Best Music Stands for Piano and Home Practice",
   desc="Best music stands for piano practice and lessons, chosen by a concert pianist: sturdy Manhasset, folding and tablet stands for every budget.",
   h1="Best Music Stands for Piano Practice and Lessons",
-  answer="The best music stand for piano practice holds the page steady at eye level: a Manhasset-style desk stand for a permanent corner, a folding stand for small spaces and lessons away from home. Every stand below was listed well under $500 when I last checked.",
-  quick=("Whether you need the best music stand under $500 or under $1,000, the answer is the same: a solid desk and a steady base matter far more than a high price, and every stand on this page was listed well under $500 when I checked. "
+  answer="The best music stand for piano practice holds the page steady at eye level: a Manhasset-style desk stand for a permanent corner, a folding stand for small spaces and lessons away from home. A good stand is a modest purchase that lasts for years.",
+  quick=("Whether you need the best music stand under $500 or under $1,000, the answer is the same: a solid desk and a steady base matter far more than a high price. "
          "For a desk or study corner, choose a sturdy stand that adjusts to eye level. For travel and lessons, choose one that folds flat. For a tablet score, choose a stand made to hold one."),
   faqs=[("What is the best music stand under $500?",
          "A solid-desk orchestral stand such as the Manhasset models on this page is built to last and sits well under that figure. A folding wire stand is lighter and cheaper if you carry it around. Prices change, so check Amazon."),
