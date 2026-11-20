@@ -93,7 +93,9 @@ RELATED = {
  "how-to-tell-if-you-are-actually-improving": ["piano-plateau-month-four", "how-long-to-learn-piano-adult", "why-adult-beginners-quit-piano"],
  "what-a-piano-teacher-hears-that-you-do-not": ["right-notes-still-sounds-wrong", "what-playing-musically-actually-means", "how-to-choose-a-piano-teacher"],
  "you-got-a-keyboard-now-what": ["what-piano-or-keyboard-should-i-buy-to-start", "piano-bench-height-posture", "how-many-keys-do-i-need-piano"],
- "piano-goals-for-the-new-year-that-you-will-keep": ["how-long-to-learn-piano-adult", "practicing-piano-when-you-have-no-time", "why-adult-beginners-quit-piano"],
+ "piano-goals-for-the-new-year-that-you-will-keep": ["how-long-to-learn-piano-adult", "practicing-piano-when-you-have-no-time", "why-adult-beginners-quit-piano", "learn-piano-in-2027-what-you-need-to-start"],
+ # --- added 2026-11-20: New Year 2027 buyer article (dated 2026-12-26; live targets only) ---
+ "learn-piano-in-2027-what-you-need-to-start": ["how-long-to-practice-piano-each-day", "is-it-too-late-to-learn-piano-at-40-50-60", "digital-piano-vs-acoustic-beginner"],
  "what-the-first-year-of-piano-actually-looks-like": ["how-long-to-learn-piano-adult", "piano-plateau-month-four", "run-your-own-piano-lesson"],
  # --- added 2026-09-21: the November queue and the two December articles ---
  "why-your-hands-will-not-do-two-things-at-once": ["how-to-practice-a-piece-you-cannot-play-yet", "why-count-out-loud-piano", "the-left-hand-is-not-the-weak-hand"],

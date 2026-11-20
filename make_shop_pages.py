@@ -89,6 +89,8 @@ import shop_tech as TECH
 TECH.apply(C, GUIDES, HUB, ARTICLE, D, S, N, SI)
 import shop_striking as ST  # 2026-11-20 striking-distance layer
 ST.apply(C.PAGES, GUIDES)
+import shop_2027 as Y27  # 2026-11-20 New Year 2027 landing page
+S.BLOG[Y27.SLUG] = list(Y27.LINKED_ARTICLES)
 
 def url(p): return "https://www.amazon.com/dp/%s?tag=%s" % (p["asin"], TAG)
 
@@ -281,7 +283,7 @@ def xmas_pair(slug):
             '<p style="margin:0;font-size:.95rem">Lesson prices increase January 1, 2027; gift certificates bought by December 31 keep today&#39;s price.</p></section>')
 
 def head_block(slug, top):
-    return xmas_lead(slug) + top + xmas_pair(slug) + guide_callout(slug) + pair_strip(slug) + cross_sell(slug)
+    return xmas_lead(slug) + top + xmas_pair(slug) + Y27.strip(slug) + guide_callout(slug) + pair_strip(slug) + cross_sell(slug)
 
 OPU_PATH = """<section class="shop-cta"><h2>Would you rather learn than buy more gear?</h2>
 <p>The shop exists to support your learning. The learning itself can start free: all 41 lessons of my beginner course are published, and I give feedback on your playing at no charge. When you want a teacher, I take private students online. I am also preparing a method book series for adults who learn alone.</p>
@@ -305,7 +307,7 @@ NAV = [("index", "Shop home"), ("pianos", "Pianos"), ("digital-pianos", "Digital
        ("music-stands", "Music stands"), ("metronomes-and-tuners", "Metronomes"), ("stand-lights", "Piano lamps"),
        ("piano-books-and-sheet-music", "Books"),
        ("audio-interfaces-for-home-recording", "Interfaces"), ("studio-monitors-for-home-recording", "Studio monitors"), ("midi-keyboard-controllers", "MIDI keyboards"), ("ipad-music-stands-and-page-turners", "Tablet stands"), ("record-yourself-playing", "Recording"), ("music-home-decor", "Decor"),
-       ("gifts-for-pianists", "Gifts"), ("christmas-gifts-for-pianists", "Christmas")]
+       ("gifts-for-pianists", "Gifts"), ("christmas-gifts-for-pianists", "Christmas"), ("start-piano-in-2027", "Start in 2027")]
 
 def shop_nav(slug):
     lis = "".join('<li><a href="%s.html"%s>%s</a></li>' % (s, ' aria-current="page"' if s == slug else "", esc(t)) for s, t in NAV)
@@ -322,6 +324,7 @@ FRESH = {  # gift/guide pages: "2026" in the title (<= 60 chars, unique) and a v
     "gifts-for-music-lovers": "Gifts for Music Lovers 2026: Music Gifts for Adults",
     "gifts-for-piano-teachers": "Piano Teacher Gifts 2026: Music Teacher Gift Ideas",
     "which-digital-piano-to-buy": "Which Digital Piano to Buy in 2026: Adult Beginner Guide",
+    "start-piano-in-2027": "Start Piano in 2027: The Keyboard and Lessons You Need",
 }
 # Only videos already published on this site (alfred-adult-all-in-one-book-1.html, about.html, sitemap-video.xml).
 VIDEOS = {
@@ -566,7 +569,8 @@ HOLIDAY = [("🎄", "Christmas gifts for pianists", "christmas-gifts-for-pianist
            ("🧦", "Stocking stuffers for musicians", "stocking-stuffers-for-musicians.html"),
            ("🎶", "Gifts for music lovers", "gifts-for-music-lovers.html"),
            ("🍎", "Gifts for music teachers", "gifts-for-piano-teachers.html"),
-           ("🎹", "Gifts for adult beginners", "gifts-for-adult-beginners.html")]
+           ("🎹", "Gifts for adult beginners", "gifts-for-adult-beginners.html"),
+           ("🎆", "Start piano in 2027", "start-piano-in-2027.html")]
 
 HUB_FAQS = [("Is this an online piano store?", "Yes, a curated one: it is my store of recommendations. You browse here, and every purchase happens on Amazon, which sells, ships and handles returns. I choose each item as a concert pianist who teaches adults."),
             ("What should an adult beginner buy first?", "An 88-key digital piano with weighted keys, a sustain pedal, an adjustable bench and a pair of closed-back headphones. Nothing else is needed to start."),
@@ -586,6 +590,7 @@ def build_hub():
     cats += "".join(catcard(pg["slug"], pg["icon"], pg["label"], pg["blurb"]) for pg in cat_pages)
     guides = "".join(catcard(k, v.get("icon", "🎁"), v["label"], v["blurb"]) for k, v in gift_guides)
     guides += catcard("which-digital-piano-to-buy", "🎹", "Which Digital Piano to Buy", "A long guide for adult beginners.")
+    guides += catcard("start-piano-in-2027", "🎆", "Start Piano in 2027", "A first-month plan, what to buy first and lessons.")
     needs = "".join('<a class="needcard" href="%s.html"><img src="../images/shop/types/%s.svg" width="600" height="450" loading="lazy" decoding="async" '
                     'alt="Illustration for %s: %s"><h3>%s</h3><p>%s</p></a>'
                     % (s, ty, attr(lab.lower()), attr(TYPES_ALT(ty)), esc(lab), esc(bl)) for lab, s, ty, bl in NEEDS)
@@ -606,7 +611,7 @@ def build_hub():
     body = (section(xmas_lead("index") + '<div class="shop-prose"><p class="lead">%s</p></div>' % esc(h["intro"]) + P.START_HERE +
                     '<h2 style="margin-top:30px">What do you need today?</h2><p class="muted">Shop by need: start with the problem you want to solve.</p>' +
                     '<div class="needgrid">%s</div>' % needs +
-                    GIFT_CARD + xmas_pair("index") +
+                    GIFT_CARD + xmas_pair("index") + Y27.strip("index") +
                     '<div class="holiday-strip"><h2>Which holiday gift should you give a musician?</h2>'
                     '<p>Christmas, Hanukkah and small gifts for the stocking, chosen by a concert pianist.</p><div class="holrow">%s</div></div>' % hol) +
             section('<h2>Which department are you shopping for?</h2><p class="muted">Each page starts with the question a buyer asks and ends with a way into the lessons.</p>'
@@ -630,7 +635,7 @@ def build_hub():
             "isPartOf": {"@type": "WebSite", "name": "Online Piano University", "url": SITE + "/"},
             "publisher": {"@type": "Organization", "name": "Online Piano University", "url": SITE + "/"}}
     allpages = [(k, v["label"]) for k, v in cat_guides] + [(pg["slug"], pg["label"]) for pg in cat_pages] + [(pg["slug"], pg["label"]) for pg in tech_pages] + [(k, v["label"]) for k, v in gift_guides] + \
-               [("which-digital-piano-to-buy", "Which Digital Piano to Buy")]
+               [("which-digital-piano-to-buy", "Which Digital Piano to Buy"), ("start-piano-in-2027", "Start Piano in 2027")]
     il = {"@context": "https://schema.org", "@type": "ItemList", "name": "Online piano store departments",
           "itemListElement": [{"@type": "ListItem", "position": k + 1, "name": lab, "url": "%s/shop/%s.html" % (SITE, s)}
                               for k, (s, lab) in enumerate(allpages)]}
@@ -670,6 +675,7 @@ def main():
     for pg in C.PAGES: build_category(pg)
     for s in GUIDES: build_guide(s)
     build_article()
+    Y27.build(globals())
     for r in REPORT: print("%-38s %3d  %2d | %-55s %3d | %s" % (r[0], r[3], len(r[1]), r[1], len(r[2]), r[2]))
     t = [r[1] for r in REPORT]; d = [r[2] for r in REPORT]
     assert len(set(t)) == len(t), "duplicate titles"
@@ -679,7 +685,7 @@ def write_blog_map():
     """Tell the blog which shop page an article should send buyers to (inverse of S.BLOG) and what each page is called, then re-apply."""
     labels = {pg["slug"]: pg["label"] for pg in C.PAGES}
     labels.update({k: v["label"] for k, v in GUIDES.items()})
-    labels["pianos"] = "Pianos"; labels["which-digital-piano-to-buy"] = "Which digital piano to buy"
+    labels["pianos"] = "Pianos"; labels["which-digital-piano-to-buy"] = "Which digital piano to buy"; labels["start-piano-in-2027"] = "Start piano in 2027"
     inv = {}
     for page, arts in S.BLOG.items():
         for a in arts: inv.setdefault(a, []).append(page)
