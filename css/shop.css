@@ -116,3 +116,7 @@
 .paircard strong{display:block;margin-bottom:4px}
 .paircard span{font-size:.86rem;color:var(--muted)}
 .shop-cta.cross{margin:26px 0 10px}
+
+.xmas-lead{border-left-color:#9b2335}
+.xmas-lead .shop-links{display:flex;flex-wrap:wrap;gap:8px}
+.xmas-pair p:last-child{color:#fff}

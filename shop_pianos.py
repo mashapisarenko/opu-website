@@ -233,11 +233,12 @@ NEW_ARTICLES = {
  "best-digital-pianos-for-adult-beginners-in-canada": "Best Digital Pianos for Adult Beginners in Canada",
 }
 HYB, PREM, GRAND, UK, CA = list(NEW_ARTICLES)
+AU = "best-digital-piano-for-adult-beginners-in-australia"  # queued
 HPH = "best-headphones-for-digital-piano"            # already in the queue (2026-11-18)
 MICA = "best-microphone-for-recording-piano-at-home"  # already in the queue (2026-11-21)
 BLOG_MORE = {
- "pianos": [PREM, HYB, "best-digital-piano-for-adult-beginners", "digital-piano-vs-acoustic-beginner"],
- "digital-pianos": [PREM, UK, CA],
+ "pianos": [PREM, HYB, "best-digital-piano-for-adult-beginners", "digital-piano-vs-acoustic-beginner", UK, CA, AU],
+ "digital-pianos": [PREM, UK, CA, AU],
  "home-digital-pianos": [PREM],
  "hybrid-and-digital-grand-pianos": [HYB, GRAND, PREM],
  "headphones-for-piano": [HPH],

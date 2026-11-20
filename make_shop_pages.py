@@ -245,8 +245,39 @@ def top3_html(prods, cat, labelled=None):
             '<p class="muted">If you only read one section, read this: one pick for most people, one for a careful budget, one to grow into.</p>'
             '<div class="pgrid">%s</div></div>' % (len(picks), cards))
 
+# ---------------------------------------------------------------- Christmas conversion layer (2026-11-20)
+XMAS_SLUGS = {"index": "A keyboard, a piano, headphones or a microphone is a gift that gets used every day for years.",
+              "pianos": "A piano is the gift that gets played every day, long after the wrapping is gone.",
+              "digital-pianos": "A weighted-key digital piano is the gift I would give an adult who has always wanted to play.",
+              "keyboards": "A keyboard is the easiest way to give someone a first year of music without a big space or a big spend.",
+              "headphones-for-piano": "Headphones let a new pianist practise at any hour, which is often what decides whether they keep playing.",
+              "microphones-and-audio-interfaces": "A microphone or interface lets a player record their own playing and hear it back, the fastest way to improve.",
+              "gifts-for-pianists": "Every pick on this page is something I would give a pianist, chosen for how it will actually be used."}
+XMAS_GUIDES = [("christmas-gifts-for-pianists", "Christmas gifts for pianists"), ("gifts-for-pianists", "Gifts for pianists"),
+               ("gifts-for-adult-beginners", "Gifts for adult beginners"), ("luxury-gifts-for-pianists", "Luxury gifts for pianists")]
+
+def xmas_lead(slug):
+    """Warm Christmas lead, links to the gift guides, and the plain order-early reminder. Only on the shop index and the six biggest departments."""
+    if slug not in XMAS_SLUGS: return ""
+    links = " ".join('<a class="btn dark" href="%s.html">%s</a>' % (s_, esc(t)) for s_, t in XMAS_GUIDES if s_ != slug)
+    return ('<div class="howbox xmas-lead"><h2><span aria-hidden="true">🎄</span> Christmas gift ideas, chosen by a concert pianist</h2>'
+            '<p style="margin:0 0 10px">%s My Christmas gift guides collect what I would give a pianist or a new learner.</p>'
+            '<p class="shop-links" style="margin:0 0 12px">%s</p>'
+            '<p class="xmas-order" style="margin:0"><strong>Order early for Christmas delivery.</strong> Check the delivery date on Amazon before you buy; it depends on the item, the seller and your address.</p></div>'
+            % (esc(XMAS_SLUGS[slug]), links))
+
+def xmas_pair(slug):
+    """Gift a keyboard together with a gift certificate for first lessons."""
+    if slug not in XMAS_SLUGS: return ""
+    return ('<section class="shop-cta xmas-pair"><h2>Give lessons with the keyboard</h2>'
+            '<p>The gift that works best is the instrument plus someone to learn from. Give the keyboard, and add a gift certificate for first lessons with me, '
+            'Dr. Maria Pisarenko, a concert pianist who teaches adults online, wherever they live.</p>'
+            '<p class="shop-links"><a class="btn" href="../gift-certificate.html">Give a lesson gift certificate</a> '
+            '<a class="btn ghost" href="../lessons.html">See private online lessons</a></p>'
+            '<p style="margin:0;font-size:.95rem">Lesson prices increase January 1, 2027; gift certificates bought by December 31 keep today&#39;s price.</p></section>')
+
 def head_block(slug, top):
-    return top + guide_callout(slug) + pair_strip(slug) + cross_sell(slug)
+    return xmas_lead(slug) + top + xmas_pair(slug) + guide_callout(slug) + pair_strip(slug) + cross_sell(slug)
 
 OPU_PATH = """<section class="shop-cta"><h2>Would you rather learn than buy more gear?</h2>
 <p>The shop exists to support your learning. The learning itself can start free: all 41 lessons of my beginner course are published, and I give feedback on your playing at no charge. When you want a teacher, I take private students online. I am also preparing a method book series for adults who learn alone.</p>
@@ -288,6 +319,8 @@ def page(slug, title, desc, h1, eyebrow, sub, body, lds, crumb, canon=None):
           '<meta property="og:site_name" content="Online Piano University">\n<meta name="twitter:card" content="summary_large_image">\n'
           '<meta name="twitter:title" content="%s">\n<meta name="twitter:description" content="%s">\n<meta name="twitter:image" content="%s/images/og-adult-piano-lessons-dr-maria-pisarenko.jpg">\n'
           % (attr(title), attr(desc), canon, attr(title), attr(desc), canon, SITE, attr(title), attr(desc), SITE))
+    cl = '<link rel="canonical" href="%s">\n' % canon
+    og = og.replace(cl, cl + '<link rel="alternate" hreflang="en" href="%s">\n<link rel="alternate" hreflang="x-default" href="%s">\n' % (canon, canon), 1)
     ld = "\n".join('<script type="application/ld+json">%s</script>' % jd(o) for o in lds)
     crumbs = '<p class="shop-crumb"><a href="../index.html">Home</a> / %s</p>' % crumb
     hero = ('<section class="pagehero"><div class="wrap">%s<span class="eyebrow" style="color:var(--gold)">%s</span><h1>%s</h1>'
@@ -506,10 +539,10 @@ def build_hub():
     hol += '<a href="../gift-certificate.html"><span aria-hidden="true">🎁</span>Gift online lessons</a>'
     tops = pick(h["top"])
     top_html = '<div class="pgrid">' + "".join(card(p, i, "top-picks") for i, p in enumerate(tops)) + "</div>"
-    body = (section('<div class="shop-prose"><p class="lead">%s</p></div>' % esc(h["intro"]) + P.START_HERE +
+    body = (section(xmas_lead("index") + '<div class="shop-prose"><p class="lead">%s</p></div>' % esc(h["intro"]) + P.START_HERE +
                     '<h2 style="margin-top:30px">What do you need today?</h2><p class="muted">Shop by need: start with the problem you want to solve.</p>' +
                     '<div class="needgrid">%s</div>' % needs +
-                    GIFT_CARD +
+                    GIFT_CARD + xmas_pair("index") +
                     '<div class="holiday-strip"><h2>Which holiday gift should you give a musician?</h2>'
                     '<p>Christmas, Hanukkah and small gifts for the stocking, chosen by a concert pianist.</p><div class="holrow">%s</div></div>' % hol) +
             section('<h2>Which department are you shopping for?</h2><p class="muted">Each page starts with the question a buyer asks and ends with a way into the lessons.</p>'
